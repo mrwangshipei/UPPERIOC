@@ -5,11 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using UpperComAutoTest.Entry;
 
 namespace FCT
 {
+	public delegate void ReciveMess(ByteMessage Reciver);
 	public class CurrentSerialPort 
 	{
+		/// <summary>
+		/// 接受消息的事件
+		/// </summary>
+		public event ReciveMess REvent;
 		private SerialPort ser;
 		private object writelock =new object();
 		private object readlock = new object();
@@ -25,7 +31,7 @@ namespace FCT
 		public bool DtrEnable { get => ser.DtrEnable; internal set => ser.DtrEnable = value; }
 		
 		
-		List<byte> data = new List<byte>();
+		List<ByteMessage> data = new List<ByteMessage>();
 		public void LockMethod(Action acr,object lockobj) {
 			lock (lockobj)
 			{
@@ -33,7 +39,12 @@ namespace FCT
 				acr.Invoke();
 			}
 		}
-		public CurrentSerialPort(string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits) 
+		public CurrentSerialPort()
+			
+		{
+			ser = new SerialPort();
+		}
+			public CurrentSerialPort(string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits) 
 		{
 			ser = new SerialPort(portName, baudRate, parity, dataBits, stopBits);
 			ser.DataReceived += DataReceve;
@@ -50,7 +61,9 @@ namespace FCT
 				{
 					byte[] bs = new byte[ser.BytesToRead];
 					ser.Read(bs,0,bs.Length);
-					data.AddRange(bs);
+					var bts = new ByteMessage() { Time = DateTime.Now,Data = bs};
+					data.Add(bts);
+					REvent?.Invoke(bts);
 				}
 			}, readlock);
 		}
@@ -70,14 +83,14 @@ namespace FCT
 		/// 读取数据，如果为0的话就回复null
 		/// </summary>
 		/// <returns></returns>
-		public byte[] Read()
+		public ByteMessage Read()
 		{
-			byte[] data =null;
+			ByteMessage data = null;
 			LockMethod(() => {
 				if (this.data.Count > 0)
 				{
 					Thread.Sleep(20);
-					data = this.data.ToArray();
+					data = this.data.Last() ;
 					this.data.Clear();
 				}
 
@@ -111,7 +124,7 @@ namespace FCT
 			}, writelock);
 		}
 
-		public string iss_receive(int time = 300)
+		/*public string iss_receive(int time = 300)
 
 		{
 					Thread.Sleep(500);
@@ -126,6 +139,6 @@ namespace FCT
 
 			}, readlock);
 			return Encoding.ASCII.GetString(data);
-		}
+		}*/
 	}
 }

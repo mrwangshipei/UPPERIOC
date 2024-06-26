@@ -1,5 +1,3 @@
-using ReactiveUI;
-using Splat;
 
 namespace UpperComAutoTest
 {

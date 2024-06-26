@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
 			panel1 = new Panel();
 			panel4 = new Panel();
 			richTextBox2 = new RichTextBox();
@@ -61,7 +60,6 @@
 			label4 = new Label();
 			comboBox5 = new ComboBox();
 			comboBox1 = new ComboBox();
-			nomalComPageViewModelBindingSource = new BindingSource(components);
 			comboBox4 = new ComboBox();
 			label5 = new Label();
 			comboBox2 = new ComboBox();
@@ -73,7 +71,6 @@
 			groupBox3.SuspendLayout();
 			groupBox2.SuspendLayout();
 			groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)nomalComPageViewModelBindingSource).BeginInit();
 			SuspendLayout();
 			// 
 			// panel1
@@ -153,7 +150,7 @@
 			groupBox4.Controls.Add(label6);
 			groupBox4.Controls.Add(textBox1);
 			groupBox4.Controls.Add(checkBox3);
-			groupBox4.Location = new Point(4, 560);
+			groupBox4.Location = new Point(6, 531);
 			groupBox4.Name = "groupBox4";
 			groupBox4.Size = new Size(265, 138);
 			groupBox4.TabIndex = 4;
@@ -168,7 +165,6 @@
 			button4.TabIndex = 2;
 			button4.Text = "发送";
 			button4.UseVisualStyleBackColor = true;
-
 			// 
 			// checkBox6
 			// 
@@ -213,7 +209,7 @@
 			groupBox3.Controls.Add(checkBox4);
 			groupBox3.Controls.Add(checkBox1);
 			groupBox3.Controls.Add(checkBox2);
-			groupBox3.Location = new Point(4, 399);
+			groupBox3.Location = new Point(6, 370);
 			groupBox3.Name = "groupBox3";
 			groupBox3.Size = new Size(265, 155);
 			groupBox3.TabIndex = 4;
@@ -268,26 +264,28 @@
 			checkBox2.TabIndex = 3;
 			checkBox2.Text = "白底黑字";
 			checkBox2.UseVisualStyleBackColor = true;
-		// 
+			// 
 			// groupBox2
 			// 
 			groupBox2.Controls.Add(button3);
 			groupBox2.Controls.Add(button1);
-			groupBox2.Location = new Point(4, 290);
+			groupBox2.Location = new Point(4, 266);
 			groupBox2.Name = "groupBox2";
-			groupBox2.Size = new Size(265, 103);
+			groupBox2.Size = new Size(265, 98);
 			groupBox2.TabIndex = 4;
 			groupBox2.TabStop = false;
 			groupBox2.Text = "操作";
 			// 
 			// button3
 			// 
+			button3.Enabled = false;
 			button3.Location = new Point(138, 27);
 			button3.Name = "button3";
 			button3.Size = new Size(114, 62);
 			button3.TabIndex = 2;
 			button3.Text = "停止";
 			button3.UseVisualStyleBackColor = true;
+			button3.Click += button3_Click;
 			// 
 			// button1
 			// 
@@ -297,6 +295,7 @@
 			button1.TabIndex = 2;
 			button1.Text = "启动";
 			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
 			// 
 			// groupBox1
 			// 
@@ -314,7 +313,7 @@
 			groupBox1.Controls.Add(comboBox2);
 			groupBox1.Location = new Point(3, 0);
 			groupBox1.Name = "groupBox1";
-			groupBox1.Size = new Size(265, 284);
+			groupBox1.Size = new Size(265, 260);
 			groupBox1.TabIndex = 4;
 			groupBox1.TabStop = false;
 			groupBox1.Text = "串口";
@@ -326,6 +325,7 @@
 			comboBox3.Name = "comboBox3";
 			comboBox3.Size = new Size(170, 29);
 			comboBox3.TabIndex = 1;
+			comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
 			// 
 			// label1
 			// 
@@ -339,22 +339,24 @@
 			// checkBox8
 			// 
 			checkBox8.AutoSize = true;
-			checkBox8.Location = new Point(160, 222);
+			checkBox8.Location = new Point(186, 222);
 			checkBox8.Name = "checkBox8";
 			checkBox8.Size = new Size(51, 25);
 			checkBox8.TabIndex = 3;
 			checkBox8.Text = "dtr";
 			checkBox8.UseVisualStyleBackColor = true;
+			checkBox8.CheckedChanged += checkBox8_CheckedChanged;
 			// 
 			// checkBox7
 			// 
 			checkBox7.AutoSize = true;
-			checkBox7.Location = new Point(14, 222);
+			checkBox7.Location = new Point(23, 222);
 			checkBox7.Name = "checkBox7";
 			checkBox7.Size = new Size(48, 25);
 			checkBox7.TabIndex = 3;
 			checkBox7.Text = "rts";
 			checkBox7.UseVisualStyleBackColor = true;
+			checkBox7.CheckedChanged += checkBox7_CheckedChanged;
 			// 
 			// label2
 			// 
@@ -390,21 +392,16 @@
 			comboBox5.Name = "comboBox5";
 			comboBox5.Size = new Size(170, 29);
 			comboBox5.TabIndex = 1;
+			comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
 			// 
 			// comboBox1
 			// 
-			comboBox1.DataBindings.Add(new Binding("DisplayMember", nomalComPageViewModelBindingSource, "NomalModel", true, DataSourceUpdateMode.OnPropertyChanged));
-			comboBox1.DataSource = nomalComPageViewModelBindingSource;
-			comboBox1.DisplayMember = "NomalModel";
 			comboBox1.FormattingEnabled = true;
 			comboBox1.Location = new Point(89, 27);
 			comboBox1.Name = "comboBox1";
 			comboBox1.Size = new Size(170, 29);
 			comboBox1.TabIndex = 1;
-			// 
-			// nomalComPageViewModelBindingSource
-			// 
-			nomalComPageViewModelBindingSource.DataSource = typeof(ModelView.NomalComPageViewModel);
+			comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
 			// 
 			// comboBox4
 			// 
@@ -413,6 +410,7 @@
 			comboBox4.Name = "comboBox4";
 			comboBox4.Size = new Size(170, 29);
 			comboBox4.TabIndex = 1;
+			comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
 			// 
 			// label5
 			// 
@@ -431,6 +429,7 @@
 			comboBox2.Name = "comboBox2";
 			comboBox2.Size = new Size(170, 29);
 			comboBox2.TabIndex = 1;
+			comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
 			// 
 			// NomalComPage
 			// 
@@ -450,7 +449,6 @@
 			groupBox2.ResumeLayout(false);
 			groupBox1.ResumeLayout(false);
 			groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)nomalComPageViewModelBindingSource).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -489,7 +487,6 @@
 		private RichTextBox richTextBox1;
 		private Panel panel4;
 		private RichTextBox richTextBox2;
-		private BindingSource nomalComPageViewModelBindingSource;
 		private CheckBox checkBox8;
 		private CheckBox checkBox7;
 	}

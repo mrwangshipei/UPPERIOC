@@ -12,7 +12,8 @@ namespace UpperComAutoTest.Model
 {
 	public  class NomalComPageModel 
 	{
-
+        public bool Send16x { get; set; }
+        public bool Receve16x { get; set; }
 		private string[] pn;
 		public string[] PortName { get => pn; set =>  pn= value; }
 
@@ -21,7 +22,7 @@ namespace UpperComAutoTest.Model
 		public string[] Btv
 		{
 			get { return btv; }
-			set { ref btv= value; }
+			set { btv = value; }
 		}
 
 		private CurrentSerialPort ser;
@@ -34,10 +35,10 @@ namespace UpperComAutoTest.Model
 			} 
 		}
 
-		public List<int> DataBits { get; internal set; }
+		public string[] DataBits { get; internal set; }
 
 		public NomalComPageModel() {
-			DataBits = new List<int>() { 1,2,3,4,5,6,7,8};
+			DataBits = new string[]{ "1","2","3","4", "5", "6", "7", "8" };
 			PortName = System.IO.Ports.SerialPort.GetPortNames();
 			 Btv = new string[]
 			{
@@ -56,6 +57,7 @@ namespace UpperComAutoTest.Model
 	"460800",
 	"921600"
 			};
+			ser = new CurrentSerialPort();
 		}
 
 	}
