@@ -1,9 +1,10 @@
+
 using UpperComAutoTest.View.Page.Center;
 using UpperComAutoTest.View.Page.Interface;
 
 namespace UpperComAutoTest
 {
-    public partial class Form1 : Form
+	public partial class Form1 : Form
 	{
 		public Form1()
 		{
@@ -13,6 +14,9 @@ namespace UpperComAutoTest
 				item.Click += Open;
             }
         }
+
+	
+
 		/// <summary>
 		/// 降低界面耦合，方便团队开发-
 		/// </summary>

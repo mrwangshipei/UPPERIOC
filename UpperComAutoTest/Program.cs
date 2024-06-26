@@ -1,3 +1,6 @@
+using ReactiveUI;
+using Splat;
+
 namespace UpperComAutoTest
 {
 	internal static class Program
@@ -8,6 +11,7 @@ namespace UpperComAutoTest
 		[STAThread]
 		static void Main()
 		{
+			
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.
 			ApplicationConfiguration.Initialize();
