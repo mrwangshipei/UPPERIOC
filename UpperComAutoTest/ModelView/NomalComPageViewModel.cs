@@ -12,7 +12,7 @@ namespace UpperComAutoTest.ModelView
 {
 	public  class NomalComPageViewModel
 	{
-		public NomalComPageModel m;
+		private NomalComPageModel m;
 
 		
 		public NomalComPageModel NomalModel { get => m; set =>  m= value; }
