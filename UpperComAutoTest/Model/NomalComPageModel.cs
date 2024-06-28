@@ -60,5 +60,14 @@ namespace UpperComAutoTest.Model
 			ser = new CurrentSerialPort();
 		}
 
+		internal void SendTo16(bool send16x)
+		{
+			throw new NotImplementedException();
+		}
+
+		internal void ReceveTo16(bool receve16x)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

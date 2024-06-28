@@ -90,13 +90,26 @@ namespace UpperComAutoTest.Page
 		private void button1_Click(object sender, EventArgs e)
 		{
 			Button startbtn = sender as Button;
-			ViewModel.StartCom(startbtn, button3,groupBox1);
+			ViewModel.StartCom(startbtn, button3, groupBox1);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
 			Button stopbutton = sender as Button;
 			ViewModel.StopCom(stopbutton, button1, groupBox1);
+		}
+
+		private void checkBox6_CheckedChanged(object sender, EventArgs e)
+		{
+			ViewModel.NomalModel.Send16x = checkBox6.Checked;
+			ViewModel.NomalModel.SendTo16(ViewModel.NomalModel.Send16x);
+
+		}
+
+		private void checkBox1_CheckedChanged(object sender, EventArgs e)
+		{
+			ViewModel.NomalModel.Receve16x = checkBox1.Checked;
+			ViewModel.NomalModel.ReceveTo16(ViewModel.NomalModel.Receve16x);
 		}
 	}
 }

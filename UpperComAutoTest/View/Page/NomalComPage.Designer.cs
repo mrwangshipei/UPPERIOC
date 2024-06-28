@@ -175,6 +175,7 @@
 			checkBox6.TabIndex = 3;
 			checkBox6.Text = "十六进制";
 			checkBox6.UseVisualStyleBackColor = true;
+			checkBox6.CheckedChanged += checkBox6_CheckedChanged;
 			// 
 			// label6
 			// 
@@ -254,6 +255,7 @@
 			checkBox1.TabIndex = 3;
 			checkBox1.Text = "转16进制";
 			checkBox1.UseVisualStyleBackColor = true;
+			checkBox1.CheckedChanged += checkBox1_CheckedChanged;
 			// 
 			// checkBox2
 			// 
