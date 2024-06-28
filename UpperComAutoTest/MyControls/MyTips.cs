@@ -60,7 +60,7 @@ namespace UpperComAutoTest.MyControls
 				}
 				else
 				{
-					tips.Location = new Point(Screen.PrimaryScreen.Bounds.Location.X + (Screen.PrimaryScreen.Bounds.Width / 2 - tips.Width / 2), Screen.PrimaryScreen.Bounds.Location.Y + (Screen.PrimaryScreen.Bounds.Height - tips.Height - 600));
+					tips.Location = new Point(Screen.PrimaryScreen.Bounds.Location.X + (Screen.PrimaryScreen.Bounds.Width / 2 - tips.Width / 2), Screen.PrimaryScreen.Bounds.Location.Y + (Screen.PrimaryScreen.Bounds.Height - tips.Height - 220));
 
 				}
 				tips.ShowForm(waittime);

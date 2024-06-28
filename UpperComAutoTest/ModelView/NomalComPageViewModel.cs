@@ -26,7 +26,7 @@ namespace UpperComAutoTest.ModelView
 
 		internal void StartCom(Button? startbtn, Button? stopbutton,GroupBox gp1)
 		{
-					MyTips.ShowTips(startbtn.FindForm(), Tipstype.Error, "串口打开出现异常", 2000, true);
+					MyTips.ShowTips(startbtn.FindForm(), Tipstype.Error, "串口打开出现异常", 2000);
 			if (NomalModel.SerialPort.IsOpen)
 			{
 				MyTips.ShowTips(startbtn.FindForm(),Tipstype.Error,"串口已经打开了",2000,true);
