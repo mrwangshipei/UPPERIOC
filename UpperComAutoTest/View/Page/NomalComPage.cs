@@ -102,14 +102,25 @@ namespace UpperComAutoTest.Page
 		private void checkBox6_CheckedChanged(object sender, EventArgs e)
 		{
 			ViewModel.NomalModel.Send16x = checkBox6.Checked;
-			ViewModel.NomalModel.SendTo16(ViewModel.NomalModel.Send16x);
+			ViewModel.SendTo16(ViewModel.NomalModel.Send16x, richTextBox_s);
 
 		}
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)
 		{
 			ViewModel.NomalModel.Receve16x = checkBox1.Checked;
-			ViewModel.NomalModel.ReceveTo16(ViewModel.NomalModel.Receve16x);
+			ViewModel.ReceveTo16(ViewModel.NomalModel.Receve16x, richTextBox_r);
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void checkBox5_CheckedChanged(object sender, EventArgs e)
+		{
+			ViewModel.NomalModel.Timestamp = checkBox5.Checked;
+
 		}
 	}
 }

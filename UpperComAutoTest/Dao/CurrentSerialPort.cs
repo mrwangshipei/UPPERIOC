@@ -31,7 +31,7 @@ namespace FCT
 		public bool DtrEnable { get => ser.DtrEnable; internal set => ser.DtrEnable = value; }
 		
 		
-		List<ByteMessage> data = new List<ByteMessage>();
+		public 	List<ByteMessage> data = new List<ByteMessage>();
 		public void LockMethod(Action acr,object lockobj) {
 			lock (lockobj)
 			{

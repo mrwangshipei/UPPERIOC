@@ -12,6 +12,7 @@ namespace UpperComAutoTest.Model
 {
 	public  class NomalComPageModel 
 	{
+        public bool Timestamp { get; set; }
         public bool Send16x { get; set; }
         public bool Receve16x { get; set; }
 		private string[] pn;
@@ -60,14 +61,6 @@ namespace UpperComAutoTest.Model
 			ser = new CurrentSerialPort();
 		}
 
-		internal void SendTo16(bool send16x)
-		{
-			throw new NotImplementedException();
-		}
-
-		internal void ReceveTo16(bool receve16x)
-		{
-			throw new NotImplementedException();
-		}
+		
 	}
 }
