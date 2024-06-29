@@ -30,9 +30,9 @@
 		{
 			panel1 = new Panel();
 			panel4 = new Panel();
-			richTextBox2 = new RichTextBox();
+			richTextBox_r = new RichTextBox();
 			panel3 = new Panel();
-			richTextBox1 = new RichTextBox();
+			richTextBox_s = new RichTextBox();
 			panel2 = new Panel();
 			groupBox5 = new GroupBox();
 			groupBox4 = new GroupBox();
@@ -85,7 +85,7 @@
 			// 
 			// panel4
 			// 
-			panel4.Controls.Add(richTextBox2);
+			panel4.Controls.Add(richTextBox_r);
 			panel4.Dock = DockStyle.Fill;
 			panel4.Location = new Point(0, 0);
 			panel4.Name = "panel4";
@@ -93,18 +93,18 @@
 			panel4.Size = new Size(939, 665);
 			panel4.TabIndex = 1;
 			// 
-			// richTextBox2
+			// richTextBox_r
 			// 
-			richTextBox2.Dock = DockStyle.Fill;
-			richTextBox2.Location = new Point(15, 15);
-			richTextBox2.Name = "richTextBox2";
-			richTextBox2.Size = new Size(909, 635);
-			richTextBox2.TabIndex = 0;
-			richTextBox2.Text = "";
+			richTextBox_r.Dock = DockStyle.Fill;
+			richTextBox_r.Location = new Point(15, 15);
+			richTextBox_r.Name = "richTextBox_r";
+			richTextBox_r.Size = new Size(909, 635);
+			richTextBox_r.TabIndex = 0;
+			richTextBox_r.Text = "";
 			// 
 			// panel3
 			// 
-			panel3.Controls.Add(richTextBox1);
+			panel3.Controls.Add(richTextBox_s);
 			panel3.Dock = DockStyle.Bottom;
 			panel3.Location = new Point(0, 665);
 			panel3.Name = "panel3";
@@ -112,14 +112,14 @@
 			panel3.Size = new Size(939, 194);
 			panel3.TabIndex = 0;
 			// 
-			// richTextBox1
+			// richTextBox_s
 			// 
-			richTextBox1.Dock = DockStyle.Fill;
-			richTextBox1.Location = new Point(15, 15);
-			richTextBox1.Name = "richTextBox1";
-			richTextBox1.Size = new Size(909, 164);
-			richTextBox1.TabIndex = 0;
-			richTextBox1.Text = "";
+			richTextBox_s.Dock = DockStyle.Fill;
+			richTextBox_s.Location = new Point(15, 15);
+			richTextBox_s.Name = "richTextBox_s";
+			richTextBox_s.Size = new Size(909, 164);
+			richTextBox_s.TabIndex = 0;
+			richTextBox_s.Text = "";
 			// 
 			// panel2
 			// 
@@ -165,6 +165,7 @@
 			button4.TabIndex = 2;
 			button4.Text = "发送";
 			button4.UseVisualStyleBackColor = true;
+			button4.Click += button4_Click;
 			// 
 			// checkBox6
 			// 
@@ -235,6 +236,7 @@
 			checkBox5.TabIndex = 3;
 			checkBox5.Text = "时间戳";
 			checkBox5.UseVisualStyleBackColor = true;
+			checkBox5.CheckedChanged += checkBox5_CheckedChanged;
 			// 
 			// checkBox4
 			// 
@@ -486,9 +488,9 @@
 		private CheckBox checkBox3;
 		private GroupBox groupBox5;
 		private Panel panel3;
-		private RichTextBox richTextBox1;
+		private RichTextBox richTextBox_s;
 		private Panel panel4;
-		private RichTextBox richTextBox2;
+		private RichTextBox richTextBox_r;
 		private CheckBox checkBox8;
 		private CheckBox checkBox7;
 	}

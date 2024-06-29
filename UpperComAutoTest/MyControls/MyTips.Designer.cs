@@ -65,7 +65,6 @@
 			// 
 			label1.Dock = DockStyle.Fill;
 			label1.Font = new Font("幼圆", 18F, FontStyle.Regular, GraphicsUnit.Point);
-			label1.ImageIndex = 1;
 			label1.Location = new Point(0, 0);
 			label1.Name = "label1";
 			label1.Size = new Size(413, 73);

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
+using UpperComAutoTest.Extend;
 using UpperComAutoTest.Model;
 using UpperComAutoTest.MyControls;
 
@@ -26,7 +27,7 @@ namespace UpperComAutoTest.ModelView
 
 		internal void StartCom(Button? startbtn, Button? stopbutton,GroupBox gp1)
 		{
-					MyTips.ShowTips(startbtn.FindForm(), Tipstype.Error, "串口打开出现异常", 2000, true);
+					MyTips.ShowTips(startbtn.FindForm(), Tipstype.Error, "串口打开出现异常", 2000);
 			if (NomalModel.SerialPort.IsOpen)
 			{
 				MyTips.ShowTips(startbtn.FindForm(),Tipstype.Error,"串口已经打开了",2000,true);
@@ -90,6 +91,18 @@ namespace UpperComAutoTest.ModelView
 
 				}
 			});
+		}
+
+		internal void ReceveTo16(bool receve16x, RichTextBox richTextBox_r)
+		{
+			richTextBox_r.Text = NomalModel.SerialPort.data.ListByteDataToStr(receve16x,NomalModel.Timestamp);
+
+		}
+
+		internal void SendTo16(bool send16x, RichTextBox richTextBox_s)
+		{
+
+
 		}
 	}
 }
