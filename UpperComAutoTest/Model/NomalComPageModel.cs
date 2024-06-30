@@ -39,7 +39,7 @@ namespace UpperComAutoTest.Model
 		public string[] DataBits { get; internal set; }
 
 		public NomalComPageModel() {
-			DataBits = new string[]{ "1","2","3","4", "5", "6", "7", "8" };
+			DataBits = new string[]{  "5", "6", "7", "8" };
 			PortName = System.IO.Ports.SerialPort.GetPortNames();
 			 Btv = new string[]
 			{

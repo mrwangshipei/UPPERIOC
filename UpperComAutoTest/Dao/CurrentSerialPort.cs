@@ -52,6 +52,7 @@ namespace FCT
 			//USB_I2C.WriteTimeout = WriteTimeout == "" ? 2000 : Convert.ToInt32(WriteTimeout);
 			ser.WriteBufferSize = 2048;
 			ser.ReadBufferSize = 2048;
+			ser.WriteTimeout = 2000;
 		}
 
 		private void DataReceve(object sender, SerialDataReceivedEventArgs e)

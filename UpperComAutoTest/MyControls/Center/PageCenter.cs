@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UpperComAutoTest.View.Page.Interface;
 
-namespace UpperComAutoTest.View.Page.Center
+namespace UpperComAutoTest.MyControls.Center
 {
     public static class PageCenter
     {
@@ -18,7 +18,7 @@ namespace UpperComAutoTest.View.Page.Center
             var items = asm.DefinedTypes.Where(type => type.IsSubclassOf(typeof(IPage)));
             var ipages = items.Select(item =>
             {
-                return Assembly.GetAssembly(item).CreateInstance(item.FullName) as IPage;
+                return Assembly.GetAssembly(item).CreateInstance(item.FullName,true,BindingFlags.CreateInstance,null,) as IPage;
             });
             foreach (var item in ipages)
             {
