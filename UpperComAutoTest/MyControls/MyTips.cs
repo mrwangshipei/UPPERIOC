@@ -32,7 +32,7 @@ namespace UpperComAutoTest.MyControls
 			switch (Type)
 			{
 				case Tipstype.Warn:
-					tips.BackColor = Color.GreenYellow;
+					tips.BackColor = Color.DimGray;
 					break;
 				case Tipstype.Success:
 					tips.BackColor = Color.LightGreen;

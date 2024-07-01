@@ -31,8 +31,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			toolStrip1 = new ToolStrip();
 			NomalComPage = new ToolStripButton();
-			panel1 = new Panel();
 			toolStripButton1 = new ToolStripButton();
+			panel1 = new Panel();
 			toolStrip1.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -44,6 +44,7 @@
 			toolStrip1.Size = new Size(1082, 25);
 			toolStrip1.TabIndex = 0;
 			toolStrip1.Text = "toolStrip1";
+			toolStrip1.ItemClicked += toolStrip1_ItemClicked;
 			// 
 			// NomalComPage
 			// 
@@ -53,14 +54,7 @@
 			NomalComPage.Name = "NomalComPage";
 			NomalComPage.Size = new Size(60, 22);
 			NomalComPage.Text = "串口调试";
-			// 
-			// panel1
-			// 
-			panel1.Dock = DockStyle.Fill;
-			panel1.Location = new Point(0, 25);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(1082, 689);
-			panel1.TabIndex = 1;
+			NomalComPage.Click += NomalComPage_Click;
 			// 
 			// toolStripButton1
 			// 
@@ -70,6 +64,14 @@
 			toolStripButton1.Name = "toolStripButton1";
 			toolStripButton1.Size = new Size(60, 22);
 			toolStripButton1.Text = "日志位置";
+			// 
+			// panel1
+			// 
+			panel1.Dock = DockStyle.Fill;
+			panel1.Location = new Point(0, 25);
+			panel1.Name = "panel1";
+			panel1.Size = new Size(1082, 689);
+			panel1.TabIndex = 1;
 			// 
 			// Form1
 			// 

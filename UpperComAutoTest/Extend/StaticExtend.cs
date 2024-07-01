@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -36,11 +37,7 @@ namespace UpperComAutoTest.Extend
 					}
 					else
 					{
-						if (failthrow)
-						{
-							throw new Exception("识别失败");
-
-						}
+						
 					}
 				}
 			}
@@ -56,20 +53,45 @@ namespace UpperComAutoTest.Extend
 			}
 			return bts.ToArray();
 		}
+		public static string ByteArrayToHex(this byte[] ba,string split)
+		{
+			StringBuilder hex = new StringBuilder(ba.Length * 2);
+			int i = 0;
+			foreach (byte b in ba)
+			{
+				if (i != 0)
+				{
 
-		public static string ListByteDataToStr(this List<ByteMessage> msgs,bool x16 = true,bool Timestamp = false)
+					hex.Append(split);
+				}
+				hex.AppendFormat("{0:x2}", b);
+			    i++;
+			}
+			return hex.ToString();
+		}
+			public static string ListByteDataToStr(this ConcurrentQueue<ByteMessage> msgs,bool x16 = true,bool Timestamp = false)
 		{
 			StringBuilder sb = new StringBuilder();
-			for (int i = 0; i < msgs.Count; i++)
+			foreach (var bts in msgs)
 			{
-				ByteMessage bts = msgs[i];
+				if (bts.IsSend)
+				{
+					sb.Append("Receive ");
+				}
+				else
+				{
+					sb.Append("Send ");
+
+				}
 				if (Timestamp)
 				{
-					sb.Append(bts.Time.ToLongDateString() + " :");
+					sb.Append(bts.Time.ToLongDateString() );
 				}
+				sb.Append(" :");
+
 				if (x16)
 				{
-					sb.Append(string.Join(" ",bts.Data));
+					sb.Append(bts.Data.ByteArrayToHex(" "));
 				}
 				else
 				{
@@ -77,8 +99,8 @@ namespace UpperComAutoTest.Extend
 				}
 				if (Timestamp)
 				{
-					sb.Append("\n");
 				}
+				sb.Append("\n");
 
 			}
 			return sb.ToString();
@@ -90,7 +112,7 @@ namespace UpperComAutoTest.Extend
 			
 				ByteMessage bts = msgs;
 			
-			if (receve)
+			if (bts.IsSend)
 			{
 				sb.Append("Receive ");
 			}
@@ -101,8 +123,10 @@ namespace UpperComAutoTest.Extend
 			}
 			if (Timestamp)
 			{
-				sb.Append(bts.Time.ToLongDateString() + " :");
+				sb.Append(bts.Time.ToLongDateString() );
 			}
+			sb.Append(" :");
+
 			if (x16)
 				{
 					sb.Append(string.Join(" ", bts.Data));
@@ -113,9 +137,9 @@ namespace UpperComAutoTest.Extend
 				}
 				if (Timestamp)
 				{
-					sb.Append("\n");
 				}
 
+					sb.Append("\n");
 			
 			return sb.ToString();
 		}

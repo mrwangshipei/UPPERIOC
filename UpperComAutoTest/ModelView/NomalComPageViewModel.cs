@@ -9,19 +9,31 @@ using UpperComAutoTest.Entry;
 using UpperComAutoTest.Extend;
 using UpperComAutoTest.Model;
 using UpperComAutoTest.MyControls;
+using UpperComAutoTest.SendorEvent;
+using UPPERIOC.Interface;
+using UPPERIOC.UPPER.IOC.Annaiation;
+using UPPERIOC.UPPER.Sendor;
 
 namespace UpperComAutoTest.ModelView
 {
-	public class NomalComPageViewModel : _IViewModel.IVIewModel
+	[IOCObject]
+	public class NomalComPageViewModel : IVIewModel
 	{
 		private NomalComPageModel m;
 
 
 		public NomalComPageModel NomalModel { get => m; set => m = value; }
+		System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+		public bool AutoSend { get=> timer.Enabled;
+			internal set {
+				timer.Enabled = value;
+			}
+		}
+		public int AutoSendTime { get =>timer.Interval; internal set => timer.Interval = value; }
 
 		public NomalComPageViewModel()
 		{
-;
+			
 			// 初始化命令和其他属性  
 		
 		}
@@ -29,7 +41,7 @@ namespace UpperComAutoTest.ModelView
 			NomalModel.SerialPort.REvent += Receve;
 
 		}
-		internal void StartCom(Button? startbtn, Button? stopbutton, GroupBox gp1)
+		internal void StartCom(Button? startbtn, Button? stopbutton, Action<bool> gp1)
 		{
 			MyTips.ShowTips(startbtn.FindForm(), Tipstype.Error, "串口打开出现异常", 2000);
 			if (NomalModel.SerialPort.IsOpen)
@@ -38,7 +50,6 @@ namespace UpperComAutoTest.ModelView
 				startbtn.Enabled = false;
 				return;
 			}
-			gp1.Enabled = false;
 			startbtn.Enabled = false;
 
 			Task.Factory.StartNew(() =>
@@ -48,6 +59,8 @@ namespace UpperComAutoTest.ModelView
 					NomalModel.SerialPort.Open();
 					startbtn.Invoke(() =>
 					{
+						gp1?.Invoke(true);
+
 						stopbutton.Enabled = true;
 					});
 				}
@@ -56,7 +69,7 @@ namespace UpperComAutoTest.ModelView
 					MyTips.ShowTips(startbtn.FindForm(), Tipstype.Error, "串口打开出现异常", 2000, true);
 					startbtn.Invoke(() =>
 					{
-						gp1.Enabled = true;
+						gp1?.Invoke(false);
 
 						startbtn.Enabled = true;
 					});
@@ -66,7 +79,7 @@ namespace UpperComAutoTest.ModelView
 			});
 		}
 
-		internal void StopCom(Button? stopbutton, Button Startbtn, GroupBox gp1)
+		internal void StopCom(Button? stopbutton, Button Startbtn, Action<bool> gp1)
 		{
 			if (!NomalModel.SerialPort.IsOpen)
 			{
@@ -83,7 +96,8 @@ namespace UpperComAutoTest.ModelView
 					NomalModel.SerialPort.Close();
 					stopbutton.Invoke(() =>
 					{
-						gp1.Enabled = true;
+						gp1?.Invoke(true);
+
 
 						Startbtn.Enabled = true;
 					});
@@ -94,7 +108,8 @@ namespace UpperComAutoTest.ModelView
 					stopbutton.Invoke(() =>
 					{
 						stopbutton.Enabled = true;
-						gp1.Enabled = false;
+						gp1?.Invoke(false);
+
 
 					});
 
@@ -117,7 +132,7 @@ namespace UpperComAutoTest.ModelView
 
 		internal void ChangeSelectionTo16x(RichTextBox richTextBox_s)
 		{
-			string str16 = string.Join(" ", Encoding.Default.GetBytes(richTextBox_s.SelectedText));
+			string str16 = string.Join(" ", Encoding.Default.GetBytes(richTextBox_s.SelectedText).ByteArrayToHex(" "));
 			richTextBox_s.SelectedText = str16;
 		}
 
@@ -135,36 +150,83 @@ namespace UpperComAutoTest.ModelView
 			}
 		}
 
-		internal void Send16(RichTextBox richTextBox_s,Action<ByteMessage> cellback)
+		internal void Send16(Action<ByteMessage> cellback)
 		{
 			ByteMessage btm = null;
 			Task.Factory.StartNew(() =>
 			{
 				try
 				{
-					var str16 = richTextBox_s.Text.ToBitArray();
-				 btm= new ByteMessage() {  Data= str16,Time = DateTime.Now};
+					byte[] str16 = null;
+					str16 = NomalModel.SendMsg.ToBitArray();
+				
+					btm = new ByteMessage() { Data = str16, Time = DateTime.Now, IsSend = true };
 					NomalModel.SerialPort.Write(str16, 0, str16.Length);
+					NomalModel.SerialPort.data.Enqueue(btm);
+
 					cellback?.Invoke(btm);
 				}
-				catch (Exception)
+				catch (Exception ex)
 				{
-					MyTips.ShowTips(richTextBox_s.FindForm(), Tipstype.Error, "转换出现异常，数字对16进制是否过大");
-				
+					//	richTextBox_s.Invoke(() => {
+					cellback?.Invoke(new ByteMessage() { Err = new Exception("转换出现异常，数字对16进制是否过大") });
+				//	});
+
 				}
 			});
 		}
+		internal void Send()
+		{
+			ByteMessage btm = null;
+			try
+				{
+				if (!NomalModel.SerialPort.IsOpen)
+				{
+					return;
+				}
+					byte[] str16 = null;
+					str16 = NomalModel.SendMsg.ToBitArray();
 
-	
+					btm = new ByteMessage() { Data = str16, Time = DateTime.Now, IsSend = true };
+					NomalModel.SerialPort.Write(str16, 0, str16.Length);
+					NomalModel.SerialPort.data.Enqueue(btm);
+				Sendor.Publish<AutoRefeashEvent>(new AutoRefeashEvent());
+
+			}
+			catch (Exception ex)
+				{
+					//	richTextBox_s.Invoke(() => {
+					//	});
+
+				}
+		
+		}
+
 		public override void Create()
 		{
 			NomalModel = new NomalComPageModel();
-
+			
+			timer.Tick += (a, arg) =>
+			{
+				Send();
+			};
 		}
 
 		public override void Destroy()
 		{
 			
+		}
+
+		internal void SetBlackBackGroud(bool @checked, Action<bool> value)
+		{
+			NomalModel.Blackback = @checked;
+			value?.Invoke(true);
+		}
+
+		internal void ClearReceive(Action<bool> value)
+		{
+			NomalModel.SerialPort.data.Clear();
+			value?.Invoke(true);
 		}
 	}
 }

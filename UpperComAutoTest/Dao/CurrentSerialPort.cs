@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace FCT
 		public bool DtrEnable { get => ser.DtrEnable; internal set => ser.DtrEnable = value; }
 		
 		
-		public 	List<ByteMessage> data = new List<ByteMessage>();
+		public 	ConcurrentQueue<ByteMessage> data = new ConcurrentQueue<ByteMessage>();
 		public void LockMethod(Action acr,object lockobj) {
 			lock (lockobj)
 			{
@@ -62,8 +63,8 @@ namespace FCT
 				{
 					byte[] bs = new byte[ser.BytesToRead];
 					ser.Read(bs,0,bs.Length);
-					var bts = new ByteMessage() { Time = DateTime.Now,Data = bs};
-					data.Add(bts);
+					var bts = new ByteMessage() { Time = DateTime.Now,Data = bs,IsSend = false};
+					data.Enqueue(bts);
 					REvent?.Invoke(bts);
 				}
 			}, readlock);

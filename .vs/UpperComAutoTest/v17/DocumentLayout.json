@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{39F91140-3A84-4066-ABBD-93B54838729B}|UPPERIOC\\UPPERIOC.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc\\upperioc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{39F91140-3A84-4066-ABBD-93B54838729B}|UPPERIOC\\UPPERIOC.csproj|solutionrelative:upperioc\\upperioc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|E:\\Wsp\\Code\\C#\\ComAutoTest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\model\\nomalcompagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\model\\nomalcompagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\dao\\currentserialport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\dao\\currentserialport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,78 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StaticExtend.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "RelativeToolTip": "UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAIwD4AAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T06:01:07.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CurrentSerialPort.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
-              "RelativeToolTip": "UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAzwCEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T05:59:33.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NomalComPageViewModel.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
-              "RelativeToolTip": "UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAkwGcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T05:59:23.823Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NomalComPageModel.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Model\\NomalComPageModel.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\Model\\NomalComPageModel.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Model\\NomalComPageModel.cs",
-              "RelativeToolTip": "UpperComAutoTest\\Model\\NomalComPageModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T05:58:37.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NomalComPage.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "RelativeToolTip": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAgwG8AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T05:56:57.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "NomalComPage.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
               "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "UpperComAutoTest\\View\\Page\\NomalComPage.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T05:56:25.451Z"
+              "WhenOpened": "2024-07-01T09:51:08.02Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UPPERIOC",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC\\UPPERIOC.csproj",
+              "RelativeDocumentMoniker": "UPPERIOC\\UPPERIOC.csproj",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC\\UPPERIOC.csproj",
+              "RelativeToolTip": "UPPERIOC\\UPPERIOC.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-01T09:51:05.513Z",
+              "EditorCaption": ""
             }
           ]
         }
