@@ -4,8 +4,20 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MyControls\GradientProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="MyControls\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MyControls\LoadingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="MyControls\MyTips.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MyControls\TransparentLabel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Update="View\Page\Interface\IPage.cs">
       <SubType>UserControl</SubType>

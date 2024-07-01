@@ -28,16 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			components = new System.ComponentModel.Container();
 			panel1 = new Panel();
 			panel4 = new Panel();
 			richTextBox_r = new RichTextBox();
 			panel3 = new Panel();
 			richTextBox_s = new RichTextBox();
+			contextMenuStrip1 = new ContextMenuStrip(components);
+			转16进制ToolStripMenuItem = new ToolStripMenuItem();
 			panel2 = new Panel();
 			groupBox5 = new GroupBox();
 			groupBox4 = new GroupBox();
 			button4 = new Button();
-			checkBox6 = new CheckBox();
 			label6 = new Label();
 			textBox1 = new TextBox();
 			checkBox3 = new CheckBox();
@@ -63,9 +65,11 @@
 			comboBox4 = new ComboBox();
 			label5 = new Label();
 			comboBox2 = new ComboBox();
+			查看字符ToolStripMenuItem = new ToolStripMenuItem();
 			panel1.SuspendLayout();
 			panel4.SuspendLayout();
 			panel3.SuspendLayout();
+			contextMenuStrip1.SuspendLayout();
 			panel2.SuspendLayout();
 			groupBox4.SuspendLayout();
 			groupBox3.SuspendLayout();
@@ -114,12 +118,26 @@
 			// 
 			// richTextBox_s
 			// 
+			richTextBox_s.ContextMenuStrip = contextMenuStrip1;
 			richTextBox_s.Dock = DockStyle.Fill;
 			richTextBox_s.Location = new Point(15, 15);
 			richTextBox_s.Name = "richTextBox_s";
 			richTextBox_s.Size = new Size(909, 164);
 			richTextBox_s.TabIndex = 0;
 			richTextBox_s.Text = "";
+			// 
+			// contextMenuStrip1
+			// 
+			contextMenuStrip1.Items.AddRange(new ToolStripItem[] { 转16进制ToolStripMenuItem, 查看字符ToolStripMenuItem });
+			contextMenuStrip1.Name = "contextMenuStrip1";
+			contextMenuStrip1.Size = new Size(181, 70);
+			// 
+			// 转16进制ToolStripMenuItem
+			// 
+			转16进制ToolStripMenuItem.Name = "转16进制ToolStripMenuItem";
+			转16进制ToolStripMenuItem.Size = new Size(180, 22);
+			转16进制ToolStripMenuItem.Text = "转16进制";
+			转16进制ToolStripMenuItem.Click += 转16进制ToolStripMenuItem_Click;
 			// 
 			// panel2
 			// 
@@ -146,7 +164,6 @@
 			// groupBox4
 			// 
 			groupBox4.Controls.Add(button4);
-			groupBox4.Controls.Add(checkBox6);
 			groupBox4.Controls.Add(label6);
 			groupBox4.Controls.Add(textBox1);
 			groupBox4.Controls.Add(checkBox3);
@@ -166,17 +183,6 @@
 			button4.Text = "发送";
 			button4.UseVisualStyleBackColor = true;
 			button4.Click += button4_Click;
-			// 
-			// checkBox6
-			// 
-			checkBox6.AutoSize = true;
-			checkBox6.Location = new Point(160, 88);
-			checkBox6.Name = "checkBox6";
-			checkBox6.Size = new Size(93, 25);
-			checkBox6.TabIndex = 3;
-			checkBox6.Text = "十六进制";
-			checkBox6.UseVisualStyleBackColor = true;
-			checkBox6.CheckedChanged += checkBox6_CheckedChanged;
 			// 
 			// label6
 			// 
@@ -435,6 +441,13 @@
 			comboBox2.TabIndex = 1;
 			comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
 			// 
+			// 查看字符ToolStripMenuItem
+			// 
+			查看字符ToolStripMenuItem.Name = "查看字符ToolStripMenuItem";
+			查看字符ToolStripMenuItem.Size = new Size(180, 22);
+			查看字符ToolStripMenuItem.Text = "查看字符";
+			查看字符ToolStripMenuItem.Click += 查看字符ToolStripMenuItem_Click;
+			// 
 			// NomalComPage
 			// 
 			Controls.Add(panel1);
@@ -445,6 +458,7 @@
 			panel1.ResumeLayout(false);
 			panel4.ResumeLayout(false);
 			panel3.ResumeLayout(false);
+			contextMenuStrip1.ResumeLayout(false);
 			panel2.ResumeLayout(false);
 			groupBox4.ResumeLayout(false);
 			groupBox4.PerformLayout();
@@ -482,7 +496,6 @@
 		private CheckBox checkBox4;
 		private GroupBox groupBox4;
 		private Button button4;
-		private CheckBox checkBox6;
 		private Label label6;
 		private TextBox textBox1;
 		private CheckBox checkBox3;
@@ -493,5 +506,9 @@
 		private RichTextBox richTextBox_r;
 		private CheckBox checkBox8;
 		private CheckBox checkBox7;
+		private MyControls.LoadingControl loading1;
+		private ContextMenuStrip contextMenuStrip1;
+		private ToolStripMenuItem 转16进制ToolStripMenuItem;
+		private ToolStripMenuItem 查看字符ToolStripMenuItem;
 	}
 }

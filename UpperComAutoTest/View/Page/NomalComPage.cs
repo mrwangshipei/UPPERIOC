@@ -9,31 +9,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UpperComAutoTest.Entry;
+using UpperComAutoTest.Extend;
 using UpperComAutoTest.ModelView;
+using UpperComAutoTest.ModelView._IViewModel;
 using UpperComAutoTest.View.Page.Interface;
 
 namespace UpperComAutoTest.Page
 {
 	public partial class NomalComPage : IPage
 	{
-		public NomalComPage()
+		public NomalComPage(IVIewModel viewm) : base(viewm)
 		{
+			;
 			InitializeComponent();
-			ViewModel = new NomalComPageViewModel();
+			ComViewMOdel = viewm as NomalComPageViewModel; 
+			ComViewMOdel.SetRevent(ReceverEvent);
 			comboBox3.DataSource = Enum.GetNames(typeof(Parity));
-			comboBox4.DataSource = Enum.GetNames(typeof(StopBits));
-			comboBox1.DataSource = ViewModel.NomalModel.PortName;
-			comboBox5.DataSource = ViewModel.NomalModel.DataBits;
-			comboBox2.DataSource = ViewModel.NomalModel.Btv;
+			comboBox4.DataSource = Enum.GetNames(typeof(StopBits)).Where(r => r != "None").ToList();
+			comboBox1.DataSource = ComViewMOdel.NomalModel.PortName;
+			comboBox5.DataSource = ComViewMOdel.NomalModel.DataBits;
+			comboBox2.DataSource = ComViewMOdel.NomalModel.Btv;
+		}
 
+	
+		private void ReceverEvent(ByteMessage Reciver)
+		{
+			var str = Reciver.ByteDataToStr(ComViewMOdel.NomalModel.Receve16x, ComViewMOdel.NomalModel.Timestamp,true);
+			this.Invoke(() =>
+			{
+				richTextBox_r.AppendText(str);
+			});
 		}
 
 		public override string PageName { get => Name; }
-		public NomalComPageViewModel? ViewModel { get; set; }
+
+		public NomalComPageViewModel? ComViewMOdel { get=> (NomalComPageViewModel)(ViewModel); set=> ViewModel = value; }
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			ViewModel.NomalModel.SerialPort.PortName = comboBox1.SelectedItem.ToString();
+			ComViewMOdel.NomalModel.SerialPort.PortName = comboBox1.SelectedItem.ToString();
 		}
 
 		private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,7 +58,7 @@ namespace UpperComAutoTest.Page
 			{
 				return;
 			}
-			ViewModel.NomalModel.SerialPort.BaudRate = btv;
+			ComViewMOdel.NomalModel.SerialPort.BaudRate = btv;
 
 		}
 
@@ -54,7 +69,7 @@ namespace UpperComAutoTest.Page
 			{
 				return;
 			}
-			ViewModel.NomalModel.SerialPort.DataBits = db;
+			ComViewMOdel.NomalModel.SerialPort.DataBits = db;
 
 		}
 
@@ -62,7 +77,7 @@ namespace UpperComAutoTest.Page
 		{
 			if (Enum.TryParse(comboBox4.SelectedItem.ToString(), out StopBits stopBits))
 			{
-				ViewModel.NomalModel.SerialPort.StopBits = stopBits;
+				ComViewMOdel.NomalModel.SerialPort.StopBits = stopBits;
 
 			}
 		}
@@ -71,55 +86,69 @@ namespace UpperComAutoTest.Page
 		{
 			if (Enum.TryParse(comboBox3.SelectedItem.ToString(), out Parity stopBits))
 			{
-				ViewModel.NomalModel.SerialPort.Parity = stopBits;
+				ComViewMOdel.NomalModel.SerialPort.Parity = stopBits;
 			}
 		}
 
 		private void checkBox7_CheckedChanged(object sender, EventArgs e)
 		{
-			ViewModel.NomalModel.SerialPort.RtsEnable = checkBox7.Checked;
+			ComViewMOdel.NomalModel.SerialPort.RtsEnable = checkBox7.Checked;
 
 		}
 
 		private void checkBox8_CheckedChanged(object sender, EventArgs e)
 		{
-			ViewModel.NomalModel.SerialPort.DtrEnable = checkBox8.Checked;
+			ComViewMOdel.NomalModel.SerialPort.DtrEnable = checkBox8.Checked;
 
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
 			Button startbtn = sender as Button;
-			ViewModel.StartCom(startbtn, button3, groupBox1);
+			ComViewMOdel.StartCom(startbtn, button3, groupBox1);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
 			Button stopbutton = sender as Button;
-			ViewModel.StopCom(stopbutton, button1, groupBox1);
+			ComViewMOdel.StopCom(stopbutton, button1, groupBox1);
 		}
 
 		private void checkBox6_CheckedChanged(object sender, EventArgs e)
 		{
-			ViewModel.NomalModel.Send16x = checkBox6.Checked;
-			ViewModel.SendTo16(ViewModel.NomalModel.Send16x, richTextBox_s);
+			//	ViewModel.NomalModel.Send16x = checkBox6.Checked;
+			//	ViewModel.SendTo16(ViewModel.NomalModel.Send16x, richTextBox_s);
 
 		}
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)
 		{
-			ViewModel.NomalModel.Receve16x = checkBox1.Checked;
-			ViewModel.ReceveTo16(ViewModel.NomalModel.Receve16x, richTextBox_r);
+			ComViewMOdel.NomalModel.Receve16x = checkBox1.Checked;
+			ComViewMOdel.ReceveTo16(ComViewMOdel.NomalModel.Receve16x, richTextBox_r);
 		}
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-
+			ComViewMOdel.Send16(richTextBox_s, btm => {
+				richTextBox_r.AppendText(btm.ByteDataToStr(ComViewMOdel.NomalModel.Receve16x, ComViewMOdel.NomalModel.Timestamp,false));
+			});
 		}
+		
 
 		private void checkBox5_CheckedChanged(object sender, EventArgs e)
 		{
-			ViewModel.NomalModel.Timestamp = checkBox5.Checked;
+			ComViewMOdel.NomalModel.Timestamp = checkBox5.Checked;
+
+		}
+
+		private void 转16进制ToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ComViewMOdel.ChangeSelectionTo16x(richTextBox_s);
+		}
+
+		private void 查看字符ToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ComViewMOdel.ChangeSelectionTostring(richTextBox_s);
 
 		}
 	}

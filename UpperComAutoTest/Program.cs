@@ -1,4 +1,6 @@
 
+using UpperComAutoTest.MyControls;
+
 namespace UpperComAutoTest
 {
 	internal static class Program
