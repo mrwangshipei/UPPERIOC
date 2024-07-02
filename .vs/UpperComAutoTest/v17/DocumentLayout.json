@@ -3,24 +3,64 @@
   "WorkspaceRootPath": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\center\\pagecenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\center\\pagecenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\view\\page\\interface\\ipage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\interface\\ipage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\view\\page\\interface\\ipage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\interface\\ipage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\view\\page\\interface\\ipage.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\interface\\ipage.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\modelview\\imodelview\\iviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\modelview\\imodelview\\iviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\model\\nomalcompagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\model\\nomalcompagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\dao\\currentserialport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\dao\\currentserialport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\loadingcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\loadingcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\uppercomautotest\\mycontrols\\mytips.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -31,28 +71,8 @@
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\nomalcompage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\dao\\currentserialport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\dao\\currentserialport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\entry\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\entry\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\loadingcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\loadingcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\uppercomautotest\\mycontrols\\loadingcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -70,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -87,12 +107,75 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IPage.cs",
+              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\View\\Page\\Interface\\IPage.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\Interface\\IPage.cs",
+              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\View\\Page\\Interface\\IPage.cs",
+              "RelativeToolTip": "UpperComAutoTest\\View\\Page\\Interface\\IPage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T08:37:48.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IPage.resx",
+              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\View\\Page\\Interface\\IPage.resx",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\Interface\\IPage.resx",
+              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\View\\Page\\Interface\\IPage.resx",
+              "RelativeToolTip": "UpperComAutoTest\\View\\Page\\Interface\\IPage.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-06-30T08:37:46.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IPage.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\View\\Page\\Interface\\IPage.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\Interface\\IPage.cs",
+              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\View\\Page\\Interface\\IPage.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "UpperComAutoTest\\View\\Page\\Interface\\IPage.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T08:37:07.156Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IVIewModel.cs",
+              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\ModelView\\IModelView\\IVIewModel.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\ModelView\\IModelView\\IVIewModel.cs",
+              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\ModelView\\IModelView\\IVIewModel.cs",
+              "RelativeToolTip": "UpperComAutoTest\\ModelView\\IModelView\\IVIewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T08:33:12.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PageCenter.cs",
+              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\Center\\PageCenter.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\Center\\PageCenter.cs",
+              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\Center\\PageCenter.cs",
+              "RelativeToolTip": "UpperComAutoTest\\MyControls\\Center\\PageCenter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAUwBcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T08:27:53.076Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "CurrentSerialPort.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
@@ -105,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "MyTips.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\MyTips.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\MyTips.cs",
@@ -118,33 +201,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "StaticExtend.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs \u2B24",
-              "RelativeToolTip": "UpperComAutoTest\\Extend\\StaticExtend.cs \u2B24",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAEwB8AAABiAAAA",
+              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
+              "RelativeToolTip": "UpperComAutoTest\\Extend\\StaticExtend.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAnwFYAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T07:14:22.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "NomalComPageViewModel.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
               "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
               "RelativeToolTip": "UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAADgv30AAAA1AAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAIwBsAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T07:09:54.586Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "Message.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Entry\\Message.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Entry\\Message.cs",
@@ -157,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "NomalComPage.Designer.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.Designer.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\NomalComPage.Designer.cs",
@@ -170,20 +253,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Form1.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Form1.cs",
               "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Form1.cs",
               "RelativeToolTip": "UpperComAutoTest\\Form1.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAiwDEAAAAGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAcwDEAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T06:30:43.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Loading.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\Loading.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\Loading.cs",
@@ -195,20 +278,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "NomalComPage.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
               "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
               "RelativeToolTip": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAhwI8AAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAQwBUAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T05:27:50.797Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "NomalComPageModel.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Model\\NomalComPageModel.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Model\\NomalComPageModel.cs",
@@ -233,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "MyTips.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\MyTips.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\MyTips.cs",
@@ -245,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "LoadingControl.cs",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\LoadingControl.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\LoadingControl.cs",
@@ -258,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "LoadingControl.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\LoadingControl.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\LoadingControl.cs",
