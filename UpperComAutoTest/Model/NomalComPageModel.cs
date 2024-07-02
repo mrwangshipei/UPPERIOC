@@ -7,9 +7,11 @@ using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UPPERIOC.UPPER.IOC.Annaiation;
 
 namespace UpperComAutoTest.Model
 {
+	[IOCObject]
 	public  class NomalComPageModel 
 	{
         public bool Timestamp { get; set; }

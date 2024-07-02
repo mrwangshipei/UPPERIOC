@@ -45,11 +45,20 @@ namespace UpperComAutoTest.Page
 			comboBox1.DataSource = ComViewMOdel.NomalModel.PortName;
 			comboBox5.DataSource = ComViewMOdel.NomalModel.DataBits;
 			comboBox2.DataSource = ComViewMOdel.NomalModel.Btv;
-			Sendor.Register<AutoRefeashEvent>((ato) => {
-				this.Invoke(() => { 
+			Sendor.Register<AutoRefeashEvent>((ato) =>
+			{
+				this.Invoke(() =>
+				{
 					ComViewMOdel.ReceveTo16(ComViewMOdel.NomalModel.Receve16x, richTextBox_r);
 				});
 
+			});
+			Sendor.Register<StopAutosendTipEvent>((sen) => {
+
+				this.Invoke(() => {
+					MyTips.ShowTips(this.FindForm(),sen.type,sen.Msg,sen.waittime,sen.showinwindow);
+					checkBox3.Checked  = false;
+				});
 			});
 		}
 
@@ -172,7 +181,7 @@ namespace UpperComAutoTest.Page
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			ComViewMOdel.Send16( btm =>
+			ComViewMOdel.Send16(btm =>
 			{
 				this.Invoke(() =>
 				{
@@ -232,7 +241,25 @@ namespace UpperComAutoTest.Page
 
 		private void checkBox3_CheckedChanged(object sender, EventArgs e)
 		{
-			ComViewMOdel.AutoSend = checkBox3.Checked;
+			if (checkBox3.Checked)
+			{
+				if (int.TryParse(textBox1.Text, out int value) && value > 0)
+				{
+					ComViewMOdel.AutoSend = checkBox3.Checked;
+
+				}
+				else
+				{
+					ComViewMOdel.AutoSend = false;
+					MyTips.ShowTips(this.FindForm(),Tipstype.Warn,"请输入正确的间隔");
+
+				}
+			}
+			else
+			{
+				ComViewMOdel.AutoSend = false;
+
+			}
 		}
 
 		private void button2_Click(object sender, EventArgs e)
@@ -265,6 +292,6 @@ namespace UpperComAutoTest.Page
 		{
 			ComViewMOdel.NomalModel.SendMsg = richTextBox_s.Text;
 		}
-		
+
 	}
 }

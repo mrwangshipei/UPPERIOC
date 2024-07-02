@@ -11,3 +11,16 @@ E:\Wsp\Code\C#\ComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UPPERIOC.dll
 E:\Wsp\Code\C#\ComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\refint\UPPERIOC.dll
 E:\Wsp\Code\C#\ComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UPPERIOC.pdb
 E:\Wsp\Code\C#\ComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\ref\UPPERIOC.dll
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\bin\Debug\net6.0-windows\UPPERIOC.deps.json
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\bin\Debug\net6.0-windows\UPPERIOC.dll
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\bin\Debug\net6.0-windows\UPPERIOC.pdb
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UpperComAutoTest.View.Page.Interface.IPage.resources
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UPPERIOC.csproj.GenerateResource.cache
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UPPERIOC.GeneratedMSBuildEditorConfig.editorconfig
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UPPERIOC.AssemblyInfoInputs.cache
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UPPERIOC.AssemblyInfo.cs
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UPPERIOC.csproj.CoreCompileInputs.cache
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UPPERIOC.dll
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\refint\UPPERIOC.dll
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\UPPERIOC.pdb
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\obj\Debug\net6.0-windows\ref\UPPERIOC.dll

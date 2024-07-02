@@ -23,17 +23,25 @@ namespace UpperComAutoTest.ModelView
 
 
 		public NomalComPageModel NomalModel { get => m; set => m = value; }
-		System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-		public bool AutoSend { get=> timer.Enabled;
+		AsyncTimer timer = new AsyncTimer();
+		public bool AutoSend { get=> timer.Enable;
 			internal set {
-				timer.Enabled = value;
+				if (value)
+				{
+					timer.Start();
+				}
+				else
+				{
+					timer.Stop();
+
+				}
 			}
 		}
-		public int AutoSendTime { get =>timer.Interval; internal set => timer.Interval = value; }
+		public int AutoSendTime { get =>timer.period; internal set => timer.period = value; }
 
-		public NomalComPageViewModel()
+		public NomalComPageViewModel(NomalComPageModel NomalModel)
 		{
-			
+			this.NomalModel = NomalModel;
 			// 初始化命令和其他属性  
 		
 		}
@@ -194,20 +202,29 @@ namespace UpperComAutoTest.ModelView
 
 			}
 			catch (Exception ex)
+			{
+				var ece = new StopAutosendTipEvent()
 				{
-					//	richTextBox_s.Invoke(() => {
-					//	});
+					Msg = "发送错误，已停止发送",
+					showinwindow = true
+					,
+					type = Tipstype.Error,
+					waittime = 2000
+				};
+				Sendor.Publish<StopAutosendTipEvent>(ece);
 
-				}
-		
+				AutoSend = false;
+			}
+
 		}
 
 		public override void Create()
 		{
-			NomalModel = new NomalComPageModel();
+			//NomalModel = new NomalComPageModel();
 			
-			timer.Tick += (a, arg) =>
+			timer.callback += () =>
 			{
+				
 				Send();
 			};
 		}
