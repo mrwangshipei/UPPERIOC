@@ -19,9 +19,6 @@
     <Compile Update="MyControls\TransparentLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="View\Page\Interface\IPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="View\Page\NomalComPage.cs">
       <SubType>UserControl</SubType>
     </Compile>

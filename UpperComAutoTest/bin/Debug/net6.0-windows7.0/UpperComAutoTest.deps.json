@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "UpperComAutoTest/1.0.0": {
         "dependencies": {
-          "System.IO.Ports": "8.0.0"
+          "System.IO.Ports": "8.0.0",
+          "UPPERIOC": "1.0.0"
         },
         "runtime": {
           "UpperComAutoTest.dll": {}
@@ -92,6 +93,11 @@
             "fileVersion": "8.0.23.53103"
           }
         }
+      },
+      "UPPERIOC/1.0.0": {
+        "runtime": {
+          "UPPERIOC.dll": {}
+        }
       }
     }
   },
@@ -149,6 +155,11 @@
       "sha512": "sha512-MaiPbx2/QXZc62gm/DrajRrGPG1lU4m08GWMoWiymPYM+ba4kfACp2PbiYpqJ4QiFGhHD00zX3RoVDTucjWe9g==",
       "path": "system.io.ports/8.0.0",
       "hashPath": "system.io.ports.8.0.0.nupkg.sha512"
+    },
+    "UPPERIOC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

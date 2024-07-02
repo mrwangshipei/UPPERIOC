@@ -8,7 +8,9 @@ namespace UpperComAutoTest.Entry
 {
 	public class ByteMessage
 	{
-        public byte[] Data{ get; set; }
+		public bool IsSend { get; set; }
+		public byte[] Data{ get; set; }
+		public Exception Err{ get; set; }
 		public DateTime Time{ get; set; }
 
     }

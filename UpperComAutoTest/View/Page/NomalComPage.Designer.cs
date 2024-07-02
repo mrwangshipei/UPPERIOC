@@ -36,6 +36,7 @@
 			richTextBox_s = new RichTextBox();
 			contextMenuStrip1 = new ContextMenuStrip(components);
 			转16进制ToolStripMenuItem = new ToolStripMenuItem();
+			查看字符ToolStripMenuItem = new ToolStripMenuItem();
 			panel2 = new Panel();
 			groupBox5 = new GroupBox();
 			groupBox4 = new GroupBox();
@@ -46,7 +47,6 @@
 			groupBox3 = new GroupBox();
 			button2 = new Button();
 			checkBox5 = new CheckBox();
-			checkBox4 = new CheckBox();
 			checkBox1 = new CheckBox();
 			checkBox2 = new CheckBox();
 			groupBox2 = new GroupBox();
@@ -65,7 +65,6 @@
 			comboBox4 = new ComboBox();
 			label5 = new Label();
 			comboBox2 = new ComboBox();
-			查看字符ToolStripMenuItem = new ToolStripMenuItem();
 			panel1.SuspendLayout();
 			panel4.SuspendLayout();
 			panel3.SuspendLayout();
@@ -125,19 +124,27 @@
 			richTextBox_s.Size = new Size(909, 164);
 			richTextBox_s.TabIndex = 0;
 			richTextBox_s.Text = "";
+			richTextBox_s.TextChanged += richTextBox_s_TextChanged;
 			// 
 			// contextMenuStrip1
 			// 
 			contextMenuStrip1.Items.AddRange(new ToolStripItem[] { 转16进制ToolStripMenuItem, 查看字符ToolStripMenuItem });
 			contextMenuStrip1.Name = "contextMenuStrip1";
-			contextMenuStrip1.Size = new Size(181, 70);
+			contextMenuStrip1.Size = new Size(127, 48);
 			// 
 			// 转16进制ToolStripMenuItem
 			// 
 			转16进制ToolStripMenuItem.Name = "转16进制ToolStripMenuItem";
-			转16进制ToolStripMenuItem.Size = new Size(180, 22);
+			转16进制ToolStripMenuItem.Size = new Size(126, 22);
 			转16进制ToolStripMenuItem.Text = "转16进制";
 			转16进制ToolStripMenuItem.Click += 转16进制ToolStripMenuItem_Click;
+			// 
+			// 查看字符ToolStripMenuItem
+			// 
+			查看字符ToolStripMenuItem.Name = "查看字符ToolStripMenuItem";
+			查看字符ToolStripMenuItem.Size = new Size(126, 22);
+			查看字符ToolStripMenuItem.Text = "查看字符";
+			查看字符ToolStripMenuItem.Click += 查看字符ToolStripMenuItem_Click;
 			// 
 			// panel2
 			// 
@@ -154,9 +161,9 @@
 			// 
 			// groupBox5
 			// 
-			groupBox5.Location = new Point(4, 704);
+			groupBox5.Location = new Point(6, 572);
 			groupBox5.Name = "groupBox5";
-			groupBox5.Size = new Size(265, 152);
+			groupBox5.Size = new Size(265, 164);
 			groupBox5.TabIndex = 4;
 			groupBox5.TabStop = false;
 			groupBox5.Text = "函数";
@@ -167,18 +174,19 @@
 			groupBox4.Controls.Add(label6);
 			groupBox4.Controls.Add(textBox1);
 			groupBox4.Controls.Add(checkBox3);
-			groupBox4.Location = new Point(6, 531);
+			groupBox4.Enabled = false;
+			groupBox4.Location = new Point(6, 463);
 			groupBox4.Name = "groupBox4";
-			groupBox4.Size = new Size(265, 138);
+			groupBox4.Size = new Size(265, 103);
 			groupBox4.TabIndex = 4;
 			groupBox4.TabStop = false;
 			groupBox4.Text = "发送";
 			// 
 			// button4
 			// 
-			button4.Location = new Point(13, 72);
+			button4.Location = new Point(151, 27);
 			button4.Name = "button4";
-			button4.Size = new Size(105, 55);
+			button4.Size = new Size(101, 61);
 			button4.TabIndex = 2;
 			button4.Text = "发送";
 			button4.UseVisualStyleBackColor = true;
@@ -199,27 +207,28 @@
 			textBox1.Name = "textBox1";
 			textBox1.Size = new Size(93, 28);
 			textBox1.TabIndex = 4;
+			textBox1.TextChanged += textBox1_TextChanged;
 			// 
 			// checkBox3
 			// 
 			checkBox3.AutoSize = true;
-			checkBox3.Location = new Point(160, 31);
+			checkBox3.Location = new Point(13, 63);
 			checkBox3.Name = "checkBox3";
 			checkBox3.Size = new Size(93, 25);
 			checkBox3.TabIndex = 5;
 			checkBox3.Text = "自动发送";
 			checkBox3.UseVisualStyleBackColor = true;
+			checkBox3.CheckedChanged += checkBox3_CheckedChanged;
 			// 
 			// groupBox3
 			// 
 			groupBox3.Controls.Add(button2);
 			groupBox3.Controls.Add(checkBox5);
-			groupBox3.Controls.Add(checkBox4);
 			groupBox3.Controls.Add(checkBox1);
 			groupBox3.Controls.Add(checkBox2);
-			groupBox3.Location = new Point(6, 370);
+			groupBox3.Location = new Point(6, 339);
 			groupBox3.Name = "groupBox3";
-			groupBox3.Size = new Size(265, 155);
+			groupBox3.Size = new Size(265, 118);
 			groupBox3.TabIndex = 4;
 			groupBox3.TabStop = false;
 			groupBox3.Text = "消息";
@@ -228,15 +237,16 @@
 			// 
 			button2.Location = new Point(11, 27);
 			button2.Name = "button2";
-			button2.Size = new Size(246, 55);
+			button2.Size = new Size(116, 55);
 			button2.TabIndex = 2;
 			button2.Text = "清理消息";
 			button2.UseVisualStyleBackColor = true;
+			button2.Click += button2_Click;
 			// 
 			// checkBox5
 			// 
 			checkBox5.AutoSize = true;
-			checkBox5.Location = new Point(159, 119);
+			checkBox5.Location = new Point(149, 89);
 			checkBox5.Name = "checkBox5";
 			checkBox5.Size = new Size(77, 25);
 			checkBox5.TabIndex = 3;
@@ -244,20 +254,10 @@
 			checkBox5.UseVisualStyleBackColor = true;
 			checkBox5.CheckedChanged += checkBox5_CheckedChanged;
 			// 
-			// checkBox4
-			// 
-			checkBox4.AutoSize = true;
-			checkBox4.Location = new Point(10, 119);
-			checkBox4.Name = "checkBox4";
-			checkBox4.Size = new Size(93, 25);
-			checkBox4.TabIndex = 3;
-			checkBox4.Text = "自动换行";
-			checkBox4.UseVisualStyleBackColor = true;
-			// 
 			// checkBox1
 			// 
 			checkBox1.AutoSize = true;
-			checkBox1.Location = new Point(10, 88);
+			checkBox1.Location = new Point(149, 27);
 			checkBox1.Name = "checkBox1";
 			checkBox1.Size = new Size(95, 25);
 			checkBox1.TabIndex = 3;
@@ -268,20 +268,21 @@
 			// checkBox2
 			// 
 			checkBox2.AutoSize = true;
-			checkBox2.Location = new Point(159, 88);
+			checkBox2.Location = new Point(149, 58);
 			checkBox2.Name = "checkBox2";
 			checkBox2.Size = new Size(93, 25);
 			checkBox2.TabIndex = 3;
 			checkBox2.Text = "白底黑字";
 			checkBox2.UseVisualStyleBackColor = true;
+			checkBox2.CheckedChanged += checkBox2_CheckedChanged;
 			// 
 			// groupBox2
 			// 
 			groupBox2.Controls.Add(button3);
 			groupBox2.Controls.Add(button1);
-			groupBox2.Location = new Point(4, 266);
+			groupBox2.Location = new Point(3, 250);
 			groupBox2.Name = "groupBox2";
-			groupBox2.Size = new Size(265, 98);
+			groupBox2.Size = new Size(265, 83);
 			groupBox2.TabIndex = 4;
 			groupBox2.TabStop = false;
 			groupBox2.Text = "操作";
@@ -289,9 +290,9 @@
 			// button3
 			// 
 			button3.Enabled = false;
-			button3.Location = new Point(138, 27);
+			button3.Location = new Point(152, 27);
 			button3.Name = "button3";
-			button3.Size = new Size(114, 62);
+			button3.Size = new Size(103, 50);
 			button3.TabIndex = 2;
 			button3.Text = "停止";
 			button3.UseVisualStyleBackColor = true;
@@ -301,7 +302,7 @@
 			// 
 			button1.Location = new Point(10, 27);
 			button1.Name = "button1";
-			button1.Size = new Size(114, 62);
+			button1.Size = new Size(99, 50);
 			button1.TabIndex = 2;
 			button1.Text = "启动";
 			button1.UseVisualStyleBackColor = true;
@@ -323,7 +324,7 @@
 			groupBox1.Controls.Add(comboBox2);
 			groupBox1.Location = new Point(3, 0);
 			groupBox1.Name = "groupBox1";
-			groupBox1.Size = new Size(265, 260);
+			groupBox1.Size = new Size(265, 244);
 			groupBox1.TabIndex = 4;
 			groupBox1.TabStop = false;
 			groupBox1.Text = "串口";
@@ -349,7 +350,7 @@
 			// checkBox8
 			// 
 			checkBox8.AutoSize = true;
-			checkBox8.Location = new Point(186, 222);
+			checkBox8.Location = new Point(188, 211);
 			checkBox8.Name = "checkBox8";
 			checkBox8.Size = new Size(51, 25);
 			checkBox8.TabIndex = 3;
@@ -360,7 +361,7 @@
 			// checkBox7
 			// 
 			checkBox7.AutoSize = true;
-			checkBox7.Location = new Point(23, 222);
+			checkBox7.Location = new Point(37, 211);
 			checkBox7.Name = "checkBox7";
 			checkBox7.Size = new Size(48, 25);
 			checkBox7.TabIndex = 3;
@@ -441,13 +442,6 @@
 			comboBox2.TabIndex = 1;
 			comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
 			// 
-			// 查看字符ToolStripMenuItem
-			// 
-			查看字符ToolStripMenuItem.Name = "查看字符ToolStripMenuItem";
-			查看字符ToolStripMenuItem.Size = new Size(180, 22);
-			查看字符ToolStripMenuItem.Text = "查看字符";
-			查看字符ToolStripMenuItem.Click += 查看字符ToolStripMenuItem_Click;
-			// 
 			// NomalComPage
 			// 
 			Controls.Add(panel1);
@@ -493,7 +487,6 @@
 		private GroupBox groupBox2;
 		private Button button3;
 		private CheckBox checkBox5;
-		private CheckBox checkBox4;
 		private GroupBox groupBox4;
 		private Button button4;
 		private Label label6;

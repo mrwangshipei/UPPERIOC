@@ -37,6 +37,8 @@ namespace UpperComAutoTest.Model
 		}
 
 		public string[] DataBits { get; internal set; }
+		public bool Blackback { get; internal set; }
+		public string SendMsg { get; internal set; }
 
 		public NomalComPageModel() {
 			DataBits = new string[]{  "5", "6", "7", "8" };

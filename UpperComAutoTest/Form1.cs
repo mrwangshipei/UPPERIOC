@@ -1,7 +1,9 @@
 
+using System.Configuration;
 using UpperComAutoTest.MyControls;
-using UpperComAutoTest.MyControls.Center;
 using UpperComAutoTest.View.Page.Interface;
+using UPPERIOC.UPPER;
+using UPPERIOC.UPPERIOCCenter;
 
 namespace UpperComAutoTest
 {
@@ -10,13 +12,14 @@ namespace UpperComAutoTest
 		public Form1()
 		{
 			InitializeComponent();
-            foreach (ToolStripItem item in toolStrip1.Items)
-            {
+			foreach (ToolStripItem item in toolStrip1.Items)
+			{
 				item.Click += Open;
-            }
-        }
+			}
+			NomalComPage.PerformClick();
+		}
 
-	
+
 
 		/// <summary>
 		/// 降低界面耦合，方便团队开发-
@@ -25,7 +28,7 @@ namespace UpperComAutoTest
 		/// <param name="e"></param>
 		private void Open(object sender, EventArgs e)
 		{
-			Loading.ShowForm(this, (loa) => {
+			/*Loading.ShowForm(this, (loa) => {
 				Thread.Sleep(1000);
 				loa.SetMessage("加载10", 10);
 				Thread.Sleep(1000);
@@ -47,15 +50,38 @@ namespace UpperComAutoTest
 				loa.SetMessage("加载100", 100);
 				Thread.Sleep(1000);
 
-			});
+			});*/
 			ToolStripItem send = sender as ToolStripItem;
-			IPage page;
-			if ((page = PageCenter.GetPage(send.Name)) != null)
+			LogCenter.Log(UPPERIOC.UPPER.enums.LogType.Debug, $"打开了{send.Name}页面");
+			
+			object page;
+			if ((page = UPPERIOCContain.Container.GetInstance(send.Name)) != null)
 			{
+				var ipage = page as IPage;
+				if (ipage == null)
+				{
+					MyTips.ShowTips(this, Tipstype.Warn, "窗体还没有实现哦", 2000);
+				}
 				panel1.Controls.Clear();
-				panel1.Controls.Add(page);
+				ipage.Dock = DockStyle.Fill;
+				panel1.Controls.Add(ipage);
 
 			}
+			else
+			{
+				MyTips.ShowTips(this, Tipstype.Warn, "窗体还没有实现哦", 2000);
+
+			}
+		}
+
+		private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+
+		}
+
+		private void NomalComPage_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
