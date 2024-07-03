@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = UPPERIOC
-build_property.ProjectDir = D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC\
+build_property.ProjectDir = E:\Wsp\Code\C#\ComAutoTest\UPPERIOC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
