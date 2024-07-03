@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace UPPERIOC.UPPER.IOC.Provider
 
 	public class UPPerContainerProvider : IContainerProvider
     {
-        Dictionary<UpperTypeInfo, object> Contain = new Dictionary<UpperTypeInfo, object>();
+        ConcurrentDictionary<UpperTypeInfo, object> Contain = new ConcurrentDictionary<UpperTypeInfo, object>();
         
      /*   private void GetInstance()
         {
@@ -31,7 +32,7 @@ namespace UPPERIOC.UPPER.IOC.Provider
             }
         }*/
 
-        public object InitInstance(Type item,bool SubRegister = false)
+        public object InitInstance(Type item,bool SubRegister = false,string name = null)
         {
             if ((!item.HasBaseClassWithAttribute<IOCObject>() )&& SubRegister)
 			{
@@ -54,13 +55,18 @@ namespace UPPERIOC.UPPER.IOC.Provider
             {
                 try
                 {
-                    if ((par[i] = Contain.GetIntstance(cos.GetParameters()[i].ParameterType,true))== null)
+                    
+                    //容器不存在实例，注册，存在则取出
+                    if ((par[i] = Contain.GetIntstance(cos.GetParameters()[i].ParameterType,name,true))== null)
                     {
+
                         par[i] = InitInstance(cos.GetParameters()[i].ParameterType,true);
-                    }
-                    if (Contain.Any(item => item.Key.Type == cos.GetParameters()[i].ParameterType))
-                    {
-                        Contain[new UpperTypeInfo() { Type = cos.GetParameters()[i].GetType(), TypeName = cos.GetParameters()[i].GetType().Name }] = par[i];
+					    //若注册了，则必须保存在容器中
+
+					   // if (Contain.All(item => item.Key.Type != cos.GetParameters()[i].ParameterType))
+                        {
+                            Contain[new UpperTypeInfo() { Type = cos.GetParameters()[i].GetType(), TypeName =string.IsNullOrWhiteSpace(name)?cos.GetParameters()[i].GetType().Name :name}] = par[i];
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -68,13 +74,13 @@ namespace UPPERIOC.UPPER.IOC.Provider
 
                     throw ex;
                     
-                    //throw new Exception($"{cos.GetParameters()[i].GetType().Name}对象的参数创建失败");
-
+                   
                 }
 
             }
-            return cos.Invoke(par);
-
+            object obj = cos.Invoke(par);
+            item.GetProperties().Where(item => item.GetCustomAttribute<IOCPorpeties>() != null).All(item=> { item.SetValue(obj, InitInstance(item.PropertyType,false, item.GetCustomAttribute<IOCPorpeties>()?.Name));return true; }) ;
+            return obj;
         }
 
         public object GetInstance(Type type)

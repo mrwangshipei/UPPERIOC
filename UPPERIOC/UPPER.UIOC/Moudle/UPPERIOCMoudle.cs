@@ -79,7 +79,6 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 
 		public void InitEnd(IContainerProvider containerProvider)
 		{
-			LoadLog();
 
 		}
 		IContainerProvider containerProvider;
@@ -89,15 +88,6 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 			LoadClass();
 		}
 
-		private void LoadLog()
-		{
-			object[] ilog = null;
-			ilog = containerProvider.GetAllInstance(typeof(ILog));
-			if ((ilog)!= null  && ilog.Length > 0)
-			{
-				LogCenter.AddAllLog(ilog.Select(i => (ILog)i).ToArray());
-
-			}
-		}
+	
 	}
 }

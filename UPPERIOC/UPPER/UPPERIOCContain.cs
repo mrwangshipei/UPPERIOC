@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using UpperComAutoTest.View.Page.Interface;
+using UPPERIOC.UPPER;
 using UPPERIOC.UPPER.ILOG;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Configuation;
@@ -46,10 +47,21 @@ namespace UPPERIOC.UPPERIOCCenter
                 item.InitEnd(moudle._containerProvider);
                 return true;
             });
-        }
+			LoadLog();
 
-        
-		
-		
+		}
+
+		private static void LoadLog()
+		{
+			object[] ilog = null;
+			ilog = Container.GetAllInstance(typeof(ILog));
+			if ((ilog) != null && ilog.Length > 0)
+			{
+				LogCenter.AddAllLog(ilog.Select(i => (ILog)i).ToArray());
+
+			}
+		}
+
+
 	}
 }

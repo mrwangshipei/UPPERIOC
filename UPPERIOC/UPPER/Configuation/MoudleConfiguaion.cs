@@ -15,14 +15,26 @@ namespace UPPERIOC.UPPER.IOC.Center.Configuation
         List<Type> Moudle = new List<Type>();
         List<Type> Log = new List<Type>();
 		internal IContainerProvider _containerProvider;
+        /// <summary>
+        /// 使用默认的IOC管理或者集成其他IOC容器
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         public void SetProvider<T>() where T: IContainerProvider 
         {
 			_containerProvider = (T)typeof(T).GetConstructors().First().Invoke(null);
 		}
+        /// <summary>
+        /// 注册一个模块
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
 		public void AddMoudle<T>()where T : IUPPERMoudle
 		{
             Moudle.Add(typeof(T));
         }
+        /// <summary>
+        /// 注册一个日志接口
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
 		public void AddILog<T>() where T : ILog
 		{
 			Log.Add(typeof(T));

@@ -39,6 +39,8 @@
 			查看字符ToolStripMenuItem = new ToolStripMenuItem();
 			panel2 = new Panel();
 			groupBox5 = new GroupBox();
+			flowLayoutPanel1 = new FlowLayoutPanel();
+			panel5 = new Panel();
 			groupBox4 = new GroupBox();
 			button4 = new Button();
 			label6 = new Label();
@@ -65,11 +67,14 @@
 			comboBox4 = new ComboBox();
 			label5 = new Label();
 			comboBox2 = new ComboBox();
+			button5 = new Button();
 			panel1.SuspendLayout();
 			panel4.SuspendLayout();
 			panel3.SuspendLayout();
 			contextMenuStrip1.SuspendLayout();
 			panel2.SuspendLayout();
+			groupBox5.SuspendLayout();
+			panel5.SuspendLayout();
 			groupBox4.SuspendLayout();
 			groupBox3.SuspendLayout();
 			groupBox2.SuspendLayout();
@@ -156,17 +161,40 @@
 			panel2.Dock = DockStyle.Right;
 			panel2.Location = new Point(939, 0);
 			panel2.Name = "panel2";
+			panel2.Padding = new Padding(5, 0, 15, 0);
 			panel2.Size = new Size(282, 859);
 			panel2.TabIndex = 0;
 			// 
 			// groupBox5
 			// 
-			groupBox5.Location = new Point(6, 572);
+			groupBox5.Controls.Add(flowLayoutPanel1);
+			groupBox5.Controls.Add(panel5);
+			groupBox5.Dock = DockStyle.Fill;
+			groupBox5.Location = new Point(5, 524);
+			groupBox5.Margin = new Padding(3, 3, 0, 3);
 			groupBox5.Name = "groupBox5";
-			groupBox5.Size = new Size(265, 164);
+			groupBox5.Size = new Size(262, 335);
 			groupBox5.TabIndex = 4;
 			groupBox5.TabStop = false;
 			groupBox5.Text = "函数";
+			// 
+			// flowLayoutPanel1
+			// 
+			flowLayoutPanel1.Dock = DockStyle.Fill;
+			flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+			flowLayoutPanel1.Location = new Point(3, 24);
+			flowLayoutPanel1.Name = "flowLayoutPanel1";
+			flowLayoutPanel1.Size = new Size(256, 252);
+			flowLayoutPanel1.TabIndex = 0;
+			// 
+			// panel5
+			// 
+			panel5.Controls.Add(button5);
+			panel5.Dock = DockStyle.Bottom;
+			panel5.Location = new Point(3, 276);
+			panel5.Name = "panel5";
+			panel5.Size = new Size(256, 56);
+			panel5.TabIndex = 0;
 			// 
 			// groupBox4
 			// 
@@ -174,19 +202,21 @@
 			groupBox4.Controls.Add(label6);
 			groupBox4.Controls.Add(textBox1);
 			groupBox4.Controls.Add(checkBox3);
+			groupBox4.Dock = DockStyle.Top;
 			groupBox4.Enabled = false;
-			groupBox4.Location = new Point(6, 463);
+			groupBox4.Location = new Point(5, 427);
+			groupBox4.Margin = new Padding(3, 3, 0, 3);
 			groupBox4.Name = "groupBox4";
-			groupBox4.Size = new Size(265, 103);
+			groupBox4.Size = new Size(262, 97);
 			groupBox4.TabIndex = 4;
 			groupBox4.TabStop = false;
 			groupBox4.Text = "发送";
 			// 
 			// button4
 			// 
-			button4.Location = new Point(151, 27);
+			button4.Location = new Point(152, 27);
 			button4.Name = "button4";
-			button4.Size = new Size(101, 61);
+			button4.Size = new Size(100, 48);
 			button4.TabIndex = 2;
 			button4.Text = "发送";
 			button4.UseVisualStyleBackColor = true;
@@ -226,9 +256,11 @@
 			groupBox3.Controls.Add(checkBox5);
 			groupBox3.Controls.Add(checkBox1);
 			groupBox3.Controls.Add(checkBox2);
-			groupBox3.Location = new Point(6, 339);
+			groupBox3.Dock = DockStyle.Top;
+			groupBox3.Location = new Point(5, 321);
+			groupBox3.Margin = new Padding(3, 3, 0, 3);
 			groupBox3.Name = "groupBox3";
-			groupBox3.Size = new Size(265, 118);
+			groupBox3.Size = new Size(262, 106);
 			groupBox3.TabIndex = 4;
 			groupBox3.TabStop = false;
 			groupBox3.Text = "消息";
@@ -246,7 +278,7 @@
 			// checkBox5
 			// 
 			checkBox5.AutoSize = true;
-			checkBox5.Location = new Point(149, 89);
+			checkBox5.Location = new Point(149, 79);
 			checkBox5.Name = "checkBox5";
 			checkBox5.Size = new Size(77, 25);
 			checkBox5.TabIndex = 3;
@@ -257,7 +289,7 @@
 			// checkBox1
 			// 
 			checkBox1.AutoSize = true;
-			checkBox1.Location = new Point(149, 27);
+			checkBox1.Location = new Point(149, 26);
 			checkBox1.Name = "checkBox1";
 			checkBox1.Size = new Size(95, 25);
 			checkBox1.TabIndex = 3;
@@ -268,7 +300,7 @@
 			// checkBox2
 			// 
 			checkBox2.AutoSize = true;
-			checkBox2.Location = new Point(149, 58);
+			checkBox2.Location = new Point(149, 53);
 			checkBox2.Name = "checkBox2";
 			checkBox2.Size = new Size(93, 25);
 			checkBox2.TabIndex = 3;
@@ -280,9 +312,11 @@
 			// 
 			groupBox2.Controls.Add(button3);
 			groupBox2.Controls.Add(button1);
-			groupBox2.Location = new Point(3, 250);
+			groupBox2.Dock = DockStyle.Top;
+			groupBox2.Location = new Point(5, 238);
+			groupBox2.Margin = new Padding(3, 3, 0, 3);
 			groupBox2.Name = "groupBox2";
-			groupBox2.Size = new Size(265, 83);
+			groupBox2.Size = new Size(262, 83);
 			groupBox2.TabIndex = 4;
 			groupBox2.TabStop = false;
 			groupBox2.Text = "操作";
@@ -322,9 +356,11 @@
 			groupBox1.Controls.Add(comboBox4);
 			groupBox1.Controls.Add(label5);
 			groupBox1.Controls.Add(comboBox2);
-			groupBox1.Location = new Point(3, 0);
+			groupBox1.Dock = DockStyle.Top;
+			groupBox1.Location = new Point(5, 0);
+			groupBox1.Margin = new Padding(3, 3, 0, 3);
 			groupBox1.Name = "groupBox1";
-			groupBox1.Size = new Size(265, 244);
+			groupBox1.Size = new Size(262, 238);
 			groupBox1.TabIndex = 4;
 			groupBox1.TabStop = false;
 			groupBox1.Text = "串口";
@@ -332,7 +368,7 @@
 			// comboBox3
 			// 
 			comboBox3.FormattingEnabled = true;
-			comboBox3.Location = new Point(89, 173);
+			comboBox3.Location = new Point(89, 170);
 			comboBox3.Name = "comboBox3";
 			comboBox3.Size = new Size(170, 29);
 			comboBox3.TabIndex = 1;
@@ -350,7 +386,7 @@
 			// checkBox8
 			// 
 			checkBox8.AutoSize = true;
-			checkBox8.Location = new Point(188, 211);
+			checkBox8.Location = new Point(188, 209);
 			checkBox8.Name = "checkBox8";
 			checkBox8.Size = new Size(51, 25);
 			checkBox8.TabIndex = 3;
@@ -361,7 +397,7 @@
 			// checkBox7
 			// 
 			checkBox7.AutoSize = true;
-			checkBox7.Location = new Point(37, 211);
+			checkBox7.Location = new Point(37, 209);
 			checkBox7.Name = "checkBox7";
 			checkBox7.Size = new Size(48, 25);
 			checkBox7.TabIndex = 3;
@@ -442,11 +478,22 @@
 			comboBox2.TabIndex = 1;
 			comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
 			// 
+			// button5
+			// 
+			button5.Location = new Point(164, 6);
+			button5.Name = "button5";
+			button5.Size = new Size(85, 45);
+			button5.TabIndex = 2;
+			button5.Text = "添加";
+			button5.UseVisualStyleBackColor = true;
+			button5.Click += button4_Click;
+			// 
 			// NomalComPage
 			// 
 			Controls.Add(panel1);
 			Controls.Add(panel2);
 			Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			MinimumSize = new Size(1221, 859);
 			Name = "NomalComPage";
 			Size = new Size(1221, 859);
 			panel1.ResumeLayout(false);
@@ -454,6 +501,8 @@
 			panel3.ResumeLayout(false);
 			contextMenuStrip1.ResumeLayout(false);
 			panel2.ResumeLayout(false);
+			groupBox5.ResumeLayout(false);
+			panel5.ResumeLayout(false);
 			groupBox4.ResumeLayout(false);
 			groupBox4.PerformLayout();
 			groupBox3.ResumeLayout(false);
@@ -503,5 +552,8 @@
 		private ContextMenuStrip contextMenuStrip1;
 		private ToolStripMenuItem 转16进制ToolStripMenuItem;
 		private ToolStripMenuItem 查看字符ToolStripMenuItem;
+		private FlowLayoutPanel flowLayoutPanel1;
+		private Panel panel5;
+		private Button button5;
 	}
 }

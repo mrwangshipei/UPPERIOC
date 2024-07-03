@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Reflection;
 using System.Xml.Linq;
 using UPPERIOC.UPPER.IOC.MyTypeInfo;
@@ -19,21 +20,21 @@ namespace UPPERIOC.UPPER.IOC.Extend
 			}
 			return false;
 		}
-		public static object GetIntstance(this Dictionary<UpperTypeInfo, object> kv, string name)
+		public static object GetIntstance(this ConcurrentDictionary<UpperTypeInfo, object> kv, string name)
         {
             return kv.GetIntstance(null, name, false);
         }
-		public static object GetIntstance(this Dictionary<UpperTypeInfo, object> kv, Type t, bool containsub = false)
+		public static object GetIntstance(this ConcurrentDictionary<UpperTypeInfo, object> kv, Type t, bool containsub = false)
 		{
 			return kv.GetIntstance(t, null,containsub);
 
 		}
-        public static object[] GetAllInstance(this Dictionary<UpperTypeInfo, object> kv, Type t)
+        public static object[] GetAllInstance(this ConcurrentDictionary<UpperTypeInfo, object> kv, Type t)
         {
             return kv.Where(item => item.Key.Type.IsSubclassOf(t) || t.IsAssignableFrom(item.Key.Type)).Select(item => item.Value).ToArray();
 
 		}
-		public static object GetIntstance(this Dictionary<UpperTypeInfo, object> kv, Type t, string name,bool containsub = false)
+		public static object GetIntstance(this ConcurrentDictionary<UpperTypeInfo, object> kv, Type t, string name,bool containsub = false)
         {
             if (t != null)
             {
