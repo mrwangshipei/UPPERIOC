@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC\\UPPERIOC.csproj",
-      "projectName": "UPPERIOC",
-      "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC\\UPPERIOC.csproj",
+      "projectUniqueName": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC\\UPPERIOC-废弃的.csproj",
+      "projectName": "UPPERIOC-废弃的",
+      "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC\\UPPERIOC-废弃的.csproj",
       "packagesPath": "C:\\Users\\10164\\.nuget\\packages\\",
       "outputPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC\\obj\\",
       "projectStyle": "PackageReference",

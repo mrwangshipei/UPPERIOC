@@ -86,18 +86,15 @@
           }
         }
       },
-      "UPPERIOC/1.0.0": {
+      "UPPERIOC2.0/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETStandard,Version=v2.0",
         "compile": {
-          "bin/placeholder/UPPERIOC.dll": {}
+          "bin/placeholder/UPPERIOC2.0.dll": {}
         },
         "runtime": {
-          "bin/placeholder/UPPERIOC.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
+          "bin/placeholder/UPPERIOC2.0.dll": {}
+        }
       }
     }
   },
@@ -239,16 +236,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "UPPERIOC/1.0.0": {
+    "UPPERIOC2.0/1.0.0": {
       "type": "project",
-      "path": "../UPPERIOC/UPPERIOC.csproj",
-      "msbuildProject": "../UPPERIOC/UPPERIOC.csproj"
+      "path": "../UPPERIOC2.0/UPPERIOC2.0.csproj",
+      "msbuildProject": "../UPPERIOC2.0/UPPERIOC2.0.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "System.IO.Ports >= 8.0.0",
-      "UPPERIOC >= 1.0.0"
+      "UPPERIOC2.0 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -285,8 +282,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows7.0",
           "projectReferences": {
-            "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC\\UPPERIOC.csproj": {
-              "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC\\UPPERIOC.csproj"
+            "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
+              "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
             }
           }
         }

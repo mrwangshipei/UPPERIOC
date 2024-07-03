@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpperComAutoTest", "UpperComAutoTest\UpperComAutoTest.csproj", "{67134889-7313-40EE-9015-0E2664C159B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPPERIOC", "UPPERIOC\UPPERIOC.csproj", "{39F91140-3A84-4066-ABBD-93B54838729B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UPPERIOC-废弃的", "UPPERIOC\UPPERIOC-废弃的.csproj", "{39F91140-3A84-4066-ABBD-93B54838729B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPPERIOC2.0", "UPPERIOC2.0\UPPERIOC2.0.csproj", "{4E52C966-3727-4D58-AA6E-0352B52CFC3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{39F91140-3A84-4066-ABBD-93B54838729B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39F91140-3A84-4066-ABBD-93B54838729B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39F91140-3A84-4066-ABBD-93B54838729B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E52C966-3727-4D58-AA6E-0352B52CFC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E52C966-3727-4D58-AA6E-0352B52CFC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E52C966-3727-4D58-AA6E-0352B52CFC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E52C966-3727-4D58-AA6E-0352B52CFC3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

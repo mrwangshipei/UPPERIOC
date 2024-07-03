@@ -34,7 +34,7 @@ namespace UpperComAutoTest.Page
 		}
 		[IOCConstructor]
 
-		public NomalComPage(NomalComPageViewModel viewm) : base(viewm)
+		public NomalComPage(NomalComPageViewModel viewm) 
 		{
 			;
 			InitializeComponent();
@@ -72,9 +72,9 @@ namespace UpperComAutoTest.Page
 			});
 		}
 
-		public override string PageName { get => Name; }
+		public  string PageName { get => Name; }
 
-		public NomalComPageViewModel? ComViewMOdel { get => (NomalComPageViewModel)(ViewModel); set => ViewModel = value; }
+		public NomalComPageViewModel? ComViewMOdel { get ; set ; }
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{

@@ -63,8 +63,9 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperCom
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.Loading.resources
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.LoadingControl.resources
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.TransparentLabel.resources
-E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC.dll
-E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC.pdb
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.Page.NomalComPage.resources
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC.dll
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC.pdb
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.View.Page.Interface.IPage.resources
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC2.0.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC2.0.pdb
