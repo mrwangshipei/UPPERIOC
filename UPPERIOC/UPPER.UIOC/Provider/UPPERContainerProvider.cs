@@ -31,9 +31,14 @@ namespace UPPERIOC.UPPER.IOC.Provider
             }
         }*/
 
-        public object InitInstance(Type item)
+        public object InitInstance(Type item,bool SubRegister = false)
         {
-            ConstructorInfo cos = null;
+            if ((!item.HasBaseClassWithAttribute<IOCObject>() )&& SubRegister)
+			{
+                throw new Exception($"对象{item.FullName}不被容器管理");
+
+			}
+			ConstructorInfo cos = null;
             try
             {
 
@@ -42,7 +47,7 @@ namespace UPPERIOC.UPPER.IOC.Provider
             catch (Exception)
             {
 
-                throw new Exception($"获取{item.GetType().Name}的构造报错");
+                throw new Exception($"获取{item.Name}的构造报错");
             }
             var par = new object[cos.GetParameters().Length];
             for (int i = 0; i < cos.GetParameters().Length; i++)
@@ -51,17 +56,17 @@ namespace UPPERIOC.UPPER.IOC.Provider
                 {
                     if ((par[i] = Contain.GetIntstance(cos.GetParameters()[i].ParameterType,true))== null)
                     {
-                        par[i] = InitInstance(cos.GetParameters()[i].ParameterType);
+                        par[i] = InitInstance(cos.GetParameters()[i].ParameterType,true);
                     }
                     if (Contain.Any(item => item.Key.Type == cos.GetParameters()[i].ParameterType))
                     {
                         Contain[new UpperTypeInfo() { Type = cos.GetParameters()[i].GetType(), TypeName = cos.GetParameters()[i].GetType().Name }] = par[i];
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                
-                        return null;
+
+                    throw ex;
                     
                     //throw new Exception($"{cos.GetParameters()[i].GetType().Name}对象的参数创建失败");
 

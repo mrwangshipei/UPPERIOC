@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Xml.Linq;
 using UPPERIOC.UPPER.IOC.MyTypeInfo;
 
@@ -6,7 +7,19 @@ namespace UPPERIOC.UPPER.IOC.Extend
 {
     public static class StaticExtend
     {
-        public static object GetIntstance(this Dictionary<UpperTypeInfo, object> kv, string name)
+		public static bool HasBaseClassWithAttribute<TAttribute>(this Type type) where TAttribute : Attribute
+		{
+			while (type != null && type != typeof(object))
+			{
+				if (type.GetCustomAttribute<TAttribute>() != null)
+				{
+					return true;
+				}
+				type = type.BaseType; // 移动到继承链中的下一个基类  
+			}
+			return false;
+		}
+		public static object GetIntstance(this Dictionary<UpperTypeInfo, object> kv, string name)
         {
             return kv.GetIntstance(null, name, false);
         }

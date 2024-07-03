@@ -15,7 +15,6 @@ D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-w
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.Form1.resources
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.MyTips.resources
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.Properties.Resources.resources
-D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.View.Page.Interface.IPage.resources
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.Page.NomalComPage.resources
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.csproj.GenerateResource.cache
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.GeneratedMSBuildEditorConfig.editorconfig
@@ -67,3 +66,5 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperCom
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC.pdb
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.Page.NomalComPage.resources
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC.dll
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC.pdb

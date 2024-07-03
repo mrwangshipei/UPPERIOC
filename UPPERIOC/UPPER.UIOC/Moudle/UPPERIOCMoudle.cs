@@ -8,6 +8,7 @@ using UPPERIOC.UPPER.ILOG;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
+using UPPERIOC.UPPER.IOC.Extend;
 
 namespace UPPERIOC.UPPER.IOC.Moudle
 {
@@ -20,7 +21,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 			foreach (var item in executingAssembly.GetTypes())
 			{
 				var item1 = Assembly.GetAssembly(item);
-				if (HasBaseClassWithAttribute<IOCObject>(item))
+				if (item.HasBaseClassWithAttribute<IOCObject>())
 				{
 					//Contain[item] = null;
 					containerProvider.Rigister(item);
@@ -43,7 +44,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 					foreach (var item in asm.GetTypes())
 					{
 						var item1 = Assembly.GetAssembly(item);
-						if (HasBaseClassWithAttribute<IOCObject>(item))
+						if (item.HasBaseClassWithAttribute<IOCObject>())
 						{
 							//	Contain[item] = null;
 							containerProvider.Rigister(item);
@@ -64,18 +65,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 
 		}
 
-		public bool HasBaseClassWithAttribute<TAttribute>(Type type) where TAttribute : Attribute
-		{
-			while (type != null && type != typeof(object))
-			{
-				if (type.GetCustomAttribute<TAttribute>() != null)
-				{
-					return true;
-				}
-				type = type.BaseType; // 移动到继承链中的下一个基类  
-			}
-			return false;
-		}
+
 
 		public void AfterCreateInstance(IContainerProvider containerProvider)
 		{
