@@ -5,12 +5,14 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using UPPERIOC.UPPER.IOC.Annaiation;
 
 namespace UPPERIOC.UPPER.IOC.Center.IProvider
 {
 	public interface IContainerProvider
 	{
-
+		[IOCMvvmModel( "textbox1.Text")]
+		string o { get; set; }
 		 object GetInstance(Type type);
 		 object[] GetAllInstance(Type type);
 		 object GetInstance(string name);
@@ -20,6 +22,10 @@ namespace UPPERIOC.UPPER.IOC.Center.IProvider
 		 T Rigister<T>();
 		 object Rigister(Type T);
 
-		 T Rigister<T>(string name);
+		object Rigister(Type T,object obj);
+		object Rigister(Type T,string name,object obj);
+		object Rigister<T>(object obj);
+
+		T Rigister<T>(string name);
 	}
 }

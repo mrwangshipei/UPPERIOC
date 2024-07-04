@@ -17,7 +17,7 @@ namespace UPPERIOC.UPPER.IOC.Provider
 
 	public class UPPerContainerProvider : IContainerProvider
     {
-        ConcurrentDictionary<UpperTypeInfo, object> Contain = new ConcurrentDictionary<UpperTypeInfo, object>();
+        ConcurrentDictionary<IOCTypeInfo, object> Contain = new ConcurrentDictionary<IOCTypeInfo, object>();
         
      /*   private void GetInstance()
         {
@@ -65,7 +65,7 @@ namespace UPPERIOC.UPPER.IOC.Provider
 
 					   // if (Contain.All(item => item.Key.Type != cos.GetParameters()[i].ParameterType))
                         {
-                            Contain[new UpperTypeInfo() { Type = cos.GetParameters()[i].GetType(), TypeName =string.IsNullOrWhiteSpace(name)?cos.GetParameters()[i].GetType().Name :name}] = par[i];
+                            Contain[new IOCTypeInfo() { Type = cos.GetParameters()[i].GetType(), TypeName =string.IsNullOrWhiteSpace(name)?cos.GetParameters()[i].GetType().Name :name}] = par[i];
                         }
                     }
                 }
@@ -109,7 +109,7 @@ namespace UPPERIOC.UPPER.IOC.Provider
 			{
 				return default(T);
 			}
-			return (T)(Contain[new UpperTypeInfo() { Type = typeof(T), TypeName = typeof(T).Name }] = InitInstance(typeof(T)));
+			return (T)(Contain[new IOCTypeInfo() { Type = typeof(T), TypeName = typeof(T).Name }] = InitInstance(typeof(T)));
         }
 
 
@@ -119,7 +119,7 @@ namespace UPPERIOC.UPPER.IOC.Provider
 			{
 				return default(T) ;
 			}
-			return (T)(Contain[new UpperTypeInfo() { Type = typeof(T), TypeName = name }] = InitInstance(typeof(T)));
+			return (T)(Contain[new IOCTypeInfo() { Type = typeof(T), TypeName = name }] = InitInstance(typeof(T)));
 
         }
 
@@ -129,7 +129,7 @@ namespace UPPERIOC.UPPER.IOC.Provider
             {
                 return null;  ;
             }
-			return (Contain[new UpperTypeInfo() { Type = T, TypeName = T.Name }] = InitInstance(T));
+			return (Contain[new IOCTypeInfo() { Type = T, TypeName = T.Name }] = InitInstance(T));
 		}
 
 		public object GetInstance(string name)
@@ -141,6 +141,21 @@ namespace UPPERIOC.UPPER.IOC.Provider
 		public object[] GetAllInstance(Type type)
 		{
             return Contain.GetAllInstance(type); ;
+		}
+
+		public object Rigister(Type T, object obj)
+		{
+            return Rigister(T,T.Name,obj);
+		}
+
+		public object Rigister<T>(object obj)
+		{
+            return Rigister(typeof(T),obj);
+		}
+
+		public object Rigister(Type T, string name, object obj)
+		{
+            return Contain[new IOCTypeInfo() { Type = T, TypeName = name }] = obj;
 		}
 	}
 }

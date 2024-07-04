@@ -11,6 +11,7 @@ using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Configuation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
+using UPPERIOC.UPPER.IOC.Extend;
 
 namespace UPPERIOC.UPPERIOCCenter
 {
@@ -24,7 +25,10 @@ namespace UPPERIOC.UPPERIOCCenter
         {
 			var Param = moudle.ExportUpperModel();
             Container = moudle._containerProvider;
-
+			if (!Param.All(item => Param.ContainsAll(item.DependisMoudel)))
+			{
+				throw new System.Exception("有模块的依赖模块没有加载。");
+			}
 			//MoudleConfiguaion model , IContainerProvider prider 
 			Param.All(item =>
             {

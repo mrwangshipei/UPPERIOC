@@ -1,9 +1,0 @@
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.1\UPPERIOCS.GeneratedMSBuildEditorConfig.editorconfig
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.1\UPPERIOCS.AssemblyInfoInputs.cache
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.1\UPPERIOCS.AssemblyInfo.cs
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.1\UPPERIOCS.csproj.CoreCompileInputs.cache
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\bin\Debug\netstandard2.1\UPPERIOCS.deps.json
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\bin\Debug\netstandard2.1\UPPERIOCS.dll
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\bin\Debug\netstandard2.1\UPPERIOCS.pdb
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.1\UPPERIOCS.dll
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.1\UPPERIOCS.pdb

@@ -1,7 +1,0 @@
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.0\UPPERIOCS.csproj.AssemblyReference.cache
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.0\UPPERIOCS.UPPER.UMvvm.IPage.resources
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.0\UPPERIOCS.csproj.GenerateResource.cache
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.0\UPPERIOCS.GeneratedMSBuildEditorConfig.editorconfig
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.0\UPPERIOCS.AssemblyInfoInputs.cache
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.0\UPPERIOCS.AssemblyInfo.cs
-E:\Wsp\Code\C#\ComAutoTest\UPPERIOCS\obj\Debug\netstandard2.0\UPPERIOCS.csproj.CoreCompileInputs.cache

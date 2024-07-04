@@ -9,8 +9,9 @@ namespace UPPERIOC.UPPER.IOC.Center.Interface
 {
     public interface IUPPERMoudle
     {
+         IUPPERMoudle[] DependisMoudel { get; set; }
         //public static IUPPERContainIniter Instance { get; set; }
-         void AfterCreateInstance(IContainerProvider containerProvider);
+        void AfterCreateInstance(IContainerProvider containerProvider);
          void PreIniter(IContainerProvider containerProvider);
          void InitEnd(IContainerProvider containerProvider);
 		void IniterAndLoadClass(IContainerProvider containerProvider);

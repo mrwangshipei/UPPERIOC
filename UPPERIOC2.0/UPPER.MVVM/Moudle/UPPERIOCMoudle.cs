@@ -12,10 +12,9 @@ using UPPERIOC.UPPER.IOC.Extend;
 
 namespace UPPERIOC.UPPER.IOC.Moudle
 {
-	public class UPPERIOCMoudle : IUPPERMoudle
+	public class UPPERMvvmMoudle : IUPPERMoudle
 	{
 		public IUPPERMoudle[] DependisMoudel { get; set; } = new IUPPERMoudle[0];
-
 		private void LoadClass()
 		{
 			// 获取当前执行的程序集  
@@ -23,10 +22,10 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 			foreach (var item in executingAssembly.GetTypes())
 			{
 				var item1 = Assembly.GetAssembly(item);
-				if (item.HasBaseClassWithAttribute<IOCObject>())
+				if (item.HasBaseClassWithAttribute<IOCMvvmModel>())
 				{
 					//Contain[item] = null;
-					containerProvider.Rigister(item);
+					
 				}
 			}
 			// 获取该程序集所依赖的所有程序集的名字  
@@ -36,7 +35,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 			{
 				if (assemblyName.FullName == Assembly.GetExecutingAssembly().GetName().FullName)
 				{
-					
+
 					continue;
 				}
 				try
@@ -46,10 +45,10 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 					foreach (var item in asm.GetTypes())
 					{
 						var item1 = Assembly.GetAssembly(item);
-						if (item.HasBaseClassWithAttribute<IOCObject>())
+						if (item.HasBaseClassWithAttribute<IOCMvvmModel>())
 						{
 							//	Contain[item] = null;
-							containerProvider.Rigister(item);
+							//containerProvider.Rigister(item);
 
 						}
 					}
@@ -69,6 +68,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 
 
 
+
 		public void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 
@@ -76,7 +76,8 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 
 		public void PreIniter(IContainerProvider containerProvider)
 		{
-
+			this.containerProvider = containerProvider;
+			LoadClass();
 		}
 
 		public void InitEnd(IContainerProvider containerProvider)
@@ -86,8 +87,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 		IContainerProvider containerProvider;
 		public void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
-			this.containerProvider = containerProvider;
-			LoadClass();
+			
 		}
 
 	

@@ -8,7 +8,7 @@ using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 
 
-namespace UPPERIOC.UPPER.Sendor.Model
+namespace UPPERIOC.UPPER.Sendor.Moudle
 {
 	public class UPPERSendorMoudle : IUPPERMoudle
     {
@@ -18,7 +18,8 @@ namespace UPPERIOC.UPPER.Sendor.Model
 
         }
 
-     
+		public IUPPERMoudle[] DependisMoudel { get; set; } = new IUPPERMoudle[0];
+
 
 		public void AfterCreateInstance(IContainerProvider containerProvider)
 		{

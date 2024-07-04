@@ -10,9 +10,9 @@ using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.UFileLog;
 
-namespace UPPERIOC.UPPER.IOC.Moudle
+namespace UPPERIOC.UPPER.UFILELOG.Moudle
 {
-    public class UPPERLogFileMoudle : IUPPERMoudle
+	public class UPPERLogFileMoudle : IUPPERMoudle
 	{
 		
 		public void AfterCreateInstance(IContainerProvider containerProvider)
@@ -31,6 +31,9 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 
 		}
 		IContainerProvider containerProvider;
+
+		public IUPPERMoudle[] DependisMoudel { get; set; } = new IUPPERMoudle[0] ;
+
 		public void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
 			this.containerProvider = containerProvider;
