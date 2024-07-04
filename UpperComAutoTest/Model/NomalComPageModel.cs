@@ -42,7 +42,7 @@ namespace UpperComAutoTest.Model
 		public bool Blackback { get; internal set; }
 		public string SendMsg { get; internal set; }
 
-		public NomalComPageModel() {
+		public NomalComPageModel(CurrentSerialPort ser) {
 			DataBits = new string[]{  "5", "6", "7", "8" };
 			PortName = System.IO.Ports.SerialPort.GetPortNames();
 			 Btv = new string[]
@@ -62,7 +62,7 @@ namespace UpperComAutoTest.Model
 	"460800",
 	"921600"
 			};
-			ser = new CurrentSerialPort();
+			this.ser = ser;
 		}
 
 		

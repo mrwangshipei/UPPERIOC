@@ -2,7 +2,8 @@
 using UpperComAutoTest.MyControls;
 using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC.UPPER.IOC.Provider;
-using UPPERIOC.UPPER.Sendor.Model;
+using UPPERIOC.UPPER.Sendor.Moudle;
+using UPPERIOC.UPPER.UFILELOG.Moudle;
 using UPPERIOC.UPPERIOCCenter;
 
 namespace UpperComAutoTest

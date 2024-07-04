@@ -9,7 +9,7 @@
       "UpperComAutoTest/1.0.0": {
         "dependencies": {
           "System.IO.Ports": "8.0.0",
-          "UPPERIOC": "1.0.0"
+          "UPPERIOC2.0": "1.0.0"
         },
         "runtime": {
           "UpperComAutoTest.dll": {}
@@ -94,9 +94,9 @@
           }
         }
       },
-      "UPPERIOC/1.0.0": {
+      "UPPERIOC2.0/1.0.0": {
         "runtime": {
-          "UPPERIOC.dll": {}
+          "UPPERIOC2.0.dll": {}
         }
       }
     }
@@ -156,7 +156,7 @@
       "path": "system.io.ports/8.0.0",
       "hashPath": "system.io.ports.8.0.0.nupkg.sha512"
     },
-    "UPPERIOC/1.0.0": {
+    "UPPERIOC2.0/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

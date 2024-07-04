@@ -7,10 +7,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using UpperComAutoTest.Entry;
+using UPPERIOC.UPPER.IOC.Annaiation;
 
 namespace FCT
 {
 	public delegate void ReciveMess(ByteMessage Reciver);
+	[IOCObject]
 	public class CurrentSerialPort 
 	{
 		/// <summary>

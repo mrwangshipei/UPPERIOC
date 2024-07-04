@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UPPERIOC.UPPER.enums;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Configuation;
-using UPPERIOC.UPPER.Sendor.Model;
+using UPPERIOC.UPPER.Sendor.Moudle;
 using UPPERIOC.UPPER.UFileLog.IConfiguation;
 
 namespace UpperComAutoTest.MyConfiguation
