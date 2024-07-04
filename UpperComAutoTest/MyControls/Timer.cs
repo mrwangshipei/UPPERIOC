@@ -68,7 +68,7 @@ namespace UpperComAutoTest.MyControls
 					{
 						await Task.Delay(dueTime);
 					}
-
+				
 					while (Enable)
 					{
 						callback();
