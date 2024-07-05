@@ -14,7 +14,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 {
 	public class UPPERIOCMoudle : IUPPERMoudle
 	{
-		public IUPPERMoudle[] DependisMoudel { get; set; } = new IUPPERMoudle[0];
+		public Type[] DependisMoudel { get; set; } = new Type[0];
 
 		private void LoadClass()
 		{

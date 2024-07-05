@@ -9,6 +9,7 @@ using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.UFileLog;
+using UPPERIOC.UPPER.IOC.Moudle;
 
 namespace UPPERIOC.UPPER.UFILELOG.Moudle
 {
@@ -32,7 +33,7 @@ namespace UPPERIOC.UPPER.UFILELOG.Moudle
 		}
 		IContainerProvider containerProvider;
 
-		public IUPPERMoudle[] DependisMoudel { get; set; } = new IUPPERMoudle[0] ;
+		public Type[] DependisMoudel { get; set; } = new Type[] { typeof(UPPERIOCMoudle)} ;
 
 		public void IniterAndLoadClass(IContainerProvider containerProvider)
 		{

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj": {}
+    "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj": {}
   },
   "projects": {
-    "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj": {
+    "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
+        "projectUniqueName": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
         "projectName": "UpperComAutoTest",
-        "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
-        "packagesPath": "C:\\Users\\10164\\.nuget\\packages\\",
-        "outputPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\obj\\",
+        "projectPath": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
+        "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+        "outputPath": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\10164\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,16 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\10164\\Downloads": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows7.0",
             "projectReferences": {
-              "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
-                "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
+              "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
+                "projectPath": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
               }
             }
           }
@@ -79,24 +77,24 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
+    "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+        "projectUniqueName": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
         "projectName": "UPPERIOC2.0",
-        "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
-        "packagesPath": "C:\\Users\\10164\\.nuget\\packages\\",
-        "outputPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\obj\\",
+        "projectPath": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+        "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+        "outputPath": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\10164\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -105,8 +103,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\10164\\Downloads": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -148,7 +144,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

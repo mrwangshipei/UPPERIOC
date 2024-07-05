@@ -11,8 +11,8 @@ namespace UPPERIOC.UPPER
 {
 	public class LogCenter
 	{
-		public static List<ILog> logs = new List<ILog>();
-		public static void AddILog(ILog log) 
+		internal static List<ILog> logs = new List<ILog>();
+		internal static void AddILog(ILog log) 
 		{
 			logs.Add(log);
 		}
