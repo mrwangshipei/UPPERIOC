@@ -222,6 +222,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "MyCustomsTask.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MVVM\\MyTask\\MyCustomsTask.cs",
@@ -229,6 +230,25 @@
               "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MVVM\\MyTask\\MyCustomsTask.cs",
               "RelativeToolTip": "UPPERIOC2.0\\UPPER.MVVM\\MyTask\\MyCustomsTask.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvwYAAAAAAAAA",
+=======
+<<<<<<< HEAD
+              "DocumentIndex": 0,
+              "Title": "Timer.cs",
+              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\Timer.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\Timer.cs",
+              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\Timer.cs",
+              "RelativeToolTip": "UpperComAutoTest\\MyControls\\Timer.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAuwEYAAAAEAAAA",
+=======
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Program.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\Program.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Program.cs",
+              "RelativeToolTip": "UpperComAutoTest\\Program.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAswBkAAAAlAAAA",
+>>>>>>> bc0b2c956316f511f44bf327d4abdc7ea693f6bc
+>>>>>>> e3cea5598c94786010867bc2e40c1e433d56e310
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T11:38:48.95Z",
               "EditorCaption": ""
