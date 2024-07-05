@@ -11,8 +11,6 @@ namespace UPPERIOC.UPPER.IOC.Center.IProvider
 {
 	public interface IContainerProvider
 	{
-		[IOCMvvmModel( "textbox1.Text")]
-		string o { get; set; }
 		 object GetInstance(Type type);
 		 object[] GetAllInstance(Type type);
 		 object GetInstance(string name);
