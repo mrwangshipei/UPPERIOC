@@ -18,7 +18,7 @@ namespace UPPERIOC.UPPER.Sendor.Moudle
 
         }
 
-		public IUPPERMoudle[] DependisMoudel { get; set; } = new IUPPERMoudle[0];
+		public Type[] DependisMoudel { get; set; } = new Type[0];
 
 
 		public void AfterCreateInstance(IContainerProvider containerProvider)

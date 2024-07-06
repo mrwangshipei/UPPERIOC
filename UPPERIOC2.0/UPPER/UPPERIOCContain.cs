@@ -25,7 +25,7 @@ namespace UPPERIOC.UPPERIOCCenter
         {
 			var Param = moudle.ExportUpperModel();
             Container = moudle._containerProvider;
-			if (!Param.All(item => Param.ContainsAll(item.DependisMoudel)))
+			if (!Param.All(item => Param.Select(item1=> item1.GetType()).ToArray().ContainsAll(item.DependisMoudel)))
 			{
 				throw new System.Exception("有模块的依赖模块没有加载。");
 			}
