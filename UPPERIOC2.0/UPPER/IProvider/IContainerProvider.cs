@@ -11,8 +11,12 @@ namespace UPPERIOC.UPPER.IOC.Center.IProvider
 {
 	public interface IContainerProvider
 	{
+<<<<<<< HEAD
 
 			 object GetInstance(Type type);
+=======
+		 object GetInstance(Type type);
+>>>>>>> 39897f155fb182076b4399bde322300430fb78cd
 		 object[] GetAllInstance(Type type);
 		 object GetInstance(string name);
 

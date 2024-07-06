@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace UPPERIOC.UPPER.IOC.Annaiation
 {
-    [AttributeUsage(AttributeTargets.Interface, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
 
-    public class IOCMvvmModel : Attribute
+    public class IOCMvvmView : Attribute
     {
     }
 }

@@ -41,7 +41,7 @@
 			toolStrip1.Items.AddRange(new ToolStripItem[] { NomalComPage, toolStripButton1 });
 			toolStrip1.Location = new Point(0, 0);
 			toolStrip1.Name = "toolStrip1";
-			toolStrip1.Size = new Size(1082, 25);
+			toolStrip1.Size = new Size(1401, 25);
 			toolStrip1.TabIndex = 0;
 			toolStrip1.Text = "toolStrip1";
 			toolStrip1.ItemClicked += toolStrip1_ItemClicked;
@@ -70,14 +70,14 @@
 			panel1.Dock = DockStyle.Fill;
 			panel1.Location = new Point(0, 25);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(1082, 689);
+			panel1.Size = new Size(1401, 871);
 			panel1.TabIndex = 1;
 			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(7F, 17F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1082, 714);
+			ClientSize = new Size(1401, 896);
 			Controls.Add(panel1);
 			Controls.Add(toolStrip1);
 			Name = "Form1";
