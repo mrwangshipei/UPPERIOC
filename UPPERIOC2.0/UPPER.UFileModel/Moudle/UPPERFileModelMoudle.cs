@@ -3,30 +3,31 @@ using System.Collections.Generic;
 using System.Text;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
+using UPPERIOC.UPPER.Sendor.Moudle;
+using UPPERIOC2._0.UPPER.UFileModel.Center;
 
 namespace UPPERIOC2._0.UPPER.UFileModel.Moudle
 {
-	public class UFileModelMoudle : IUPPERMoudle
+	public class UPPERFileModelMoudle : IUPPERMoudle
 	{
-		
+		public Type[] DependisMoudel { get => new Type[0]; set => throw new NotImplementedException(); }
+
 		public void AfterCreateInstance(IContainerProvider containerProvider)
 		{
-			throw new NotImplementedException();
 		}
 
 		public void InitEnd(IContainerProvider containerProvider)
 		{
-			throw new NotImplementedException();
 		}
 
 		public void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
-			throw new NotImplementedException();
 		}
 
 		public void PreIniter(IContainerProvider containerProvider)
 		{
-			throw new NotImplementedException();
+			UFileModelCenter.Instance = new UFileModelCenter();
+			UFileModelCenter.Instance.pdr = containerProvider;
 		}
 	}
 }

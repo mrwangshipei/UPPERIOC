@@ -1,14 +1,9 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "iKfamIIRH5k=",
-=======
-  "dgSpecHash": "zSFVw7TdDD0=",
->>>>>>> 9c19fb58290fa3988935bc9b86a55adf5621a5fe
   "success": true,
-  "projectFilePath": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
+  "projectFilePath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
   "expectedPackageFiles": [
-<<<<<<< HEAD
     "C:\\Users\\10164\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\10164\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\10164\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
@@ -45,15 +40,13 @@
     "C:\\Users\\10164\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\10164\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\10164\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
-=======
-    "C:\\Users\\1\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
-    "C:\\Users\\1\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
-    "C:\\Users\\1\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\8.0.0\\runtime.linux-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
-    "C:\\Users\\1\\.nuget\\packages\\runtime.native.system.io.ports\\8.0.0\\runtime.native.system.io.ports.8.0.0.nupkg.sha512",
-    "C:\\Users\\1\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
-    "C:\\Users\\1\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\8.0.0\\runtime.osx-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
-    "C:\\Users\\1\\.nuget\\packages\\system.io.ports\\8.0.0\\system.io.ports.8.0.0.nupkg.sha512"
->>>>>>> 9c19fb58290fa3988935bc9b86a55adf5621a5fe
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "读取缓存文件 E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\obj\\project.nuget.cache 时遇到问题: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

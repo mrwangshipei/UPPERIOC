@@ -14,11 +14,13 @@ using UpperComAutoTest.Extend;
 using UpperComAutoTest.ModelView;
 using UpperComAutoTest.MyControls;
 using UpperComAutoTest.SendorEvent;
+using UpperComAutoTest.SendorEvent.IEventFileModel;
 using UpperComAutoTest.View.Page.Interface;
 
 using UPPERIOC.Interface;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.Sendor;
+using UPPERIOC2._0.UPPER.UFileModel.Center;
 
 namespace UpperComAutoTest.Page
 {
@@ -32,6 +34,7 @@ namespace UpperComAutoTest.Page
 		{
 
 		}
+		EventFileModel model;
 		[IOCConstructor]
 
 		public NomalComPage(NomalComPageViewModel viewm) 
@@ -45,6 +48,7 @@ namespace UpperComAutoTest.Page
 			comboBox1.DataSource = ComViewMOdel.NomalModel.PortName;
 			comboBox5.DataSource = ComViewMOdel.NomalModel.DataBits;
 			comboBox2.DataSource = ComViewMOdel.NomalModel.Btv;
+			model = UFileModelCenter.Instance.GetModel(new EventFileModel());
 			Sendor.Register<AutoRefeashEvent>((ato) =>
 			{
 				this.Invoke(() =>
