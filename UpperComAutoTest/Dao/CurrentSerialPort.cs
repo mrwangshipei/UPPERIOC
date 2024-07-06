@@ -47,7 +47,7 @@ namespace FCT
 		{
 			ser = new SerialPort();
 		}
-			public CurrentSerialPort(string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits) 
+		public CurrentSerialPort(string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits) 
 		{
 			ser = new SerialPort(portName, baudRate, parity, dataBits, stopBits);
 			ser.DataReceived += DataReceve;

@@ -58,6 +58,10 @@
             "System.IO.Ports": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "System.Xml.XmlSerializer": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
