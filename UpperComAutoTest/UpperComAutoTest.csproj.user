@@ -4,6 +4,15 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MyControls\FuncControl\FunEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MyControls\FuncControl\TypeEdit\IFuncTypeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="MyControls\FuncControl\SelectFuncControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="MyControls\GradientProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>

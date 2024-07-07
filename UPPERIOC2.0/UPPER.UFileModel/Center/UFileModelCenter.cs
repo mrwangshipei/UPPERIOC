@@ -5,6 +5,7 @@ using System.Text;
 using System.Xml.Serialization;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC2._0.UPPER.UFileModel.IConfiguaion;
+using static System.Net.WebRequestMethods;
 
 namespace UPPERIOC2._0.UPPER.UFileModel.Center
 {
@@ -12,7 +13,7 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 	{
 		internal IContainerProvider pdr;
 		public static UFileModelCenter Instance;
-		public IModel.IModel GetModel(IModel.IModel T) 
+		public I GetModel<I>(I T)where I: IModel.IModel 
 		{
 
 			if (pdr == null)
@@ -38,7 +39,7 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 					{
 						return T;
 					}
-					return obj as IModel.IModel;
+					return obj as I;
 				}
 				catch (Exception)
 				{
@@ -51,7 +52,8 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 
 			}
 		}
-		public void SaveModel(IModel.IModel T) {
+		public void SaveModel<I>(I T) where I : IModel.IModel 
+		{ 
 
 			if (pdr == null)
 			{
