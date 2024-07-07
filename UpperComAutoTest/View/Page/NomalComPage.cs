@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UpperComAutoTest.Entry;
+using UpperComAutoTest.Entry.IEventFileModel;
 using UpperComAutoTest.Extend;
 using UpperComAutoTest.ModelView;
 using UpperComAutoTest.MyControls;
@@ -19,10 +20,12 @@ using UpperComAutoTest.View.Page.Interface;
 using UPPERIOC.Interface;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.Sendor;
+using UPPERIOC.UPPERIOCCenter;
+using UPPERIOC2._0.UPPER.UFileModel.Center;
 
 namespace UpperComAutoTest.Page
 {
-	[IOCObject]
+    [IOCObject]
 	public partial class NomalComPage : IPage
 	{
 #if DESIGNER
@@ -32,6 +35,7 @@ namespace UpperComAutoTest.Page
 		{
 
 		}
+		EventFileModel model;
 		[IOCConstructor]
 
 		public NomalComPage(NomalComPageViewModel viewm) 
@@ -45,6 +49,8 @@ namespace UpperComAutoTest.Page
 			comboBox1.DataSource = ComViewMOdel.NomalModel.PortName;
 			comboBox5.DataSource = ComViewMOdel.NomalModel.DataBits;
 			comboBox2.DataSource = ComViewMOdel.NomalModel.Btv;
+			model = UFileModelCenter.Instance.GetModel(new EventFileModel());
+			UPPERIOCContain.Container.Rigister<EventFileModel>(model);
 			Sendor.Register<AutoRefeashEvent>((ato) =>
 			{
 				this.Invoke(() =>

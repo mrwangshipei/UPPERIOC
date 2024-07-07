@@ -7,7 +7,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using UpperComAutoTest.Entry;
+using UpperComAutoTest.Entry.IEventFileModel;
 using UPPERIOC.UPPER.IOC.Annaiation;
+using UPPERIOC.UPPERIOCCenter;
 
 namespace FCT
 {
@@ -47,7 +49,7 @@ namespace FCT
 		{
 			ser = new SerialPort();
 		}
-			public CurrentSerialPort(string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits) 
+		public CurrentSerialPort(string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits) 
 		{
 			ser = new SerialPort(portName, baudRate, parity, dataBits, stopBits);
 			ser.DataReceived += DataReceve;
@@ -61,11 +63,18 @@ namespace FCT
 		private void DataReceve(object sender, SerialDataReceivedEventArgs e)
 		{
 			LockMethod(() => {
-				if (ser.BytesToRead >0)
-				{
-					byte[] bs = new byte[ser.BytesToRead];
-					ser.Read(bs,0,bs.Length);
-					var bts = new ByteMessage() { Time = DateTime.Now,Data = bs,IsSend = false};
+			if (ser.BytesToRead > 0)
+			{
+				byte[] bs = new byte[ser.BytesToRead];
+				ser.Read(bs, 0, bs.Length);
+				var bts = new ByteMessage() { Time = DateTime.Now, Data = bs, IsSend = false };
+				EventFileModel eve = UPPERIOCContain.Container.GetInstance(typeof(EventFileModel)) as EventFileModel;
+				eve.Msgevens.ForEach(item => {
+					if (item.Receivebytemess.Data.SequenceEqual(bs))
+					{
+						Write(item.Sendbytemess.Data,0, item.Sendbytemess.Data.Length);
+					}
+				});
 					data.Enqueue(bts);
 					REvent?.Invoke(bts);
 				}

@@ -7,6 +7,9 @@ using UpperComAutoTest.MyControls;
 
 namespace UpperComAutoTest.SendorEvent
 {
+	/// <summary>
+	/// 停止自动测试并且弹一个提示条
+	/// </summary>
 	public  class StopAutosendTipEvent
 	{
         public string Msg { get; set; }

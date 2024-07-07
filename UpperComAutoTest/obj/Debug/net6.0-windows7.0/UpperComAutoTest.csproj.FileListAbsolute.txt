@@ -70,3 +70,6 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC2.0.dll
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC2.0.pdb
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.View.Page.Interface.IPage.resources
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.FuncControl.FunEdit.resources
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.FuncControl.IFuncTypeEdit.resources
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.FuncControl.SelectFuncControl.resources

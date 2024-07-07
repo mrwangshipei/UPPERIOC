@@ -5,6 +5,7 @@ using UPPERIOC.UPPER.IOC.Provider;
 using UPPERIOC.UPPER.Sendor.Moudle;
 using UPPERIOC.UPPER.UFILELOG.Moudle;
 using UPPERIOC.UPPERIOCCenter;
+using UPPERIOC2._0.UPPER.UFileModel.Moudle;
 
 namespace UpperComAutoTest
 {
@@ -24,6 +25,7 @@ namespace UpperComAutoTest
 			config.AddMoudle<UPPERIOCMoudle>();
 			config.AddMoudle<UPPERLogFileMoudle>();
 			config.AddMoudle<UPPERSendorMoudle>();
+			config.AddMoudle<UPPERFileModelMoudle>();
 			config.SetProvider<UPPerContainerProvider>();
 			UPPERIOCContain.RunInstance(config);
 			Application.Run(new Form1());
