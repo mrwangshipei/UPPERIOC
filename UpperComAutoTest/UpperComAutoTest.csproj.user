@@ -13,6 +13,9 @@
     <Compile Update="MyControls\FuncControl\SelectFuncControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="MyControls\FuncControl\TypeEdit\NormalFuncControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="MyControls\GradientProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
