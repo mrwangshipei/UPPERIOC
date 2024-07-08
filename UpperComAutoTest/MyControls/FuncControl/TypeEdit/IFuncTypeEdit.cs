@@ -11,11 +11,11 @@ using UpperComAutoTest.Entry.IEventFileModel.IMsgEvent;
 
 namespace UpperComAutoTest.MyControls.FuncControl
 {
-	public partial class IFuncTypeEdit : UserControl
+	public  partial class IFuncTypeEdit : UserControl
 	{
-        public  virtual MsgEventInterface msg { get; set; }
+		public virtual MsgEventInterface msg { get; set; }
 
-        public IFuncTypeEdit()
+		public IFuncTypeEdit()
 		{
 			InitializeComponent();
 		}
