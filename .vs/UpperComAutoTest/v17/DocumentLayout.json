@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\funcfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\mycontrols\\funccontrol\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\mycontrols\\funccontrol\\ifunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\ifunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\mycontrols\\funccontrol\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\mycontrols\\funccontrol\\funedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\mycontrols\\funccontrol\\selectfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\selectfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\mycontrols\\funccontrol\\ifunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\ifunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -66,21 +66,21 @@
               "Title": "FuncFactory.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactory.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactory.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactory.cs \u2B24",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactory.cs \u2B24",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwsAAAAQAAAA",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactory.cs",
+              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactory.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAADwvxEAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-07T06:37:47.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "IFuncTypeEdit.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\IFuncTypeEdit.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\IFuncTypeEdit.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\IFuncTypeEdit.cs",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\IFuncTypeEdit.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
+              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvw0AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-07T06:36:30.552Z",
@@ -88,19 +88,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "IFuncTypeEdit.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\IFuncTypeEdit.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\IFuncTypeEdit.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\IFuncTypeEdit.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\IFuncTypeEdit.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-07T06:36:27.328Z",
               "EditorCaption": " [\u8BBE\u8BA1]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FunEdit.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.cs",
@@ -112,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MsgEventInterface.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Entry\\IEventFileModel\\IMsgEvent\\MsgEventInterface.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Entry\\IEventFileModel\\IMsgEvent\\MsgEventInterface.cs",
@@ -125,7 +125,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "IFuncControl.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs",
+              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAADwvwwAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T06:19:26.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "SelectFuncControl.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs",
@@ -138,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SelectFuncControl.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs",
@@ -147,19 +160,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-07T06:21:02.04Z",
               "EditorCaption": " [\u8BBE\u8BA1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IFuncControl.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs \u2B24",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs \u2B24",
-              "ViewState": "AQIAAAEAAAAAAAAAAADwvwwAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T06:19:26.336Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
