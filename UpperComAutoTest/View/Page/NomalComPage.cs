@@ -11,9 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UpperComAutoTest.Entry;
 using UpperComAutoTest.Entry.IEventFileModel;
+using UpperComAutoTest.Entry.IEventFileModel.IMsgEvent;
 using UpperComAutoTest.Extend;
 using UpperComAutoTest.ModelView;
 using UpperComAutoTest.MyControls;
+using UpperComAutoTest.MyControls.FuncControl;
 using UpperComAutoTest.SendorEvent;
 using UpperComAutoTest.View.Page.Interface;
 
@@ -25,7 +27,7 @@ using UPPERIOC2._0.UPPER.UFileModel.Center;
 
 namespace UpperComAutoTest.Page
 {
-    [IOCObject]
+	[IOCObject]
 	public partial class NomalComPage : IPage
 	{
 #if DESIGNER
@@ -35,12 +37,13 @@ namespace UpperComAutoTest.Page
 		{
 
 		}
+		UFileModelCenter center;
 		EventFileModel model;
 		[IOCConstructor]
 
-		public NomalComPage(NomalComPageViewModel viewm) 
+		public NomalComPage(NomalComPageViewModel viewm, UFileModelCenter center)
 		{
-			;
+			this.center = center;
 			InitializeComponent();
 			ComViewMOdel = viewm as NomalComPageViewModel;
 			ComViewMOdel.SetRevent(ReceverEvent);
@@ -49,8 +52,10 @@ namespace UpperComAutoTest.Page
 			comboBox1.DataSource = ComViewMOdel.NomalModel.PortName;
 			comboBox5.DataSource = ComViewMOdel.NomalModel.DataBits;
 			comboBox2.DataSource = ComViewMOdel.NomalModel.Btv;
-			model = UFileModelCenter.Instance.GetModel(new EventFileModel());
-			UPPERIOCContain.Container.Rigister<EventFileModel>(model);
+			Sendor.Register<CurrentPortSendMessageEvent>(msg => {
+				ComViewMOdel.Send(msg);
+			});
+
 			Sendor.Register<AutoRefeashEvent>((ato) =>
 			{
 				this.Invoke(() =>
@@ -59,11 +64,13 @@ namespace UpperComAutoTest.Page
 				});
 
 			});
-			Sendor.Register<StopAutosendTipEvent>((sen) => {
+			Sendor.Register<StopAutosendTipEvent>((sen) =>
+			{
 
-				this.Invoke(() => {
-					MyTips.ShowTips(this.FindForm(),sen.type,sen.Msg,sen.waittime,sen.showinwindow);
-					checkBox3.Checked  = false;
+				this.Invoke(() =>
+				{
+					MyTips.ShowTips(this.FindForm(), sen.type, sen.Msg, sen.waittime, sen.showinwindow);
+					checkBox3.Checked = false;
 				});
 			});
 		}
@@ -78,9 +85,9 @@ namespace UpperComAutoTest.Page
 			});
 		}
 
-		public  string PageName { get => Name; }
+		public string PageName { get => Name; }
 
-		public NomalComPageViewModel? ComViewMOdel { get ; set ; }
+		public NomalComPageViewModel? ComViewMOdel { get; set; }
 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -196,7 +203,7 @@ namespace UpperComAutoTest.Page
 						MyTips.ShowTips(richTextBox_s.FindForm(), Tipstype.Error, btm.Err.Message);
 						return;
 					}
-					richTextBox_r.AppendText(btm.ByteDataToStr(ComViewMOdel.NomalModel.Receve16x, ComViewMOdel.NomalModel.Timestamp, false));
+					richTextBox_r.AppendText(btm.ByteDataToStr(ComViewMOdel.NomalModel.Receve16x, ComViewMOdel.NomalModel.Timestamp));
 				});
 			});
 		}
@@ -257,7 +264,7 @@ namespace UpperComAutoTest.Page
 				else
 				{
 					ComViewMOdel.AutoSend = false;
-					MyTips.ShowTips(this.FindForm(),Tipstype.Warn,"请输入正确的间隔");
+					MyTips.ShowTips(this.FindForm(), Tipstype.Warn, "请输入正确的间隔");
 
 				}
 			}
@@ -299,5 +306,23 @@ namespace UpperComAutoTest.Page
 			ComViewMOdel.NomalModel.SendMsg = richTextBox_s.Text;
 		}
 
+		private void NomalComPage_Load(object sender, EventArgs e)
+		{
+			model = center.GetModel(new EventFileModel());
+			model.Msgevens.ForEach(item =>
+			{
+				flowLayoutPanel1.Controls.Add(new SelectFuncControl(item));
+			});
+			UPPERIOCContain.Container.Rigister<EventFileModel>(model);
+
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			SelectFuncControl sel = new SelectFuncControl(new NormalFuncEvent());
+			sel.Width = flowLayoutPanel1.Width - 6;
+			flowLayoutPanel1.Controls.Add(sel);
+			model.Msgevens.Add(sel.MsgBody);
+		}
 	}
 }

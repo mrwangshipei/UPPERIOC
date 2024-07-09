@@ -8,7 +8,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using UpperComAutoTest.Entry;
 using UpperComAutoTest.Entry.IEventFileModel;
+using UpperComAutoTest.SendorEvent;
 using UPPERIOC.UPPER.IOC.Annaiation;
+using UPPERIOC.UPPER.Sendor;
 using UPPERIOC.UPPERIOCCenter;
 
 namespace FCT
@@ -47,8 +49,11 @@ namespace FCT
 		public CurrentSerialPort()
 			
 		{
+
 			ser = new SerialPort();
+			ser.DataReceived += DataReceve;
 		}
+		
 		public CurrentSerialPort(string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits) 
 		{
 			ser = new SerialPort(portName, baudRate, parity, dataBits, stopBits);
@@ -72,7 +77,10 @@ namespace FCT
 				eve.Msgevens.ForEach(item => {
 					if (item.Receivebytemess.Data.SequenceEqual(bs))
 					{
-						Write(item.Sendbytemess.Data,0, item.Sendbytemess.Data.Length);
+						item.Sendbytemess.IsSend = true;
+						item.Sendbytemess.Time = DateTime.Now;
+						Sendor.Publish<CurrentPortSendMessageEvent>(new CurrentPortSendMessageEvent() {  Msg =  item.Sendbytemess});
+					//	Write(item.Sendbytemess.Data,0, item.Sendbytemess.Data.Length);
 					}
 				});
 					data.Enqueue(bts);

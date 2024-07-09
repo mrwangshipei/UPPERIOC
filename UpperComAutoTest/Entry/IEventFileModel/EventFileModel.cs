@@ -13,7 +13,7 @@ namespace UpperComAutoTest.Entry.IEventFileModel
     {
         [XmlIgnore]
         public override string ModelName { get => "EventModel.xml"; set { } }
-        public List<MsgEventInterface> Msgevens { get; set; }
+        public List<MsgEventInterface> Msgevens { get; set; } = new List<MsgEventInterface>();
 
     }
 }

@@ -41,6 +41,7 @@
 			groupBox5 = new GroupBox();
 			flowLayoutPanel1 = new FlowLayoutPanel();
 			panel5 = new Panel();
+			button5 = new Button();
 			groupBox4 = new GroupBox();
 			button4 = new Button();
 			label6 = new Label();
@@ -67,7 +68,6 @@
 			comboBox4 = new ComboBox();
 			label5 = new Label();
 			comboBox2 = new ComboBox();
-			button5 = new Button();
 			panel1.SuspendLayout();
 			panel4.SuspendLayout();
 			panel3.SuspendLayout();
@@ -195,6 +195,16 @@
 			panel5.Name = "panel5";
 			panel5.Size = new Size(256, 56);
 			panel5.TabIndex = 0;
+			// 
+			// button5
+			// 
+			button5.Location = new Point(164, 6);
+			button5.Name = "button5";
+			button5.Size = new Size(85, 45);
+			button5.TabIndex = 2;
+			button5.Text = "添加";
+			button5.UseVisualStyleBackColor = true;
+			button5.Click += button5_Click;
 			// 
 			// groupBox4
 			// 
@@ -478,16 +488,6 @@
 			comboBox2.TabIndex = 1;
 			comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
 			// 
-			// button5
-			// 
-			button5.Location = new Point(164, 6);
-			button5.Name = "button5";
-			button5.Size = new Size(85, 45);
-			button5.TabIndex = 2;
-			button5.Text = "添加";
-			button5.UseVisualStyleBackColor = true;
-			button5.Click += button4_Click;
-			// 
 			// NomalComPage
 			// 
 			Controls.Add(panel1);
@@ -496,6 +496,7 @@
 			MinimumSize = new Size(1221, 859);
 			Name = "NomalComPage";
 			Size = new Size(1221, 859);
+			Load += NomalComPage_Load;
 			panel1.ResumeLayout(false);
 			panel4.ResumeLayout(false);
 			panel3.ResumeLayout(false);

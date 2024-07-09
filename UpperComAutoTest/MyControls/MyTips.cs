@@ -18,7 +18,21 @@ namespace UpperComAutoTest.MyControls
 		}
 
 		public static List<MyTips> useing_Tips = new List<MyTips>();
-		public static void ShowTips(Form BaseForm,Tipstype Type, string msg,int waittime = 2000,bool inWindow = true) 
+		public static void ShowTips(Form BaseForm, Tipstype Type, string msg, int waittime = 2000, bool inWindow = true)
+		{
+			if (BaseForm.InvokeRequired)
+			{
+				BaseForm.Invoke(() => {
+					ShowTip(BaseForm, Type, msg, waittime , inWindow);
+				});
+			}
+			else
+			{
+				ShowTip(BaseForm, Type, msg, waittime, inWindow);
+
+			}
+		}
+		private static void ShowTip(Form BaseForm,Tipstype Type, string msg,int waittime = 2000,bool inWindow = true) 
 		{
 			lock (useing_Tips)
 			{

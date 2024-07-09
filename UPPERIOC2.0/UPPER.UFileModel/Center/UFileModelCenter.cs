@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
+using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC2._0.UPPER.UFileModel.IConfiguaion;
 using static System.Net.WebRequestMethods;
 
 namespace UPPERIOC2._0.UPPER.UFileModel.Center
 {
+	[IOCObject]
 	public class UFileModelCenter
 	{
-		internal IContainerProvider pdr;
-		public static UFileModelCenter Instance;
+		internal static IContainerProvider pdr;
+				
 		public I GetModel<I>(I T)where I: IModel.IModel 
 		{
 

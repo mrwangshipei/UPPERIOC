@@ -13,15 +13,25 @@ namespace UpperComAutoTest.MyControls.FuncControl
 {
 	public partial class SelectFuncControl : UserControl
 	{
-		internal string Funname;
-		internal MsgEventInterface MsgBody;
+		public MsgEventInterface MsgBody;
 		public SelectFuncControl() { }
-		public SelectFuncControl(string Funname, MsgEventInterface MsgBody)
+		public SelectFuncControl( MsgEventInterface MsgBody)
 		{
+
 			InitializeComponent();
-			this.Funname = Funname;
 			this.MsgBody = MsgBody;
-			label1.Text = Funname;
+			label1.Text = MsgBody.Name;
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			FunEdit fc = new FunEdit(MsgBody);
+			var r = fc.ShowDialog();
+			if (r == DialogResult.OK)
+			{
+				label1.Text = MsgBody.Name;
+			   
+			}
 		}
 	}
 }
