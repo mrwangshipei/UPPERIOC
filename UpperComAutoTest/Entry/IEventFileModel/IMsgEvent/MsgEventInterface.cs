@@ -12,10 +12,10 @@ namespace UpperComAutoTest.Entry.IEventFileModel.IMsgEvent
     [Serializable]
     public abstract class MsgEventInterface
     {
+		public string Name { get; internal set; }
+        public ByteMessage Sendbytemess { get; set; } = new ByteMessage();
 
-        internal ByteMessage Sendbytemess { get; set; }
-
-        internal ByteMessage Receivebytemess { get; set; }
+        public ByteMessage Receivebytemess { get; set; } = new ByteMessage();
 
     }
 }

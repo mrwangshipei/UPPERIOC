@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UpperComAutoTest.Entry.IEventFileModel.IMsgEvent
 {
-	internal class NormalFuncEvent:IMsgEvent.MsgEventInterface
+	public class NormalFuncEvent:IMsgEvent.MsgEventInterface
 	{
 	}
 }

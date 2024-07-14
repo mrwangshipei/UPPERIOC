@@ -10,23 +10,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UpperComAutoTest.Entry.IEventFileModel.IMsgEvent;
 using UpperComAutoTest.Extend;
+using UpperComAutoTest.MyControls.FuncControl.TypeEdit.IFactory;
 
 namespace UpperComAutoTest.MyControls.FuncControl.TypeEdit
 {
 	public partial class NormalFuncControl : IFuncTypeEdit
 	{
-		internal override MsgEventInterface msg { get => base.msg; set => base.msg = value; }
+		public override MsgEventInterface msg { get => base.msg; set => base.msg = value; }
 
 		private NormalFuncEvent Func { get => msg as NormalFuncEvent; set => msg = value; }
-		internal NormalFuncControl()
+		public NormalFuncControl()
 		{
 			InitializeComponent();
-
+			Func = new NormalFuncEvent();
 		}
-		internal NormalFuncControl(NormalFuncEvent Func)
+		public NormalFuncControl(NormalFuncEvent Func)
 		{
 			InitializeComponent();
 			this.Func = Func;
+			richTextBox1.Text = Func.Receivebytemess.Data.ByteArrayToHex(" ");
+			richTextBox2.Text = Func.Sendbytemess.Data.ByteArrayToHex(" ");
 		}
 
 		private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -38,6 +41,20 @@ namespace UpperComAutoTest.MyControls.FuncControl.TypeEdit
 		{
 			Func.Sendbytemess = new Entry.ByteMessage() { Data = richTextBox2.Text.ToBitArray(), IsSend = true, Time = DateTime.Now }; ;
 
+		}
+	}
+	public class NormalFuncFactory : IFuncFactory
+	{
+		public string ProductName { get => "即回事件"; set => throw new NotImplementedException(); }
+		public Type ProductType { get => typeof(NormalFuncEvent); set => throw new NotImplementedException(); }
+
+		public IFuncTypeEdit CreateIFuncControl(MsgEventInterface msg)
+		{
+			return new NormalFuncControl(msg as NormalFuncEvent);
+		}
+		public IFuncTypeEdit CreateIFuncControl()
+		{
+			return new NormalFuncControl();
 		}
 	}
 }

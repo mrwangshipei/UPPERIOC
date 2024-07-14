@@ -11,6 +11,7 @@ using UpperComAutoTest.Model;
 using UpperComAutoTest.MyControls;
 using UpperComAutoTest.SendorEvent;
 using UPPERIOC.Interface;
+using UPPERIOC.UPPER;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.Sendor;
 
@@ -244,6 +245,12 @@ namespace UpperComAutoTest.ModelView
 		{
 			NomalModel.SerialPort.data.Clear();
 			value?.Invoke(true);
+		}
+
+		internal void Send(CurrentPortSendMessageEvent msg)
+		{
+			NomalModel.SerialPort.Write(msg.Msg.Data);
+			LogCenter.Log( UPPERIOC.UPPER.enums.LogType.Debug, msg.Msg.ByteDataToStr());
 		}
 	}
 }

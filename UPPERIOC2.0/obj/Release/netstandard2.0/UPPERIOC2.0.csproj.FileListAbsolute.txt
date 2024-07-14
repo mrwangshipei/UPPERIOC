@@ -1,0 +1,10 @@
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\bin\Release\netstandard2.0\UPPERIOC2.0.deps.json
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\bin\Release\netstandard2.0\UPPERIOC2.0.dll
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\bin\Release\netstandard2.0\UPPERIOC2.0.pdb
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\obj\Release\netstandard2.0\UPPERIOC2.0.csproj.AssemblyReference.cache
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\obj\Release\netstandard2.0\UPPERIOC2.0.GeneratedMSBuildEditorConfig.editorconfig
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\obj\Release\netstandard2.0\UPPERIOC2.0.AssemblyInfoInputs.cache
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\obj\Release\netstandard2.0\UPPERIOC2.0.AssemblyInfo.cs
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\obj\Release\netstandard2.0\UPPERIOC2.0.csproj.CoreCompileInputs.cache
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\obj\Release\netstandard2.0\UPPERIOC2.0.dll
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\obj\Release\netstandard2.0\UPPERIOC2.0.pdb

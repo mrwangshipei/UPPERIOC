@@ -13,7 +13,8 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Moudle
 		public Type[] DependisMoudel { get => new Type[0]; set => throw new NotImplementedException(); }
 
 		public void AfterCreateInstance(IContainerProvider containerProvider)
-		{
+		{	
+
 		}
 
 		public void InitEnd(IContainerProvider containerProvider)
@@ -26,8 +27,9 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Moudle
 
 		public void PreIniter(IContainerProvider containerProvider)
 		{
-			UFileModelCenter.Instance = new UFileModelCenter();
-			UFileModelCenter.Instance.pdr = containerProvider;
+			UFileModelCenter.pdr = containerProvider;
+
+			//UFileModelCenter.Instance = new UFileModelCenter();
 		}
 	}
 }

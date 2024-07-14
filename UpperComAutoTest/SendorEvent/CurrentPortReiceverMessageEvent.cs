@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using UpperComAutoTest.Entry;
 using UpperComAutoTest.Entry.IEventFileModel.IMsgEvent;
 
 namespace UpperComAutoTest.SendorEvent
 {
 
-    internal class CurrentPortReiceverMessageEvent: MsgEventInterface
+    internal class CurrentPortSendMessageEvent
 	{
-	}
+        public ByteMessage Msg { get; set; }
+    }
 }

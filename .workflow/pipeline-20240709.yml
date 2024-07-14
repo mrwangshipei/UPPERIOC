@@ -1,0 +1,33 @@
+version: '1.0'
+name: pipeline-20240709
+displayName: pipeline-20240709
+triggers:
+  trigger: auto
+  push:
+    branches:
+      prefix:
+        - ''
+stages:
+  - name: stage-32addd96
+    displayName: 未命名
+    strategy: naturally
+    trigger: auto
+    executor: []
+    steps:
+      - step: build@dotnet
+        name: build_dotnet
+        displayName: .NET Core 构建
+        dotnetVersion: '3.1'
+        commands:
+          - '# input your command here'
+          - dotnet restore
+          - dotnet publish -c Release -o out
+        artifacts:
+          - name: BUILD_ARTIFACT
+            path:
+              - ./out
+        caches:
+          - ~/.nuget/packages
+        notify: []
+        strategy:
+          retry: '0'

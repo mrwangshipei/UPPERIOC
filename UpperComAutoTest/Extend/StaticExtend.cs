@@ -76,11 +76,11 @@ namespace UpperComAutoTest.Extend
 			{
 				if (bts.IsSend)
 				{
-					sb.Append("Receive ");
+					sb.Append("Send ");
 				}
 				else
 				{
-					sb.Append("Send ");
+					sb.Append("Receive ");
 
 				}
 				if (Timestamp)
@@ -114,11 +114,11 @@ namespace UpperComAutoTest.Extend
 			
 			if (bts.IsSend)
 			{
-				sb.Append("Receive ");
+				sb.Append("Send ");
 			}
 			else
 			{
-				sb.Append("Send ");
+				sb.Append("Receive ");
 
 			}
 			if (Timestamp)
