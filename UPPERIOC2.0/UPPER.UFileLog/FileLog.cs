@@ -13,6 +13,7 @@ namespace UPPERIOC.UPPER.UFileLog
     public class FileLog : ILog
     {
         IFileLogConfiguation Config;
+
         public FileLog(IFileLogConfiguation Config)
         {
             if (Config == null)
@@ -23,6 +24,9 @@ namespace UPPERIOC.UPPER.UFileLog
         }
         public void Log(LogType LogType, string Msg)
         {
+            lock (Config)
+            {
+
             if (!Config.WhichTypePrint.Contains(LogType))
             {
                 return;
@@ -51,9 +55,10 @@ namespace UPPERIOC.UPPER.UFileLog
             sb.Append(Msg);
             sb.Append("\n");
             File.AppendAllText(fullname, sb.ToString());
-        }
+            }
+		}
 
-        private void DelTimeOutLog(DirectoryInfo di, DateTime now)
+		private void DelTimeOutLog(DirectoryInfo di, DateTime now)
         {
             foreach (var item in di.GetFiles())
             {
