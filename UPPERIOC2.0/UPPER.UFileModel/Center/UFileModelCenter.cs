@@ -31,31 +31,36 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 			CheckPathExist(cfg);
 			string dp = Path.Combine(Environment.CurrentDirectory, cfg.SaveModelPath);
 
-			var xs = new XmlSerializer(typeof(IModel.IModel));
-			using (var fs = new FileStream(dp + T.ModelName, FileMode.OpenOrCreate))
+			var xs = new XmlSerializer(typeof(I));
+			string p = Path.Combine(dp ,T.ModelName);
+			try
 			{
-				try
-				{
-					var obj = xs.Deserialize(fs);
+				using (var fs = new FileStream(p, FileMode.Open,FileAccess.Read))
+			{
+				var obj = xs.Deserialize(fs);
 					if (obj == null)
 					{
 						return T;
 					}
 					return obj as I;
-				}
-				catch (Exception)
-				{
-					return T;
 
 				}
-				finally {
-					fs.Close();
-				}
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+				return T;
 
 			}
+			finally
+			{
+			}
+
 		}
 		public void SaveModel<I>(I T) where I : IModel.IModel 
-		{ 
+		{
+			lock (this)
+			{
 
 			if (pdr == null)
 			{
@@ -70,16 +75,19 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 			CheckPathExist(cfg);
 			string dp = Path.Combine(Environment.CurrentDirectory, cfg.SaveModelPath);
 
-			var xs = new XmlSerializer(typeof(IModel.IModel));
-			using (var fs = new FileStream(dp + T.ModelName, FileMode.OpenOrCreate))
+			var xs = new XmlSerializer(typeof(I));
+			string p = Path.Combine(dp, T.ModelName);
+				
+			using (var fs = new FileStream(p, FileMode.Create))
 			{
 				try
 				{
+						
 					xs.Serialize(fs,T);
 				}
-				catch (Exception)
+				catch (Exception ex)
 				{
-
+					throw ex;
 				}
 				finally
 				{
@@ -87,6 +95,8 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 				}
 
 			}
+			}
+
 		}
 		private void CheckPathExist(IUFileModelConfiguation cfg)
 		{

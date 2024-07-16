@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UpperComAutoTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc6b49b44b37070fecf5d6e3beed746d7c7c6d07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("UpperComAutoTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UpperComAutoTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
