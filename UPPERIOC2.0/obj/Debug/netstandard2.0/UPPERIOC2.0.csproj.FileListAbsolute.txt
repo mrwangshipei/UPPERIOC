@@ -18,3 +18,13 @@ D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC2.0\obj\Debug\netstandard2.
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC2.0\bin\Debug\netstandard2.0\UPPERIOC2.0.deps.json
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC2.0\bin\Debug\netstandard2.0\UPPERIOC2.0.dll
 D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC2.0\bin\Debug\netstandard2.0\UPPERIOC2.0.pdb
+D:\Code\C#\UpperContest\UPPERIOC2.0\bin\Debug\netstandard2.0\UPPERIOC2.0.deps.json
+D:\Code\C#\UpperContest\UPPERIOC2.0\bin\Debug\netstandard2.0\UPPERIOC2.0.dll
+D:\Code\C#\UpperContest\UPPERIOC2.0\bin\Debug\netstandard2.0\UPPERIOC2.0.pdb
+D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.csproj.AssemblyReference.cache
+D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.AssemblyInfoInputs.cache
+D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.AssemblyInfo.cs
+D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.csproj.CoreCompileInputs.cache
+D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.dll
+D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.pdb
