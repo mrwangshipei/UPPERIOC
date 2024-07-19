@@ -12,6 +12,7 @@ using UPPERIOC.UPPER.IOC.Center.Configuation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Extend;
+using UPPERIOC2._0.UPPER.IModel;
 
 namespace UPPERIOC.UPPERIOCCenter
 {
@@ -19,6 +20,7 @@ namespace UPPERIOC.UPPERIOCCenter
     public class UPPERIOCContain
     {
         public static IContainerProvider Container;
+		public static  VersionModel vm;
         List<ILog> Log = new List<ILog>();
 		//public static event DosomethingWhenInited AopEvent;
 		public static void RunInstance(MoudleConfiguaion moudle)
@@ -55,7 +57,14 @@ namespace UPPERIOC.UPPERIOCCenter
 			LoadLog();
 
 		}
-
+		public static void RigisterVersionModel(VersionModel vm1) 
+		{
+			if (vm1.GetType() == typeof(VersionModel) && vm1 != null)
+			{
+				return;
+			}
+			vm = vm1;
+		}
 		private static void LoadLog()
 		{
 			object[] ilog = null;
