@@ -4,7 +4,7 @@ using System.Text;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 
-namespace UPPERIOC2._0.UPPER.AutoUpdate.Moudle
+namespace UPPERIOC2.UPPER.AutoUpdate.Moudle
 {
 	public class UpperAutoUpdateMoudle : IUPPERMoudle
 	{

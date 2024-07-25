@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
-using UPPERIOC2._0.UPPER.AutoUpdate.Interfaces;
+using UPPERIOC2.UPPER.AutoUpdate.Interfaces;
 
-namespace UPPERIOC2._0.UPPER.AutoUpdate
+namespace UPPERIOC2.UPPER.AutoUpdate
 {
 	public class MainUpdate
 	{

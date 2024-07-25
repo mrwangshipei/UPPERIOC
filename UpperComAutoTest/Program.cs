@@ -5,7 +5,7 @@ using UPPERIOC.UPPER.IOC.Provider;
 using UPPERIOC.UPPER.Sendor.Moudle;
 using UPPERIOC.UPPER.UFILELOG.Moudle;
 using UPPERIOC.UPPERIOCCenter;
-using UPPERIOC2._0.UPPER.UFileModel.Moudle;
+using UPPERIOC2.UPPER.UFileModel.Moudle;
 
 namespace UpperComAutoTest
 {

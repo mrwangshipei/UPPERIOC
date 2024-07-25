@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>UPPERIOC2._0</RootNamespace>
+    <RootNamespace>UPPERIOC2</RootNamespace>
   </PropertyGroup>
 
 </Project>

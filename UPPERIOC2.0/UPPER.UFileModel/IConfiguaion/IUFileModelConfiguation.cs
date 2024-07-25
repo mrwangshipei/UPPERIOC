@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UPPERIOC2._0.UPPER.UFileModel.IConfiguaion
+namespace UPPERIOC2.UPPER.UFileModel.IConfiguaion
 {
 	public interface IUFileModelConfiguation 
 	{

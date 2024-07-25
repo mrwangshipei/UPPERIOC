@@ -12,7 +12,7 @@ using UPPERIOC.UPPER.IOC.Center.Configuation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Extend;
-using UPPERIOC2._0.UPPER.IModel;
+using UPPERIOC2.UPPER.IModel;
 
 namespace UPPERIOC.UPPERIOCCenter
 {

@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace UPPERIOC2._0.UPPER.IModel
+namespace UPPERIOC2.UPPER.IModel
 {
     public class VersionModel
     {
@@ -15,7 +15,7 @@ namespace UPPERIOC2._0.UPPER.IModel
             InitModel();
         }
 
-        public double NowVersion { get; set; }
+        public virtual double NowVersion { get; set; }
 
         public virtual void SaveModel()
         {

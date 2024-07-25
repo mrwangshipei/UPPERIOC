@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UPPERIOC2._0.UPPER.VersionControl.IVersion
+namespace UPPERIOC2.UPPER.VersionControl.IVersion
 {
 	public interface IVersionControl
 	{

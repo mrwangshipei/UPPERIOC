@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using UpperComAutoTest.Entry.IEventFileModel.IMsgEvent;
-using UPPERIOC2._0.UPPER.UFileModel.IModel;
+using UPPERIOC2.UPPER.UFileModel.IModel;
 
 namespace UpperComAutoTest.Entry.IEventFileModel
 {

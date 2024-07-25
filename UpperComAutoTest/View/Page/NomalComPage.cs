@@ -23,7 +23,7 @@ using UPPERIOC.Interface;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.Sendor;
 using UPPERIOC.UPPERIOCCenter;
-using UPPERIOC2._0.UPPER.UFileModel.Center;
+using UPPERIOC2.UPPER.UFileModel.Center;
 
 namespace UpperComAutoTest.Page
 {

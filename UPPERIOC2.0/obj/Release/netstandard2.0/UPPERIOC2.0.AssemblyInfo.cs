@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UPPERIOC2.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f11f501cdf1424345ebb738e8e7c976767431bb8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2c60b9ee6d7c95c5cc0408a30e228fe8cc863d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("UPPERIOC2.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UPPERIOC2.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -198,9 +198,10 @@
 			// 
 			// button5
 			// 
-			button5.Location = new Point(164, 6);
+			button5.Dock = DockStyle.Right;
+			button5.Location = new Point(130, 0);
 			button5.Name = "button5";
-			button5.Size = new Size(85, 45);
+			button5.Size = new Size(126, 56);
 			button5.TabIndex = 2;
 			button5.Text = "添加";
 			button5.UseVisualStyleBackColor = true;
@@ -224,9 +225,10 @@
 			// 
 			// button4
 			// 
-			button4.Location = new Point(152, 27);
+			button4.Dock = DockStyle.Right;
+			button4.Location = new Point(133, 24);
 			button4.Name = "button4";
-			button4.Size = new Size(100, 48);
+			button4.Size = new Size(126, 70);
 			button4.TabIndex = 2;
 			button4.Text = "发送";
 			button4.UseVisualStyleBackColor = true;
@@ -235,7 +237,7 @@
 			// label6
 			// 
 			label6.AutoSize = true;
-			label6.Location = new Point(112, 35);
+			label6.Location = new Point(98, 32);
 			label6.Name = "label6";
 			label6.Size = new Size(32, 21);
 			label6.TabIndex = 2;
@@ -245,14 +247,14 @@
 			// 
 			textBox1.Location = new Point(13, 29);
 			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(93, 28);
+			textBox1.Size = new Size(81, 28);
 			textBox1.TabIndex = 4;
 			textBox1.TextChanged += textBox1_TextChanged;
 			// 
 			// checkBox3
 			// 
 			checkBox3.AutoSize = true;
-			checkBox3.Location = new Point(13, 63);
+			checkBox3.Location = new Point(34, 63);
 			checkBox3.Name = "checkBox3";
 			checkBox3.Size = new Size(93, 25);
 			checkBox3.TabIndex = 5;
@@ -277,9 +279,10 @@
 			// 
 			// button2
 			// 
-			button2.Location = new Point(11, 27);
+			button2.Dock = DockStyle.Left;
+			button2.Location = new Point(3, 24);
 			button2.Name = "button2";
-			button2.Size = new Size(116, 55);
+			button2.Size = new Size(127, 79);
 			button2.TabIndex = 2;
 			button2.Text = "清理消息";
 			button2.UseVisualStyleBackColor = true;
@@ -320,8 +323,8 @@
 			// 
 			// groupBox2
 			// 
-			groupBox2.Controls.Add(button3);
 			groupBox2.Controls.Add(button1);
+			groupBox2.Controls.Add(button3);
 			groupBox2.Dock = DockStyle.Top;
 			groupBox2.Location = new Point(5, 238);
 			groupBox2.Margin = new Padding(3, 3, 0, 3);
@@ -333,10 +336,11 @@
 			// 
 			// button3
 			// 
+			button3.Dock = DockStyle.Right;
 			button3.Enabled = false;
-			button3.Location = new Point(152, 27);
+			button3.Location = new Point(130, 24);
 			button3.Name = "button3";
-			button3.Size = new Size(103, 50);
+			button3.Size = new Size(129, 56);
 			button3.TabIndex = 2;
 			button3.Text = "停止";
 			button3.UseVisualStyleBackColor = true;
@@ -344,9 +348,10 @@
 			// 
 			// button1
 			// 
-			button1.Location = new Point(10, 27);
+			button1.Dock = DockStyle.Fill;
+			button1.Location = new Point(3, 24);
 			button1.Name = "button1";
-			button1.Size = new Size(99, 50);
+			button1.Size = new Size(127, 56);
 			button1.TabIndex = 2;
 			button1.Text = "启动";
 			button1.UseVisualStyleBackColor = true;
@@ -396,7 +401,7 @@
 			// checkBox8
 			// 
 			checkBox8.AutoSize = true;
-			checkBox8.Location = new Point(188, 209);
+			checkBox8.Location = new Point(167, 205);
 			checkBox8.Name = "checkBox8";
 			checkBox8.Size = new Size(51, 25);
 			checkBox8.TabIndex = 3;
@@ -407,7 +412,7 @@
 			// checkBox7
 			// 
 			checkBox7.AutoSize = true;
-			checkBox7.Location = new Point(37, 209);
+			checkBox7.Location = new Point(46, 205);
 			checkBox7.Name = "checkBox7";
 			checkBox7.Size = new Size(48, 25);
 			checkBox7.TabIndex = 3;

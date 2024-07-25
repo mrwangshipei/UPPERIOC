@@ -129,7 +129,7 @@ namespace UpperComAutoTest.Extend
 
 			if (x16)
 				{
-					sb.Append(string.Join(" ", bts.Data));
+					sb.Append( bts.Data.ByteArrayToHex(" "));
 				}
 				else
 				{

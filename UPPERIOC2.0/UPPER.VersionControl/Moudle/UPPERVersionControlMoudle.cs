@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPERIOCCenter;
-using UPPERIOC2._0.UPPER.IModel;
-using UPPERIOC2._0.UPPER.VersionControl;
-using UPPERIOC2._0.UPPER.VersionControl.IVersion;
+using UPPERIOC2.UPPER.IModel;
+using UPPERIOC2.UPPER.VersionControl;
+using UPPERIOC2.UPPER.VersionControl.IVersion;
 
 
 namespace UPPERIOC.UPPER.Sendor.Moudle
@@ -27,7 +27,8 @@ namespace UPPERIOC.UPPER.Sendor.Moudle
 
 		public void AfterCreateInstance(IContainerProvider containerProvider)
 		{
-			VersionCenter.IVersions = containerProvider.GetAllInstance(typeof(IVersionControl)).Select(item => item as IVersionControl);
+
+			VersionCenter.IVersions = containerProvider.GetAllInstance(typeof(IVersionControl)).Select(item => item as IVersionControl).ToList();
 		}
 
 		public void PreIniter(IContainerProvider containerProvider)

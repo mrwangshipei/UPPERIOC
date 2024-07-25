@@ -5,10 +5,10 @@ using System.Text;
 using System.Xml.Serialization;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
-using UPPERIOC2._0.UPPER.UFileModel.IConfiguaion;
+using UPPERIOC2.UPPER.UFileModel.IConfiguaion;
 using static System.Net.WebRequestMethods;
 
-namespace UPPERIOC2._0.UPPER.UFileModel.Center
+namespace UPPERIOC2.UPPER.UFileModel.Center
 {
 	[IOCObject]
 	public class UFileModelCenter
