@@ -10,12 +10,12 @@ using UpperComAutoTest.Entry;
 using UpperComAutoTest.Entry.IEventFileModel;
 using UpperComAutoTest.SendorEvent;
 using UPPERIOC.UPPER.IOC.Annaiation;
-using UPPERIOC.UPPER.Sendor;
 using UPPERIOC.UPPERIOCCenter;
+using UPPERIOC2.UPPER.USendor.Center;
 
 namespace FCT
 {
-	public delegate void ReciveMess(ByteMessage Reciver);
+    public delegate void ReciveMess(ByteMessage Reciver);
 	[IOCObject]
 	public class CurrentSerialPort 
 	{
@@ -79,7 +79,7 @@ namespace FCT
 					{
 						item.Sendbytemess.IsSend = true;
 						item.Sendbytemess.Time = DateTime.Now;
-						Sendor.Publish<CurrentPortSendMessageEvent>(new CurrentPortSendMessageEvent() {  Msg =  item.Sendbytemess});
+						SendorCenter.Publish<CurrentPortSendMessageEvent>(new CurrentPortSendMessageEvent() {  Msg =  item.Sendbytemess});
 					//	Write(item.Sendbytemess.Data,0, item.Sendbytemess.Data.Length);
 					}
 				});

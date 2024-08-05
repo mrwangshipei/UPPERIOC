@@ -142,6 +142,10 @@ namespace UPPERIOC.UPPER.IOC.Provider
 		{
             return Contain.GetAllInstance(type); ;
 		}
+		public T[] GetAllInstance<T>()
+		{
+			return Contain.GetAllInstance(typeof(T)).Select(t=> (T)t).ToArray(); ;
+		}
 
 		public object Rigister(Type T, object obj)
 		{
@@ -156,6 +160,11 @@ namespace UPPERIOC.UPPER.IOC.Provider
 		public object Rigister(Type T, string name, object obj)
 		{
             return Contain[new IOCTypeInfo() { Type = T, TypeName = name }] = obj;
+		}
+
+		public T GetInstance<T>()
+		{
+			return (T)Contain.GetIntstance(typeof(T)) ;
 		}
 	}
 }

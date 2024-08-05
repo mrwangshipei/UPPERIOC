@@ -38,3 +38,6 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Release\net6.0-windows7.0\refint
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Release\net6.0-windows7.0\UpperComAutoTest.pdb
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Release\net6.0-windows7.0\UpperComAutoTest.genruntimeconfig.cache
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Release\net6.0-windows7.0\ref\UpperComAutoTest.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Release\net6.0-windows7.0\System.CodeDom.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Release\net6.0-windows7.0\System.Management.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Release\net6.0-windows7.0\runtimes\win\lib\net6.0\System.Management.dll
