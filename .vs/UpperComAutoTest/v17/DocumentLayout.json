@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.usendor\\center\\sendorcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.usendor\\center\\sendorcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.mlock\\moudle\\uppermlockmoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.mlock\\moudle\\uppermlockmoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upperioc2.0.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upperioc2.0.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.usendor\\center\\sendorcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.usendor\\center\\sendorcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper\\imodel\\versionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -222,7 +222,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
@@ -250,33 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UPPERMLockMoudle.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
-              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
-              "RelativeToolTip": "UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
-              "ViewState": "AQIAAHcAAAAAAAAAAAAQwHoAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T06:34:16.321Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RigisterConsole.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
-              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
-              "RelativeToolTip": "UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAcwEsAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T06:51:39.052Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UFileModelCenter.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
               "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
@@ -284,12 +258,11 @@
               "RelativeToolTip": "UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
               "ViewState": "AQIAACMAAAAAAAAAAAD4vyEAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T06:08:48.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-09T06:08:48.333Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "UPPERContainerProvider.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UIOC\\Provider\\UPPERContainerProvider.cs",
               "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.UIOC\\Provider\\UPPERContainerProvider.cs",
@@ -301,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "IContainerProvider.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER\\IProvider\\IContainerProvider.cs",
               "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER\\IProvider\\IContainerProvider.cs",
@@ -313,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MLockConfiguation.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\IConfiguation\\MLockConfiguation.cs",
               "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.MLOCK\\IConfiguation\\MLockConfiguation.cs",
@@ -321,12 +294,11 @@
               "RelativeToolTip": "UPPERIOC2.0\\UPPER.MLOCK\\IConfiguation\\MLockConfiguation.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T06:35:49.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T06:35:49.751Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UPPERIOCMoudle.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UIOC\\Moudle\\UPPERIOCMoudle.cs",
               "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.UIOC\\Moudle\\UPPERIOCMoudle.cs",
@@ -334,12 +306,48 @@
               "RelativeToolTip": "UPPERIOC2.0\\UPPER.UIOC\\Moudle\\UPPERIOCMoudle.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAywCAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T09:17:51.14Z",
+              "WhenOpened": "2024-08-05T09:17:51.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SendorCenter.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAADwvycAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T08:30:10.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "UPPERMLockMoudle.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAcwHcAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T06:34:16.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RigisterConsole.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAcwEsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T06:51:39.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "UPPERIOC2.0.csproj",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
               "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPERIOC2.0.csproj",
@@ -351,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Program.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Program.cs",
@@ -420,18 +428,6 @@
               "ViewState": "AQIAAAYAAAAAAAAAAADwvxEAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-25T08:18:32.915Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SendorCenter.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
-              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
-              "RelativeToolTip": "UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAADwvw4AAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T08:30:10.218Z"
             },
             {
               "$type": "Document",

@@ -35,7 +35,12 @@ namespace UPPERIOC2.UPPER.USendor.Center
 
         public static object Publish<TEvent>(TEvent T)
         {
-            return Events[typeof(TEvent)]?.Invoke(T);
+            if (T.GetType() != typeof(TEvent))
+            {
+                return Events[T.GetType()]?.Invoke(T);
+
+			}
+			return Events[typeof(TEvent)]?.Invoke(T);
 
 
         }
