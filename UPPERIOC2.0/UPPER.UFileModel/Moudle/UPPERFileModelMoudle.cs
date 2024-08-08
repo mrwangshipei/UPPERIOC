@@ -4,9 +4,9 @@ using System.Text;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.Sendor.Moudle;
-using UPPERIOC2._0.UPPER.UFileModel.Center;
+using UPPERIOC2.UPPER.UFileModel.Center;
 
-namespace UPPERIOC2._0.UPPER.UFileModel.Moudle
+namespace UPPERIOC2.UPPER.UFileModel.Moudle
 {
 	public class UPPERFileModelMoudle : IUPPERMoudle
 	{

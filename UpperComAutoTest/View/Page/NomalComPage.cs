@@ -21,13 +21,13 @@ using UpperComAutoTest.View.Page.Interface;
 
 using UPPERIOC.Interface;
 using UPPERIOC.UPPER.IOC.Annaiation;
-using UPPERIOC.UPPER.Sendor;
 using UPPERIOC.UPPERIOCCenter;
-using UPPERIOC2._0.UPPER.UFileModel.Center;
+using UPPERIOC2.UPPER.UFileModel.Center;
+using UPPERIOC2.UPPER.USendor.Center;
 
 namespace UpperComAutoTest.Page
 {
-	[IOCObject]
+    [IOCObject]
 	public partial class NomalComPage : IPage
 	{
 #if DESIGNER
@@ -52,11 +52,11 @@ namespace UpperComAutoTest.Page
 			comboBox1.DataSource = ComViewMOdel.NomalModel.PortName;
 			comboBox5.DataSource = ComViewMOdel.NomalModel.DataBits;
 			comboBox2.DataSource = ComViewMOdel.NomalModel.Btv;
-			Sendor.Register<CurrentPortSendMessageEvent>(msg => {
+			SendorCenter.Register<CurrentPortSendMessageEvent>(msg => {
 				ComViewMOdel.Send(msg);
 			});
 
-			Sendor.Register<AutoRefeashEvent>((ato) =>
+			SendorCenter.Register<AutoRefeashEvent>((ato) =>
 			{
 				this.Invoke(() =>
 				{
@@ -64,7 +64,7 @@ namespace UpperComAutoTest.Page
 				});
 
 			});
-			Sendor.Register<StopAutosendTipEvent>((sen) =>
+			SendorCenter.Register<StopAutosendTipEvent>((sen) =>
 			{
 
 				this.Invoke(() =>

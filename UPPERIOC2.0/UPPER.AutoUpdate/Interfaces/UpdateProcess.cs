@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UPPERIOC2._0.UPPER.AutoUpdate.Interfaces
+namespace UPPERIOC2.UPPER.AutoUpdate.Interfaces
 {
     public interface UpdateProcess
     {

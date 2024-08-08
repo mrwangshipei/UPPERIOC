@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UPPERIOC2._0
+namespace UPPERIOC2
 {
 	public class Class1
 	{

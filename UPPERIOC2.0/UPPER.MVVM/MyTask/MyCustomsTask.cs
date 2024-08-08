@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UPPERIOC2._0.UPPER.MVVM.MyTask
+namespace UPPERIOC2.UPPER.MVVM.MyTask
 {
 
 }

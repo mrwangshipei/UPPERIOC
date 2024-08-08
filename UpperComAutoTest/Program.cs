@@ -5,7 +5,7 @@ using UPPERIOC.UPPER.IOC.Provider;
 using UPPERIOC.UPPER.Sendor.Moudle;
 using UPPERIOC.UPPER.UFILELOG.Moudle;
 using UPPERIOC.UPPERIOCCenter;
-using UPPERIOC2._0.UPPER.UFileModel.Moudle;
+using UPPERIOC2.UPPER.UFileModel.Moudle;
 
 namespace UpperComAutoTest
 {
@@ -17,6 +17,7 @@ namespace UpperComAutoTest
 		[STAThread]
 		static void Main()
 		{
+
 
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.

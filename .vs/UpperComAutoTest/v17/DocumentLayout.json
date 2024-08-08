@@ -3,28 +3,112 @@
   "WorkspaceRootPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifactory\\ifuncfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifactory\\ifuncfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.usendor\\center\\sendorcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.usendor\\center\\sendorcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|E:\\Wsp\\Code\\C#\\ComAutoTest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.mlock\\moudle\\uppermlockmoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.mlock\\moudle\\uppermlockmoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.mlock\\rigisterconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.mlock\\rigisterconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.ufilemodel\\center\\ufilemodelcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.ufilemodel\\center\\ufilemodelcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.uioc\\moudle\\upperiocmoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.uioc\\moudle\\upperiocmoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.mlock\\iconfiguation\\mlockconfiguation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.mlock\\iconfiguation\\mlockconfiguation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper\\iprovider\\icontainerprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper\\iprovider\\icontainerprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.uioc\\provider\\uppercontainerprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.uioc\\provider\\uppercontainerprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upperioc2.0.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upperioc2.0.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper\\imodel\\versionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper\\imodel\\versionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.versioncontrol\\moudle\\upperversioncontrolmoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.versioncontrol\\moudle\\upperversioncontrolmoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper\\upperioccontain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper\\upperioccontain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.autoupdate\\interfaces\\updateprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.autoupdate\\interfaces\\updateprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.autoupdate\\mainupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.autoupdate\\mainupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.autoupdate\\moudle\\upperautoupdatemoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.autoupdate\\moudle\\upperautoupdatemoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.versioncontrol\\iversion\\iversioncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.versioncontrol\\iversion\\iversioncontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.ufilemodel\\imodel\\imodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.ufilemodel\\imodel\\imodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.versioncontrol\\versioncenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.versioncontrol\\versioncenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.usendor\\moudle\\uppersendormoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.usendor\\moudle\\uppersendormoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|E:\\Wsp\\Code\\C#\\ComAutoTest\\uppercomautotest\\mycontrols\\funccontrol\\funedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\funedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\dao\\currentserialport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\dao\\currentserialport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|E:\\Wsp\\Code\\C#\\ComAutoTest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\view\\page\\nomalcompage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\modelview\\nomalcompageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\sendorevent\\currentportreicevermessageevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,18 +127,6 @@
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\uppercomautotest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.autoupdate\\mainupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.autoupdate\\mainupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.autoupdate\\interfaces\\updateprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.autoupdate\\interfaces\\updateprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.autoupdate\\moudle\\upperautoupdatemoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.autoupdate\\moudle\\upperautoupdatemoudle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\entry\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\entry\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -71,51 +143,18 @@
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\funedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|E:\\Wsp\\Code\\C#\\ComAutoTest\\uppercomautotest\\mycontrols\\funccontrol\\funedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\funedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|E:\\Wsp\\Code\\C#\\ComAutoTest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\normalfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\normalfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> 2163192bf05dba176f832797132566781a9c86aa
     },
     {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\entry\\ieventfilemodel\\imsgevent\\msgeventinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\entry\\ieventfilemodel\\imsgevent\\msgeventinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\funcfactorycenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\funcfactorycenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\normalfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\normalfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\normalfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\normalfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\extend\\staticextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\entry\\ieventfilemodel\\imsgevent\\normalfuncevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\entry\\ieventfilemodel\\imsgevent\\normalfuncevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\ifunctypeedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|d:\\code\\vs\\uppercomautotest\\uppercomautotest\\uppercomautotest\\entry\\ieventfilemodel\\eventfilemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\entry\\ieventfilemodel\\eventfilemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|E:\\Wsp\\Code\\C#\\ComAutoTest\\uppercomautotest\\mycontrols\\funccontrol\\typeedit\\normalfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\funccontrol\\typeedit\\normalfunccontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -152,15 +191,6 @@
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\entry\\ieventfilemodel\\eventfilemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|e:\\wsp\\code\\c#\\comautotest\\upperioc2.0\\upper.ufilemodel\\center\\ufilemodelcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E52C966-3727-4D58-AA6E-0352B52CFC3C}|UPPERIOC2.0\\UPPERIOC2.0.csproj|solutionrelative:upperioc2.0\\upper.ufilemodel\\center\\ufilemodelcenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> 2163192bf05dba176f832797132566781a9c86aa
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|e:\\wsp\\code\\c#\\comautotest\\uppercomautotest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|E:\\Wsp\\Code\\C#\\ComAutoTest\\uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{67134889-7313-40EE-9015-0E2664C159B0}|UpperComAutoTest\\UpperComAutoTest.csproj|solutionrelative:uppercomautotest\\mycontrols\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -192,97 +222,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IFuncFactory.cs",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFactory\\IFuncFactory.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFactory\\IFuncFactory.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFactory\\IFuncFactory.cs",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFactory\\IFuncFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T14:10:36.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StaticExtend.cs",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "RelativeToolTip": "UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T14:05:41.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IFuncTypeEdit.cs",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA8AAAACAAAA",
-=======
-          "SelectedChildIndex": 5,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "FunEdit.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.cs",
               "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.cs [\u8BBE\u8BA1]",
->>>>>>> 2163192bf05dba176f832797132566781a9c86aa
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T04:55:23.667Z",
               "IsPinned": true
             },
             {
-<<<<<<< HEAD
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "NormalFuncEvent.cs",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Entry\\IEventFileModel\\IMsgEvent\\NormalFuncEvent.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\Entry\\IEventFileModel\\IMsgEvent\\NormalFuncEvent.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Entry\\IEventFileModel\\IMsgEvent\\NormalFuncEvent.cs",
-              "RelativeToolTip": "UpperComAutoTest\\Entry\\IEventFileModel\\IMsgEvent\\NormalFuncEvent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T13:58:06.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EventFileModel.cs",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Entry\\IEventFileModel\\EventFileModel.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\Entry\\IEventFileModel\\EventFileModel.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\Entry\\IEventFileModel\\EventFileModel.cs",
-              "RelativeToolTip": "UpperComAutoTest\\Entry\\IEventFileModel\\EventFileModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T13:57:48.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NormalFuncControl.cs",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAIAywCMAAAAAAAAA",
-=======
               "$type": "Bookmark",
               "Name": "ST:0:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
             },
@@ -296,187 +250,164 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CurrentSerialPort.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
-              "RelativeToolTip": "UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAQwEwAAAADAAAA",
->>>>>>> 2163192bf05dba176f832797132566781a9c86aa
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T06:44:11.071Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 4,
-              "Title": "NormalFuncControl.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs [\u8BBE\u8BA1]",
-=======
-              "DocumentIndex": 0,
-              "Title": "NomalComPage.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "RelativeToolTip": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "ViewState": "AQIAACsBAAAAAAAAAADgvzwBAAAAAAAA",
->>>>>>> 2163192bf05dba176f832797132566781a9c86aa
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T06:02:38.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StaticExtend.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "RelativeToolTip": "UpperComAutoTest\\Extend\\StaticExtend.cs",
-              "ViewState": "AQIAAGYAAAAAAAAAAAD4v2wAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T08:54:14.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 7,
-              "Title": "IFuncTypeEdit.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs [\u8BBE\u8BA1]",
-=======
-              "DocumentIndex": 1,
-              "Title": "NomalComPage.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "UpperComAutoTest\\View\\Page\\NomalComPage.cs [\u8BBE\u8BA1]",
->>>>>>> 2163192bf05dba176f832797132566781a9c86aa
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T06:02:32.059Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 2,
-              "Title": "FuncFactoryCenter.cs",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactoryCenter.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactoryCenter.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactoryCenter.cs",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactoryCenter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwsAAAARAAAA",
-=======
               "DocumentIndex": 3,
-              "Title": "NomalComPageViewModel.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
-              "RelativeToolTip": "UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAowEQAAAAFAAAA",
->>>>>>> 2163192bf05dba176f832797132566781a9c86aa
+              "Title": "UFileModelCenter.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAD4vyEAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T06:19:59.084Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StopAutosendTipEvent.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\StopAutosendTipEvent.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\SendorEvent\\StopAutosendTipEvent.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\StopAutosendTipEvent.cs",
-              "RelativeToolTip": "UpperComAutoTest\\SendorEvent\\StopAutosendTipEvent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T08:45:41.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CurrentPortReiceverMessageEvent.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\CurrentPortReiceverMessageEvent.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\SendorEvent\\CurrentPortReiceverMessageEvent.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\CurrentPortReiceverMessageEvent.cs",
-              "RelativeToolTip": "UpperComAutoTest\\SendorEvent\\CurrentPortReiceverMessageEvent.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T08:45:36.423Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 9,
-              "Title": "UPPERMvvmMoudle.cs",
-              "DocumentMoniker": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\UPPER.MVVM\\Moudle\\UPPERMvvmMoudle.cs",
-              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.MVVM\\Moudle\\UPPERMvvmMoudle.cs",
-              "ToolTip": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\UPPER.MVVM\\Moudle\\UPPERMvvmMoudle.cs",
-              "RelativeToolTip": "UPPERIOC2.0\\UPPER.MVVM\\Moudle\\UPPERMvvmMoudle.cs",
-=======
-              "DocumentIndex": 7,
-              "Title": "AutoRefeashEvent.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\AutoRefeashEvent.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\SendorEvent\\AutoRefeashEvent.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\AutoRefeashEvent.cs",
-              "RelativeToolTip": "UpperComAutoTest\\SendorEvent\\AutoRefeashEvent.cs",
->>>>>>> 2163192bf05dba176f832797132566781a9c86aa
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T08:45:40.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-09T06:08:48.333Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "UpperComAutoTest",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\UpperComAutoTest.csproj",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
-              "RelativeToolTip": "UpperComAutoTest\\UpperComAutoTest.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-09T07:53:11.29Z",
+              "Title": "UPPERContainerProvider.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UIOC\\Provider\\UPPERContainerProvider.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.UIOC\\Provider\\UPPERContainerProvider.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UIOC\\Provider\\UPPERContainerProvider.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.UIOC\\Provider\\UPPERContainerProvider.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAUwJIAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T06:37:06.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IContainerProvider.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER\\IProvider\\IContainerProvider.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER\\IProvider\\IContainerProvider.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER\\IProvider\\IContainerProvider.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER\\IProvider\\IContainerProvider.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T06:36:34.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MLockConfiguation.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\IConfiguation\\MLockConfiguation.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.MLOCK\\IConfiguation\\MLockConfiguation.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\IConfiguation\\MLockConfiguation.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.MLOCK\\IConfiguation\\MLockConfiguation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T06:35:49.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UPPERIOCMoudle.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UIOC\\Moudle\\UPPERIOCMoudle.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.UIOC\\Moudle\\UPPERIOCMoudle.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UIOC\\Moudle\\UPPERIOCMoudle.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.UIOC\\Moudle\\UPPERIOCMoudle.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAywCAAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T09:17:51.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SendorCenter.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.USendor\\Center\\SendorCenter.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAADwvycAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T08:30:10.218Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UPPERMLockMoudle.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.MLOCK\\Moudle\\UPPERMLockMoudle.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAcwHcAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T06:34:16.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RigisterConsole.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.MLOCK\\RigisterConsole.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAcwEsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T06:51:39.052Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "MainUpdate.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.AutoUpdate\\MainUpdate.cs",
-              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.AutoUpdate\\MainUpdate.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.AutoUpdate\\MainUpdate.cs",
-              "RelativeToolTip": "UPPERIOC2.0\\UPPER.AutoUpdate\\MainUpdate.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAACEAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T08:00:03.204Z",
-              "EditorCaption": ""
+              "Title": "UPPERIOC2.0.csproj",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPERIOC2.0.csproj",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPERIOC2.0.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-19T06:05:48.824Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Program.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\Program.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Program.cs",
+              "RelativeToolTip": "UpperComAutoTest\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvyAAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T06:07:48.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IVersionControl.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.VersionControl\\IVersion\\IVersionControl.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.VersionControl\\IVersion\\IVersionControl.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.VersionControl\\IVersion\\IVersionControl.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.VersionControl\\IVersion\\IVersionControl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T06:07:40.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "UpdateProcess.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.AutoUpdate\\Interfaces\\UpdateProcess.cs",
               "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.AutoUpdate\\Interfaces\\UpdateProcess.cs",
               "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.AutoUpdate\\Interfaces\\UpdateProcess.cs",
               "RelativeToolTip": "UPPERIOC2.0\\UPPER.AutoUpdate\\Interfaces\\UpdateProcess.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAAXAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T08:01:15.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-09T08:01:15.052Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "UPPERVersionControlMoudle.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.VersionControl\\Moudle\\UPPERVersionControlMoudle.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.VersionControl\\Moudle\\UPPERVersionControlMoudle.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.VersionControl\\Moudle\\UPPERVersionControlMoudle.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.VersionControl\\Moudle\\UPPERVersionControlMoudle.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwB4AAACHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T06:06:13.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "UpperAutoUpdateMoudle.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.AutoUpdate\\Moudle\\UpperAutoUpdateMoudle.cs",
               "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.AutoUpdate\\Moudle\\UpperAutoUpdateMoudle.cs",
@@ -484,12 +415,202 @@
               "RelativeToolTip": "UPPERIOC2.0\\UPPER.AutoUpdate\\Moudle\\UpperAutoUpdateMoudle.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T07:57:56.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-09T07:57:56.194Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
+              "Title": "VersionModel.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER\\IModel\\VersionModel.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER\\IModel\\VersionModel.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER\\IModel\\VersionModel.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER\\IModel\\VersionModel.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAADwvxEAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T08:18:32.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UPPERIOCContain.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER\\UPPERIOCContain.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER\\UPPERIOCContain.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER\\UPPERIOCContain.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER\\UPPERIOCContain.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T09:15:20.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IModel.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UFileModel\\IModel\\IModel.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.UFileModel\\IModel\\IModel.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UFileModel\\IModel\\IModel.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.UFileModel\\IModel\\IModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T08:32:17.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\Class1.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\Class1.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\Class1.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T08:31:26.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainUpdate.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.AutoUpdate\\MainUpdate.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.AutoUpdate\\MainUpdate.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.AutoUpdate\\MainUpdate.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.AutoUpdate\\MainUpdate.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAACEAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T08:00:03.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "VersionCenter.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.VersionControl\\VersionCenter.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.VersionControl\\VersionCenter.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.VersionControl\\VersionCenter.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.VersionControl\\VersionCenter.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAACAAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T08:08:32.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UPPERSendorMoudle.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.USendor\\Moudle\\UPPERSendorMoudle.cs",
+              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.USendor\\Moudle\\UPPERSendorMoudle.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.USendor\\Moudle\\UPPERSendorMoudle.cs",
+              "RelativeToolTip": "UPPERIOC2.0\\UPPER.USendor\\Moudle\\UPPERSendorMoudle.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAYwBoAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T08:30:39.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CurrentSerialPort.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
+              "RelativeToolTip": "UpperComAutoTest\\Dao\\CurrentSerialPort.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAQwEwAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T06:44:11.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "NomalComPage.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "UpperComAutoTest\\View\\Page\\NomalComPage.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T06:02:32.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "NomalComPage.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\View\\Page\\NomalComPage.cs",
+              "RelativeToolTip": "UpperComAutoTest\\View\\Page\\NomalComPage.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAgwGEAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T06:02:38.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "StaticExtend.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\Extend\\StaticExtend.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Extend\\StaticExtend.cs",
+              "RelativeToolTip": "UpperComAutoTest\\Extend\\StaticExtend.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAswIMAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T08:54:14.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "NomalComPageViewModel.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
+              "RelativeToolTip": "UpperComAutoTest\\ModelView\\NomalComPageViewModel.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAA7wEQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T06:19:59.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "StopAutosendTipEvent.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\StopAutosendTipEvent.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\SendorEvent\\StopAutosendTipEvent.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\StopAutosendTipEvent.cs",
+              "RelativeToolTip": "UpperComAutoTest\\SendorEvent\\StopAutosendTipEvent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T08:45:41.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CurrentPortReiceverMessageEvent.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\CurrentPortReiceverMessageEvent.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\SendorEvent\\CurrentPortReiceverMessageEvent.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\CurrentPortReiceverMessageEvent.cs",
+              "RelativeToolTip": "UpperComAutoTest\\SendorEvent\\CurrentPortReiceverMessageEvent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T08:45:36.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AutoRefeashEvent.cs",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\AutoRefeashEvent.cs",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\SendorEvent\\AutoRefeashEvent.cs",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\SendorEvent\\AutoRefeashEvent.cs",
+              "RelativeToolTip": "UpperComAutoTest\\SendorEvent\\AutoRefeashEvent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T08:45:40.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UpperComAutoTest.csproj",
+              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
+              "RelativeDocumentMoniker": "UpperComAutoTest\\UpperComAutoTest.csproj",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
+              "RelativeToolTip": "UpperComAutoTest\\UpperComAutoTest.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-09T07:53:11.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "MyTips.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\MyTips.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\MyTips.cs",
@@ -502,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 33,
               "Title": "Form1.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Form1.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Form1.cs",
@@ -513,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 31,
               "Title": "Message.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Entry\\Message.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Entry\\Message.cs",
@@ -525,7 +646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 34,
               "Title": "FunEdit.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.cs",
@@ -537,7 +658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 38,
               "Title": "NormalFuncControl.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
@@ -548,7 +669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 35,
               "Title": "IFuncTypeEdit.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFuncTypeEdit.cs",
@@ -559,7 +680,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 36,
               "Title": "NormalFuncControl.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\NormalFuncControl.cs",
@@ -571,7 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 40,
               "Title": "SelectFuncControl.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs",
@@ -584,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 37,
               "Title": "MsgEventInterface.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Entry\\IEventFileModel\\IMsgEvent\\MsgEventInterface.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Entry\\IEventFileModel\\IMsgEvent\\MsgEventInterface.cs",
@@ -596,19 +717,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SelectFuncControl.cs [Design]",
+              "DocumentIndex": 39,
+              "Title": "SelectFuncControl.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs [Design]",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs [Design]",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "UpperComAutoTest\\MyControls\\FuncControl\\SelectFuncControl.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T05:58:15.549Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-07-09T05:58:15.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 41,
               "Title": "FuncFactoryCenter.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactoryCenter.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\FuncFactoryCenter.cs",
@@ -620,7 +740,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 42,
               "Title": "IFuncControl.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\IFuncControl.cs",
@@ -632,7 +752,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 47,
               "Title": "EventFileModel.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Entry\\IEventFileModel\\EventFileModel.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\Entry\\IEventFileModel\\EventFileModel.cs",
@@ -644,7 +764,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 46,
               "Title": "ExecutionContext.cs",
               "DocumentMoniker": "C:\\Users\\10164\\AppData\\Local\\Temp\\.vsdbgsrc\\50c0acac28e5ef4e47c0d0892746a521e2628a81ba670fd5f7ce0c672bd8ca89\\ExecutionContext.cs",
               "ToolTip": "C:\\Users\\10164\\AppData\\Local\\Temp\\.vsdbgsrc\\50c0acac28e5ef4e47c0d0892746a521e2628a81ba670fd5f7ce0c672bd8ca89\\ExecutionContext.cs [\u53EA\u8BFB]",
@@ -655,7 +775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 45,
               "Title": "Task.cs",
               "DocumentMoniker": "C:\\Users\\10164\\AppData\\Local\\Temp\\.vsdbgsrc\\be23523e2745f4009096bc5570f0f0e3421d48f739d7afc3e4a4237e1d98b0b7\\Task.cs",
               "ToolTip": "C:\\Users\\10164\\AppData\\Local\\Temp\\.vsdbgsrc\\be23523e2745f4009096bc5570f0f0e3421d48f739d7afc3e4a4237e1d98b0b7\\Task.cs [\u53EA\u8BFB]",
@@ -666,7 +786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 43,
               "Title": "ThreadPoolWorkQueue.cs",
               "DocumentMoniker": "C:\\Users\\10164\\AppData\\Local\\Temp\\.vsdbgsrc\\7fac2845ebd4a36baa4f5412d0f14bb2ae52f39e62217f6ad6005e9d106aea21\\ThreadPoolWorkQueue.cs",
               "ToolTip": "C:\\Users\\10164\\AppData\\Local\\Temp\\.vsdbgsrc\\7fac2845ebd4a36baa4f5412d0f14bb2ae52f39e62217f6ad6005e9d106aea21\\ThreadPoolWorkQueue.cs [\u53EA\u8BFB]",
@@ -677,7 +797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 44,
               "Title": "Thread.cs",
               "DocumentMoniker": "C:\\Users\\10164\\AppData\\Local\\Temp\\.vsdbgsrc\\b304625f2f31ea46ecadd4ea0d1603547cdb8aeeb29f3be938ca353be2546085\\Thread.cs",
               "ToolTip": "C:\\Users\\10164\\AppData\\Local\\Temp\\.vsdbgsrc\\b304625f2f31ea46ecadd4ea0d1603547cdb8aeeb29f3be938ca353be2546085\\Thread.cs [\u53EA\u8BFB]",
@@ -688,7 +808,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 51,
               "Title": "UPPERFileModelMoudle.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UFileModel\\Moudle\\UPPERFileModelMoudle.cs",
               "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.UFileModel\\Moudle\\UPPERFileModelMoudle.cs",
@@ -700,7 +820,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 50,
               "Title": "FileMoudleConfiguation.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyConfiguation\\FileMoudleConfiguation.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyConfiguation\\FileMoudleConfiguation.cs",
@@ -712,7 +832,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 48,
               "Title": "Loading.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\Loading.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\Loading.cs",
@@ -723,43 +843,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "MyTips.cs [Design]",
+              "DocumentIndex": 49,
+              "Title": "MyTips.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\MyTips.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\MyTips.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\MyTips.cs [Design]",
-              "RelativeToolTip": "UpperComAutoTest\\MyControls\\MyTips.cs [Design]",
+              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\MyTips.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "UpperComAutoTest\\MyControls\\MyTips.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T06:04:19.594Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-07-09T06:04:19.594Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "UFileModelCenter.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
-              "RelativeDocumentMoniker": "UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
-              "RelativeToolTip": "UPPERIOC2.0\\UPPER.UFileModel\\Center\\UFileModelCenter.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAuwBEAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T06:08:48.333Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Program.cs",
-              "RelativeDocumentMoniker": "UpperComAutoTest\\Program.cs",
-              "ToolTip": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\Program.cs",
-              "RelativeToolTip": "UpperComAutoTest\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvxsAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T06:07:48.977Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 52,
               "Title": "IFuncFactory.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFactory\\IFuncFactory.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\TypeEdit\\IFactory\\IFuncFactory.cs",
@@ -771,7 +866,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 53,
               "Title": "FunEdit.Designer.cs",
               "DocumentMoniker": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.Designer.cs",
               "RelativeDocumentMoniker": "UpperComAutoTest\\MyControls\\FuncControl\\FunEdit.Designer.cs",
