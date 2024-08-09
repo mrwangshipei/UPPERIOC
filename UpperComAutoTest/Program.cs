@@ -26,6 +26,7 @@ namespace UpperComAutoTest
 			config.AddMoudle<UPPERIOCMoudle>();
 			config.AddMoudle<UPPERLogFileMoudle>();
 			config.AddMoudle<UPPERSendorMoudle>();
+			config.AddMoudle<UPPERMLockMoudle>();
 			config.AddMoudle<UPPERFileModelMoudle>();
 			config.SetProvider<UPPerContainerProvider>();
 			UPPERIOCContain.RunInstance(config);

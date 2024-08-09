@@ -34,6 +34,9 @@
     <Compile Update="MyControls\TransparentLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Setup\PWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UPPER.UMvvm\IPage.cs">
       <SubType>UserControl</SubType>
     </Compile>

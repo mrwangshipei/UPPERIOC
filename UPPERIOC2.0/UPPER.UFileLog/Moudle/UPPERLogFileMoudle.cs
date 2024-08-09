@@ -8,12 +8,12 @@ using UPPERIOC.UPPER.UFileLog.IConfiguation;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
-using UPPERIOC.UPPER.UFileLog;
 using UPPERIOC.UPPER.IOC.Moudle;
+using UPPERIOC2.UPPER.UFileLog.DefineLog;
 
 namespace UPPERIOC.UPPER.UFILELOG.Moudle
 {
-	public class UPPERLogFileMoudle : IUPPERMoudle
+    public class UPPERLogFileMoudle : IUPPERMoudle
 	{
 		
 		public void AfterCreateInstance(IContainerProvider containerProvider)
