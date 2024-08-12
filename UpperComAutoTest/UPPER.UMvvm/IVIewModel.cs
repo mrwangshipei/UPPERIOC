@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UpperComAutoTest.View.Page.Interface;
-using UPPERIOC.UPPERIOCCenter;
 using UPPERIOC.UPPERMvvm;
 
 namespace UPPERIOC.Interface

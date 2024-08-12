@@ -6,6 +6,7 @@ using System.Security;
 using System.Text;
 using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
+using UPPERIOC2.UPPER.MLOCK.Util;
 using static UPPERIOC.UPPER.IOC.Moudle.UPPERMLockMoudle;
 
 namespace UPPERIOC2.UPPER.MLOCK.Center
@@ -75,11 +76,9 @@ namespace UPPERIOC2.UPPER.MLOCK.Center
                 return;
             }
             var r = HashHelper.EncryptWithSalt(m.Solt);
-            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, m.Listenaddr);
-            File.Delete(path);
-            File.WriteAllText(path, r, Encoding.ASCII);
+            RegistryHelper.WriteRegistry("Software\\" + m.Listenaddr, "RGK",r);
 
-            Console.WriteLine("注册成功，使用愉快");
+			Console.WriteLine("注册成功，使用愉快");
             Console.ReadLine();
 
         }

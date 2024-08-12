@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using UpperComAutoTest.Entry.IEventFileModel.IMsgEvent;
 using UpperComAutoTest.MyControls.FuncControl.TypeEdit.IFactory;
 using UPPERIOC.UPPER.IOC.Annaiation;
-using UPPERIOC.UPPERIOCCenter;
 
 namespace UpperComAutoTest.MyControls.FuncControl.TypeEdit
 {

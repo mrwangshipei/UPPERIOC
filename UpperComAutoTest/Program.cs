@@ -1,9 +1,9 @@
 
 using UpperComAutoTest.MyControls;
+using UPPERIOC;
 using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC.UPPER.Sendor.Moudle;
 using UPPERIOC.UPPER.UFILELOG.Moudle;
-using UPPERIOC.UPPERIOCCenter;
 using UPPERIOC2.UPPER.UFileModel.Moudle;
 using UPPERIOC2.UPPER.UIOC.DefaultProvider;
 
@@ -29,7 +29,7 @@ namespace UpperComAutoTest
 			config.AddMoudle<UPPERMLockMoudle>();
 			config.AddMoudle<UPPERFileModelMoudle>();
 			config.SetProvider<UPPerContainerProvider>();
-			UPPERIOCContain.RunInstance(config);
+			UPPERIOCApplication.RunInstance(config);
 			Application.Run(new Form1());
 		}
 

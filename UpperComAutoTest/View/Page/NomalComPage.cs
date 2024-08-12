@@ -18,10 +18,9 @@ using UpperComAutoTest.MyControls;
 using UpperComAutoTest.MyControls.FuncControl;
 using UpperComAutoTest.SendorEvent;
 using UpperComAutoTest.View.Page.Interface;
-
+using UPPERIOC;
 using UPPERIOC.Interface;
 using UPPERIOC.UPPER.IOC.Annaiation;
-using UPPERIOC.UPPERIOCCenter;
 using UPPERIOC2.UPPER.UFileModel.Center;
 using UPPERIOC2.UPPER.USendor.Center;
 
@@ -313,7 +312,7 @@ namespace UpperComAutoTest.Page
 			{
 				flowLayoutPanel1.Controls.Add(new SelectFuncControl(item));
 			});
-			UPPERIOCContain.Container.Rigister<EventFileModel>(model);
+			UPPERIOCApplication.Container.Rigister<EventFileModel>(model);
 
 		}
 

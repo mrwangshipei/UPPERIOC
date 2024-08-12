@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
+using UPPERIOC2.UPPER.MLOCK.Util;
 using static UPPERIOC.UPPER.IOC.Moudle.UPPERMLockMoudle;
 
 namespace Setup.Configuation
@@ -28,9 +29,8 @@ namespace Setup.Configuation
 				if (pr == DialogResult.Yes)
 				{
 					var x = HashHelper.EncryptWithSalt(Solt);
-					var path = Path.Combine(Environment.CurrentDirectory, m.Listenaddr);
-					File.Delete(path);
-					File.WriteAllText(path, x, Encoding.ASCII);
+					RegistryHelper.WriteRegistry("Software\\" + m.Listenaddr, "RGK", x);
+
 
 				}
 			}

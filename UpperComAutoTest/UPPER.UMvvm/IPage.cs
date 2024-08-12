@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.Interface;
 using UPPERIOC.UPPER.IOC.Annaiation;
-using UPPERIOC.UPPERIOCCenter;
 using UPPERIOC.UPPERMvvm;
 
 namespace UpperComAutoTest.View.Page.Interface

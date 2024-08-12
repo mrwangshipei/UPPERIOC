@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using UpperComAutoTest.Entry;
 using UpperComAutoTest.Entry.IEventFileModel;
 using UpperComAutoTest.SendorEvent;
+using UPPERIOC;
 using UPPERIOC.UPPER.IOC.Annaiation;
-using UPPERIOC.UPPERIOCCenter;
 using UPPERIOC2.UPPER.USendor.Center;
 
 namespace FCT
@@ -73,7 +73,7 @@ namespace FCT
 				byte[] bs = new byte[ser.BytesToRead];
 				ser.Read(bs, 0, bs.Length);
 				var bts = new ByteMessage() { Time = DateTime.Now, Data = bs, IsSend = false };
-				EventFileModel eve = UPPERIOCContain.Container.GetInstance(typeof(EventFileModel)) as EventFileModel;
+				EventFileModel eve = UPPERIOCApplication.Container.GetInstance(typeof(EventFileModel)) as EventFileModel;
 				eve.Msgevens.ForEach(item => {
 					if (item.Receivebytemess.Data.SequenceEqual(bs))
 					{

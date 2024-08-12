@@ -2,8 +2,8 @@
 using System.Configuration;
 using UpperComAutoTest.MyControls;
 using UpperComAutoTest.View.Page.Interface;
+using UPPERIOC;
 using UPPERIOC.UPPER;
-using UPPERIOC.UPPERIOCCenter;
 
 namespace UpperComAutoTest
 {
@@ -55,7 +55,7 @@ namespace UpperComAutoTest
 			LogCenter.Log(UPPERIOC.UPPER.enums.LogType.Debug, $"打开了{send.Name}页面");
 			
 			object page;
-			if ((page = UPPERIOCContain.Container.GetInstance(send.Name)) != null)
+			if ((page = UPPERIOCApplication.Container.GetInstance(send.Name)) != null)
 			{
 				var ipage = page as IPage;
 				if (ipage == null)
