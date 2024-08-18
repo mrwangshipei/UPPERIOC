@@ -33,7 +33,7 @@ namespace UPPERIOC.UPPER.UFileLog
             }
             var logtime = DateTime.Now;
             //路径
-            var diname = Path.Combine(Environment.CurrentDirectory, Config.DirectoryName);
+            var diname = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Config.DirectoryName);
             DirectoryInfo di = new DirectoryInfo(diname);
             if (!Directory.Exists(diname))
             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -81,7 +82,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 				throw new Exception("至少注册一个MLockConfiguation的对象");
 			}
 			m = c[0];
-			var lisaddr = Path.Combine(Environment.CurrentDirectory, m.Listenaddr);
+			var lisaddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, m.Listenaddr);
 			if (!File.Exists(lisaddr))
 			{
 				m.Noregister();

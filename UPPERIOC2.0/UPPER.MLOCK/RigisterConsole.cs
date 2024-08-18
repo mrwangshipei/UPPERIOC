@@ -74,7 +74,7 @@ namespace UPPERIOC2.UPPER.MLOCK
 				return;
 			}
 			var r = HashHelper.EncryptWithSalt(m.Solt);
-			var path = Path.Combine(Environment.CurrentDirectory, m.Listenaddr);
+			var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, m.Listenaddr);
 			File.Delete(path);
 			File.WriteAllText(path,r,Encoding.ASCII);
 
