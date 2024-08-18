@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UpperComAutoTest.View.Page.Interface;
-using UPPERIOC.UPPERIOCCenter;
 using UPPERIOC.UPPERMvvm;
 
 namespace UPPERIOC.Interface
@@ -21,7 +20,7 @@ namespace UPPERIOC.Interface
 	
 		public void Invoke<T>(Action<IMvvmCompent> act) where T : IMvvmCompent
 		{
-			var obj = UPPERIOCContain.Container.GetInstance(typeof(T)) as IMvvmCompent;
+			var obj = UPPERIOCApplication.Container.GetInstance(typeof(T)) as IMvvmCompent;
 			if (obj != null)
 			{
 					act?.Invoke(obj);

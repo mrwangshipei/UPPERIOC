@@ -14,10 +14,10 @@ using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Extend;
 using UPPERIOC2.UPPER.IModel;
 
-namespace UPPERIOC.UPPERIOCCenter
+namespace UPPERIOC
 {
     //public delegate void DosomethingWhenInited(Dictionary<Type, object> Contain);
-    public class UPPERIOCContain
+    public class UPPERIOCApplication
     {
         public static IContainerProvider Container;
 		public static  VersionModel vm;

@@ -9,7 +9,7 @@ using UPPERIOC2.UPPER.UFileModel.IModel;
 
 namespace UpperComAutoTest.Entry.IEventFileModel
 {
-    internal class EventFileModel : IModel
+    public class EventFileModel : IModel
     {
         [XmlIgnore]
         public override string ModelName { get => "EventModel.xml"; set { } }

@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
-using UPPERIOC.UPPERIOCCenter;
 using UPPERIOC2.UPPER.IModel;
 using UPPERIOC2.UPPER.VersionControl;
 using UPPERIOC2.UPPER.VersionControl.IVersion;
@@ -33,7 +32,7 @@ namespace UPPERIOC.UPPER.Sendor.Moudle
 
 		public void PreIniter(IContainerProvider containerProvider)
 		{
-			UPPERIOCCenter.UPPERIOCContain.RigisterVersionModel(new VersionModel());
+			UPPERIOC.UPPERIOCApplication.RigisterVersionModel(new VersionModel());
 		}
 
 		public void InitEnd(IContainerProvider containerProvider)

@@ -14,7 +14,7 @@ namespace UPPERIOC.UPPER.IOC.Center.Configuation
     {
         List<Type> Moudle = new List<Type>();
         List<Type> Log = new List<Type>();
-		internal IContainerProvider _containerProvider;
+		internal IContainerProvider _containerProvider ;
         /// <summary>
         /// 使用默认的IOC管理或者集成其他IOC容器
         /// </summary>

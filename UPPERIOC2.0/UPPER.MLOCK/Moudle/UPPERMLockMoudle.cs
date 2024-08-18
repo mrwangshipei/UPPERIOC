@@ -13,7 +13,9 @@ using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Extend;
+using UPPERIOC2.UPPER.MLOCK.Center;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
+using UPPERIOC2.UPPER.MLOCK.Util;
 
 namespace UPPERIOC.UPPER.IOC.Moudle
 {
@@ -82,13 +84,13 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 				throw new Exception("至少注册一个MLockConfiguation的对象");
 			}
 			m = c[0];
-			var lisaddr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, m.Listenaddr);
-			if (!File.Exists(lisaddr))
+		//	var lisaddr = Path.Combine(Environment.CurrentDirectory, m.Listenaddr);
+			if (RegistryHelper.ReadRegistry("Software\\"+ m.Listenaddr,"RGK") == null)
 			{
 				m.Noregister();
 
 			}
-			if (HashHelper.VerifyWithSalt(m.Solt ,File.ReadAllText(lisaddr)))
+			if (HashHelper.VerifyWithSalt(m.Solt , RegistryHelper.ReadRegistry("Software\\" + m.Listenaddr, "RGK")))
 			{
 				Console.Write("验证成功");
 			}
