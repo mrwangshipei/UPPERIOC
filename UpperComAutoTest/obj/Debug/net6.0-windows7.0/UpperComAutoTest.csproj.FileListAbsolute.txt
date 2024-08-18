@@ -129,3 +129,4 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\System.M
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\win\lib\net6.0\System.Management.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\Setup.PWD.resources
 >>>>>>> 127af220353f082780265b343b6d74bfe73209fa
+D:\code\vs\UpperComAutoTest\UpperComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\Setup.PWD.resources
