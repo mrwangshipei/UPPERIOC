@@ -28,3 +28,5 @@ D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.Assembl
 D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.csproj.CoreCompileInputs.cache
 D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.dll
 D:\Code\C#\UpperContest\UPPERIOC2.0\obj\Debug\netstandard2.0\UPPERIOC2.0.pdb
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\obj\Debug\netstandard2.0\refint\UPPERIOC2.0.dll
+E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\obj\Debug\netstandard2.0\ref\UPPERIOC2.0.dll
