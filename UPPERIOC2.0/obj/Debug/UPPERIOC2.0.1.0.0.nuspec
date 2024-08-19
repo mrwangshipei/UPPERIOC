@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>UPPERIOC2.0</id>
+    <version>1.0.0</version>
+    <authors>UPPERIOC2.0</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="2f4519d394697bcb643b7e774eda036cb4908f68" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.Win32.Registry" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Management" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Emit" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\bin\Debug\netstandard2.0\UPPERIOC2.0.dll" target="lib\netstandard2.0\UPPERIOC2.0.dll" />
+  </files>
+</package>
