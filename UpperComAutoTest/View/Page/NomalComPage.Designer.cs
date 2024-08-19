@@ -53,8 +53,8 @@
 			checkBox1 = new CheckBox();
 			checkBox2 = new CheckBox();
 			groupBox2 = new GroupBox();
-			button3 = new Button();
 			button1 = new Button();
+			button3 = new Button();
 			groupBox1 = new GroupBox();
 			comboBox3 = new ComboBox();
 			label1 = new Label();
@@ -180,8 +180,8 @@
 			// 
 			// flowLayoutPanel1
 			// 
+			flowLayoutPanel1.AutoScroll = true;
 			flowLayoutPanel1.Dock = DockStyle.Fill;
-			flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
 			flowLayoutPanel1.Location = new Point(3, 24);
 			flowLayoutPanel1.Name = "flowLayoutPanel1";
 			flowLayoutPanel1.Size = new Size(256, 252);
@@ -334,6 +334,17 @@
 			groupBox2.TabStop = false;
 			groupBox2.Text = "操作";
 			// 
+			// button1
+			// 
+			button1.Dock = DockStyle.Fill;
+			button1.Location = new Point(3, 24);
+			button1.Name = "button1";
+			button1.Size = new Size(127, 56);
+			button1.TabIndex = 2;
+			button1.Text = "启动";
+			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
+			// 
 			// button3
 			// 
 			button3.Dock = DockStyle.Right;
@@ -345,17 +356,6 @@
 			button3.Text = "停止";
 			button3.UseVisualStyleBackColor = true;
 			button3.Click += button3_Click;
-			// 
-			// button1
-			// 
-			button1.Dock = DockStyle.Fill;
-			button1.Location = new Point(3, 24);
-			button1.Name = "button1";
-			button1.Size = new Size(127, 56);
-			button1.TabIndex = 2;
-			button1.Text = "启动";
-			button1.UseVisualStyleBackColor = true;
-			button1.Click += button1_Click;
 			// 
 			// groupBox1
 			// 
