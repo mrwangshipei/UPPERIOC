@@ -374,7 +374,10 @@
       },
       "UPPERIOC2.0/1.0.0": {
         "dependencies": {
+<<<<<<< HEAD
+=======
           "Microsoft.Win32.Registry": "5.0.0",
+>>>>>>> 127af220353f082780265b343b6d74bfe73209fa
           "System.Management": "8.0.0"
         },
         "runtime": {

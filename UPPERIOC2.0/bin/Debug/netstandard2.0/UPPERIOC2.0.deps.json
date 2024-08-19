@@ -9,7 +9,10 @@
     ".NETStandard,Version=v2.0/": {
       "UPPERIOC2.0/1.0.0": {
         "dependencies": {
+<<<<<<< HEAD
+=======
           "Microsoft.Win32.Registry": "5.0.0",
+>>>>>>> 127af220353f082780265b343b6d74bfe73209fa
           "NETStandard.Library": "2.0.3",
           "System.Management": "8.0.0"
         },
@@ -37,6 +40,8 @@
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
       },
+<<<<<<< HEAD
+=======
       "System.Buffers/4.5.1": {
         "runtime": {
           "lib/netstandard2.0/System.Buffers.dll": {
@@ -45,6 +50,7 @@
           }
         }
       },
+>>>>>>> 127af220353f082780265b343b6d74bfe73209fa
       "System.CodeDom/8.0.0": {
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {
@@ -63,6 +69,8 @@
             "fileVersion": "8.0.23.53103"
           }
         }
+<<<<<<< HEAD
+=======
       },
       "System.Memory/4.5.4": {
         "dependencies": {
@@ -111,6 +119,7 @@
             "fileVersion": "5.0.20.51904"
           }
         }
+>>>>>>> 127af220353f082780265b343b6d74bfe73209fa
       }
     }
   },
@@ -141,6 +150,8 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
+<<<<<<< HEAD
+=======
     "System.Buffers/4.5.1": {
       "type": "package",
       "serviceable": true,
@@ -148,6 +159,7 @@
       "path": "system.buffers/4.5.1",
       "hashPath": "system.buffers.4.5.1.nupkg.sha512"
     },
+>>>>>>> 127af220353f082780265b343b6d74bfe73209fa
     "System.CodeDom/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -161,6 +173,8 @@
       "sha512": "sha512-jrK22i5LRzxZCfGb+tGmke2VH7oE0DvcDlJ1HAKYU8cPmD8XnpUT0bYn2Gy98GEhGjtfbR/sxKTVb+dE770pfA==",
       "path": "system.management/8.0.0",
       "hashPath": "system.management.8.0.0.nupkg.sha512"
+<<<<<<< HEAD
+=======
     },
     "System.Memory/4.5.4": {
       "type": "package",
@@ -196,6 +210,7 @@
       "sha512": "sha512-t0MGLukB5WAVU9bO3MGzvlGnyJPgUlcwerXn1kzBRjwLKixT96XV0Uza41W49gVd8zEMFu9vQEFlv0IOrytICA==",
       "path": "system.security.principal.windows/5.0.0",
       "hashPath": "system.security.principal.windows.5.0.0.nupkg.sha512"
+>>>>>>> 127af220353f082780265b343b6d74bfe73209fa
     }
   }
 }

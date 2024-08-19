@@ -29,7 +29,7 @@ namespace UPPERIOC2.UPPER.UFileModel.Center
 			}
 			var cfg = arr[0] as IUFileModelConfiguation;
 			CheckPathExist(cfg);
-			string dp = Path.Combine(Environment.CurrentDirectory, cfg.SaveModelPath);
+			string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 
 			var xs = new XmlSerializer(typeof(I));
 			string p = Path.Combine(dp ,T.ModelName);
@@ -73,7 +73,7 @@ namespace UPPERIOC2.UPPER.UFileModel.Center
 			}
 			var cfg = arr[0] as IUFileModelConfiguation;
 			CheckPathExist(cfg);
-			string dp = Path.Combine(Environment.CurrentDirectory, cfg.SaveModelPath);
+			string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 
 			var xs = new XmlSerializer(typeof(I));
 			string p = Path.Combine(dp, T.ModelName);
@@ -100,7 +100,7 @@ namespace UPPERIOC2.UPPER.UFileModel.Center
 		}
 		private void CheckPathExist(IUFileModelConfiguation cfg)
 		{
-			string dp = Path.Combine(Environment.CurrentDirectory, cfg.SaveModelPath);
+			string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 			if (!Directory.Exists(dp))
 			{
 				Directory.CreateDirectory(dp);

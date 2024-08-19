@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -14,7 +15,7 @@ using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Extend;
 using UPPERIOC2.UPPER.MLOCK.Center;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
-using UPPERIOC2.UPPER.MLOCK.Util;
+using UPPERIOC2.UPPER.Util;
 
 namespace UPPERIOC.UPPER.IOC.Moudle
 {

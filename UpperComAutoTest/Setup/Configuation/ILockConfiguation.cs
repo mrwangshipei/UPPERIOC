@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
-using UPPERIOC2.UPPER.MLOCK.Util;
+using UPPERIOC2.UPPER.Util;
 using static UPPERIOC.UPPER.IOC.Moudle.UPPERMLockMoudle;
 
 namespace Setup.Configuation
 {
-	[IOCObject]
+    [IOCObject]
 	public class ILockConfiguation : MLockConfiguation
 	{
 		public override string Solt { get =>"-fdskjlskjasklfjaskljf"; set => base.Solt = value; }
