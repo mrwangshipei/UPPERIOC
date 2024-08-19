@@ -2758,7 +2758,6 @@
         "net6.0-windows7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "C:\\Users\\10164\\Downloads": {},
         "https://api.nuget.org/v3/index.json": {}

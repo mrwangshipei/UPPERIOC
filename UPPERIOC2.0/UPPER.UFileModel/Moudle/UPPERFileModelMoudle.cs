@@ -28,7 +28,7 @@ namespace UPPERIOC2.UPPER.UFileModel.Moudle
 		public void PreIniter(IContainerProvider containerProvider)
 		{
 			UFileModelCenter.pdr = containerProvider;
-
+			containerProvider.Rigister<UFileModelCenter>();
 			//UFileModelCenter.Instance = new UFileModelCenter();
 		}
 	}
