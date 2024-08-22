@@ -43,3 +43,4 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\refint\U
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.pdb
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.genruntimeconfig.cache
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\ref\UpperComAutoTest.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\COMIEEE.FrmPwd.resources

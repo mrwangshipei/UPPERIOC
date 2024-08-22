@@ -9,9 +9,11 @@ namespace UPPERIOC2.UPPER.Premission.IConfiguation
 	{
 		
 		string ApplicationName { get; set; }
+		string PicSavePath { get; set; }
 		string Solt{ get; set; }
 		bool AllowNull { get; set; }
 
 		User Login(PermissionModel pm);
+		PermissionModel InitModel();
 	}
 }

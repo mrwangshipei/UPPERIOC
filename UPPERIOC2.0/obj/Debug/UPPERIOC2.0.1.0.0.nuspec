@@ -5,7 +5,7 @@
     <version>1.0.0</version>
     <authors>UPPERIOC2.0</authors>
     <description>Package Description</description>
-    <repository type="git" commit="2f4519d394697bcb643b7e774eda036cb4908f68" />
+    <repository type="git" commit="e534856d0c4c2f73de711eb0ddd75544ee8f3a76" />
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="Microsoft.Win32.Registry" version="5.0.0" exclude="Build,Analyzers" />

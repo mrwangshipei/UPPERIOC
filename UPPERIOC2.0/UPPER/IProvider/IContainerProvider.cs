@@ -13,6 +13,7 @@ namespace UPPERIOC.UPPER.IOC.Center.IProvider
 	{
 			 object GetInstance(Type type);
 			 T GetInstance<T>();
+			 T GetInstance<T>(string name);
 		 object[] GetAllInstance(Type type);
 		 T[] GetAllInstance<T>( );
 		 object GetInstance(string name);
@@ -23,6 +24,7 @@ namespace UPPERIOC.UPPER.IOC.Center.IProvider
 		 object Rigister(Type T);
 
 		object Rigister(Type T,object obj);
+		object Rigister(Type T, string name);
 		object Rigister(Type T,string name,object obj);
 		object Rigister<T>(object obj);
 

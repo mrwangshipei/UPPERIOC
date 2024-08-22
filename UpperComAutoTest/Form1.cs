@@ -1,5 +1,6 @@
 
 using System.Configuration;
+using UpperComAutoTest.ModelView;
 using UpperComAutoTest.MyControls;
 using UpperComAutoTest.View.Page.Interface;
 using UPPERIOC;
@@ -7,10 +8,13 @@ using UPPERIOC.UPPER;
 
 namespace UpperComAutoTest
 {
-    public partial class Form1 : Form
+
+	public partial class Form1 : Form
 	{
+		Form1ModelView modelView;
 		public Form1()
 		{
+			modelView = UPPERIOCApplication.Container.GetInstance<Form1ModelView>();
 			InitializeComponent();
 			foreach (ToolStripItem item in toolStrip1.Items)
 			{
@@ -53,7 +57,7 @@ namespace UpperComAutoTest
 			});*/
 			ToolStripItem send = sender as ToolStripItem;
 			LogCenter.Log(UPPERIOC.UPPER.enums.LogType.Debug, $"打开了{send.Name}页面");
-			
+
 			object page;
 			if ((page = UPPERIOCApplication.Container.GetInstance(send.Name)) != null)
 			{
@@ -82,6 +86,20 @@ namespace UpperComAutoTest
 		private void NomalComPage_Click(object sender, EventArgs e)
 		{
 
+		}
+		private void toolStripButton1_Click(object sender, EventArgs e)
+		{
+			modelView.Dosomething();
+		}
+
+		private void toolStripButton2_Click(object sender, EventArgs e)
+		{
+			modelView.AddUser();
+		}
+
+		private void toolStripButton3_Click(object sender, EventArgs e)
+		{
+			modelView.addRole();
 		}
 	}
 }

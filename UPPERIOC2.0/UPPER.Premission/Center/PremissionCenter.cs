@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Management;
 using System.Text;
@@ -37,14 +38,23 @@ namespace UPPERIOC2.UPPER.Premission.Center
 				{
 					throw new Exception("配置异常，联系管理");
 				}
-				pm = new PermissionModel();
+				else
+				{
+					pm = c.InitModel();
+					SaveChange();
+				}
+				//pm = new PermissionModel();
 			}
 			CurrentUser = c.Login(pm);
-		
+			if (CurrentUser == null && !c.AllowNull)
+			{
+				throw new Exception("登录失败");
+			}
 		}
 		public void AddUserToGroup(User user, RoleGroup gp) 
 		{
-			gp.users.Add(user.id);
+			user.RoleGroup = gp.id;
+			//gp.users.Add(user.id);
 
 		}
 		public void AddRoleToGroup(Role r,RoleGroup rp) 
@@ -52,24 +62,101 @@ namespace UPPERIOC2.UPPER.Premission.Center
 			rp.Roles.Add(r.id);
 
 		}
-		public List<RoleGroup> AddRoleGroup(string GroupName)
+		public List<Role> GetRoleByRoleGroup(RoleGroup rp)
 		{
-			pm.rolegps.Add(new RoleGroup { id = (int)pm.RoleGPid, GpName= GroupName,Roles = new List<int>(), users = new List<int>()});
+			List<Role> lr = new List<Role>();
+
+
+			foreach (var item in rp.Roles)
+            {
+				var i = pm.roles.Find(item1 => item == item1.id);
+				if (i != null)
+				{
+				lr.Add(i);
+
+				}
+            }
+			return lr;
+        }
+		public RoleGroup AddRoleGroup(RoleGroup GroupName)
+		{
+			GroupName.id = pm.RoleGPid;
+			pm.rolegps.Add(GroupName);
 			pm.RoleGPid++;
-			return pm.rolegps;
+			return GroupName;
 		}
-		public List<Role> AddRole(string RoleName) 
+		public Role AddRole(Role Role) 
 		{
-			pm.roles.Add(new Role { id = (int)pm.Roleid, Name = RoleName });
+			Role.id = pm.Roleid;
+			pm.roles.Add(Role);
 			pm.Roleid++;
-			return pm.roles;
+			return Role;
 		}
-		public List<User> AddUser(string UserName,string password)
+		public User UpdateById(User us,string pwd = null) {
+			var changeu = pm.users.Find(item=> item.id == us.id);
+			changeu.Name = us.Name;
+			changeu.RoleGroup = us.RoleGroup;
+			if (!string.IsNullOrWhiteSpace(pwd))
+			{
+			string Token = HashHelper.EncryptWithSalt(c.Solt,us.Token);
+				changeu.Token = Token;
+
+			}
+			changeu.UserName = us.UserName;
+			changeu.ActPath = us.ActPath;
+			if (changeu.ActPath != us.ActPath)
+			{
+				changeu.ActPath = AddPic(us.ActPath);
+
+			}
+			return changeu;
+
+		}
+
+		public Role UpdateById(Role us)
 		{
-			string Token = HashHelper.EncryptWithSalt(c.Solt,password);
-			pm.users.Add(new User {id  = (int)pm.Userid,Name = UserName,Token = password });
+			var changeu = pm.roles.Find(item => item.id == us.id);
+			changeu.Name = us.Name;
+			changeu.Backup = us.Backup;
+			return changeu;
+
+		}
+		public RoleGroup UpdateById(RoleGroup us)
+		{
+			var changeu = pm.rolegps.Find(item => item.id == us.id);
+			changeu.Backup= us.Backup;
+			changeu.GpName= us.GpName;
+			changeu.Roles= us.Roles;
+			//changeu.users= us.users;
+			return changeu;
+
+		}
+
+		public void RemoveChange() {
+			pm = rod.LoadObjectFromRegistry<PermissionModel>(c.ApplicationName);
+
+		}
+		public string AddPic(string str)
+		{
+			var fi = FileUtil.RelativePathToFileInfo(str);
+			if (!fi.Exists)
+			{
+				return "";
+			}
+			var dstr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, c.PicSavePath, pm.PicNum + "");
+			fi.CopyTo(dstr);
+			pm.PicNum++;
+			return FileUtil.FileInfoToRelativePath(new FileInfo(dstr));
+		}
+		public User AddUser(string UserName,string password,string ActPath,string Name)
+		{
+			string Token = HashHelper.EncryptWithSalt(c.Solt, password);
+			
+			var user= 			new User { id = (int)pm.Userid, UserName = UserName, Token = password, ActPath = ActPath, Name = Name };
+			pm.users.Add(user);
 			pm.Userid++;
-			return pm.users;
+			user.ActPath = AddPic(user.ActPath);
+			return user;
 
 		}
 		public bool CanInvoke(int Role) 

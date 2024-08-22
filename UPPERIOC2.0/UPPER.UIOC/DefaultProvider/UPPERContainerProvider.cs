@@ -166,5 +166,20 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
         {
             return (T)Contain.GetIntstance(typeof(T));
         }
-    }
+
+		public object Rigister(Type T, string name)
+		{
+			return Contain[new IOCTypeInfo() { Type = T, TypeName = name}] = InitInstance(T);
+
+		}
+
+		public T GetInstance<T>(string name)
+		{
+			if (string.IsNullOrWhiteSpace(name))
+			{
+				return default(T);
+			}
+			return(T) Contain.GetIntstance(typeof(T), name); ;
+		}
+	}
 }

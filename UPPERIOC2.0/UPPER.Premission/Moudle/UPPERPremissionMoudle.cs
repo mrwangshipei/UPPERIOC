@@ -1,6 +1,6 @@
 ﻿
 using System;
-
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
@@ -15,86 +15,154 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 	public class UPPERPremissionMoudle : IUPPERMoudle
 	{
 		public Type[] DependisMoudel { get => new Type[0]; set => throw new NotImplementedException(); }
+		public object CreateProxy(Type target )
+		{
+			var targetType = target;
+			var assemblyName = new AssemblyName(targetType.Name + "ProxyAssembly");
+			var assemblyBuilder = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
+			var moduleBuilder = assemblyBuilder.DefineDynamicModule("MainModule");
 
+			var typeBuilder = moduleBuilder.DefineType(
+				targetType.Name + "Proxy",
+				TypeAttributes.Public | TypeAttributes.Class,
+				targetType
+			);
 
-	public object CreateProxy(Type target)
-{
-    var targetType = target;
-    var assemblyName = new AssemblyName(targetType.Name + "ProxyAssembly");
-    var assemblyBuilder = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
-    var moduleBuilder = assemblyBuilder.DefineDynamicModule("MainModule");
+			// 添加一个字段来保存被代理的实例
+			var targetField = typeBuilder.DefineField("_target", targetType, FieldAttributes.Private);
 
-    var typeBuilder = moduleBuilder.DefineType(targetType.Name + "Proxy", TypeAttributes.Public | TypeAttributes.Class, targetType);
+			// 定义构造函数来初始化被代理的实例
+			var constructorBuilder = typeBuilder.DefineConstructor(
+				MethodAttributes.Public,
+				CallingConventions.Standard,
+				new[] { targetType }
+			);
 
-    // 添加一个字段来保存被代理的实例
-    var targetField = typeBuilder.DefineField("_target", targetType, FieldAttributes.Private);
+			var ilGenerator = constructorBuilder.GetILGenerator();
+			ilGenerator.Emit(OpCodes.Ldarg_0);
+			ilGenerator.Emit(OpCodes.Ldarg_1);
+			ilGenerator.Emit(OpCodes.Stfld, targetField);
+			ilGenerator.Emit(OpCodes.Ret);
 
-    // 定义构造函数来初始化被代理的实例
-    var constructorBuilder = typeBuilder.DefineDefaultConstructor(MethodAttributes.Public);
-   /* var ctorIlGenerator = constructorBuilder.GetILGenerator();
-    ctorIlGenerator.Emit(OpCodes.Ldarg_0); // this
-    ctorIlGenerator.Emit(OpCodes.Ldarg_1); // target
-    ctorIlGenerator.Emit(OpCodes.Stfld, targetField);
-    ctorIlGenerator.Emit(OpCodes.Ret);*/
+			// 为每个方法生成代理逻辑
+			foreach (var method in targetType.GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly))
+			{
+				var permissionAttribute = method.GetCustomAttribute<PremissionRequiredAttribute>();
+				if (permissionAttribute == null)
+				{
+					continue;
+				}
 
-    // 为每个方法生成代理逻辑
-    foreach (var method in targetType.GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly))
-    {
-        var permissionAttribute = method.GetCustomAttribute<PremissionRequiredAttribute>();
-        if (permissionAttribute == null)
-        {
-            continue;
-        }
+				var parameterTypes = Array.ConvertAll(method.GetParameters(), p => p.ParameterType);
+				var methodBuilder = typeBuilder.DefineMethod(
+					method.Name,
+					MethodAttributes.Public | MethodAttributes.Virtual | MethodAttributes.HideBySig,
+					method.ReturnType,
+					parameterTypes
+				);
 
-        var parameterTypes = Array.ConvertAll(method.GetParameters(), p => p.ParameterType);
-        var methodBuilder = typeBuilder.DefineMethod(method.Name, MethodAttributes.Public | MethodAttributes.Virtual, method.ReturnType, parameterTypes);
-        var ilGenerator = methodBuilder.GetILGenerator();
+				ilGenerator = methodBuilder.GetILGenerator();
 
-        if (permissionAttribute != null)
-        {
-            var permissionCheckLabel = ilGenerator.DefineLabel();
-            ilGenerator.Emit(OpCodes.Ldstr, permissionAttribute.Permission);
-            ilGenerator.Emit(OpCodes.Call, typeof(PermissionInterceptor).GetMethod("Intercept", new[] { typeof(int) }));
-            ilGenerator.Emit(OpCodes.Brtrue_S, permissionCheckLabel);
+				// Define permission check logic
+				if (permissionAttribute != null)
+				{
+					var permissionCheckLabel = ilGenerator.DefineLabel();
+					var endOfMethodLabel = ilGenerator.DefineLabel();
 
-            if (method.ReturnType != typeof(void))
-            {
-                ilGenerator.Emit(OpCodes.Ldstr, "Unauthorized");
-            }
-            ilGenerator.Emit(OpCodes.Ret);
+					// Push the required permission onto the stack
+					ilGenerator.Emit(OpCodes.Ldc_I4, permissionAttribute.Permission);
 
-            ilGenerator.MarkLabel(permissionCheckLabel);
-        }
+					// Call the PermissionInterceptor.Intercept method
+					ilGenerator.Emit(OpCodes.Call, typeof(PermissionInterceptor).GetMethod("Intercept", new[] { typeof(int) }));
 
-        ilGenerator.Emit(OpCodes.Ldarg_0);
-        ilGenerator.Emit(OpCodes.Ldfld, targetField);
+					// If permission is granted, continue to the method body
+					ilGenerator.Emit(OpCodes.Brtrue_S, permissionCheckLabel);
 
-        for (int i = 0; i < parameterTypes.Length; i++)
-        {
-            ilGenerator.Emit(OpCodes.Ldarg, i + 1);
-        }
+					// Permission denied, handle it
+					if (method.ReturnType != typeof(void))
+					{
+						ilGenerator.Emit(OpCodes.Ldstr, "Unauthorized");
+						ilGenerator.Emit(OpCodes.Newobj, typeof(UnauthorizedAccessException).GetConstructor(new[] { typeof(string) }));
+						ilGenerator.Emit(OpCodes.Throw);
+					}
+					else
+					{
+						ilGenerator.Emit(OpCodes.Ret);
+					}
 
-        ilGenerator.Emit(OpCodes.Call, method);
+					// Mark the label where the method body starts
+					ilGenerator.MarkLabel(permissionCheckLabel);
+				}
 
-        if (method.ReturnType != typeof(void))
-        {
-            ilGenerator.Emit(OpCodes.Ret);
-        }
+				// Load 'this' onto the evaluation stack
+				ilGenerator.Emit(OpCodes.Ldarg_0);
+				ilGenerator.Emit(OpCodes.Ldfld, targetField);
 
-        typeBuilder.DefineMethodOverride(methodBuilder, method);
-    }
+				// Load method arguments onto the evaluation stack
+				for (int i = 0; i < parameterTypes.Length; i++)
+				{
+					ilGenerator.Emit(OpCodes.Ldarg, i + 1);
+				}
 
-    var proxyType = typeBuilder.CreateTypeInfo();
+				// Load the target object from the field and call the method
+				ilGenerator.Emit(OpCodes.Call, method);
 
-    // 检查构造函数是否正确生成
-    var constructors = proxyType.DeclaredConstructors;
-    foreach (var constructor in constructors)
-    {
-        Console.WriteLine(constructor);
-    }
+				// Return the result (if method has a return value)
+				if (method.ReturnType != typeof(void))
+				{
+					ilGenerator.Emit(OpCodes.Ret);
+				}
+				else
+				{
+					ilGenerator.Emit(OpCodes.Ret);
+				}
 
-    return //Activator.CreateInstance(proxyType, target);
-}
+				// Define method override
+				typeBuilder.DefineMethodOverride(methodBuilder, method);
+			}
+
+			var proxyType = typeBuilder.CreateTypeInfo();
+
+			// 检查构造函数是否正确生成
+			var constructors = proxyType.DeclaredConstructors;
+			foreach (var constructor in constructors)
+			{
+				Console.WriteLine(constructor);
+			}
+
+			// Determine the constructor parameters
+			var constructorsList = proxyType.GetConstructors();
+			var constructorParams = constructorsList[0].GetParameters();
+			object[] constructorArguments;
+
+			if (constructorParams.Length > 0)
+			{
+				constructorArguments = new object[constructorParams.Length];
+				for (int i = 0; i < constructorParams.Length; i++)
+				{
+					var paramType = constructorParams[i].ParameterType;
+					constructorArguments[i] = containerProvider.GetInstance(paramType) ;
+				}
+			}
+			else
+			{
+				constructorArguments = Array.Empty<object>();
+			}
+
+			// Create an instance of the proxy type
+			var proxyInstance = constructorsList[0].Invoke(constructorArguments);
+
+			// Ensure that the target instance is set if not null
+			if (target != null)
+			{
+				var targetFieldInfo = proxyType.GetField("_target", BindingFlags.NonPublic | BindingFlags.Instance);
+				containerProvider.Rigister(target, "Target");
+				targetFieldInfo.SetValue(proxyInstance, containerProvider.GetInstance(target, "Target"));
+			}
+
+			return proxyInstance;
+		}
+
 
 		private void LoadClass()
 		{
@@ -112,7 +180,7 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 						var mgm = c.MakeGenericMethod(item);
 						var obj = mgm.Invoke(proxyGenerator, new object[] { interceptor });*/
 					var obj = CreateProxy(item);
-					containerProvider.Rigister(item,obj);
+					containerProvider.Rigister(item, obj);
 				}
 			}
 			// 获取该程序集所依赖的所有程序集的名字  
@@ -125,8 +193,7 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 
 					continue;
 				}
-				try
-				{
+			
 					// 尝试加载依赖的程序集  
 					Assembly asm = Assembly.Load(assemblyName);
 					foreach (var item in asm.GetTypes())
@@ -144,12 +211,7 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 					Console.WriteLine("Loaded assembly: " + asm.FullName);
 
 					// 现在你可以通过 loadedAssembly 变量来探索这个程序集中的类型和方法了  
-				}
-				catch (Exception ex)
-				{
-					// 如果加载失败，打印异常信息  
-					Console.WriteLine("Failed to load assembly: " + assemblyName.FullName + ". Error: " + ex.Message);
-				}
+				
 			}
 
 		}
@@ -159,7 +221,7 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 		{
 			this.containerProvider = containerProvider;
 			PremissionCenter.pd = containerProvider;
-		 cen = PremissionCenter.pd.Rigister<PremissionCenter>();
+			cen = PremissionCenter.pd.Rigister<PremissionCenter>();
 			cen.Load();
 			LoadClass();
 		}
@@ -174,7 +236,7 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 
 		public void PreIniter(IContainerProvider containerProvider)
 		{
-		
+
 		}
 
 	}
