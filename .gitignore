@@ -1,3 +1,97 @@
 ﻿.vs/
 /.vs/UpperComAutoTest/v17/DocumentLayout.json
 .vs
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.user
+*.suo
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+
+# NUnit
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Rider
+.idea/
+
+# Rider specific comment on solution
+.idea/.idea/.ideaSolution/sln.iml
+
+# Rider specific files
+.idea/.idea/.ideaSolution/workspace.xml
+.idea/.idea/.ideaSolution/misc.xml
+.idea/.idea/.ideaSolution/modules.xml
+
+# Rider out folder
+.idea/.idea/out/
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+
+# Uncomment if you have an MSBuild versioning package
+# Packages that auto-generate AssemblyInfo file should be commented out
+# !**/packages/*/AutoGenAssemblyInfo.*
+
+# Ignore .NET Core project directories
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# StyleCop
+StyleCopReport.xml
+
+# Windows Azure Build Output
+csx/
+*.build.csdef
+
+# Publish folder
+publish/
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+_compile_commands.json
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
