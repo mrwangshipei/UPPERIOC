@@ -43,5 +43,10 @@ namespace UpperComAutoTest.MyConfiguation
 			}
 			return null;
 		}
+
+		public bool NotPremission()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
