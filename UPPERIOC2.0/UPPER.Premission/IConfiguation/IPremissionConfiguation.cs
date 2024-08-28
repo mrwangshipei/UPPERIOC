@@ -15,5 +15,6 @@ namespace UPPERIOC2.UPPER.Premission.IConfiguation
 
 		User Login(PermissionModel pm);
 		PermissionModel InitModel();
+		bool NotPremission();
 	}
 }

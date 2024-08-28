@@ -12,7 +12,7 @@ using UPPERIOC2.UPPER.Util;
 
 namespace UPPERIOC2.UPPER.Premission.Center
 {
-	public class PremissionCenter
+    public class PremissionCenter
 	{
 		public static IContainerProvider pd;
 		public static PremissionCenter Instance { get => pd.GetInstance<PremissionCenter>(); } 
@@ -62,6 +62,16 @@ namespace UPPERIOC2.UPPER.Premission.Center
 			rp.Roles.Add(r.id);
 
 		}
+		public void Must(int premission) {
+			User Cu = CurrentUser;
+			while(!PermissionInterceptor.Intercept(premission))
+			{
+			}
+			CurrentUser = Cu;
+
+
+
+		}
 		public List<Role> GetRoleByRoleGroup(RoleGroup rp)
 		{
 			List<Role> lr = new List<Role>();
@@ -98,12 +108,12 @@ namespace UPPERIOC2.UPPER.Premission.Center
 			changeu.RoleGroup = us.RoleGroup;
 			if (!string.IsNullOrWhiteSpace(pwd))
 			{
-			string Token = HashHelper.EncryptWithSalt(c.Solt,us.Token);
+			string Token = HashHelper.EncryptWithSalt(c.Solt, pwd);
 				changeu.Token = Token;
 
 			}
 			changeu.UserName = us.UserName;
-			changeu.ActPath = us.ActPath;
+			//changeu.ActPath = us.ActPath;
 			if (changeu.ActPath != us.ActPath)
 			{
 				changeu.ActPath = AddPic(us.ActPath);
@@ -139,12 +149,17 @@ namespace UPPERIOC2.UPPER.Premission.Center
 		public string AddPic(string str)
 		{
 			var fi = FileUtil.RelativePathToFileInfo(str);
-			if (!fi.Exists)
+			if (fi== null || !fi.Exists)
 			{
 				return "";
 			}
+			var dpa = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, c.PicSavePath);
+			if (!Directory.Exists(dpa))
+			{
+				Directory.CreateDirectory(dpa);
+			}
 			var dstr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, c.PicSavePath, pm.PicNum + "");
-			fi.CopyTo(dstr);
+			fi.CopyTo(dstr,true);
 			pm.PicNum++;
 			return FileUtil.FileInfoToRelativePath(new FileInfo(dstr));
 		}
@@ -152,7 +167,7 @@ namespace UPPERIOC2.UPPER.Premission.Center
 		{
 			string Token = HashHelper.EncryptWithSalt(c.Solt, password);
 			
-			var user= 			new User { id = (int)pm.Userid, UserName = UserName, Token = password, ActPath = ActPath, Name = Name };
+			var user= 			new User { id = (int)pm.Userid, UserName = UserName, Token = Token, ActPath = ActPath, Name = Name };
 			pm.users.Add(user);
 			pm.Userid++;
 			user.ActPath = AddPic(user.ActPath);
@@ -177,7 +192,12 @@ namespace UPPERIOC2.UPPER.Premission.Center
 			{
 				return true;
 			}
-			CurrentUser = c.Login(pm);
+			bool r = c.NotPremission();
+			if (r)
+			{
+				CurrentUser = c.Login(pm);
+				return CanInvoke(Role);
+			}
 
 			return false;
 

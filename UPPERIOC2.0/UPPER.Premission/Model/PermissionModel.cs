@@ -14,6 +14,6 @@ namespace UPPERIOC2.UPPER.Premission.Model
         public int Userid { get; set; }
         public int Roleid { get; set; }
         public int RoleGPid { get; set; }
-		public int  PicNum { get; internal set; }
+		public int  PicNum { get;  set; }
 	}
 }
