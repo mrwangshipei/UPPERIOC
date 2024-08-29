@@ -156,8 +156,8 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 			if (target != null)
 			{
 				var targetFieldInfo = proxyType.GetField("_target", BindingFlags.NonPublic | BindingFlags.Instance);
-				containerProvider.Rigister(target, "Target");
-				targetFieldInfo.SetValue(proxyInstance, containerProvider.GetInstance(target, "Target"));
+				containerProvider.Rigister(target);
+				targetFieldInfo.SetValue(proxyInstance, containerProvider.GetInstance(target));
 			}
 
 			return proxyInstance;
