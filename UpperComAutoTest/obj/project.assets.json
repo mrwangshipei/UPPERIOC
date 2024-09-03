@@ -642,6 +642,15 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "FrmControl/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/FrmControl.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmControl.dll": {}
+        }
+      },
       "UPPERIOC2.0/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2721,6 +2730,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "FrmControl/1.0.0": {
+      "type": "project",
+      "path": "../FrmControl/FrmControl.csproj",
+      "msbuildProject": "../FrmControl/FrmControl.csproj"
+    },
     "UPPERIOC2.0/1.0.0": {
       "type": "project",
       "path": "../UPPERIOC2.0/UPPERIOC2.0.csproj",
@@ -2729,6 +2743,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "FrmControl >= 1.0.0",
       "System.IO.Ports >= 8.0.0",
       "System.Xml.XmlSerializer >= 4.3.0",
       "UPPERIOC2.0 >= 1.0.0"
@@ -2767,6 +2782,9 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows7.0",
           "projectReferences": {
+            "E:\\Wsp\\Code\\C#\\ComAutoTest\\FrmControl\\FrmControl.csproj": {
+              "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\FrmControl\\FrmControl.csproj"
+            },
             "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
               "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
             }

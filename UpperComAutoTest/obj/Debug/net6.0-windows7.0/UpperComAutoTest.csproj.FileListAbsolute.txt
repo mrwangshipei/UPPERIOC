@@ -44,3 +44,5 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperCom
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.genruntimeconfig.cache
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\ref\UpperComAutoTest.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\COMIEEE.FrmPwd.resources
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\FrmControl.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\FrmControl.pdb

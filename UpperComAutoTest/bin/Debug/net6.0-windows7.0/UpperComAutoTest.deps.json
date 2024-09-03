@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "UpperComAutoTest/1.0.0": {
         "dependencies": {
+          "FrmControl": "1.0.0",
           "System.IO.Ports": "8.0.0",
           "System.Xml.XmlSerializer": "4.3.0",
           "UPPERIOC2.0": "1.0.0"
@@ -372,6 +373,11 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "FrmControl/1.0.0": {
+        "runtime": {
+          "FrmControl.dll": {}
+        }
+      },
       "UPPERIOC2.0/1.0.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "5.0.0",
@@ -676,6 +682,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "FrmControl/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "UPPERIOC2.0/1.0.0": {
       "type": "project",

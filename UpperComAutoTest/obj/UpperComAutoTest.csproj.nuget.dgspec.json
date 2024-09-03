@@ -4,6 +4,21 @@
     "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj": {}
   },
   "projects": {
+    "E:\\Wsp\\Code\\C#\\ComAutoTest\\FrmControl\\FrmControl.csproj": {
+      "restore": {
+        "projectUniqueName": "E:\\Wsp\\Code\\C#\\ComAutoTest\\FrmControl\\FrmControl.csproj",
+        "projectName": "FrmControl",
+        "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\FrmControl\\FrmControl.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    },
     "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -33,6 +48,9 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows7.0",
             "projectReferences": {
+              "E:\\Wsp\\Code\\C#\\ComAutoTest\\FrmControl\\FrmControl.csproj": {
+                "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\FrmControl\\FrmControl.csproj"
+              },
               "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
                 "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
               }

@@ -1,4 +1,5 @@
 ﻿using COMIEEE;
+using Scancodeupload.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,13 +28,12 @@ namespace UpperComAutoTest.ModelView
 		{
 
 		}
-		[PremissionRequired(1)]
+		[PremissionRequired(0)]
 
-		public virtual void AddUser()
+		public virtual void Premission()
 		{
-			var r = FrmPwd.Show("添加用户");
-			PremissionCenter.Instance.AddUser(r[0], r[1],"","");
-			PremissionCenter.Instance.SaveChange();
+			PremissionEditForm g = new PremissionEditForm();
+			g.ShowDialog();
 		}
 	}
 }
