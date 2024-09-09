@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Management.Instrumentation;
 using System.Text;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
@@ -28,7 +29,8 @@ namespace UPPERIOC2.UPPER.UFileModel.Moudle
 		public void PreIniter(IContainerProvider containerProvider)
 		{
 			UFileModelCenter.pdr = containerProvider;
-			containerProvider.Rigister<UFileModelCenter>();
+			UFileModelCenter.Instance = new UFileModelCenter();
+			containerProvider.Rigister<UFileModelCenter>(UFileModelCenter.Instance);
 			//UFileModelCenter.Instance = new UFileModelCenter();
 		}
 	}

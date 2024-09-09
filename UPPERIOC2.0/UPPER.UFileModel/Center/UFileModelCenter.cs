@@ -10,11 +10,10 @@ using static System.Net.WebRequestMethods;
 
 namespace UPPERIOC2.UPPER.UFileModel.Center
 {
-	[IOCObject]
 	public class UFileModelCenter
 	{
 		internal static IContainerProvider pdr;
-				
+		public static UFileModelCenter Instance;
 		public I GetModel<I>(I T)where I: IModel.IModel 
 		{
 

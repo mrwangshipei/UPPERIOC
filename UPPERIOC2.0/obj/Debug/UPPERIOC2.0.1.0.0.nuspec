@@ -5,7 +5,7 @@
     <version>1.0.0</version>
     <authors>UPPERIOC2.0</authors>
     <description>Package Description</description>
-    <repository type="git" commit="a06e62c0e8b8e4379755b474103c0de3f1ef7b32" />
+    <repository type="git" commit="8a8430214e606e62ab8deadc2cd51e7718e934c8" />
     <dependencies>
       <group targetFramework=".NETFramework4.5">
         <dependency id="System.Management" version="5.0.0" exclude="Build,Analyzers" />
