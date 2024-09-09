@@ -1,17 +1,10 @@
 ﻿using COMIEEE;
-using FrmControl.BLL;
 using FrmControl.FrmPremission;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UPPERIOC;
-using UPPERIOC2.UPPER.Premission.Center;
 using UPPERIOC2.UPPER.Premission.Model;
 
 namespace FrmControl

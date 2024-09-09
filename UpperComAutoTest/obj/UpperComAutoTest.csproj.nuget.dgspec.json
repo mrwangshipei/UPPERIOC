@@ -10,13 +10,17 @@
         "projectName": "FrmControl",
         "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\FrmControl\\FrmControl.csproj",
         "frameworks": {
-          "net461": {
-            "projectReferences": {}
+          "net452": {
+            "projectReferences": {
+              "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
+                "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
+              }
+            }
           }
         }
       },
       "frameworks": {
-        "net461": {}
+        "net452": {}
       }
     },
     "E:\\Wsp\\Code\\C#\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj": {
@@ -122,7 +126,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "net45"
         ],
         "sources": {
           "C:\\Program Files\\dotnet\\library-packs": {},
@@ -130,8 +134,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
+          "net45": {
+            "targetAlias": "net45",
             "projectReferences": {}
           }
         },
@@ -147,39 +151,18 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
+        "net45": {
+          "targetAlias": "net45",
           "dependencies": {
-            "Microsoft.Win32.Registry": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
             "System.Management": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[5.0.0, )"
             },
             "System.Reflection.Emit": {
               "target": "Package",
               "version": "[4.3.0, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }

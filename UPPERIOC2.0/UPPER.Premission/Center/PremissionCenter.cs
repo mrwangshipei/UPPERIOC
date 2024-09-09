@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Management;
 using System.Text;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC2.UPPER.Premission.IConfiguation;

@@ -30,7 +30,7 @@ namespace UpperComAutoTest
 			config.AddMoudle<UPPERMLockMoudle>();
 			config.AddMoudle<UPPERPremissionMoudle>();
 			config.AddMoudle<UPPERFileModelMoudle>();
-			config.SetProvider<UPPerContainerProvider>();
+			config.SetProvider<UPPERDefaultProvider>();
 			UPPERIOCApplication.RunInstance(config);
 			Application.Run(new Form1());
 		}

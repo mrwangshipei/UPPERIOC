@@ -146,7 +146,7 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 			}
 			else
 			{
-				constructorArguments = Array.Empty<object>();
+				constructorArguments = new object[0];
 			}
 
 			// Create an instance of the proxy type

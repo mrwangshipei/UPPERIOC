@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Management;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
@@ -85,12 +84,12 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 			}
 			m = c[0];
 		//	var lisaddr = Path.Combine(Environment.CurrentDirectory, m.Listenaddr);
-			if (RegistryHelper.ReadRegistry("Software\\"+ m.Listenaddr,"RGK") == null)
+			if (RegisterHelper.GetLockFile(m.Listenaddr,"RGK") == null)
 			{
 				m.Noregister();
 
 			}
-			if (HashHelper.VerifyWithSalt(m.Solt , RegistryHelper.ReadRegistry("Software\\" + m.Listenaddr, "RGK")))
+			if (HashHelper.VerifyWithSalt(m.Solt , RegisterHelper.GetLockFile( m.Listenaddr, "RGK")))
 			{
 				Console.Write("验证成功");
 			}

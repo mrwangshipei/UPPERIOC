@@ -35,7 +35,7 @@ namespace UPPERIOC2.UPPER.UFileModel.Center
 			string p = Path.Combine(dp ,T.ModelName);
 			try
 			{
-				using (var fs = new FileStream(p, FileMode.Open,FileAccess.Read))
+			using (var fs = new FileStream(p, FileMode.Open,FileAccess.Read))
 			{
 				var obj = xs.Deserialize(fs);
 					if (obj == null)

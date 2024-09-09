@@ -4,7 +4,6 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UpperCom
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UpperComAutoTest.runtimeconfig.json
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UpperComAutoTest.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UpperComAutoTest.pdb
-E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\System.CodeDom.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\System.IO.Ports.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\System.Management.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
@@ -14,11 +13,14 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\unix\lib\net6.0\System.IO.Ports.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\win\lib\net6.0\System.IO.Ports.dll
-E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\win\lib\net6.0\System.Management.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\FrmControl.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC2.0.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\FrmControl.pdb
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC2.0.pdb
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.csproj.AssemblyReference.cache
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.Form1.resources
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\COMIEEE.FrmPwd.resources
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.FuncControl.FunEdit.resources
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.FuncControl.SelectFuncControl.resources
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.MyControls.FuncControl.IFuncTypeEdit.resources
@@ -43,6 +45,3 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\refint\U
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.pdb
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\UpperComAutoTest.genruntimeconfig.cache
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\ref\UpperComAutoTest.dll
-E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\obj\Debug\net6.0-windows7.0\COMIEEE.FrmPwd.resources
-E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\FrmControl.dll
-E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\FrmControl.pdb

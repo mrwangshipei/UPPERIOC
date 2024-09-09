@@ -27,7 +27,7 @@
           "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {
+          "ref/netstandard2.0/_._": {
             "related": ".xml"
           }
         },
@@ -98,20 +98,17 @@
           }
         }
       },
-      "System.CodeDom/8.0.0": {
+      "System.CodeDom/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.CodeDom.dll": {
+          "ref/netstandard2.0/System.CodeDom.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.CodeDom.dll": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
             "related": ".xml"
           }
-        },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Collections/4.3.0": {
@@ -247,26 +244,25 @@
           "lib/netstandard1.6/System.Linq.dll": {}
         }
       },
-      "System.Management/8.0.0": {
+      "System.Management/5.0.0": {
         "type": "package",
         "dependencies": {
-          "System.CodeDom": "8.0.0"
+          "Microsoft.NETCore.Platforms": "5.0.0",
+          "Microsoft.Win32.Registry": "5.0.0",
+          "System.CodeDom": "5.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Management.dll": {
+          "ref/netstandard2.0/System.Management.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.Management.dll": {
+          "lib/netstandard2.0/System.Management.dll": {
             "related": ".xml"
           }
         },
-        "build": {
-          "buildTransitive/net6.0/_._": {}
-        },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.Management.dll": {
+          "runtimes/win/lib/netcoreapp2.0/System.Management.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -437,7 +433,7 @@
           "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/System.Security.AccessControl.dll": {
+          "ref/netstandard2.0/_._": {
             "related": ".xml"
           }
         },
@@ -456,7 +452,7 @@
       "System.Security.Principal.Windows/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {
+          "ref/netcoreapp3.0/_._": {
             "related": ".xml"
           }
         },
@@ -644,6 +640,9 @@
       },
       "FrmControl/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "UPPERIOC2.0": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/FrmControl.dll": {}
         },
@@ -653,10 +652,9 @@
       },
       "UPPERIOC2.0/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
-          "Microsoft.Win32.Registry": "5.0.0",
-          "System.Management": "8.0.0",
+          "System.Management": "5.0.0",
           "System.Reflection.Emit": "4.3.0"
         },
         "compile": {
@@ -841,33 +839,28 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.CodeDom/8.0.0": {
-      "sha512": "WTlRjL6KWIMr/pAaq3rYqh0TJlzpouaQ/W1eelssHgtlwHAH25jXTkUphTYx9HaIIf7XA6qs/0+YhtLEQRkJ+Q==",
+    "System.CodeDom/5.0.0": {
+      "sha512": "JPJArwA1kdj8qDAkY2XGjSWoYnqiM7q/3yRNkt6n28Mnn95MuEGkZXUbPBf7qc3IjwrGY5ttQon7yqHZyQJmOQ==",
       "type": "package",
-      "path": "system.codedom/8.0.0",
+      "path": "system.codedom/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.CodeDom.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
-        "lib/net462/System.CodeDom.dll",
-        "lib/net462/System.CodeDom.xml",
-        "lib/net6.0/System.CodeDom.dll",
-        "lib/net6.0/System.CodeDom.xml",
-        "lib/net7.0/System.CodeDom.dll",
-        "lib/net7.0/System.CodeDom.xml",
-        "lib/net8.0/System.CodeDom.dll",
-        "lib/net8.0/System.CodeDom.xml",
+        "lib/net461/System.CodeDom.dll",
+        "lib/net461/System.CodeDom.xml",
         "lib/netstandard2.0/System.CodeDom.dll",
         "lib/netstandard2.0/System.CodeDom.xml",
-        "system.codedom.8.0.0.nupkg.sha512",
+        "ref/net461/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.xml",
+        "ref/netstandard2.0/System.CodeDom.dll",
+        "ref/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.5.0.0.nupkg.sha512",
         "system.codedom.nuspec",
-        "useSharedDesignerContext.txt"
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Collections/4.3.0": {
@@ -1346,37 +1339,29 @@
         "system.linq.nuspec"
       ]
     },
-    "System.Management/8.0.0": {
-      "sha512": "jrK22i5LRzxZCfGb+tGmke2VH7oE0DvcDlJ1HAKYU8cPmD8XnpUT0bYn2Gy98GEhGjtfbR/sxKTVb+dE770pfA==",
+    "System.Management/5.0.0": {
+      "sha512": "MF1CHaRcC+MLFdnDthv4/bKWBZnlnSpkGqa87pKukQefgEdwtb9zFW6zs0GjPp73qtpYYg4q6PEKbzJbxCpKfw==",
       "type": "package",
-      "path": "system.management/8.0.0",
+      "path": "system.management/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
-        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net6.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Management.targets",
-        "lib/net462/_._",
-        "lib/net6.0/System.Management.dll",
-        "lib/net6.0/System.Management.xml",
-        "lib/net7.0/System.Management.dll",
-        "lib/net7.0/System.Management.xml",
-        "lib/net8.0/System.Management.dll",
-        "lib/net8.0/System.Management.xml",
+        "lib/net45/_._",
         "lib/netstandard2.0/System.Management.dll",
         "lib/netstandard2.0/System.Management.xml",
-        "runtimes/win/lib/net6.0/System.Management.dll",
-        "runtimes/win/lib/net6.0/System.Management.xml",
-        "runtimes/win/lib/net7.0/System.Management.dll",
-        "runtimes/win/lib/net7.0/System.Management.xml",
-        "runtimes/win/lib/net8.0/System.Management.dll",
-        "runtimes/win/lib/net8.0/System.Management.xml",
-        "system.management.8.0.0.nupkg.sha512",
+        "ref/net45/_._",
+        "ref/netstandard2.0/System.Management.dll",
+        "ref/netstandard2.0/System.Management.xml",
+        "runtimes/win/lib/net45/_._",
+        "runtimes/win/lib/netcoreapp2.0/System.Management.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Management.xml",
+        "system.management.5.0.0.nupkg.sha512",
         "system.management.nuspec",
-        "useSharedDesignerContext.txt"
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Reflection/4.3.0": {

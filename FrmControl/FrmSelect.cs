@@ -18,6 +18,10 @@ namespace COMIEEE
 			fm.comboBox1.DataSource = msg;
 			fm.Owner = parent;
 			var r = fm.ShowDialog(parent);
+			if (r != DialogResult.OK)
+			{
+				return "";
+			}
 			return fm.comboBox1.Text ;
 		}
 		public FrmSelect()

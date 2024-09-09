@@ -15,7 +15,7 @@ using UPPERIOC.UPPER.IOC.MyTypeInfo;
 namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
 {
 
-    public class UPPerContainerProvider : IContainerProvider
+    public class UPPERDefaultProvider : IContainerProvider
     {
         ConcurrentDictionary<IOCTypeInfo, object> Contain = new ConcurrentDictionary<IOCTypeInfo, object>();
 

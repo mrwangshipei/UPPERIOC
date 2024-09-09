@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml.Serialization;
 using UPPERIOC;
@@ -15,7 +16,7 @@ namespace UPPERIOC2.UPPER.Premission
             RigisterObjLoad[] r = UPPERIOCApplication.Container.GetAllInstance<RigisterObjLoad>() ;
             if (r == null || r.Length == 0)
             {
-                throw new Exception("至少注册一个RigisterObjLoad 的实现类，哪怕使用默认的方法");
+                throw new Exception("至少注册一个RigisterObjLoad 的实现类");
 
 			}
             r[0].RegistryRoot = root;
@@ -32,19 +33,19 @@ namespace UPPERIOC2.UPPER.Premission
             XmlSerializer xml = new XmlSerializer(obj.GetType());
             StringWriter sw = new StringWriter();
             xml.Serialize(sw, obj);
-            Registry.SetValue(RegistryRoot, keyName, sw.ToString());
+          //  Registry.SetValue(RegistryRoot, keyName, sw.ToString());
         }
 
         public virtual T LoadObjectFromRegistry<T>(string keyName) where T : new()
         {
             XmlSerializer xml = new XmlSerializer(typeof(T));
-            string t = (string)Registry.GetValue(RegistryRoot, keyName, null);
-            if (t == null)
+           // string t = (string)Registry.GetValue(RegistryRoot, keyName, null);
+           // if (t == null)
             {
                 return default;
             }
-            StringReader sw = new StringReader(t);
-            return (T)xml.Deserialize(sw);
+         
+          //  return (T)xml.Deserialize(sw);
 
         }
     }

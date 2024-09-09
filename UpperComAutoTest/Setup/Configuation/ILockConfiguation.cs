@@ -29,7 +29,7 @@ namespace Setup.Configuation
 				if (pr == DialogResult.Yes)
 				{
 					var x = HashHelper.EncryptWithSalt(Solt);
-					RegistryHelper.WriteRegistry("Software\\" + m.Listenaddr, "RGK", x);
+					RegisterHelper.SaveLockFile(m.Listenaddr, "RGK", x);
 
 
 				}
