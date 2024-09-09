@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpperComAutoTest", "UpperCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UPPERIOC2.0", "UPPERIOC2.0\UPPERIOC2.0.csproj", "{4E52C966-3727-4D58-AA6E-0352B52CFC3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmControl", "FrmControl\FrmControl.csproj", "{D50E8CDB-9D79-410A-A4DA-43A307D17884}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4E52C966-3727-4D58-AA6E-0352B52CFC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E52C966-3727-4D58-AA6E-0352B52CFC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E52C966-3727-4D58-AA6E-0352B52CFC3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D50E8CDB-9D79-410A-A4DA-43A307D17884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D50E8CDB-9D79-410A-A4DA-43A307D17884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D50E8CDB-9D79-410A-A4DA-43A307D17884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D50E8CDB-9D79-410A-A4DA-43A307D17884}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

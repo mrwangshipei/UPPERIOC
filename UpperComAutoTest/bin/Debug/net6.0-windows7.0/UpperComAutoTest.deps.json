@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "UpperComAutoTest/1.0.0": {
         "dependencies": {
+          "FrmControl": "1.0.0",
           "System.IO.Ports": "8.0.0",
           "System.Xml.XmlSerializer": "4.3.0",
           "UPPERIOC2.0": "1.0.0"
@@ -78,14 +79,7 @@
           }
         }
       },
-      "System.CodeDom/8.0.0": {
-        "runtime": {
-          "lib/net6.0/System.CodeDom.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
-          }
-        }
-      },
+      "System.CodeDom/5.0.0": {},
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -167,22 +161,24 @@
           "System.Runtime.Extensions": "4.3.0"
         }
       },
-      "System.Management/8.0.0": {
+      "System.Management/5.0.0": {
         "dependencies": {
-          "System.CodeDom": "8.0.0"
+          "Microsoft.NETCore.Platforms": "5.0.0",
+          "Microsoft.Win32.Registry": "5.0.0",
+          "System.CodeDom": "5.0.0"
         },
         "runtime": {
-          "lib/net6.0/System.Management.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
+          "lib/netstandard2.0/System.Management.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net6.0/System.Management.dll": {
+          "runtimes/win/lib/netcoreapp2.0/System.Management.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
@@ -372,13 +368,18 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "FrmControl/1.0.0": {
+        "dependencies": {
+          "UPPERIOC2.0": "1.0.0"
+        },
+        "runtime": {
+          "FrmControl.dll": {}
+        }
+      },
       "UPPERIOC2.0/1.0.0": {
         "dependencies": {
-<<<<<<< HEAD
-=======
-          "Microsoft.Win32.Registry": "5.0.0",
->>>>>>> 127af220353f082780265b343b6d74bfe73209fa
-          "System.Management": "8.0.0"
+          "System.Management": "5.0.0",
+          "System.Reflection.Emit": "4.3.0"
         },
         "runtime": {
           "UPPERIOC2.0.dll": {}
@@ -455,12 +456,12 @@
       "path": "runtime.osx-x64.runtime.native.system.io.ports/8.0.0",
       "hashPath": "runtime.osx-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512"
     },
-    "System.CodeDom/8.0.0": {
+    "System.CodeDom/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WTlRjL6KWIMr/pAaq3rYqh0TJlzpouaQ/W1eelssHgtlwHAH25jXTkUphTYx9HaIIf7XA6qs/0+YhtLEQRkJ+Q==",
-      "path": "system.codedom/8.0.0",
-      "hashPath": "system.codedom.8.0.0.nupkg.sha512"
+      "sha512": "sha512-JPJArwA1kdj8qDAkY2XGjSWoYnqiM7q/3yRNkt6n28Mnn95MuEGkZXUbPBf7qc3IjwrGY5ttQon7yqHZyQJmOQ==",
+      "path": "system.codedom/5.0.0",
+      "hashPath": "system.codedom.5.0.0.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",
@@ -518,12 +519,12 @@
       "path": "system.linq/4.3.0",
       "hashPath": "system.linq.4.3.0.nupkg.sha512"
     },
-    "System.Management/8.0.0": {
+    "System.Management/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jrK22i5LRzxZCfGb+tGmke2VH7oE0DvcDlJ1HAKYU8cPmD8XnpUT0bYn2Gy98GEhGjtfbR/sxKTVb+dE770pfA==",
-      "path": "system.management/8.0.0",
-      "hashPath": "system.management.8.0.0.nupkg.sha512"
+      "sha512": "sha512-MF1CHaRcC+MLFdnDthv4/bKWBZnlnSpkGqa87pKukQefgEdwtb9zFW6zs0GjPp73qtpYYg4q6PEKbzJbxCpKfw==",
+      "path": "system.management/5.0.0",
+      "hashPath": "system.management.5.0.0.nupkg.sha512"
     },
     "System.Reflection/4.3.0": {
       "type": "package",
@@ -678,6 +679,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "FrmControl/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "UPPERIOC2.0/1.0.0": {
       "type": "project",

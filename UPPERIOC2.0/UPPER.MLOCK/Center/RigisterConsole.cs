@@ -15,30 +15,58 @@ namespace UPPERIOC2.UPPER.MLOCK.Center
     {
 
 
-        public static bool CompareSecureStrings(SecureString secureString, string plainString)
-        {
-            // Convert SecureString to plain string
-            IntPtr secureStringPtr = IntPtr.Zero;
-            try
-            {
-                secureStringPtr = SecureStringMarshal.SecureStringToGlobalAllocUnicode(secureString);
-                string secureStringPlain = Marshal.PtrToStringUni(secureStringPtr);
+		/* public static bool CompareSecureStrings(SecureString secureString, string plainString)
+		 {
+			 // Convert SecureString to plain string
+			 IntPtr secureStringPtr = IntPtr.Zero;
+			 try
+			 {
+				 secureStringPtr = SecureStringMarshal.SecureStringToGlobalAllocUnicode(secureString);
+				 string secureStringPlain = Marshal.PtrToStringUni(secureStringPtr);
 
-                // Compare the two strings
-                return secureStringPlain.Equals(plainString);
-            }
-            finally
-            {
-                // Ensure the secure string memory is cleared
-                if (secureStringPtr != IntPtr.Zero)
-                {
-                    Marshal.ZeroFreeGlobalAllocUnicode(secureStringPtr);
-                }
-            }
-        }
+				 // Compare the two strings
+				 return secureStringPlain.Equals(plainString);
+			 }
+			 finally
+			 {
+				 // Ensure the secure string memory is cleared
+				 if (secureStringPtr != IntPtr.Zero)
+				 {
+					 Marshal.ZeroFreeGlobalAllocUnicode(secureStringPtr);
+				 }
+			 }
+		 }
+ */
+		public static bool CompareSecureStrings(SecureString secureString, string plainString)
+		{
+			// Convert SecureString to plain string
+			IntPtr secureStringPtr = IntPtr.Zero;
+			try
+			{
+				var s = new SecureString();
+				for (int i = 0; i < plainString.Length; i++)
+				{
+					s.AppendChar(plainString[i]);
 
+				}
 
-        public static void Rigister(MLockConfiguation m)
+				return s.Equals(secureString);
+				//	secureStringPtr = SecureStringMarshal.SecureStringToGlobalAllocUnicode(secureString);
+				//	string secureStringPlain = Marshal.PtrToStringUni(secureStringPtr);
+
+				// Compare the two strings
+				//return secureStringPlain.Equals(plainString);
+			}
+			finally
+			{
+				// Ensure the secure string memory is cleared
+				if (secureStringPtr != IntPtr.Zero)
+				{
+					Marshal.ZeroFreeGlobalAllocUnicode(secureStringPtr);
+				}
+			}
+		}
+		public static void Rigister(MLockConfiguation m)
         {
             Console.WriteLine("欢迎使用注册器，请输入需要注册的验证码");
             // 使用SecureString来存储密码，避免在内存中留下明文密码  
@@ -76,7 +104,7 @@ namespace UPPERIOC2.UPPER.MLOCK.Center
                 return;
             }
             var r = HashHelper.EncryptWithSalt(m.Solt);
-            RegistryHelper.WriteRegistry("Software\\" + m.Listenaddr, "RGK",r);
+            RegisterHelper.SaveLockFile(m.Listenaddr, "RGK",r);
 
 			Console.WriteLine("注册成功，使用愉快");
             Console.ReadLine();

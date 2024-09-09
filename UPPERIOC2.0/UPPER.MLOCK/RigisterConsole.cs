@@ -6,6 +6,7 @@ using System.Security;
 using System.Text;
 using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
+using UPPERIOC2.UPPER.Util;
 using static UPPERIOC.UPPER.IOC.Moudle.UPPERMLockMoudle;
 
 namespace UPPERIOC2.UPPER.MLOCK
@@ -20,11 +21,19 @@ namespace UPPERIOC2.UPPER.MLOCK
 			IntPtr secureStringPtr = IntPtr.Zero;
 			try
 			{
-				secureStringPtr = SecureStringMarshal.SecureStringToGlobalAllocUnicode(secureString);
-				string secureStringPlain = Marshal.PtrToStringUni(secureStringPtr);
+				var s = new SecureString();
+				for (int i = 0; i < plainString.Length; i++)
+				{
+					s.AppendChar(plainString[i]);
+
+				}
+
+				return s.Equals(secureString);
+			//	secureStringPtr = SecureStringMarshal.SecureStringToGlobalAllocUnicode(secureString);
+			//	string secureStringPlain = Marshal.PtrToStringUni(secureStringPtr);
 
 				// Compare the two strings
-				return secureStringPlain.Equals(plainString);
+				//return secureStringPlain.Equals(plainString);
 			}
 			finally
 			{
