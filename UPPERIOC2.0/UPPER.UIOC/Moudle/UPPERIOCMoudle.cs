@@ -9,6 +9,7 @@ using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Extend;
+using UPPERIOC2.UPPER.UIOC.Center;
 
 namespace UPPERIOC.UPPER.IOC.Moudle
 {
@@ -76,7 +77,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 
 		public void PreIniter(IContainerProvider containerProvider)
 		{
-
+			U.C = containerProvider;
 		}
 
 		public void InitEnd(IContainerProvider containerProvider)

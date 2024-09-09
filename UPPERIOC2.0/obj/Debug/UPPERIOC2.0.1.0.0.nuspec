@@ -5,7 +5,7 @@
     <version>1.0.0</version>
     <authors>UPPERIOC2.0</authors>
     <description>Package Description</description>
-    <repository type="git" commit="dc280eace6112c4f6607c8bd99314ecee06ad26a" />
+    <repository type="git" commit="a06e62c0e8b8e4379755b474103c0de3f1ef7b32" />
     <dependencies>
       <group targetFramework=".NETFramework4.5">
         <dependency id="System.Management" version="5.0.0" exclude="Build,Analyzers" />
@@ -14,6 +14,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\bin\Debug\net45\UPPERIOC2.0.dll" target="lib\net45\UPPERIOC2.0.dll" />
+    <file src="D:\code\vs\UpperComAutoTest\UpperComAutoTest\UPPERIOC2.0\bin\Debug\net45\UPPERIOC2.0.dll" target="lib\net45\UPPERIOC2.0.dll" />
   </files>
 </package>
