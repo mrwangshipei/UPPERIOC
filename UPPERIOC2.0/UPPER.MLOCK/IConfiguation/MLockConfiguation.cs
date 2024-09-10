@@ -8,6 +8,7 @@ namespace UPPERIOC2.UPPER.MLOCK.IConfiguation
 	{
         public virtual string Solt { get; set; }
         public virtual string Listenaddr { get; set; }
+        public virtual string LockName { get; set; }
         public virtual void Noregister() {
             Console.Write("没有注册");
             Environment.Exit(0);
