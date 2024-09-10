@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,8 @@ namespace UpperComAutoTest.MyControls
 		{
 			InitializeComponent();
 		}
-
-		public static List<MyTips> useing_Tips = new List<MyTips>();
+		public float radius { get; set; } = 15;
+        public static List<MyTips> useing_Tips = new List<MyTips>();
 		public static void ShowTips(Form BaseForm, Tipstype Type, string msg, int waittime = 2000, bool inWindow = true)
 		{
 			if (BaseForm.InvokeRequired)
@@ -86,6 +87,24 @@ namespace UpperComAutoTest.MyControls
 		private void ShowForm(int waittime = 2000)
 		{
 			Show();
+			Rectangle rect = this.ClientRectangle;
+			GraphicsPath pa = new GraphicsPath();
+			// 开始绘制圆角矩形  
+			// 注意：为了简化，我们假设矩形的宽度和高度都足够大，可以放下圆角  
+
+			// 左上角  
+			pa.AddArc(rect.Left, rect.Top, 2 * radius, 2 * radius, 180, 90);
+
+			// 右上角  
+			pa.AddArc(rect.Right - 2 * radius, rect.Top, 2 * radius, 2 * radius, 270, 90);
+
+			// 右下角 
+			pa.AddArc(rect.Right - 2 * radius, rect.Bottom - 2 * radius, 2 * radius, 2 * radius, 0, 90);
+
+			// 左下角 
+			pa.AddArc(rect.Left, rect.Bottom - 2 * radius, 2 * radius, 2 * radius, 90, 90);
+
+			this.Region = new Region(pa);
 			close_t.Interval = 2000;
 			close_t.Tick += CloseWindow;
 			close_t.Enabled = true;

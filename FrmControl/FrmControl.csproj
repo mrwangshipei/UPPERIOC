@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C\LastResultControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C\LastResultControl.Designer.cs">
+      <DependentUpon>LastResultControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPremission\BLL\FrmEditCBLL.cs" />
     <Compile Include="FrmPremission\BLL\FrmRoleGroupbll.cs" />
     <Compile Include="FrmPremission\BLL\FrmRoleEditBLL.cs" />
@@ -121,6 +127,8 @@
     <Compile Include="C\LoadingControl.Designer.cs">
       <DependentUpon>LoadingControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CountModel.cs" />
+    <Compile Include="Model\PNCountModel.cs" />
     <Compile Include="MyTips.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +155,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="C\LastResultControl.resx">
+      <DependentUpon>LastResultControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPremission\C\RoleGroupEditControl.resx">
       <DependentUpon>RoleGroupEditControl.cs</DependentUpon>
     </EmbeddedResource>
