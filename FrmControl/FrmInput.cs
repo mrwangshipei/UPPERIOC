@@ -12,13 +12,24 @@ namespace COMIEEE
 {
 	public partial class FrmInput : Form
 	{
-		public static string ShowDialog(Form parent,string title) {
+		public static string ShowDialog(Form parent,string title, string defaultv ="") {
 			FrmInput fm = new FrmInput();
 			fm.label4.Text = title;
+			fm.textBox1.Text = defaultv;
+
 			fm.Owner = parent;
 			var r = fm.ShowDialog(parent);
 			return fm.textBox1.Text;
 		}
+		public static string ShowDialog(string title,string defaultv)
+		{
+			FrmInput fm = new FrmInput();
+			fm.label4.Text = title;
+			fm.textBox1.Text = defaultv;
+			var r = fm.ShowDialog();
+			return fm.textBox1.Text;
+		}
+
 		public FrmInput()
 		{
 			InitializeComponent();
