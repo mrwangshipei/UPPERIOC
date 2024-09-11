@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using UPPERIOC.UPPER.ILOG;
-using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
-using UPPERIOC.UPPER.IOC.Extend;
-using UPPERIOC2.UPPER.MLOCK.Center;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
 using UPPERIOC2.UPPER.Util;
 
@@ -84,12 +72,12 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 			}
 			m = c[0];
 		//	var lisaddr = Path.Combine(Environment.CurrentDirectory, m.Listenaddr);
-			if (RegisterHelper.GetLockFile(m.Listenaddr,"RGK") == null)
+			if (RegisterHelper.GetLockFile(m.Listenaddr,m.LockName) == null)
 			{
 				m.Noregister();
 
 			}
-			if (HashHelper.VerifyWithSalt(m.Solt , RegisterHelper.GetLockFile( m.Listenaddr, "RGK")))
+			if (HashHelper.VerifyWithSalt(m.Solt , RegisterHelper.GetLockFile( m.Listenaddr, m.LockName)))
 			{
 				Console.Write("验证成功");
 			}

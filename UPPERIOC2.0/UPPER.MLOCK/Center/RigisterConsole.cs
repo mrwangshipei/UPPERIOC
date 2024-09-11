@@ -104,7 +104,7 @@ namespace UPPERIOC2.UPPER.MLOCK.Center
                 return;
             }
             var r = HashHelper.EncryptWithSalt(m.Solt);
-            RegisterHelper.SaveLockFile(m.Listenaddr, "RGK",r);
+            RegisterHelper.SaveLockFile(m.Listenaddr, m.LockName,r);
 
 			Console.WriteLine("注册成功，使用愉快");
             Console.ReadLine();
