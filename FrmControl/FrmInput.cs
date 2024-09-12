@@ -18,7 +18,7 @@ namespace COMIEEE
 			fm.textBox1.Text = defaultv;
 
 			fm.Owner = parent;
-			fm.textBox1.Text = defaulttext;
+			//fm.textBox1.Text = defaulttext;
 			var r = fm.ShowDialog(parent);
 			
 			if (r != DialogResult.OK)
@@ -33,6 +33,10 @@ namespace COMIEEE
 			fm.label4.Text = title;
 			fm.textBox1.Text = defaultv;
 			var r = fm.ShowDialog();
+			if (r != DialogResult.OK)
+			{
+				return null;
+			}
 			return fm.textBox1.Text;
 		}
 

@@ -14,17 +14,22 @@ namespace UPPERIOC2.UPPER.USendor.Center
     {
         public static IContainerProvider Contain;
         static ConcurrentDictionary<Type, Func<object, object>> Events = new ConcurrentDictionary<Type, Func<object, object>>();
-        public static void Register<TEvent>(Action<TEvent> @event)
-        {
-            Events[typeof(TEvent)] = new Func<object, object>((obj) =>
-            {
-                @event?.Invoke((TEvent)obj);
-                return null;
-            });
+		public static void Register<TEvent>(Action<TEvent> @event)
+		{
+			Events[typeof(TEvent)] = new Func<object, object>((obj) =>
+			{
+				@event?.Invoke((TEvent)obj);
+				return null;
+			});
 
-        }
+		}
+		public static void UnRegister<TEvent>()
+		{
+			Events.TryRemove(typeof(TEvent), out Func<object, object> F);
 
-        public static void Register<TInEvent>(Func<TInEvent, object> @event)
+		}
+
+		public static void Register<TInEvent>(Func<TInEvent, object> @event)
         {
             Events[typeof(TInEvent)] = new Func<object, object>((obj) =>
             {
@@ -35,11 +40,11 @@ namespace UPPERIOC2.UPPER.USendor.Center
 
         public static object Publish<TEvent>(TEvent T)
         {
-            if (T.GetType() != typeof(TEvent))
+            /*if (T.GetType() != typeof(TEvent))
             {
                 return Events[T.GetType()]?.Invoke(T);
 
-			}
+			}*/
 			return Events[typeof(TEvent)]?.Invoke(T);
 
 
