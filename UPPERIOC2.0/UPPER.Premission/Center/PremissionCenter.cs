@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -61,15 +62,32 @@ namespace UPPERIOC2.UPPER.Premission.Center
 			rp.Roles.Add(r.id);
 
 		}
-		public void Must(int premission) {
+		public bool TryDo(int premission,Action act)
+		{
 			User Cu = CurrentUser;
-			while(!PermissionInterceptor.Intercept(premission))
+			if(PermissionInterceptor.Intercept(premission, false))
 			{
+				act.Invoke();
+				return true;
 			}
 			CurrentUser = Cu;
+			return false;
+		}
+		public void Must(int premission) {
+			User CurrentUser = this.CurrentUser;
+			while (true)
+			{
+				if (pm.rolegps.Find(item => CurrentUser?.RoleGroup == item.id)?.Roles?.Contains(premission) == true)
+				{
+					break;
+				}
+				bool r = c.NotPremission();
 
 
 
+				CurrentUser = c.Login(pm);
+
+			}
 		}
 		public List<Role> GetRoleByRoleGroup(RoleGroup rp)
 		{
@@ -173,33 +191,56 @@ namespace UPPERIOC2.UPPER.Premission.Center
 			return user;
 
 		}
-		public bool CanInvoke(int Role) 
+		public bool CanInvoke(int Role ,bool needlogin, User CurrentUser = null) 
 		{
-			if (CurrentUser == null&& !c.AllowNull)
+			if (CurrentUser == null)
 			{
-				CurrentUser = c.Login(pm);
+				CurrentUser = this.CurrentUser;
+			}
+			try
+			{
 
-				return false;
-			}
-			if (pm.rolegps == null && !c.AllowNull)
-			{
-				CurrentUser = c.Login(pm);
+				if (CurrentUser == null && !c.AllowNull)
+				{
 
-				return false;
+
+					//return false;
+				}
+				if (pm.rolegps == null && !c.AllowNull)
+				{
+					//CurrentUser = c.Login(pm);
+
+					//return false;
+				}
+				if (pm.rolegps.Find(item => CurrentUser?.RoleGroup == item.id)?.Roles?.Contains(Role) == true)
+				{
+					return true;
+				}
+				
+
+			//	return false;
 			}
-			if (pm.rolegps.Find(item => CurrentUser?.RoleGroup == item.id)?.Roles?.Contains(Role)== true )
+			catch (Exception)
 			{
-				return true;
+
+				throw;
 			}
+			finally {
+				
+				if (needlogin && CurrentUser!= null)
+				{
+					this.CurrentUser = CurrentUser;
+				}
+			}
+			
 			bool r = c.NotPremission();
+			CurrentUser = c.Login(pm);
 			if (r)
 			{
-				CurrentUser = c.Login(pm);
-				return CanInvoke(Role);
+				//CurrentUser = c.Login(pm);
+				return CanInvoke(Role, needlogin,CurrentUser);
 			}
-
 			return false;
-
 		}
 
 		public void SaveChange() { 

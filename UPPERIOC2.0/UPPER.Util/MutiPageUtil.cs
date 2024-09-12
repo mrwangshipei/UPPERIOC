@@ -15,7 +15,10 @@ namespace UPPERIOC2.UPPER.Util
 		{
 			Pages.Add(pa);
 		}
-
+		public void ClearPage() {
+			Pages.Clear();
+			CurrentPage = null;
+		}
 		public void ChangeCurrentPage(string pa) 
 		{
 			if (CurrentPage == null)
@@ -29,8 +32,11 @@ namespace UPPERIOC2.UPPER.Util
 			if (pa == null)
 			{
 				CurrentPage?.ToBack();
+
 			}
-			Pages.Find(i => i.PageName == pa).ToFront();
+			var page = Pages.Find(i => i.PageName == pa);
+			page?.ToFront();
+			CurrentPage = page;
 		}
 	}
 	public interface IPage 

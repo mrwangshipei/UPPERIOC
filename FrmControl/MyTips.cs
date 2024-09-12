@@ -105,7 +105,7 @@ namespace UpperComAutoTest.MyControls
 			pa.AddArc(rect.Left, rect.Bottom - 2 * radius, 2 * radius, 2 * radius, 90, 90);
 
 			this.Region = new Region(pa);
-			close_t.Interval = 2000;
+			close_t.Interval = waittime;
 			close_t.Tick += CloseWindow;
 			close_t.Enabled = true;
 		}
