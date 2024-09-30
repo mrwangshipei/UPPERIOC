@@ -27,10 +27,11 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\10164\\Downloads": {},
           "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.cdn.azure.cn/v3/index.json": {},
           "https://repo.huaweicloud.com/repository/nuget/v3/index.json": {},
-          "https://www.nuget.org.cn/v3/index.json": {}
+          "https://www.myget.org/F/xbim-develop/api/v3/index.json": {},
+          "https://www.nuget.org/api/v2": {}
         },
         "frameworks": {
           "net45": {
