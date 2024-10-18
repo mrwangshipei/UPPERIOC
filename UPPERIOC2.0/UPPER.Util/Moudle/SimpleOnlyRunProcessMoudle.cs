@@ -9,7 +9,7 @@ using UPPERIOC.UPPER.IOC.Center.IProvider;
 
 namespace UPPERIOC2.UPPER.Util.Moudle
 {
-	internal class SimpleOnlyRunProcessMoudle : IUPPERMoudle
+	public class SimpleOnlyRunProcessMoudle : IUPPERMoudle
 	{
 		public Type[] DependisMoudel { get => Type.EmptyTypes; set => throw new NotImplementedException(); }
 
