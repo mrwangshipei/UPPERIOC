@@ -118,7 +118,7 @@ namespace FCT.MyControls
 			}
 			DoInvoke(() =>{
 			NowResult = r;
-			DoInvoke(()=> Init(ref pnc));
+			DoInvoke(()=> Init( pnc));
 			panel3.Invalidate();
 			});
 		}
@@ -131,7 +131,7 @@ namespace FCT.MyControls
 		}
 
 		public PNCountModel pnc;
-		public void Init(ref PNCountModel pnc) 
+		public void Init( PNCountModel pnc) 
 		{
 			if (this.pnc != pnc)
 			{
@@ -191,7 +191,7 @@ namespace FCT.MyControls
 			pnc.All = 0;
 			pnc.Pass = 0;
 			pnc.Fail = 0;
-			Init(ref pnc);
+			Init( pnc);
 
 		}
 		private void 清零测试数据ToolStripMenuItem_Click(object sender, EventArgs e)

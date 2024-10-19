@@ -71,9 +71,21 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 
 					// Push the required permission onto the stack
 					ilGenerator.Emit(OpCodes.Ldc_I4, permissionAttribute.Permission);
+					bool needLogin = permissionAttribute.NeedLogin; // 假设这是你在C#代码中已经获取的布尔值  
 
+					// ...  
+
+					// 假设ilGenerator是你已经创建好的ILGenerator实例  
+					if (needLogin)
+					{
+						ilGenerator.Emit(OpCodes.Ldc_I4_1); // 推送1（即true）到栈上  
+					}
+					else
+					{
+						ilGenerator.Emit(OpCodes.Ldc_I4_0); // 推送0（即false）到栈上  
+					}
 					// Call the PermissionInterceptor.Intercept method
-					ilGenerator.Emit(OpCodes.Call, typeof(PermissionInterceptor).GetMethod("Intercept", new[] { typeof(int) }));
+					ilGenerator.Emit(OpCodes.Call, typeof(PermissionInterceptor).GetMethod("Intercept", new[] { typeof(int), typeof(bool) }));
 
 					// If permission is granted, continue to the method body
 					ilGenerator.Emit(OpCodes.Brtrue_S, permissionCheckLabel);

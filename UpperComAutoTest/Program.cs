@@ -1,4 +1,5 @@
 
+using DuIni.Moudle;
 using UpperComAutoTest.MyControls;
 using UPPERIOC;
 using UPPERIOC.UPPER.IOC.Moudle;
@@ -30,6 +31,7 @@ namespace UpperComAutoTest
 			config.AddMoudle<UPPERMLockMoudle>();
 			config.AddMoudle<UPPERPremissionMoudle>();
 			config.AddMoudle<UPPERFileModelMoudle>();
+			config.AddMoudle<UPPERGengXinQiMoudle>();
 			config.SetProvider<UPPERDefaultProvider>();
 			UPPERIOCApplication.RunInstance(config);
 			Application.Run(new Form1());

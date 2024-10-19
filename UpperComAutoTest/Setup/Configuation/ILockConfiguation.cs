@@ -17,6 +17,7 @@ namespace Setup.Configuation
 	public class ILockConfiguation : MLockConfiguation
 	{
 		public override string Solt { get =>"-fdskjlskjasklfjaskljf"; set => base.Solt = value; }
+        public override string LockName { get =>"Lis"; set { } }
 		public override string Listenaddr { get => "Lis"; set => base.Listenaddr = value; }
 		public override void Noregister()
 		{

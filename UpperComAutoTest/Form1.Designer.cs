@@ -75,7 +75,6 @@
 			toolStripButton1.Name = "toolStripButton1";
 			toolStripButton1.Size = new Size(60, 22);
 			toolStripButton1.Text = "日志位置";
-			toolStripButton1.Click += toolStripButton1_Click;
 			// 
 			// panel1
 			// 
@@ -105,7 +104,7 @@
 		private ToolStrip toolStrip1;
 		private Panel panel1;
 		private ToolStripButton NomalComPage;
-		private ToolStripButton toolStripButton1;
 		private ToolStripButton toolStripButton2;
+		private ToolStripButton toolStripButton1;
 	}
 }

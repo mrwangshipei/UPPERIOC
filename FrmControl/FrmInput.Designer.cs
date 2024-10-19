@@ -75,7 +75,7 @@ namespace COMIEEE
 			this.textBox1.Font = new System.Drawing.Font("宋体", 16F);
 			this.textBox1.Location = new System.Drawing.Point(30, 30);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(430, 44);
+			this.textBox1.Size = new System.Drawing.Size(430, 32);
 			this.textBox1.TabIndex = 0;
 			// 
 			// panel4
@@ -171,7 +171,7 @@ namespace COMIEEE
 			// 
 			// FrmInput
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(492, 304);
 			this.Controls.Add(this.panel1);

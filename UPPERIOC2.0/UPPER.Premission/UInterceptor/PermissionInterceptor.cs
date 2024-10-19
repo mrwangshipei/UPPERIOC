@@ -7,14 +7,14 @@ using UPPERIOC2.UPPER.Premission.Center;
 public static class PermissionInterceptor 
 {
 
-	public  static bool Intercept(int p)
+	public  static bool Intercept(int p,bool needlogin)
 	{
 		PremissionCenter cen  =UPPERIOCApplication.Container.GetInstance<PremissionCenter>();
 		if (cen.c.AllowNull)
 		{
 			return true;
 		}
-		return cen.CanInvoke(p);
+		return cen.CanInvoke(p, needlogin);
 		
 				// 处理验证失败的情况，比如提示用户登录
 				
