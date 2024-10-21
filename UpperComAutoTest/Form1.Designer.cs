@@ -75,6 +75,7 @@
 			toolStripButton1.Name = "toolStripButton1";
 			toolStripButton1.Size = new Size(60, 22);
 			toolStripButton1.Text = "日志位置";
+			toolStripButton1.Click += toolStripButton1_Click_1;
 			// 
 			// panel1
 			// 

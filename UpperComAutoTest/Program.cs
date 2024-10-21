@@ -5,6 +5,7 @@ using UPPERIOC;
 using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC.UPPER.Sendor.Moudle;
 using UPPERIOC.UPPER.UFILELOG.Moudle;
+using UPPERIOC2.UPPER.EmailErrorSender.Moudle;
 using UPPERIOC2.UPPER.Premission.Moudle;
 using UPPERIOC2.UPPER.UFileModel.Moudle;
 using UPPERIOC2.UPPER.UIOC.DefaultProvider;
@@ -31,7 +32,8 @@ namespace UpperComAutoTest
 			config.AddMoudle<UPPERMLockMoudle>();
 			config.AddMoudle<UPPERPremissionMoudle>();
 			config.AddMoudle<UPPERFileModelMoudle>();
-			config.AddMoudle<UPPERGengXinQiMoudle>();
+			config.AddMoudle<UPPERErrorMoudle>();
+			//config.AddMoudle<UPPERGengXinQiMoudle>();
 			config.SetProvider<UPPERDefaultProvider>();
 			UPPERIOCApplication.RunInstance(config);
 			Application.Run(new Form1());

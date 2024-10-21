@@ -64,7 +64,7 @@ namespace UpperComAutoTest
 				var ipage = page as IPage;
 				if (ipage == null)
 				{
-				//	MyTips.ShowTips(this, Tipstype.Warn, "窗体还没有实现哦", 2000);
+					//	MyTips.ShowTips(this, Tipstype.Warn, "窗体还没有实现哦", 2000);
 				}
 				panel1.Controls.Clear();
 				ipage.Dock = DockStyle.Fill;
@@ -100,6 +100,11 @@ namespace UpperComAutoTest
 		private void toolStripButton3_Click(object sender, EventArgs e)
 		{
 			modelView.Premission();
+		}
+
+		private void toolStripButton1_Click_1(object sender, EventArgs e)
+		{
+			throw new Exception("未完成操作");
 		}
 	}
 }
