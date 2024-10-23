@@ -54,7 +54,7 @@ namespace UpperComAutoTest.MyConfiguation
 			return pm;
 		}
 
-		public User Login(PermissionModel pm)
+		public User Login(PermissionModel pm,string def = "")
 		{
 			;
 			if (pm.users != null && pm.users.Count > 0)

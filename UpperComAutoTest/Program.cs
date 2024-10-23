@@ -1,5 +1,6 @@
 
 using DuIni.Moudle;
+using System.Reflection;
 using UpperComAutoTest.MyControls;
 using UPPERIOC;
 using UPPERIOC.UPPER.IOC.Moudle;
@@ -20,7 +21,7 @@ namespace UpperComAutoTest
 		[STAThread]
 		static void Main()
 		{
-
+			
 
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.

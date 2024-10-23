@@ -73,7 +73,7 @@ namespace UPPERIOC2.UPPER.Premission.Center
 			CurrentUser = Cu;
 			return false;
 		}
-		public void Must(int premission) {
+		public void Must(int premission,string def  ="") {
 			User CurrentUser = this.CurrentUser;
 			while (true)
 			{
@@ -85,7 +85,7 @@ namespace UPPERIOC2.UPPER.Premission.Center
 
 
 
-				CurrentUser = c.Login(pm);
+				CurrentUser = c.Login(pm,def);
 
 			}
 		}

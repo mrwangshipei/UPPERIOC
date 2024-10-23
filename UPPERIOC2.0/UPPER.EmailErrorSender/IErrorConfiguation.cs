@@ -13,6 +13,5 @@ namespace UPPERIOC2.UPPER.EmailErrorSender
 		string SMPTServer { get; }
 		string SenderPWD { get; }
 		int SMPTPort { get; }
-		string SenderUserName { get; }
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 using UPPERIOC2.UPPER.Premission.Model;
 
@@ -13,7 +14,7 @@ namespace UPPERIOC2.UPPER.Premission.IConfiguation
 		string Solt{ get; set; }
 		bool AllowNull { get; set; }
 
-		User Login(PermissionModel pm);
+		User Login(PermissionModel pm,string def = "");
 		PermissionModel InitModel();
 		bool NotPremission();
 	}

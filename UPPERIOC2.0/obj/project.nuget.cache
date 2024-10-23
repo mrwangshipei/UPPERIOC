@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ybxORb0hF8g=",
+  "dgSpecHash": "8GQO5XKT3BM=",
   "success": true,
-  "projectFilePath": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\1\\.nuget\\packages\\system.management\\5.0.0\\system.management.5.0.0.nupkg.sha512",
-    "C:\\Users\\1\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512"
-  ],
+  "projectFilePath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

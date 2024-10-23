@@ -5,7 +5,6 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UpperCom
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UpperComAutoTest.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UpperComAutoTest.pdb
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\System.IO.Ports.dll
-E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\System.Management.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
@@ -13,7 +12,6 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\unix\lib\net6.0\System.IO.Ports.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\win\lib\net6.0\System.IO.Ports.dll
-E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\win\lib\netcoreapp2.0\System.Management.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\FrmControl.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPERIOC2.0.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\FrmControl.pdb
@@ -49,3 +47,4 @@ E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\UPPER.Ge
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\Newtonsoft.Json.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\System.Text.Encoding.CodePages.dll
 E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+E:\Wsp\Code\C#\ComAutoTest\UpperComAutoTest\bin\Debug\net6.0-windows7.0\System.Management.dll

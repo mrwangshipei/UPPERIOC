@@ -41,7 +41,7 @@ namespace UPPERIOC2.UPPER.EmailErrorSender.Sender
 				SmtpClient smtpServer = new SmtpClient(cf1.SMPTServer); // 替换为你的SMTP服务器地址  
 				smtpServer.Port = cf1.SMPTPort; // SMTP服务器端口，QQ邮箱通常使用465（SSL）或587（TLS）  
 				smtpServer.UseDefaultCredentials = false;
-				smtpServer.Credentials = new NetworkCredential(cf1.SenderUserName, cf1.SenderPWD); // 替换为你的发件人邮箱和密码  
+				smtpServer.Credentials = new NetworkCredential(cf1.SenderEmail, cf1.SenderPWD); // 替换为你的发件人邮箱和密码  
 			//	smtpServer.EnableSsl = false; // 如果使用SSL加密，则设置为true  
 											 //System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
 				smtpServer.Timeout = 100000; // 设置超时时间为 10 秒

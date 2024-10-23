@@ -125,7 +125,7 @@
 			Controls.Add(textBox_PWD);
 			Controls.Add(label_Err);
 			Controls.Add(label1);
-			Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			Font = new Font("宋体", 12F);
 			Margin = new Padding(4);
 			MaximizeBox = false;
 			MaximumSize = new Size(367, 178);

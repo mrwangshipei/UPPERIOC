@@ -21,6 +21,5 @@ namespace UpperComAutoTest.MyConfiguation
 
 		public int SMPTPort =>25;
 
-		public string SenderUserName => "13144874915@163.com";
 	}
 }
