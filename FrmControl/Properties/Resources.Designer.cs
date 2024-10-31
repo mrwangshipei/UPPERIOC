@@ -73,6 +73,16 @@ namespace FrmControl.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 实验室监控 {
+            get {
+                object obj = ResourceManager.GetObject("实验室监控", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 用户 {
             get {
                 object obj = ResourceManager.GetObject("用户", resourceCulture);

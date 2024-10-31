@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace UPPERIOC2.UPPER.EmailErrorSender.Moudle
 	public class UPPERErrorMoudle : IUPPERMoudle
 	{
 		public Type[] DependisMoudel { get => new Type[] { }; set => throw new NotImplementedException(); }
-
+		private int mainThreadId = 0;
 		public void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 		}
@@ -23,7 +24,8 @@ namespace UPPERIOC2.UPPER.EmailErrorSender.Moudle
 		{
 
 			AppDomain.CurrentDomain.UnhandledException += ExHandle; ;
-
+			mainThreadId = Thread.CurrentThread.ManagedThreadId;
+			
 			Application.ThreadException += ExHandle;
 		}
 

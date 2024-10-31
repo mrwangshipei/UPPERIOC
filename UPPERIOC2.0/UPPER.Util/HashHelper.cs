@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Management;
 using System.Security.Cryptography;
 using System.Text;
-
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
 namespace UPPERIOC2.UPPER.Util
 {
 	public class HashHelper
@@ -59,12 +60,12 @@ namespace UPPERIOC2.UPPER.Util
 				return sBuilder.ToString();
 			}
 		}
-
+		[ComVisible(true)]
 		private static string GetCpuId()
 		{
 			string cpuInfo = string.Empty;
-
-			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
+			string s = "SELECT ProcessorId FROM Win32_Processor";
+			ManagementObjectSearcher searcher = new ManagementObjectSearcher(s);
 
 			foreach (ManagementObject mo in searcher.Get())
 			{
@@ -74,12 +75,13 @@ namespace UPPERIOC2.UPPER.Util
 
 			return cpuInfo;
 		}
+		[ComVisible(true)]
 
 		private static string GetBiosId()
 		{
 			string biosId = string.Empty;
 
-			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_BIOS");
+			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT SerialNumber,SMBIOSBIOSVersion FROM Win32_BIOS");
 
 			foreach (ManagementObject mo in searcher.Get())
 			{
@@ -91,12 +93,13 @@ namespace UPPERIOC2.UPPER.Util
 
 			return biosId;
 		}
+		[ComVisible(true)]
 
 		private static string GetBaseBoardId()
 		{
 			string baseBoardId = string.Empty;
 
-			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_BaseBoard");
+			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_BaseBoard");
 
 			foreach (ManagementObject mo in searcher.Get())
 			{

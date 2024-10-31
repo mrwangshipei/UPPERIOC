@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8GQO5XKT3BM=",
+  "dgSpecHash": "r93RkQ7IvNo=",
   "success": true,
-  "projectFilePath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\10164\\.nuget\\packages\\system.management\\4.6.0\\system.management.4.6.0.nupkg.sha512"
+  ],
   "logs": []
 }

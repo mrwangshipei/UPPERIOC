@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{720A2839-B484-41BE-A906-954AC4B4ADA3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AutoComTest</RootNamespace>
+    <AssemblyName>AutoComTest</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Diagnostics.Runtime">
+      <HintPath>..\packages\Microsoft.Diagnostics.Runtime.1.1.122004\lib\net45\Microsoft.Diagnostics.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UPPERIOC2.0">
+      <HintPath>..\UPPERIOC2.0\bin\Debug\net45\UPPERIOC2.0.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\CurrentSerialPort.cs" />
+    <Compile Include="Entry\IEventFileModel\EventFileModel.cs" />
+    <Compile Include="Entry\IEventFileModel\IMsgEvent\MsgEventInterface.cs" />
+    <Compile Include="Entry\IEventFileModel\IMsgEvent\NormalFuncEvent.cs" />
+    <Compile Include="Entry\Message.cs" />
+    <Compile Include="Extend\StaticExtend.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelView\Form1ModelView.cs" />
+    <Compile Include="ModelView\NomalComPageViewModel.cs" />
+    <Compile Include="Model\NomalComPageModel.cs" />
+    <Compile Include="MyConfiguation\ErrorUpload.cs" />
+    <Compile Include="MyConfiguation\FileMoudleConfiguation.cs" />
+    <Compile Include="MyConfiguation\FileRigisterLoader.cs" />
+    <Compile Include="MyConfiguation\MUPConfiguation.cs" />
+    <Compile Include="MyConfiguation\MyConfiguation.cs" />
+    <Compile Include="MyControls\FrmPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyControls\FrmPwd.Designer.cs">
+      <DependentUpon>FrmPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\FuncControl\FunEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyControls\FuncControl\FunEdit.Designer.cs">
+      <DependentUpon>FunEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\FuncControl\IFuncControl.cs" />
+    <Compile Include="MyControls\FuncControl\SelectFuncControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\FuncControl\SelectFuncControl.Designer.cs">
+      <DependentUpon>SelectFuncControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\FuncControl\TypeEdit\FuncFactoryCenter.cs" />
+    <Compile Include="MyControls\FuncControl\TypeEdit\IFactory\IFuncFactory.cs" />
+    <Compile Include="MyControls\FuncControl\TypeEdit\IFuncTypeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\FuncControl\TypeEdit\IFuncTypeEdit.Designer.cs">
+      <DependentUpon>IFuncTypeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\FuncControl\TypeEdit\NormalFuncControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\FuncControl\TypeEdit\NormalFuncControl.Designer.cs">
+      <DependentUpon>NormalFuncControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\GradientProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyControls\GradientProgressBar.Designer.cs">
+      <DependentUpon>GradientProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyControls\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\LoadingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\LoadingControl.Designer.cs">
+      <DependentUpon>LoadingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\MyTips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyControls\MyTips.Designer.cs">
+      <DependentUpon>MyTips.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\Timer.cs" />
+    <Compile Include="MyControls\TransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyControls\TransparentLabel.Designer.cs">
+      <DependentUpon>TransparentLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendorEvent\AutoRefeashEvent.cs" />
+    <Compile Include="SendorEvent\CurrentPortReiceverMessageEvent.cs" />
+    <Compile Include="SendorEvent\StopAutosendTipEvent.cs" />
+    <Compile Include="Setup\Configuation\ILockConfiguation.cs" />
+    <Compile Include="Setup\Program.cs" />
+    <Compile Include="Setup\PWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setup\PWD.Designer.cs">
+      <DependentUpon>PWD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UPPER.UMvvm\IMvvm\IMvvmCompent.cs" />
+    <Compile Include="UPPER.UMvvm\IPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UPPER.UMvvm\IVIewModel.cs" />
+    <Compile Include="View\Page\NomalComPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Page\NomalComPage.Designer.cs">
+      <DependentUpon>NomalComPage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\FrmPwd.resx">
+      <DependentUpon>FrmPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\FuncControl\FunEdit.resx">
+      <DependentUpon>FunEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\FuncControl\SelectFuncControl.resx">
+      <DependentUpon>SelectFuncControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\FuncControl\TypeEdit\IFuncTypeEdit.resx">
+      <DependentUpon>IFuncTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\FuncControl\TypeEdit\NormalFuncControl.resx">
+      <DependentUpon>NormalFuncControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\GradientProgressBar.resx">
+      <DependentUpon>GradientProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\LoadingControl.resx">
+      <DependentUpon>LoadingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\MyTips.resx">
+      <DependentUpon>MyTips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\TransparentLabel.resx">
+      <DependentUpon>TransparentLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Setup\PWD.resx">
+      <DependentUpon>PWD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UPPER.UMvvm\IPage.resx">
+      <DependentUpon>IPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Page\NomalComPage.resx">
+      <DependentUpon>NomalComPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Setup\app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\失败.png" />
+    <Content Include="Resources\错误.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrmControl\FrmControl.csproj">
+      <Project>{D50E8CDB-9D79-410A-A4DA-43A307D17884}</Project>
+      <Name>FrmControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

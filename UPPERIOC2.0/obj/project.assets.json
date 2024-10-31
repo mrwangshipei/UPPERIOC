@@ -1,11 +1,57 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.5": {}
+    ".NETFramework,Version=v4.5": {
+      "System.Management/4.6.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Management"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net45/_._": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "System.Management/4.6.0": {
+      "sha512": "Wyb0OtzOuuyNIIhR+cSo2fX1Q3/MtG9GaSB/r7ABZt89cNs5ZpT4yxdlKXeuciOLqBs6sbgqDayLuLLBXSK5qw==",
+      "type": "package",
+      "path": "system.management/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/_._",
+        "lib/netstandard2.0/System.Management.dll",
+        "lib/netstandard2.0/System.Management.xml",
+        "ref/net45/_._",
+        "ref/netstandard2.0/System.Management.dll",
+        "ref/netstandard2.0/System.Management.xml",
+        "runtimes/win/lib/net45/_._",
+        "runtimes/win/lib/netcoreapp2.0/System.Management.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Management.xml",
+        "system.management.4.6.0.nupkg.sha512",
+        "system.management.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.5": []
+    ".NETFramework,Version=v4.5": [
+      "System.Management >= 4.6.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\10164\\.nuget\\packages\\": {},
@@ -14,11 +60,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+      "projectUniqueName": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
       "projectName": "UPPERIOC2.0",
-      "projectPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+      "projectPath": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
       "packagesPath": "C:\\Users\\10164\\.nuget\\packages\\",
-      "outputPath": "E:\\Wsp\\Code\\C#\\ComAutoTest\\UPPERIOC2.0\\obj\\",
+      "outputPath": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UPPERIOC2.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,6 +106,12 @@
     "frameworks": {
       "net45": {
         "targetAlias": "net45",
+        "dependencies": {
+          "System.Management": {
+            "target": "Package",
+            "version": "[4.6.0, )"
+          }
+        },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }

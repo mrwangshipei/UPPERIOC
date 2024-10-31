@@ -1,4 +1,5 @@
 
+using FrmControl.C;
 using System.Configuration;
 using UpperComAutoTest.ModelView;
 using UpperComAutoTest.MyControls;
@@ -104,7 +105,9 @@ namespace UpperComAutoTest
 
 		private void toolStripButton1_Click_1(object sender, EventArgs e)
 		{
-			throw new Exception("未完成操作");
+		//	SystemStopwatch sw = new SystemStopwatch();
+		//	Thread.Sleep(15000);
+		//	throw new Exception("未完成操作");
 		}
 	}
 }

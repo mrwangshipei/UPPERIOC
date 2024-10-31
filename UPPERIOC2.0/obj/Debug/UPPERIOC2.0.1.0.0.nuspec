@@ -5,15 +5,14 @@
     <version>1.0.0</version>
     <authors>UPPERIOC2.0</authors>
     <description>Package Description</description>
-    <repository type="git" commit="b98f0bf35270e37bd9317c6ef15dfd162b02aaa2" />
+    <repository type="git" commit="6ff8a8146b338611799c4aaf0324b7b06658928d" />
     <dependencies>
-      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="System.Management" version="4.6.0" exclude="Build,Analyzers" />
+      </group>
     </dependencies>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System.Management" targetFramework=".NETFramework4.5" />
-    </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="E:\Wsp\Code\C#\ComAutoTest\UPPERIOC2.0\bin\Debug\net45\UPPERIOC2.0.dll" target="lib\net45\UPPERIOC2.0.dll" />
+    <file src="E:\Wsp\Code\Cjinghao\ComAutoTest\UPPERIOC2.0\bin\Debug\net45\UPPERIOC2.0.dll" target="lib\net45\UPPERIOC2.0.dll" />
   </files>
 </package>
