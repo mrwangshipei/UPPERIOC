@@ -45,6 +45,7 @@ namespace FrmControl.C
 					{
 						Console.WriteLine(ex.Message +ex.StackTrace);
 					}
+					Thread.Sleep(30);
 				}
 			},can);
 		}
@@ -56,8 +57,8 @@ namespace FrmControl.C
 
 			var ta = this.BeginInvoke(new Action(() =>
 			{
-				sw.Stop();
-			}));
+					sw.Stop();
+				}));
 			ta.AsyncWaitHandle.WaitOne(10000);
 			//bool r = Task.WaitAll(new Task[] { ta },10000);
 				sw.Dispose();
@@ -105,7 +106,7 @@ namespace FrmControl.C
 		{
 			 DataTarget target = DataTarget.AttachToProcess(processId, 3000, AttachFlag.Passive);
 			System.Threading.Thread.Sleep(3000); // 等待数据收集
-			
+
 			ClrRuntime runtime = target.ClrVersions[0].CreateRuntime();
 
 			foreach (var thread in runtime.Threads)
@@ -128,7 +129,16 @@ namespace FrmControl.C
 			base.DestroyHandle();
 			can.ThrowIfCancellationRequested();
 		}
-	
+		private void MouseleaveD(object sender, EventArgs e)
+		{
+			te.Visible = false ;
+		}
+
+		private void MouseEnterD(object sender, EventArgs e)
+		{
+			te.Visible = true;
+
+		}
 	}
 
 	
