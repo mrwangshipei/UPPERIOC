@@ -25,6 +25,11 @@ namespace Common.MConfigration
 		public override T LoadObjectFromRegistry<T>(string keyName)
 		{
 			XmlSerializer xml = new XmlSerializer(typeof(T));
+			if (!Path.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lock.txt")))
+			{
+				return default;
+
+			}
 			string t = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lock.txt"));
 			if (t == null)
 			{

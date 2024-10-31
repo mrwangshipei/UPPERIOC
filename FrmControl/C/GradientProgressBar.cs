@@ -13,8 +13,9 @@ namespace UpperComAutoTest.MyControls
 		private Color endColor = Color.FromArgb(24, 144, 255);
 		private System.Windows.Forms.Timer animationTimer;
 		private float animationValue;
-
-		public GradientProgressBar()
+        public Color StartColor { get=> startColor; set=> startColor = value; }
+        public Color EndColor { get=> endColor; set=> endColor = value; }
+        public GradientProgressBar()
 		{
 
 			this.SetStyle(ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
@@ -103,6 +104,7 @@ namespace UpperComAutoTest.MyControls
 				{
 					e.Graphics.FillRectangle(brush, progressRect);
 				}
+			e.Graphics.DrawString((value * 100 )/(maximum - minimum) + "%", Font, new SolidBrush(Color.Black), this.ClientRectangle, new StringFormat() { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
 
 			}
 

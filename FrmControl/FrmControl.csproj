@@ -31,7 +31,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Diagnostics.Runtime, Version=1.1.2.22004, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Diagnostics.Runtime.1.1.122004\lib\net45\Microsoft.Diagnostics.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +56,12 @@
     </Compile>
     <Compile Include="C\LastResultControl.Designer.cs">
       <DependentUpon>LastResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C\SystemStopwatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C\TempForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPremission\BLL\FrmEditCBLL.cs" />
     <Compile Include="FrmPremission\BLL\FrmRoleGroupbll.cs" />
@@ -209,6 +221,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\取消.png" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +232,9 @@
       <Project>{4e52c966-3727-4d58-aa6e-0352b52cfc3c}</Project>
       <Name>UPPERIOC2.0</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\实验室监控.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
