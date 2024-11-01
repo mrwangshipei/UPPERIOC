@@ -1,4 +1,4 @@
-﻿
+﻿#if NETFRAMEWORK
 using System;
 using System.Linq;
 using System.Reflection;
@@ -253,3 +253,4 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 
 	}
 }
+#endif

@@ -37,7 +37,7 @@ public class DumpHelper
 				currentProcess.Handle,
 				(uint)currentProcess.Id,
 				fs.SafeFileHandle.DangerousGetHandle(),
-				MINIDUMP_TYPE.MiniDumpNormal,
+				MINIDUMP_TYPE.MiniDumpWithFullMemory,
 				IntPtr.Zero,
 				IntPtr.Zero,
 				IntPtr.Zero);

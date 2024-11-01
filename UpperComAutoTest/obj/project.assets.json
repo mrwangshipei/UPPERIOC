@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {
+    "net7.0-windows7.0": {
       "Microsoft.NETCore.Platforms/3.0.0": {
         "type": "package",
         "compile": {
@@ -207,12 +207,12 @@
           "runtime.native.System.IO.Ports": "8.0.0"
         },
         "compile": {
-          "lib/net8.0/System.IO.Ports.dll": {
+          "lib/net7.0/System.IO.Ports.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.IO.Ports.dll": {
+          "lib/net7.0/System.IO.Ports.dll": {
             "related": ".xml"
           }
         },
@@ -220,11 +220,11 @@
           "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/net8.0/System.IO.Ports.dll": {
+          "runtimes/unix/lib/net7.0/System.IO.Ports.dll": {
             "assetType": "runtime",
             "rid": "unix"
           },
-          "runtimes/win/lib/net8.0/System.IO.Ports.dll": {
+          "runtimes/win/lib/net7.0/System.IO.Ports.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -492,12 +492,12 @@
       "System.Text.Encoding.CodePages/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.Text.Encoding.CodePages.dll": {
+          "lib/net7.0/System.Text.Encoding.CodePages.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Text.Encoding.CodePages.dll": {
+          "lib/net7.0/System.Text.Encoding.CodePages.dll": {
             "related": ".xml"
           }
         },
@@ -505,7 +505,7 @@
           "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Text.Encoding.CodePages.dll": {
+          "runtimes/win/lib/net7.0/System.Text.Encoding.CodePages.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -678,7 +678,7 @@
       },
       "UPPERIOC2.0/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
+        "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "System.Management": "4.6.0"
         },
@@ -2792,7 +2792,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0-windows7.0": [
+    "net7.0-windows7.0": [
       "FrmControl >= 1.0.0",
       "System.IO.Ports >= 8.0.0",
       "System.Text.Encoding.CodePages >= 8.0.0",
@@ -2801,47 +2801,37 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\10164\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
+      "projectUniqueName": "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\UpperComAutoTest.csproj",
       "projectName": "UpperComAutoTest",
-      "projectPath": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UpperComAutoTest\\UpperComAutoTest.csproj",
-      "packagesPath": "C:\\Users\\10164\\.nuget\\packages\\",
-      "outputPath": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UpperComAutoTest\\obj\\",
+      "projectPath": "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\UpperComAutoTest.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\10164\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-windows7.0"
+        "net7.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.cdn.azure.cn/v3/index.json": {},
-        "https://repo.huaweicloud.com/repository/nuget/v3/index.json": {},
-        "https://www.myget.org/F/xbim-develop/api/v3/index.json": {},
-        "https://www.nuget.org/api/v2": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows7.0",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\FrmControl\\FrmControl.csproj": {
-              "projectPath": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\FrmControl\\FrmControl.csproj"
+            "D:\\Code\\C#\\UpperContest\\FrmControl\\FrmControl.csproj": {
+              "projectPath": "D:\\Code\\C#\\UpperContest\\FrmControl\\FrmControl.csproj"
             },
-            "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
-              "projectPath": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
+            "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
+              "projectPath": "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
             }
           }
         }
@@ -2850,16 +2840,11 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
-      "net8.0-windows7.0": {
-        "targetAlias": "net8.0-windows7.0",
+      "net7.0-windows7.0": {
+        "targetAlias": "net7.0-windows",
         "dependencies": {
           "System.IO.Ports": {
             "target": "Package",
@@ -2893,7 +2878,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

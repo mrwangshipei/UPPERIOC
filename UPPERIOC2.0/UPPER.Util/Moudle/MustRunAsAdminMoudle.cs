@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NETFRAMEWORK
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -194,3 +195,4 @@ namespace UPPERIOC2.UPPER.Util.Moudle
 			}*/
 	}
 }
+#endif

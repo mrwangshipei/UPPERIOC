@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing.Text;
+
 using System.IO;
 using System.Linq;
 using System.Text;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC2.UPPER.Premission.IConfiguation;
 using UPPERIOC2.UPPER.Premission.Model;
-using UPPERIOC2.UPPER.Premission.Moudle;
 using UPPERIOC2.UPPER.Util;
 
 namespace UPPERIOC2.UPPER.Premission.Center

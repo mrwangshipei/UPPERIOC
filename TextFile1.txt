@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <system.serviceModel>
+ 
+      <services>
+        <service name="Video12.Demo1.NetTcp.CalculatorService" behaviorConfiguration="CalculatorServiceBehavior">
+          <!--设定自承载的访问地址，也就是SVCUTIL时要使用的地址 http://localhost:8732/Design_Time_Addresses/Video12.Demo1.NetTcp/CalculatorService/-->
+          <host>
+            <baseAddresses>
+              <add baseAddress="http://localhost:8000/Video12.Demo1.NetTcp/service"/>
+            </baseAddresses>
+          </host>
+          <!--添加一个支持net.tcp传输协定的终结点-->
+          <endpoint address="net.tcp://localhost:9000/Video12.Demo1.NetTcp/service" binding="netTcpBinding" bindingConfiguration="Binding1" contract="Video12.Demo1.NetTcp.ICalculatorService"/>
+          <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange"/>
+        </service>
+      </services>
+      <!-- 
+            Following is the expanded configuration section for a NetTcpBinding.
+            Each property is configured with the default values.
+            See the Message Security, and Transport Security samples in the WS binding samples
+            to learn how to configure these features.
+         -->
+      <!--设置netTcp绑定参数的属性-->
+      <bindings>
+        <netTcpBinding>
+          <binding name="Binding1" closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" transactionFlow="false" transferMode="Buffered" transactionProtocol="OleTransactions" hostNameComparisonMode="StrongWildcard" listenBacklog="10" maxBufferPoolSize="524288" maxBufferSize="65536" maxConnections="10" maxReceivedMessageSize="65536">
+            <!--配置配额-->
+            <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384"/>
+            <reliableSession ordered ="true" inactivityTimeout ="00:10:00" enabled="false"/>
+            <security mode="Transport">
+              <transport clientCredentialType="Windows" protectionLevel="EncryptAndSign"/>
+            </security>
+          </binding>
+        </netTcpBinding>
+      </bindings>
+ 
+      <!--For debugging purposes set the includeExceptionDetailInFaults attribute to true-->
+      <behaviors>
+          <serviceBehaviors>
+              <behavior name="CalculatorServiceBehavior">
+                  <serviceMetadata httpGetEnabled="true" />
+                  <serviceDebug includeExceptionDetailInFaults="false" />
+              </behavior>
+          </serviceBehaviors>
+      </behaviors>
+      
+    </system.serviceModel>
+</configuration>

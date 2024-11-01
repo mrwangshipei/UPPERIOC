@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "r93RkQ7IvNo=",
+  "dgSpecHash": "2tCbEAZaQCd5kYm30VFVsg5++UBaZhASh7dl8UDJj1A7Fcypt1+h5GzHSW3DG5wDylWywoohzvbPgvhqYEuwxg==",
   "success": true,
-  "projectFilePath": "E:\\Wsp\\Code\\Cjinghao\\ComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+  "projectFilePath": "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\10164\\.nuget\\packages\\system.management\\4.6.0\\system.management.4.6.0.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.codedom\\4.6.0\\system.codedom.4.6.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.management\\4.6.0\\system.management.4.6.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -47,10 +47,6 @@ namespace UPPERIOC2.UPPER.UFileModel.Center
 			}
 			catch (Exception ex)
 			{
-<<<<<<< HEAD
-=======
-				//throw ex;
->>>>>>> 11127b1ed6586d7d3397c66a09af7cc022eda3ab
 				return T;
 
 			}

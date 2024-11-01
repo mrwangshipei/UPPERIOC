@@ -4,7 +4,7 @@
     <RootNamespace>UPPERIOC2</RootNamespace>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFrameworks>netstandard2;net45</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
