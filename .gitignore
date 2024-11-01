@@ -1,1 +1,29 @@
-﻿.vs/
+﻿# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio cache and configuration files
+.vs/
+.vscode/
+*.pdb
+*.ipch
+*.log
+
+# Others
+*.nupkg
+*.snk
+*.dbmdl
+*.publishsettings

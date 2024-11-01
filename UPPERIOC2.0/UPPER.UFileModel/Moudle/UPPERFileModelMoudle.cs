@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Management.Instrumentation;
 using System.Text;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.Sendor.Moudle;
-using UPPERIOC2._0.UPPER.UFileModel.Center;
+using UPPERIOC2.UPPER.UFileModel.Center;
 
-namespace UPPERIOC2._0.UPPER.UFileModel.Moudle
+namespace UPPERIOC2.UPPER.UFileModel.Moudle
 {
 	public class UPPERFileModelMoudle : IUPPERMoudle
 	{
@@ -28,7 +29,8 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Moudle
 		public void PreIniter(IContainerProvider containerProvider)
 		{
 			UFileModelCenter.pdr = containerProvider;
-
+			UFileModelCenter.Instance = new UFileModelCenter();
+			containerProvider.Rigister<UFileModelCenter>(UFileModelCenter.Instance);
 			//UFileModelCenter.Instance = new UFileModelCenter();
 		}
 	}

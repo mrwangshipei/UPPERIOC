@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>True</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -14,9 +14,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="UPPER.UMvvm\IPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="UPPER.UMvvm\IPage.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +26,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
   </ItemGroup>
 
@@ -36,7 +35,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FrmControl\FrmControl.csproj" />
     <ProjectReference Include="..\UPPERIOC2.0\UPPERIOC2.0.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="UPPER.GengXinQi">
+      <HintPath>..\dll\UPPER.GengXinQi.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -1,16 +1,21 @@
 
+using FrmControl.C;
 using System.Configuration;
+using UpperComAutoTest.ModelView;
 using UpperComAutoTest.MyControls;
 using UpperComAutoTest.View.Page.Interface;
+using UPPERIOC;
 using UPPERIOC.UPPER;
-using UPPERIOC.UPPERIOCCenter;
 
 namespace UpperComAutoTest
 {
-    public partial class Form1 : Form
+
+	public partial class Form1 : Form
 	{
+		Form1ModelView modelView;
 		public Form1()
 		{
+			modelView = UPPERIOCApplication.Container.GetInstance<Form1ModelView>();
 			InitializeComponent();
 			foreach (ToolStripItem item in toolStrip1.Items)
 			{
@@ -53,14 +58,14 @@ namespace UpperComAutoTest
 			});*/
 			ToolStripItem send = sender as ToolStripItem;
 			LogCenter.Log(UPPERIOC.UPPER.enums.LogType.Debug, $"打开了{send.Name}页面");
-			
+
 			object page;
-			if ((page = UPPERIOCContain.Container.GetInstance(send.Name)) != null)
+			if ((page = UPPERIOCApplication.Container.GetInstance(send.Name)) != null)
 			{
 				var ipage = page as IPage;
 				if (ipage == null)
 				{
-					MyTips.ShowTips(this, Tipstype.Warn, "窗体还没有实现哦", 2000);
+					//	MyTips.ShowTips(this, Tipstype.Warn, "窗体还没有实现哦", 2000);
 				}
 				panel1.Controls.Clear();
 				ipage.Dock = DockStyle.Fill;
@@ -69,7 +74,7 @@ namespace UpperComAutoTest
 			}
 			else
 			{
-				MyTips.ShowTips(this, Tipstype.Warn, "窗体还没有实现哦", 2000);
+				//MyTips.ShowTips(this, Tipstype.Warn, "窗体还没有实现哦", 2000);
 
 			}
 		}
@@ -82,6 +87,27 @@ namespace UpperComAutoTest
 		private void NomalComPage_Click(object sender, EventArgs e)
 		{
 
+		}
+		private void toolStripButton1_Click(object sender, EventArgs e)
+		{
+			modelView.Dosomething();
+		}
+
+		private void toolStripButton2_Click(object sender, EventArgs e)
+		{
+			modelView.Premission();
+		}
+
+		private void toolStripButton3_Click(object sender, EventArgs e)
+		{
+			modelView.Premission();
+		}
+
+		private void toolStripButton1_Click_1(object sender, EventArgs e)
+		{
+		//	SystemStopwatch sw = new SystemStopwatch();
+		//	Thread.Sleep(15000);
+		//	throw new Exception("未完成操作");
 		}
 	}
 }

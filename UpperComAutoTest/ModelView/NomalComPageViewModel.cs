@@ -13,11 +13,11 @@ using UpperComAutoTest.SendorEvent;
 using UPPERIOC.Interface;
 using UPPERIOC.UPPER;
 using UPPERIOC.UPPER.IOC.Annaiation;
-using UPPERIOC.UPPER.Sendor;
+using UPPERIOC2.UPPER.USendor.Center;
 
 namespace UpperComAutoTest.ModelView
 {
-	[IOCObject]
+    [IOCObject]
 	public class NomalComPageViewModel : IVIewModel
 	{
 		private NomalComPageModel m;
@@ -199,7 +199,7 @@ namespace UpperComAutoTest.ModelView
 					btm = new ByteMessage() { Data = str16, Time = DateTime.Now, IsSend = true };
 					NomalModel.SerialPort.Write(str16, 0, str16.Length);
 					NomalModel.SerialPort.data.Enqueue(btm);
-				Sendor.Publish<AutoRefeashEvent>(new AutoRefeashEvent());
+				SendorCenter.Publish<AutoRefeashEvent>(new AutoRefeashEvent());
 
 			}
 			catch (Exception ex)
@@ -212,7 +212,7 @@ namespace UpperComAutoTest.ModelView
 					type = Tipstype.Error,
 					waittime = 2000
 				};
-				Sendor.Publish<StopAutosendTipEvent>(ece);
+				SendorCenter.Publish<StopAutosendTipEvent>(ece);
 
 				AutoSend = false;
 			}

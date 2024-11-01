@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
+using UPPERIOC2.UPPER.USendor.Center;
 
 
 namespace UPPERIOC.UPPER.Sendor.Moudle
 {
-	public class UPPERSendorMoudle : IUPPERMoudle
+    public class UPPERSendorMoudle : IUPPERMoudle
     {
 
         public UPPERSendorMoudle()
@@ -23,7 +24,7 @@ namespace UPPERIOC.UPPER.Sendor.Moudle
 
 		public void AfterCreateInstance(IContainerProvider containerProvider)
 		{
-			Sendor.Contain = containerProvider;
+			SendorCenter.Contain = containerProvider;
 
 		}
 

@@ -31,6 +31,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			toolStrip1 = new ToolStrip();
 			NomalComPage = new ToolStripButton();
+			toolStripButton2 = new ToolStripButton();
 			toolStripButton1 = new ToolStripButton();
 			panel1 = new Panel();
 			toolStrip1.SuspendLayout();
@@ -38,7 +39,7 @@
 			// 
 			// toolStrip1
 			// 
-			toolStrip1.Items.AddRange(new ToolStripItem[] { NomalComPage, toolStripButton1 });
+			toolStrip1.Items.AddRange(new ToolStripItem[] { NomalComPage, toolStripButton2, toolStripButton1 });
 			toolStrip1.Location = new Point(0, 0);
 			toolStrip1.Name = "toolStrip1";
 			toolStrip1.Size = new Size(1401, 25);
@@ -56,6 +57,16 @@
 			NomalComPage.Text = "串口调试";
 			NomalComPage.Click += NomalComPage_Click;
 			// 
+			// toolStripButton2
+			// 
+			toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
+			toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
+			toolStripButton2.ImageTransparentColor = Color.Magenta;
+			toolStripButton2.Name = "toolStripButton2";
+			toolStripButton2.Size = new Size(60, 22);
+			toolStripButton2.Text = "权限管理";
+			toolStripButton2.Click += toolStripButton3_Click;
+			// 
 			// toolStripButton1
 			// 
 			toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
@@ -64,6 +75,7 @@
 			toolStripButton1.Name = "toolStripButton1";
 			toolStripButton1.Size = new Size(60, 22);
 			toolStripButton1.Text = "日志位置";
+			toolStripButton1.Click += toolStripButton1_Click_1;
 			// 
 			// panel1
 			// 
@@ -93,6 +105,7 @@
 		private ToolStrip toolStrip1;
 		private Panel panel1;
 		private ToolStripButton NomalComPage;
+		private ToolStripButton toolStripButton2;
 		private ToolStripButton toolStripButton1;
 	}
 }

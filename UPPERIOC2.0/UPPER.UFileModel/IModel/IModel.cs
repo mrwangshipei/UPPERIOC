@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace UPPERIOC2._0.UPPER.UFileModel.IModel
+namespace UPPERIOC2.UPPER.UFileModel.IModel
 {
 	[Serializable]
 	[XmlRoot]

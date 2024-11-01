@@ -5,16 +5,15 @@ using System.Text;
 using System.Xml.Serialization;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
-using UPPERIOC2._0.UPPER.UFileModel.IConfiguaion;
+using UPPERIOC2.UPPER.UFileModel.IConfiguaion;
 using static System.Net.WebRequestMethods;
 
-namespace UPPERIOC2._0.UPPER.UFileModel.Center
+namespace UPPERIOC2.UPPER.UFileModel.Center
 {
-	[IOCObject]
 	public class UFileModelCenter
 	{
 		internal static IContainerProvider pdr;
-				
+		public static UFileModelCenter Instance;
 		public I GetModel<I>(I T)where I: IModel.IModel 
 		{
 
@@ -29,13 +28,13 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 			}
 			var cfg = arr[0] as IUFileModelConfiguation;
 			CheckPathExist(cfg);
-			string dp = Path.Combine(Environment.CurrentDirectory, cfg.SaveModelPath);
+			string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 
 			var xs = new XmlSerializer(typeof(I));
 			string p = Path.Combine(dp ,T.ModelName);
 			try
 			{
-				using (var fs = new FileStream(p, FileMode.Open,FileAccess.Read))
+			using (var fs = new FileStream(p, FileMode.Open,FileAccess.Read))
 			{
 				var obj = xs.Deserialize(fs);
 					if (obj == null)
@@ -48,6 +47,10 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 			}
 			catch (Exception ex)
 			{
+<<<<<<< HEAD
+=======
+				//throw ex;
+>>>>>>> 11127b1ed6586d7d3397c66a09af7cc022eda3ab
 				return T;
 
 			}
@@ -72,7 +75,7 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 			}
 			var cfg = arr[0] as IUFileModelConfiguation;
 			CheckPathExist(cfg);
-			string dp = Path.Combine(Environment.CurrentDirectory, cfg.SaveModelPath);
+			string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 
 			var xs = new XmlSerializer(typeof(I));
 			string p = Path.Combine(dp, T.ModelName);
@@ -99,7 +102,7 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 		}
 		private void CheckPathExist(IUFileModelConfiguation cfg)
 		{
-			string dp = Path.Combine(Environment.CurrentDirectory, cfg.SaveModelPath);
+			string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 			if (!Directory.Exists(dp))
 			{
 				Directory.CreateDirectory(dp);
