@@ -109,6 +109,7 @@ namespace UpperComAutoTest
 	
 		private void toolStripButton1_Click_2(object sender, EventArgs e)
 		{
+			throw new Exception(";");
 			//Thread.Sleep(15000);
 		}
 

@@ -33,7 +33,7 @@ namespace UpperComAutoTest
 			config.AddMoudle<UPPERMLockMoudle>();
 			config.AddMoudle<UPPERPremissionMoudle>();
 			config.AddMoudle<UPPERFileModelMoudle>();
-		//	config.AddMoudle<UPPERErrorMoudle>();
+			config.AddMoudle<UPPERErrorMoudle>();
 			//config.AddMoudle<UPPERGengXinQiMoudle>();
 			config.SetProvider<UPPERDefaultProvider>();
 			UPPERIOCApplication.RunInstance(config);

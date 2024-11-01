@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
+using System.IO;
 
 namespace UPPERIOC2.UPPER.EmailErrorSender.Sender
 {
@@ -27,7 +28,7 @@ namespace UPPERIOC2.UPPER.EmailErrorSender.Sender
 				MailMessage mail = new MailMessage();
 				mail.From = new MailAddress(cf1.SenderEmail); // 替换为你的发件人邮箱  
 				mail.To.Add(cf1.ReceiveEmail);
-				mail.Subject = "your Application Error:"+x.GetType().Name; // 邮件主题  
+				mail.Subject = "您的应用出现了一点异常:" + x.GetType().Name; // 邮件主题  
 				mail.Body = x.Message + ""+x.StackTrace; // 邮件正文  
 				while (x.InnerException != null)
 				{
@@ -36,7 +37,14 @@ namespace UPPERIOC2.UPPER.EmailErrorSender.Sender
 
 				}
 				mail.IsBodyHtml = true; // 如果邮件正文是HTML格式，则设置为true  
-
+				var dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "temp");
+				if (!Directory.Exists(dp))
+				{
+					Directory.CreateDirectory(dp);
+				}
+				var p = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"temp",DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".dmp");
+				DumpHelper.CreateDump(p);
+				mail.Attachments.Add(new Attachment(p));
 				// SMTP服务器配置  
 				SmtpClient smtpServer = new SmtpClient(cf1.SMPTServer); // 替换为你的SMTP服务器地址  
 				smtpServer.Port = cf1.SMPTPort; // SMTP服务器端口，QQ邮箱通常使用465（SSL）或587（TLS）  
