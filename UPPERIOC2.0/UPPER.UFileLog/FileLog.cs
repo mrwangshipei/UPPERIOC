@@ -50,7 +50,14 @@ namespace UPPERIOC.UPPER.UFileLog
             StringBuilder sb = new StringBuilder();
             sb.Append(Enum.GetName(LogType.GetType(), LogType));
             sb.Append(" - ");
-            sb.Append(logtime.ToLocalTime().ToString());
+                var sbf = "HH:mm:ss";
+                if (Config.PrintMs)
+                {
+                    sbf +=":ffff";
+
+                }
+
+            sb.Append(logtime.ToString(sbf));
             sb.Append(":");
             sb.Append(Msg);
             sb.Append("\n");

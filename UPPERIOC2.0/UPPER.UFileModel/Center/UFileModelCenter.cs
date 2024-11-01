@@ -48,7 +48,6 @@ namespace UPPERIOC2._0.UPPER.UFileModel.Center
 			}
 			catch (Exception ex)
 			{
-				throw ex;
 				return T;
 
 			}

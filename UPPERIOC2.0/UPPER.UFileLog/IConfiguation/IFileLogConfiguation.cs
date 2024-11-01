@@ -10,9 +10,14 @@ namespace UPPERIOC.UPPER.UFileLog.IConfiguation
 	public interface IFileLogConfiguation
 	{
 		/// <summary>
-		/// 目录文件名称
+		/// 是否打印毫秒
+		/// 
 		/// </summary>
-         string DirectoryName { get; set; }
+          bool PrintMs { get; set; }
+        /// <summary>
+        /// 目录文件名称
+        /// </summary>
+        string DirectoryName { get; set; }
 		/// <summary>
 		/// 默认的后缀名
 		/// </summary>
