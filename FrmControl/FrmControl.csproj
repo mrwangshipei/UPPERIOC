@@ -228,13 +228,13 @@
     <None Include="Resources\用户.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UPPERIOC2.0\UPPERIOC2.0.csproj">
-      <Project>{4e52c966-3727-4d58-aa6e-0352b52cfc3c}</Project>
-      <Name>UPPERIOC2.0</Name>
-    </ProjectReference>
+    <None Include="Resources\实验室监控.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\实验室监控.png" />
+    <ProjectReference Include="..\UPPERIOC2.0\UPPERIOC2.0.csproj">
+      <Project>{4E52C966-3727-4D58-AA6E-0352B52CFC3C}</Project>
+      <Name>UPPERIOC2.0</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

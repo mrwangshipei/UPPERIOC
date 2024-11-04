@@ -107,7 +107,7 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
         {
             if (Contain.GetIntstance(typeof(T)) != null)
             {
-                return default;
+                return default(T);
             }
             return (T)(Contain[new IOCTypeInfo() { Type = typeof(T), TypeName = typeof(T).Name }] = InitInstance(typeof(T)));
         }
@@ -117,7 +117,7 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
         {
             if (Contain.GetIntstance(name) != null)
             {
-                return default;
+                return default(T);
             }
             return (T)(Contain[new IOCTypeInfo() { Type = typeof(T), TypeName = name }] = InitInstance(typeof(T)));
 

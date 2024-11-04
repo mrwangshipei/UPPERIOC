@@ -109,7 +109,7 @@ namespace UpperComAutoTest
 	
 		private void toolStripButton1_Click_2(object sender, EventArgs e)
 		{
-			throw new Exception(";");
+			MyTips.ShowTips(this, Tipstype.Tip, "adsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjk");
 			//Thread.Sleep(15000);
 		}
 

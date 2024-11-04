@@ -42,7 +42,7 @@ namespace UPPERIOC2.UPPER.Premission
            // string t = (string)Registry.GetValue(RegistryRoot, keyName, null);
            // if (t == null)
             {
-                return default;
+                return default(T);
             }
          
           //  return (T)xml.Deserialize(sw);
