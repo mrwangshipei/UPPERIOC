@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,11 +79,24 @@ namespace UpperComAutoTest.MyControls
 					tips.Location = new Point(Screen.PrimaryScreen.Bounds.Location.X + (Screen.PrimaryScreen.Bounds.Width / 2 - tips.Width / 2), Screen.PrimaryScreen.Bounds.Location.Y + (Screen.PrimaryScreen.Bounds.Height - tips.Height - 220));
 
 				}
+				int n = tips.GetTextLineCount(tips.label1);
+				tips.Height = tips.Height * n;
 				tips.ShowForm(waittime);
 			}
 
 		}
-		System.Windows.Forms.Timer close_t = new System.Windows.Forms.Timer();
+	
+		public int GetTextLineCount(System.Windows.Forms.Label label1)
+	{
+		using (Graphics graphics = label1.CreateGraphics())
+		{
+			SizeF textSize = graphics.MeasureString(label1.Text, label1.Font);
+			int lineCount = (int)Math.Ceiling(textSize.Width / label1.Width);
+
+			return lineCount;
+		}
+	}
+	System.Windows.Forms.Timer close_t = new System.Windows.Forms.Timer();
 
 		private void ShowForm(int waittime = 2000)
 		{

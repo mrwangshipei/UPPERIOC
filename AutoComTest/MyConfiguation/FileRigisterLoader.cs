@@ -27,13 +27,13 @@ namespace Common.MConfigration
 			XmlSerializer xml = new XmlSerializer(typeof(T));
 			if (!File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lock.txt")))
 			{
-				return default;
+				return default(T);
 
 			}
 			string t = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lock.txt"));
 			if (t == null)
 			{
-				return default;
+				return default(T);
 			}
 			StringReader sw = new StringReader(t);
 			return (T)xml.Deserialize(sw);

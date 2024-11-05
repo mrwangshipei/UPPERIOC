@@ -19,5 +19,6 @@ namespace UpperComAutoTest.MyConfiguation
 		public List<LogType> WhichTypePrint { get => new List<LogType>() {LogType.Debug, LogType.Error, LogType.Warn, LogType.Info }; set => throw new NotImplementedException(); }
 		public string FileNameTimeFormat { get => "测试日志yyyyMMdd"; set => throw new NotImplementedException(); }
 		public int HowManyHourSave { get => 48; set => throw new NotImplementedException(); }
+		public bool PrintMs { get =>true; set => throw new NotImplementedException(); }
 	}
 }
