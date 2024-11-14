@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JsveQVsvaDk=",
+  "dgSpecHash": "Y/MrqOAdQGJNy+BltApD56/bpbnEInAYEIEz9pMONL/Oh5X7G+zx6pV/hwBz6WQLNv+yN6waFSWQHN01/x4dAA==",
   "success": true,
-  "projectFilePath": "D:\\code\\vs\\UpperComAutoTest\\UpperComAutoTest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+  "projectFilePath": "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\1\\.nuget\\packages\\system.management\\4.6.0\\system.management.4.6.0.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.management\\4.6.0\\system.management.4.6.0.nupkg.sha512"
   ],
   "logs": []
 }

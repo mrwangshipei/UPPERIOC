@@ -51,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C\Btn\Apple3Btn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C\Btn\Apple3Btn.Designer.cs">
+      <DependentUpon>Apple3Btn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C\Btn\FrmBtn.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="C\LastResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,6 +72,7 @@
     <Compile Include="C\TempForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Extention\GraphicsExtensions.cs" />
     <Compile Include="FrmPremission\BLL\FrmEditCBLL.cs" />
     <Compile Include="FrmPremission\BLL\FrmRoleGroupbll.cs" />
     <Compile Include="FrmPremission\BLL\FrmRoleEditBLL.cs" />
@@ -167,6 +177,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="C\Btn\Apple3Btn.resx">
+      <DependentUpon>Apple3Btn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C\LastResultControl.resx">
       <DependentUpon>LastResultControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +248,15 @@
       <Project>{4E52C966-3727-4D58-AA6E-0352B52CFC3C}</Project>
       <Name>UPPERIOC2.0</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maximize-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shut down-2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

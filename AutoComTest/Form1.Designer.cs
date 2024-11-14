@@ -37,7 +37,6 @@ namespace UpperComAutoTest
 			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.systemStopwatch1 = new FrmControl.C.SystemStopwatch();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -90,22 +89,13 @@ namespace UpperComAutoTest
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1201, 607);
 			this.panel1.TabIndex = 1;
-			// 
-			// systemStopwatch1
-			// 
-			this.systemStopwatch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("systemStopwatch1.BackgroundImage")));
-			this.systemStopwatch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.systemStopwatch1.Location = new System.Drawing.Point(198, 0);
-			this.systemStopwatch1.Name = "systemStopwatch1";
-			this.systemStopwatch1.Size = new System.Drawing.Size(36, 32);
-			this.systemStopwatch1.TabIndex = 2;
+			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1201, 632);
-			this.Controls.Add(this.systemStopwatch1);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.toolStrip1);
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -125,6 +115,5 @@ namespace UpperComAutoTest
 		private ToolStripButton NomalComPage;
 		private ToolStripButton toolStripButton2;
 		private ToolStripButton toolStripButton1;
-		private FrmControl.C.SystemStopwatch systemStopwatch1;
 	}
 }

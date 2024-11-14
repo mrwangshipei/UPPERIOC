@@ -193,6 +193,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Setup\PWD.resx">
       <DependentUpon>PWD.cs</DependentUpon>
@@ -219,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\失败.png" />
+    <None Include="Resources\新建文件夹.png" />
     <Content Include="Resources\错误.png" />
   </ItemGroup>
   <ItemGroup>
