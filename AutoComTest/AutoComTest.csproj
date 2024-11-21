@@ -73,6 +73,7 @@
     <Compile Include="MyConfiguation\FileRigisterLoader.cs" />
     <Compile Include="MyConfiguation\MUPConfiguation.cs" />
     <Compile Include="MyConfiguation\MyConfiguation.cs" />
+    <Compile Include="MyConfiguation\MyTranslateConfig.cs" />
     <Compile Include="MyControls\FrmPwd.cs">
       <SubType>Form</SubType>
     </Compile>

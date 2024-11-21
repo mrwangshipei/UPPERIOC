@@ -80,6 +80,7 @@ namespace UpperComAutoTest
 			this.toolStripButton1.Size = new System.Drawing.Size(60, 22);
 			this.toolStripButton1.Text = "日志位置";
 			this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_2);
+			this.toolStripButton1.DisplayStyleChanged += new System.EventHandler(this.toolStripButton1_DisplayStyleChanged);
 			// 
 			// panel1
 			// 

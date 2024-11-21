@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace UPPERIOC2.UPPER.IModel
+namespace UPPERIOC2.UPPER.Model
 {
     public class VersionModel
     {

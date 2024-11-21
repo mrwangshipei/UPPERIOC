@@ -44,5 +44,17 @@ namespace FrmControl.C.Btn
 			}
 
 		}
+
+		private void Apple3Btn_SizeChanged(object sender, EventArgs e)
+		{
+			this.frmBtn1.Radius = this.frmBtn1.Width / 2;
+			this.frmBtn2.Radius = this.frmBtn2.Width / 2;
+			this.frmBtn3.Radius = this.frmBtn3.Width / 2;
+		}
+
+		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
 	}
 }

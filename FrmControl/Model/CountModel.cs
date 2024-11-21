@@ -1,5 +1,5 @@
 ﻿using Kernal;
-using UPPERIOC2.UPPER.UFileModel.IModel;
+using UPPERIOC2.UPPER.UFileModel.Model;
 
 namespace FCT.Model
 {

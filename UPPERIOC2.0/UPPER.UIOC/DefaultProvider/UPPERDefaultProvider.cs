@@ -161,8 +161,12 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
         {
             return Contain[new IOCTypeInfo() { Type = T, TypeName = name }] = obj;
         }
+		public T GetInstanceAndSub<T>()
+		{
+			return (T)Contain.GetIntstance(typeof(T),true);
+		}
 
-        public T GetInstance<T>()
+		public T GetInstance<T>()
         {
             return (T)Contain.GetIntstance(typeof(T));
         }

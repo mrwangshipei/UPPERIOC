@@ -9,6 +9,8 @@ using UPPERIOC.UPPER.Sendor.Moudle;
 using UPPERIOC.UPPER.UFILELOG.Moudle;
 using UPPERIOC2.UPPER.EmailErrorSender.Moudle;
 using UPPERIOC2.UPPER.Premission.Moudle;
+using UPPERIOC2.UPPER.Translate.Center;
+using UPPERIOC2.UPPER.Translate.Moudle;
 using UPPERIOC2.UPPER.UFileModel.Moudle;
 using UPPERIOC2.UPPER.UIOC.DefaultProvider;
 
@@ -33,10 +35,12 @@ namespace UpperComAutoTest
 			config.AddMoudle<UPPERMLockMoudle>();
 			config.AddMoudle<UPPERPremissionMoudle>();
 			config.AddMoudle<UPPERFileModelMoudle>();
-			config.AddMoudle<UPPERErrorMoudle>();
-			//config.AddMoudle<UPPERGengXinQiMoudle>();
+			//config.AddMoudle<UPPERErrorMoudle>();
+			config.AddMoudle<UPPERTranslateMoudle>();
 			config.SetProvider<UPPERDefaultProvider>();
 			UPPERIOCApplication.RunInstance(config);
+			TranslateCenter.Instance.SetLanguage("EN");
+
 			Application.Run(new Form1());
 		}
 

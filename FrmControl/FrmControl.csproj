@@ -73,6 +73,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Extention\GraphicsExtensions.cs" />
+    <Compile Include="FrmBase\FrmBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBase\FrmBaseForm.Designer.cs">
+      <DependentUpon>FrmBaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPremission\BLL\FrmEditCBLL.cs" />
     <Compile Include="FrmPremission\BLL\FrmRoleGroupbll.cs" />
     <Compile Include="FrmPremission\BLL\FrmRoleEditBLL.cs" />
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C\LastResultControl.resx">
       <DependentUpon>LastResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBase\FrmBaseForm.resx">
+      <DependentUpon>FrmBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPremission\C\RoleGroupEditControl.resx">
       <DependentUpon>RoleGroupEditControl.cs</DependentUpon>

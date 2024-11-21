@@ -9,6 +9,7 @@ using UpperComAutoTest.MyControls;
 using UpperComAutoTest.View.Page.Interface;
 using UPPERIOC;
 using UPPERIOC.UPPER;
+using UPPERIOC2.UPPER.Translate.Center;
 
 namespace UpperComAutoTest
 {
@@ -18,13 +19,17 @@ namespace UpperComAutoTest
 		Form1ModelView modelView;
 		public Form1()
 		{
+
 			modelView = UPPERIOCApplication.Container.GetInstance<Form1ModelView>();
 			InitializeComponent();
 			foreach (ToolStripItem item in toolStrip1.Items)
 			{
 				item.Click += Open;
 			}
+
 			NomalComPage.PerformClick();
+			TranslateCenter.Instance.SetRootWindows(this);
+
 		}
 
 
@@ -119,6 +124,11 @@ namespace UpperComAutoTest
 		}
 
 		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void toolStripButton1_DisplayStyleChanged(object sender, EventArgs e)
 		{
 
 		}

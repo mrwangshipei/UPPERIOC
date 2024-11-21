@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
-using UPPERIOC2.UPPER.IModel;
+using UPPERIOC2.UPPER.Model;
 using UPPERIOC2.UPPER.VersionControl;
 using UPPERIOC2.UPPER.VersionControl.IVersion;
 

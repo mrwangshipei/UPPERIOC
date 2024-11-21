@@ -10,11 +10,14 @@ using static System.Net.WebRequestMethods;
 
 namespace UPPERIOC2.UPPER.UFileModel.Center
 {
+	public static class F { 
+		public static UFileModelCenter I { get => UFileModelCenter.Instance; }
+	}
 	public class UFileModelCenter
 	{
 		internal static IContainerProvider pdr;
 		public static UFileModelCenter Instance;
-		public I GetModel<I>(I T)where I: IModel.IModel 
+		public I GetModel<I>(I T)where I: Model.IModel 
 		{
 
 			if (pdr == null)
@@ -55,7 +58,7 @@ namespace UPPERIOC2.UPPER.UFileModel.Center
 			}
 
 		}
-		public void SaveModel<I>(I T) where I : IModel.IModel 
+		public void SaveModel<I>(I T) where I : Model.IModel 
 		{
 			lock (this)
 			{
