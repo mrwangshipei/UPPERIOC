@@ -33,7 +33,7 @@ TranslateCenter.Instance.SetLanguage("EN");
 TranslateCenter.Instance.SetRootWindows(this);
 也可以显式的使用
 Control.Property = TranslateCenter.Instance.SetText(Control.Property);
-模块会在路径Model/translate生成一个文件，你可以用文本打开，然后依次翻译词条。但是我们推荐使用接口翻译。需要你实现一个接口，并通过
+模块会在路径Model/translate生成一个文件，你可以用文本打开，然后依次翻译词条。但是我们推荐使用接口翻译。需要你实现一个ITranslateConfig接口，并注入到容器中。容器会在SetText没有翻译的情况下使用有道词典进行翻译。
 ```
 
 #### 软件架构
