@@ -9,6 +9,7 @@
  项目是个人开发 **完全开源免费** ，后期假如一直在这个行业就会一直维护。可以用来申请专利还有二次开发。无版权问题，只要
 ![输入图片说明](src=http___image109.360doc.com_DownloadImg_2018_09_1103_143832249_2_20180911034746566&refer=http___image109.360doc.webp)
 ```
+
 > Sendor
 的用法很简单，提供一个消息类，便可以实现依赖反转式的通信，很好的解耦了软件中的层级关系。
 > Log
@@ -23,7 +24,16 @@ IOC就是集成了一些注解注入式容器，目前是可用的，但是相�
 > SimplePremission
 一个简单的单体应用权限系统解决方案，通过配置 IPremissionConfiguation 配置权限系统的初始化，窗体，还有一些基本信息。需要注意的是，使用简单的权限系统需要实现RigisterObjLoad 来初始化权限的保存方式，无论如何，你必须持有一个 RigisterObjLoad 的对象在容器中，这个对象会管理权限系统的保存在系统中的方式，默认是以注册表的形式保存的。
 还有一件你要关心的，就是权限系统的用法，我提供了两种用法，一种是直接通过权限标识在需要权限的时候访问，当前用户无权限就会抛出异常。一种是使用Mvvm在vm层将需要权限的类授予 ProxyClass 标签 而方法标记上 PremissionRequired 标签，这样vm的生命周期都将交给IOC管理，在需要vm的时候使用我的IOC容器，会提供一个经过AOP的子类。
-
+> Translate
+使用Translate模块，可以翻译软件中所有原生控件的Text属性，也能自己手动设置翻译。使用Translate翻译模块需要在启用容器的时候调用
+config.AddMoudle<UPPERTranslateMoudle>();
+然后在RunApplication之后设置语言
+TranslateCenter.Instance.SetLanguage("EN");
+然后在需要翻译的窗体加载完成后调用函数
+TranslateCenter.Instance.SetRootWindows(this);
+也可以显式的使用
+Control.Property = TranslateCenter.Instance.SetText(Control.Property);
+模块会在路径Model/translate生成一个文件，你可以用文本打开，然后依次翻译词条。但是我们推荐使用接口翻译。需要你实现一个接口，并通过
 ```
 
 #### 软件架构
@@ -48,6 +58,7 @@ UPPERIOC.*.Center -用户直接交互的类
 UPPERIOC.*.IConfigration -模块中用户需要自己实现的配置类（注册）
 
 UPPERIOC.*.IModel -模块中用户需要自己实现的模型类（注册）
+
 
 #### 安装教程
 
