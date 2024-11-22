@@ -109,5 +109,10 @@ namespace UPPERIOC2.UPPER.Util
 
 			return baseBoardId;
 		}
+
+		internal static bool VerifyWithSalt(string solt, object value)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

@@ -72,12 +72,12 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 			}
 			m = c[0];
 		//	var lisaddr = Path.Combine(Environment.CurrentDirectory, m.Listenaddr);
-			if (RegisterHelper.GetLockFile(m.Listenaddr,m.LockName) == null)
+			if (RegisterHelper.Instance.GetLockFile(m.Listenaddr,m.LockName) == null)
 			{
 				m.Noregister();
 
 			}
-			if (HashHelper.VerifyWithSalt(m.Solt , RegisterHelper.GetLockFile( m.Listenaddr, m.LockName)))
+			if (HashHelper.VerifyWithSalt(m.Solt , RegisterHelper.Instance.GetLockFile( m.Listenaddr, m.LockName)))
 			{
 				Console.Write("验证成功");
 			}

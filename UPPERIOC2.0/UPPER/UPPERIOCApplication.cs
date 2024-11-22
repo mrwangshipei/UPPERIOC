@@ -21,11 +21,14 @@ namespace UPPERIOC
     {
         public static IContainerProvider Container;
 		public static  VersionModel vm;
-        List<ILog> Log = new List<ILog>();
+        internal static List<ILog> Log ;
 		//public static event DosomethingWhenInited AopEvent;
 		public static void RunInstance(MoudleConfiguaion moudle)
         {
 			var Param = moudle.ExportUpperModel();
+
+			Log = moudle.Log;
+			LogCenter.AddAllLog(Log.ToArray());
             Container = moudle._containerProvider;
 			if (!Param.All(item => Param.Select(item1=> item1.GetType()).ToArray().ContainsAll(item.DependisMoudel)))
 			{
@@ -54,8 +57,7 @@ namespace UPPERIOC
                 item.InitEnd(moudle._containerProvider);
                 return true;
             });
-			LoadLog();
-
+			//LoadLog();
 		}
 		public static void RigisterVersionModel(VersionModel vm1) 
 		{
@@ -65,7 +67,7 @@ namespace UPPERIOC
 			}
 			vm = vm1;
 		}
-		private static void LoadLog()
+		/*public static void LoadLog()
 		{
 			object[] ilog = null;
 			ilog = Container?.GetAllInstance(typeof(ILog));
@@ -75,7 +77,7 @@ namespace UPPERIOC
 
 			}
 		}
-	
+	*/
 
 	}
 }

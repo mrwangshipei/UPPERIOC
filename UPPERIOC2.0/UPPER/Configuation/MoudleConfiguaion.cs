@@ -12,40 +12,36 @@ namespace UPPERIOC.UPPER.IOC.Center.Configuation
 {
     public class MoudleConfiguaion
     {
-        List<Type> Moudle = new List<Type>();
-        List<Type> Log = new List<Type>();
+        List<IUPPERMoudle> Moudle = new List<IUPPERMoudle>();
+        internal List<ILog> Log = new List<ILog>();
 		public IContainerProvider _containerProvider ;
         /// <summary>
         /// 使用默认的IOC管理或者集成其他IOC容器
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void SetProvider<T>() where T: IContainerProvider 
+        public void SetProvider<T>() where T: IContainerProvider ,new()
         {
-			_containerProvider = (T)typeof(T).GetConstructors().First().Invoke(null);
+			_containerProvider = new T();
 		}
         /// <summary>
         /// 注册一个模块
         /// </summary>
         /// <typeparam name="T"></typeparam>
-		public void AddMoudle<T>()where T : IUPPERMoudle
+		public void AddMoudle<T>()where T : IUPPERMoudle,new()
 		{
-            Moudle.Add(typeof(T));
+            Moudle.Add(new T());
         }
         /// <summary>
         /// 注册一个日志接口
         /// </summary>
         /// <typeparam name="T"></typeparam>
-		public void AddILog<T>() where T : ILog
+		public void AddILog<T>() where T : ILog,new()
 		{
-			Log.Add(typeof(T));
+			Log.Add(new T());
 		}
 		internal IUPPERMoudle[] ExportUpperModel() {
-            IUPPERMoudle[] models = new IUPPERMoudle[Moudle.Count];
-            return Moudle.Select(model =>
-            {
-
-                return model.Assembly.CreateInstance(model.FullName) as IUPPERMoudle;
-            }).ToArray();
+            //IUPPERMoudle[] models = new IUPPERMoudle[Moudle.Count];
+            return Moudle.ToArray();
 		}
     }
 }
