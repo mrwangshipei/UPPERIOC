@@ -30,7 +30,7 @@ namespace Setup.Configuation
 				if (pr == DialogResult.Yes)
 				{
 					var x = HashHelper.EncryptWithSalt(Solt);
-					RegisterHelper.SaveLockFile(m.Listenaddr,m.LockName, x);
+					RegisterHelper.Instance.SaveLockFile(m.Listenaddr,m.LockName, x);
 
 
 				}

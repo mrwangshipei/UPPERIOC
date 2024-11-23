@@ -323,5 +323,15 @@ namespace UpperComAutoTest.Page
 			flowLayoutPanel1.Controls.Add(sel);
 			model.Msgevens.Add(sel.MsgBody);
 		}
-	}
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }

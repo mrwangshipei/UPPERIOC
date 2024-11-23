@@ -1,39 +1,44 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\UpperComAutoTest.csproj": {}
+    "E:\\code\\cs\\upperioc\\UpperComAutoTest\\UpperComAutoTest.csproj": {}
   },
   "projects": {
-    "D:\\Code\\C#\\UpperContest\\FrmControl\\FrmControl.csproj": {
+    "E:\\code\\cs\\upperioc\\FrmControl\\FrmControl.csproj": {
       "restore": {
-        "projectUniqueName": "D:\\Code\\C#\\UpperContest\\FrmControl\\FrmControl.csproj",
+        "projectUniqueName": "E:\\code\\cs\\upperioc\\FrmControl\\FrmControl.csproj",
         "projectName": "FrmControl",
-        "projectPath": "D:\\Code\\C#\\UpperContest\\FrmControl\\FrmControl.csproj",
+        "projectPath": "E:\\code\\cs\\upperioc\\FrmControl\\FrmControl.csproj",
+        "UsingMicrosoftNETSdk": false,
         "frameworks": {
-          "net452": {
+          "net48": {
             "projectReferences": {
-              "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
-                "projectPath": "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
+              "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
+                "projectPath": "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
               }
             }
           }
         }
       },
       "frameworks": {
-        "net452": {}
+        "net48": {}
       }
     },
-    "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\UpperComAutoTest.csproj": {
+    "E:\\code\\cs\\upperioc\\UpperComAutoTest\\UpperComAutoTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\UpperComAutoTest.csproj",
+        "projectUniqueName": "E:\\code\\cs\\upperioc\\UpperComAutoTest\\UpperComAutoTest.csproj",
         "projectName": "UpperComAutoTest",
-        "projectPath": "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\UpperComAutoTest.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\obj\\",
+        "projectPath": "E:\\code\\cs\\upperioc\\UpperComAutoTest\\UpperComAutoTest.csproj",
+        "packagesPath": "C:\\Users\\Wsp00\\.nuget\\packages\\",
+        "outputPath": "E:\\code\\cs\\upperioc\\UpperComAutoTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Wsp00\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -41,18 +46,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.cdn.azure.cn/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "D:\\Code\\C#\\UpperContest\\FrmControl\\FrmControl.csproj": {
-                "projectPath": "D:\\Code\\C#\\UpperContest\\FrmControl\\FrmControl.csproj"
+              "E:\\code\\cs\\upperioc\\FrmControl\\FrmControl.csproj": {
+                "projectPath": "E:\\code\\cs\\upperioc\\FrmControl\\FrmControl.csproj"
               },
-              "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
-                "projectPath": "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
+              "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
+                "projectPath": "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
               }
             }
           }
@@ -61,7 +65,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net7.0-windows7.0": {
@@ -91,6 +101,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -99,35 +127,38 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
+    "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+        "projectUniqueName": "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
         "projectName": "UPPERIOC2.0",
-        "projectPath": "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\obj\\",
+        "projectPath": "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\UPPERIOC2.0.csproj",
+        "packagesPath": "C:\\Users\\Wsp00\\.nuget\\packages\\",
+        "outputPath": "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
+        "fallbackFolders": [
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Wsp00\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net45"
+          "net452"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.cdn.azure.cn/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net45": {
-            "targetAlias": "net45",
+          "net452": {
+            "targetAlias": "net452",
             "projectReferences": {}
           }
         },
@@ -135,18 +166,24 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net45": {
-          "targetAlias": "net45",
+        "net452": {
+          "targetAlias": "net452",
           "dependencies": {
             "System.Management": {
               "target": "Package",
               "version": "[4.6.0, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

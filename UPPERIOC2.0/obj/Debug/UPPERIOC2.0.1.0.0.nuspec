@@ -5,6 +5,7 @@
     <version>1.0.0</version>
     <authors>UPPERIOC2.0</authors>
     <description>Package Description</description>
+    <repository type="git" commit="ae1943e56b3089bab9d7a126b83c4bc02d6c8e87" />
     <dependencies>
       <group targetFramework=".NETFramework4.5">
         <dependency id="System.Management" version="4.6.0" exclude="Build,Analyzers" />
@@ -12,6 +13,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="D:\Code\C#\UpperContest\UPPERIOC2.0\bin\Debug\net45\UPPERIOC2.0.dll" target="lib\net45\UPPERIOC2.0.dll" />
+    <file src="E:\code\cs\upperioc\UPPERIOC2.0\bin\Debug\net45\UPPERIOC2.0.dll" target="lib\net45\UPPERIOC2.0.dll" />
   </files>
 </package>

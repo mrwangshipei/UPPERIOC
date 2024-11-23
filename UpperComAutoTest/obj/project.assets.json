@@ -678,7 +678,7 @@
       },
       "UPPERIOC2.0/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.5",
+        "framework": ".NETFramework,Version=v4.5.2",
         "dependencies": {
           "System.Management": "4.6.0"
         },
@@ -2801,19 +2801,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\Wsp00\\.nuget\\packages\\": {},
+    "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\UpperComAutoTest.csproj",
+      "projectUniqueName": "E:\\code\\cs\\upperioc\\UpperComAutoTest\\UpperComAutoTest.csproj",
       "projectName": "UpperComAutoTest",
-      "projectPath": "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\UpperComAutoTest.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\C#\\UpperContest\\UpperComAutoTest\\obj\\",
+      "projectPath": "E:\\code\\cs\\upperioc\\UpperComAutoTest\\UpperComAutoTest.csproj",
+      "packagesPath": "C:\\Users\\Wsp00\\.nuget\\packages\\",
+      "outputPath": "E:\\code\\cs\\upperioc\\UpperComAutoTest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Wsp00\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2821,18 +2826,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.cdn.azure.cn/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "D:\\Code\\C#\\UpperContest\\FrmControl\\FrmControl.csproj": {
-              "projectPath": "D:\\Code\\C#\\UpperContest\\FrmControl\\FrmControl.csproj"
+            "E:\\code\\cs\\upperioc\\FrmControl\\FrmControl.csproj": {
+              "projectPath": "E:\\code\\cs\\upperioc\\FrmControl\\FrmControl.csproj"
             },
-            "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
-              "projectPath": "D:\\Code\\C#\\UpperContest\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
+            "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\UPPERIOC2.0.csproj": {
+              "projectPath": "E:\\code\\cs\\upperioc\\UPPERIOC2.0\\UPPERIOC2.0.csproj"
             }
           }
         }
@@ -2841,7 +2845,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net7.0-windows7.0": {
@@ -2871,6 +2881,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -2879,8 +2907,20 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "包 \"System.Text.RegularExpressions\" 4.3.0 具有已知的 高 严重性漏洞，https://github.com/advisories/GHSA-cmhx-cq75-c4mj",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    }
+  ]
 }

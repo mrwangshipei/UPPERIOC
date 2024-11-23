@@ -28,3 +28,10 @@ x86/
 *.dbmdl
 *.publishsettings
 /UpperComAutoTest/MyConfiguation/ErrorUpload.cs
+/.vs
+ProjectEvaluation
+/.vs/ProjectEvaluation
+/.vs/UpperComAutoTest
+/.vs/upperioc
+/.vs/.gitignore
+/.vs/VSWorkspaceState.json

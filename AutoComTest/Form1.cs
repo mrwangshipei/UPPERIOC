@@ -28,7 +28,7 @@ namespace UpperComAutoTest
 			}
 
 			NomalComPage.PerformClick();
-			TranslateCenter.Instance.SetRootWindows(this);
+	//		TranslateCenter.Instance.SetRootWindows(this);
 
 		}
 
