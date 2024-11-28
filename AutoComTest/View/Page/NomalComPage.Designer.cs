@@ -117,6 +117,7 @@ namespace UpperComAutoTest.Page
             this.frmLinerGidentBtn1.Location = new System.Drawing.Point(169, 82);
             this.frmLinerGidentBtn1.Name = "frmLinerGidentBtn1";
             this.frmLinerGidentBtn1.Size = new System.Drawing.Size(421, 118);
+            this.frmLinerGidentBtn1.SizeCLick = 70;
             this.frmLinerGidentBtn1.TabIndex = 4;
             this.frmLinerGidentBtn1.Text = "sss";
             // 
@@ -148,6 +149,7 @@ namespace UpperComAutoTest.Page
             this.richTextBox_s.Size = new System.Drawing.Size(909, 164);
             this.richTextBox_s.TabIndex = 0;
             this.richTextBox_s.Text = "";
+            this.richTextBox_s.TextChanged += new System.EventHandler(this.richTextBox_s_TextChanged_1);
             // 
             // contextMenuStrip1
             // 
@@ -156,18 +158,18 @@ namespace UpperComAutoTest.Page
             this.转16进制ToolStripMenuItem,
             this.查看字符ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(142, 52);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 48);
             // 
             // 转16进制ToolStripMenuItem
             // 
             this.转16进制ToolStripMenuItem.Name = "转16进制ToolStripMenuItem";
-            this.转16进制ToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.转16进制ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.转16进制ToolStripMenuItem.Text = "转16进制";
             // 
             // 查看字符ToolStripMenuItem
             // 
             this.查看字符ToolStripMenuItem.Name = "查看字符ToolStripMenuItem";
-            this.查看字符ToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
+            this.查看字符ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.查看字符ToolStripMenuItem.Text = "查看字符";
             // 
             // panel2
@@ -201,9 +203,9 @@ namespace UpperComAutoTest.Page
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 29);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 24);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(256, 247);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(256, 252);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel5
@@ -244,9 +246,9 @@ namespace UpperComAutoTest.Page
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.Location = new System.Drawing.Point(133, 29);
+            this.button4.Location = new System.Drawing.Point(133, 24);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 65);
+            this.button4.Size = new System.Drawing.Size(126, 70);
             this.button4.TabIndex = 2;
             this.button4.Text = "发送";
             this.button4.UseVisualStyleBackColor = true;
@@ -256,7 +258,7 @@ namespace UpperComAutoTest.Page
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(98, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 27);
+            this.label6.Size = new System.Drawing.Size(32, 21);
             this.label6.TabIndex = 2;
             this.label6.Text = "ms";
             // 
@@ -264,15 +266,16 @@ namespace UpperComAutoTest.Page
             // 
             this.textBox1.Location = new System.Drawing.Point(13, 29);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(81, 33);
+            this.textBox1.Size = new System.Drawing.Size(81, 28);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(34, 63);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(114, 31);
+            this.checkBox3.Size = new System.Drawing.Size(93, 25);
             this.checkBox3.TabIndex = 5;
             this.checkBox3.Text = "自动发送";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -295,9 +298,9 @@ namespace UpperComAutoTest.Page
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Location = new System.Drawing.Point(3, 29);
+            this.button2.Location = new System.Drawing.Point(3, 24);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 74);
+            this.button2.Size = new System.Drawing.Size(127, 79);
             this.button2.TabIndex = 2;
             this.button2.Text = "清理消息";
             this.button2.UseVisualStyleBackColor = true;
@@ -307,7 +310,7 @@ namespace UpperComAutoTest.Page
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(149, 79);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(94, 31);
+            this.checkBox5.Size = new System.Drawing.Size(77, 25);
             this.checkBox5.TabIndex = 3;
             this.checkBox5.Text = "时间戳";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -317,7 +320,7 @@ namespace UpperComAutoTest.Page
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(149, 26);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 31);
+            this.checkBox1.Size = new System.Drawing.Size(95, 25);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "转16进制";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -327,7 +330,7 @@ namespace UpperComAutoTest.Page
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(149, 53);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(114, 31);
+            this.checkBox2.Size = new System.Drawing.Size(93, 25);
             this.checkBox2.TabIndex = 3;
             this.checkBox2.Text = "白底黑字";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -348,9 +351,9 @@ namespace UpperComAutoTest.Page
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 29);
+            this.button1.Location = new System.Drawing.Point(3, 24);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 51);
+            this.button1.Size = new System.Drawing.Size(127, 56);
             this.button1.TabIndex = 2;
             this.button1.Text = "启动";
             this.button1.UseVisualStyleBackColor = true;
@@ -359,9 +362,9 @@ namespace UpperComAutoTest.Page
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Right;
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(130, 29);
+            this.button3.Location = new System.Drawing.Point(130, 24);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 51);
+            this.button3.Size = new System.Drawing.Size(129, 56);
             this.button3.TabIndex = 2;
             this.button3.Text = "停止";
             this.button3.UseVisualStyleBackColor = true;
@@ -395,7 +398,7 @@ namespace UpperComAutoTest.Page
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(89, 170);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(170, 35);
+            this.comboBox3.Size = new System.Drawing.Size(170, 29);
             this.comboBox3.TabIndex = 1;
             // 
             // label1
@@ -403,7 +406,7 @@ namespace UpperComAutoTest.Page
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(11, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 27);
+            this.label1.Size = new System.Drawing.Size(42, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "串口";
             // 
@@ -412,7 +415,7 @@ namespace UpperComAutoTest.Page
             this.checkBox8.AutoSize = true;
             this.checkBox8.Location = new System.Drawing.Point(167, 205);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(62, 31);
+            this.checkBox8.Size = new System.Drawing.Size(51, 25);
             this.checkBox8.TabIndex = 3;
             this.checkBox8.Text = "dtr";
             this.checkBox8.UseVisualStyleBackColor = true;
@@ -422,7 +425,7 @@ namespace UpperComAutoTest.Page
             this.checkBox7.AutoSize = true;
             this.checkBox7.Location = new System.Drawing.Point(46, 205);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(58, 31);
+            this.checkBox7.Size = new System.Drawing.Size(48, 25);
             this.checkBox7.TabIndex = 3;
             this.checkBox7.Text = "rts";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -432,7 +435,7 @@ namespace UpperComAutoTest.Page
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 27);
+            this.label2.Size = new System.Drawing.Size(58, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "波特率";
             // 
@@ -441,7 +444,7 @@ namespace UpperComAutoTest.Page
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 27);
+            this.label3.Size = new System.Drawing.Size(58, 21);
             this.label3.TabIndex = 0;
             this.label3.Text = "数据位";
             // 
@@ -450,7 +453,7 @@ namespace UpperComAutoTest.Page
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 138);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 27);
+            this.label4.Size = new System.Drawing.Size(58, 21);
             this.label4.TabIndex = 0;
             this.label4.Text = "停止位";
             // 
@@ -459,15 +462,16 @@ namespace UpperComAutoTest.Page
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(89, 98);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(170, 35);
+            this.comboBox5.Size = new System.Drawing.Size(170, 29);
             this.comboBox5.TabIndex = 1;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged_1);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(89, 27);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 35);
+            this.comboBox1.Size = new System.Drawing.Size(170, 29);
             this.comboBox1.TabIndex = 1;
             // 
             // comboBox4
@@ -475,7 +479,7 @@ namespace UpperComAutoTest.Page
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(89, 135);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(170, 35);
+            this.comboBox4.Size = new System.Drawing.Size(170, 29);
             this.comboBox4.TabIndex = 1;
             // 
             // label5
@@ -484,7 +488,7 @@ namespace UpperComAutoTest.Page
             this.label5.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label5.Location = new System.Drawing.Point(11, 173);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 27);
+            this.label5.Size = new System.Drawing.Size(74, 21);
             this.label5.TabIndex = 0;
             this.label5.Text = "基偶校验";
             // 
@@ -493,7 +497,7 @@ namespace UpperComAutoTest.Page
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(89, 62);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(170, 35);
+            this.comboBox2.Size = new System.Drawing.Size(170, 29);
             this.comboBox2.TabIndex = 1;
             // 
             // NomalComPage

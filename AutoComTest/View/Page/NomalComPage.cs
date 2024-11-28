@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrmControl.C.TempShow;
 using UpperComAutoTest.Entry;
 using UpperComAutoTest.Entry.IEventFileModel;
 using UpperComAutoTest.Entry.IEventFileModel.IMsgEvent;
@@ -333,5 +334,26 @@ namespace UpperComAutoTest.Page
         {
 
         }
+
+        private void comboBox5_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        TempListForm te ;
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+			
+        }
+
+        private void richTextBox_s_TextChanged_1(object sender, EventArgs e)
+        {
+			te = new TempListForm(richTextBox_s);
+
+            te.Source = new BindingList<string>() { "1234", "123x4", "1234w", };  
+			
+            te.Show();
+			richTextBox_s.Focus();
+		}
     }
 }

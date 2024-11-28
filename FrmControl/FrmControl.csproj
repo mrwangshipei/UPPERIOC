@@ -83,6 +83,12 @@
     <Compile Include="C\TempForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="C\TempShow\TempListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C\TempShow\TempListForm.Designer.cs">
+      <DependentUpon>TempListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extention\GraphicsExtensions.cs" />
     <Compile Include="FrmBase\FrmBaseForm.cs">
       <SubType>Form</SubType>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="C\LastResultControl.resx">
       <DependentUpon>LastResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C\TempShow\TempListForm.resx">
+      <DependentUpon>TempListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBase\FrmBaseForm.resx">
       <DependentUpon>FrmBaseForm.cs</DependentUpon>
