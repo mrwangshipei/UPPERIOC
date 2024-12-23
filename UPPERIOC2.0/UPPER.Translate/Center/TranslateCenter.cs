@@ -63,6 +63,10 @@ namespace UPPERIOC2.UPPER.Translate.Center
 		public void SetLanguage(string lan)
 		{
 			L = lan;
+			if (null == TranslateModel)
+			{
+				TranslateModel =F.I.GetModel(new TranslateModel());
+			}
 			if (null != TranslateModel)
 			{
 				TranslateBlock = TranslateModel.Translateblocks.Find(x=> x.Name == lan);
@@ -116,7 +120,7 @@ namespace UPPERIOC2.UPPER.Translate.Center
 				return text;
 			}
 
-			var str = TranslateBlock.Values.Find(x => x.Key == text).Value;
+			var str = TranslateBlock.Values.Find(x => x.Key == text && !string.IsNullOrWhiteSpace(x.Value)).Value;
 			if (string.IsNullOrWhiteSpace(str))
 			{
 				str = TranslateUtil.Transcale(text);
