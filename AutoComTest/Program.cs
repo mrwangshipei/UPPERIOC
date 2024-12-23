@@ -36,7 +36,7 @@ namespace UpperComAutoTest
 			config.AddMoudle<UPPERPremissionMoudle>();
 			config.AddMoudle<UPPERFileModelMoudle>();
 			//config.AddMoudle<UPPERErrorMoudle>();
-		//	config.AddMoudle<UPPERTranslateMoudle>();
+			//config.AddMoudle<UPPERTranslateMoudle>();
 			config.SetProvider<UPPERDefaultProvider>();
 			UPPERIOCApplication.RunInstance(config);
 		//	TranslateCenter.Instance.SetLanguage("EN");

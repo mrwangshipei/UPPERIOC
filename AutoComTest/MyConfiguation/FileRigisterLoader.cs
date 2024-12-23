@@ -14,7 +14,7 @@ namespace Common.MConfigration
 	[IOCObject]
 	public class RigisterObjLoadToFile : RigisterObjLoad
 	{
-		public override void SaveObjectToRegistry(string keyName, object obj)
+	/*	public override void SaveObjectToRegistry(string keyName, object obj)
 		{
 			XmlSerializer xml = new XmlSerializer(obj.GetType());
 			StringWriter sw = new StringWriter();
@@ -38,6 +38,6 @@ namespace Common.MConfigration
 			StringReader sw = new StringReader(t);
 			return (T)xml.Deserialize(sw);
 
-		}
+		}*/
 	}
 }

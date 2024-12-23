@@ -14,12 +14,13 @@ using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC2.UPPER.Translate.Model;
 using UPPERIOC2.UPPER.UFileModel.Center;
 using UPPERIOC2.UPPER.Util;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UPPERIOC2.UPPER.Translate.Center
 {
 	public class TranslateCenter
 	{
-		public static TranslateCenter Instance { get; set; }
+		public static TranslateCenter Instance { get; set; } = new TranslateCenter();
 		internal TranslateModel TranslateModel;
 		internal Translateblock TranslateBlock;
 		internal IContainerProvider ipd;
@@ -30,8 +31,15 @@ namespace UPPERIOC2.UPPER.Translate.Center
 
 			this.ipd = ipd;
 		}
+		internal TranslateCenter()
+		{
+
+		}
 		public void SetRootWindows(Component com) {
-			
+			if (ipd == null)
+			{
+				return;
+			}
 			if (com is ToolStrip it)
 			{
 				foreach (ToolStripItem item in it.Items)
@@ -63,6 +71,10 @@ namespace UPPERIOC2.UPPER.Translate.Center
 		public void SetLanguage(string lan)
 		{
 			L = lan;
+			if (null == TranslateModel)
+			{
+				TranslateModel =F.I.GetModel(new TranslateModel());
+			}
 			if (null != TranslateModel)
 			{
 				TranslateBlock = TranslateModel.Translateblocks.Find(x=> x.Name == lan);
@@ -111,12 +123,16 @@ namespace UPPERIOC2.UPPER.Translate.Center
 
 		public string GetText(string text)
 		{
+			if (ipd == null)
+			{
+				return text;
+			}
 			if (string.IsNullOrWhiteSpace(text))
 			{
 				return text;
 			}
 
-			var str = TranslateBlock.Values.Find(x => x.Key == text).Value;
+			var str = TranslateBlock.Values.Find(x => x.Key == text && !string.IsNullOrWhiteSpace(x.Value)).Value;
 			if (string.IsNullOrWhiteSpace(str))
 			{
 				str = TranslateUtil.Transcale(text);
