@@ -39,7 +39,7 @@ namespace UpperComAutoTest
 			//config.AddMoudle<UPPERTranslateMoudle>();
 			config.SetProvider<UPPERDefaultProvider>();
 			UPPERIOCApplication.RunInstance(config);
-		//	TranslateCenter.Instance.SetLanguage("EN");
+			TranslateCenter.Instance.SetLanguage("EN");
 
 			Application.Run(new Form1());
 		}
