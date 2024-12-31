@@ -33,7 +33,9 @@ SendorCenter.Register<object>(x =>
 //触发消息Sendor
 SendorCenter.Publish<object>("HelloWorld");		
 ```
+
 > Log
+
 是我提供的一个统一的接口，任何实现了 ILog 的类都可以注册进来，并且提供了一个默认的实现（ FileLog ），使用 FileLog 需要你配置一个 IFileLogConfiguation 配置类，并且注入到容器中，可以使用你自己的 Provider 注入，也可以使用默认提供的 UPPerContainerProvider 的实现注入。你也可以使用我内置的IOC模块使用注解 [IOCObject] 注入
 
 ```
@@ -55,8 +57,11 @@ config._containerProvider.Rigister<FCTUFileConfiguation>(new FCTUFileConfiguatio
 //4.通过LogCenter.Log("Hello")使用日志功能
 LogCenter.Log("Hello")
 ```
+
 > Model
+
 Model是一个将文件序列化和反序列化能力的模块，接下来将为您演示
+
 ```
 //1.注册一个文件日志中心
  config.AddMoudle <UPPERFileModelMoudle>();
@@ -73,6 +78,7 @@ F.I.SaveModel(new T());
 F.I.GetModel(new T());
 //你可以使用XmlIgnore忽略项目使其不存储。
 ```
+
 > IOC
 
 UPPERIOC集成了注解注入式容器，主要是项目中整合其他模块的时候可以使用,有时候使用 [IOCObject] 便可以直接使用，而无需在 UPPERApplication.RunInstance(conf) 之前使用 Provider 一个个注册，这样代码会显得很冗余。
@@ -91,11 +97,15 @@ U.C.GetInstance<VerContent>();//使用注册的实例
 ```
 
 > Util
+
 小工具集合，文档加速整理中...
 
 > SimplePremission
+
 小权限系统，文档加速整理中...
+
 > Translate
+
 一个翻译模块。可以实现按需翻译你的应用，傻瓜式操作，有手就行。
 1.使用Translate翻译模块需要在启用容器的时候调用
 config.AddMoudle<UPPERTranslateMoudle>();
