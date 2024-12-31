@@ -1,4 +1,4 @@
-# UpperComAutoTest
+# UPPERIOC
 
 #### 首先声明
  本项目是一个IOC容器和插件集 ，提供给Winform开发者加速构建你的 **单体应用程序** ，功能基本正常 ，建议 **个人学习** 使用，没有针对性能做过特殊调优，大项目请选择性使用，如选择使用，代表您了解此项目可能存在漏洞，并且愿意承担可能的风险。
@@ -74,21 +74,36 @@ F.I.GetModel(new T());
 //你可以使用XmlIgnore忽略项目使其不存储。
 ```
 > IOC
-IOC就是集成了一些注解注入式容器，主要是项目中整合其他模块的时候有时候使用 [IOCObject] 便可以直接使用，而无需在 UPPERApplication.RunInstance(conf) 之前使用 Provider 一个个注册，这样代码会显得很冗余
+
+UPPERIOC集成了注解注入式容器，主要是项目中整合其他模块的时候可以使用,有时候使用 [IOCObject] 便可以直接使用，而无需在 UPPERApplication.RunInstance(conf) 之前使用 Provider 一个个注册，这样代码会显得很冗余。
+用法：
+
+```
+config.AddMoudle<UPPERIOCMoudle>();//引入模块
+[IOCObject]//注册一个实例
+public class VerContent
+{
+    public string Up;
+    public string Ver;
+    public string Content;        
+}
+U.C.GetInstance<VerContent>();//使用注册的实例
+```
+
 > Util
-目前这里面有两个模块，一个 MustRunAsAdminMoudle 如果你在 RunInstance 之前是用了这个模块，那么他会提醒并让你的应用必须以管理员模式打开，
-第二个模块 SimpleOnlyRunProcessMoudle 能保证你的应用只会打开一个，当你打开第二个的时候会唤醒第一个打开的应用，并关闭第二个打开的应用。需要注意的是，应用是使用默认的ProcessName识别的，所以请保证你的ProcessName不会与其他应用冲突
+小工具集合，文档加速整理中...
+
 > SimplePremission
-一个简单的单体应用权限系统解决方案，通过配置 IPremissionConfiguation 配置权限系统的初始化，窗体，还有一些基本信息。需要注意的是，使用简单的权限系统需要实现RigisterObjLoad 来初始化权限的保存方式，无论如何，你必须持有一个 RigisterObjLoad 的对象在容器中，这个对象会管理权限系统的保存在系统中的方式，默认是以注册表的形式保存的。
-还有一件你要关心的，就是权限系统的用法，我提供了两种用法，一种是直接通过权限标识在需要权限的时候访问，当前用户无权限就会抛出异常。一种是使用Mvvm在vm层将需要权限的类授予 ProxyClass 标签 而方法标记上 PremissionRequired 标签，这样vm的生命周期都将交给IOC管理，在需要vm的时候使用我的IOC容器，会提供一个经过AOP的子类。
+小权限系统，文档加速整理中...
 > Translate
-使用Translate模块，可以翻译软件中所有原生控件的Text属性，也能自己手动设置翻译。使用Translate翻译模块需要在启用容器的时候调用
+一个翻译模块。可以实现按需翻译你的应用，傻瓜式操作，有手就行。
+1.使用Translate翻译模块需要在启用容器的时候调用
 config.AddMoudle<UPPERTranslateMoudle>();
-然后在RunApplication之后设置语言
+2.然后在RunApplication之后设置语言
 TranslateCenter.Instance.SetLanguage("EN");
-然后在需要翻译的窗体加载完成后调用函数
+3.然后在需要翻译的窗体加载完成后调用函数
 TranslateCenter.Instance.SetRootWindows(this);
-也可以显式的使用
+3. OR 也可以显式的使用
 Control.Property = TranslateCenter.Instance.SetText(Control.Property);
 模块会在路径Model/translate生成一个文件，你可以用文本打开，然后依次翻译词条。但是我们推荐使用接口翻译。需要你实现一个ITranslateConfig接口，并注入到容器中。容器会在SetText没有翻译的情况下使用有道词典进行翻译。
 
