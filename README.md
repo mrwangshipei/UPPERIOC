@@ -1,23 +1,80 @@
 # UpperComAutoTest
 
 #### 首先声明
- 本项目处于 **初版出来的阶段** ，提供给开发者加速构建你的 **单体应用程序** ，功能基本正常，但是 **难免会有一些坑要踩** ，建议 **个人学习** 使用
+ 本项目是一个IOC容器和插件集 ，提供给Winform开发者加速构建你的 **单体应用程序** ，功能基本正常 ，建议 **个人学习** 使用，没有针对性能做过特殊调优，大项目请选择性使用，如选择使用，代表您了解此项目可能存在漏洞，并且愿意承担可能的风险。
  
 
 ### **UPPERIOC**
-目前包含了 以下的功能，而且在应用中 **提供了一个类似串口助手的东西** ：：不是很正式，用于学习使用UPPERIOC的基本使用方法。
- 项目是个人开发 **完全开源免费** ，后期假如一直在这个行业就会一直维护。可以用来申请专利还有二次开发。无版权问题，只要
-![输入图片说明](src=http___image109.360doc.com_DownloadImg_2018_09_1103_143832249_2_20180911034746566&refer=http___image109.360doc.webp)
-```
+目前包含了 以下的功能，而且在应用中 **提供了一个插件集合的东西** ：：希望您学习使用UPPERIOC的基本使用方法。
+ 项目是个人开发并且 **开源免费** ，后期假如一直在这个行业就会一直维护。可以用来申请专利还有二次开发。无版权问题。
+### 核心用法
 
+```
+static void main（） {
+ var config = new MoudleConfiguaion();
+  config.AddMoudle <XXXMoudle>();
+  config.AddMoudle <YYYMoudle>();
+  config.AddMoudle <ZZZMoudle>();
+  config.SetProvider<UPPERDefaultProvider>();
+  UPPERIOCApplication.RunInstance(config);
+   
+}
+ ```
+在应用启动时加载模块，意味着模块的生命周期将会伴随您的应用同生同灭。我们提供了许多模块方便您的开发。
 > Sendor
 的用法很简单，提供一个消息类，便可以实现依赖反转式的通信，很好的解耦了软件中的层级关系。
+
+```
+///注册一个消息Sendor
+SendorCenter.Register<object>(x =>
+{
+	LogCenter.Log(x.ToString);
+});
+//触发消息Sendor
+SendorCenter.Publish<object>("HelloWorld");		
+```
 > Log
 是我提供的一个统一的接口，任何实现了 ILog 的类都可以注册进来，并且提供了一个默认的实现（ FileLog ），使用 FileLog 需要你配置一个 IFileLogConfiguation 配置类，并且注入到容器中，可以使用你自己的 Provider 注入，也可以使用默认提供的 UPPerContainerProvider 的实现注入。你也可以使用我内置的IOC模块使用注解 [IOCObject] 注入
+
+```
+//1.注册一个文件日志中心
+ config.AddMoudle <UPPERLogFileMoudle>();
+//2.实现IFileLogConfiguation接口
+internal class FCTUFileConfiguation : IFileLogConfiguation
+{
+    public string DirectoryName { get => "FCTlog"; set => throw new NotImplementedException(); }
+    public string DefaultExt { get => ".log"; set => throw new NotImplementedException(); }
+    public List<LogType> WhichTypePrint { get => new List<LogType> { LogType.Debug, LogType.Warn, LogType.Info, LogType.Error, }; set => throw new NotImplementedException(); }
+    public string FileNameTimeFormat { get => "日志yyyyMMdd"; set => throw new NotImplementedException(); }
+    public int HowManyHourSave { get => 48; set => throw new NotImplementedException(); }
+    public bool PrintMs { get => true; set => throw new NotImplementedException(); }
+}
+//3.在执行注入了一个Provider后，将实例注入容器中
+config.SetProvider<UPPERDefaultProvider>();
+config._containerProvider.Rigister<FCTUFileConfiguation>(new FCTUFileConfiguation());
+//4.通过LogCenter.Log("Hello")使用日志功能
+LogCenter.Log("Hello")
+```
 > Model
-Model我用的也不是很多，这意味着可能会有潜在的错误未被发现，但是我是有一个项目正在使用 Model 的。建议不用。
+Model是一个将文件序列化和反序列化能力的模块，接下来将为您演示
+```
+//1.注册一个文件日志中心
+ config.AddMoudle <UPPERFileModelMoudle>();
+//2.实现IUFileModelConfiguation接口
+internal class UFileModelConfigration : IUFileModelConfiguation
+{
+	public string SaveModelPath { get => "conf"; set => throw new NotImplementedException(); }
+}
+//3.在执行注入了一个Provider后，将实例注入容器中
+config.SetProvider<UPPERDefaultProvider>();
+config._containerProvider.Rigister<UFileModelConfigration >(new UFileModelConfigration ());
+//4.通过F.I使用实例化功能 where T:IModel 
+F.I.SaveModel(new T());
+F.I.GetModel(new T());
+//你可以使用XmlIgnore忽略项目使其不存储。
+```
 > IOC
-IOC就是集成了一些注解注入式容器，目前是可用的，但是相对成熟的IOC容器是有很大的差距的，主要是项目中整合其他模块的时候有时候使用 [IOCObject] 便可以直接使用，而无需在 UPPERApplication.RunInstance(conf) 之前使用 Provider 一个个注册，这样代码会显得很冗余
+IOC就是集成了一些注解注入式容器，主要是项目中整合其他模块的时候有时候使用 [IOCObject] 便可以直接使用，而无需在 UPPERApplication.RunInstance(conf) 之前使用 Provider 一个个注册，这样代码会显得很冗余
 > Util
 目前这里面有两个模块，一个 MustRunAsAdminMoudle 如果你在 RunInstance 之前是用了这个模块，那么他会提醒并让你的应用必须以管理员模式打开，
 第二个模块 SimpleOnlyRunProcessMoudle 能保证你的应用只会打开一个，当你打开第二个的时候会唤醒第一个打开的应用，并关闭第二个打开的应用。需要注意的是，应用是使用默认的ProcessName识别的，所以请保证你的ProcessName不会与其他应用冲突
@@ -34,7 +91,7 @@ TranslateCenter.Instance.SetRootWindows(this);
 也可以显式的使用
 Control.Property = TranslateCenter.Instance.SetText(Control.Property);
 模块会在路径Model/translate生成一个文件，你可以用文本打开，然后依次翻译词条。但是我们推荐使用接口翻译。需要你实现一个ITranslateConfig接口，并注入到容器中。容器会在SetText没有翻译的情况下使用有道词典进行翻译。
-```
+
 
 #### 软件架构
 
