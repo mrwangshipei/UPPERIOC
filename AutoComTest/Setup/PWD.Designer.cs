@@ -32,116 +32,102 @@ namespace Setup
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PWD));
-			label1 = new Label();
-			label_Err = new Label();
-			textBox_PWD = new TextBox();
-			button1 = new Button();
-			pictureBox_KeyBoard = new PictureBox();
-			label2 = new Label();
-			label3 = new Label();
-			((System.ComponentModel.ISupportInitialize)pictureBox_KeyBoard).BeginInit();
-			SuspendLayout();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label_Err = new System.Windows.Forms.Label();
+			this.textBox_PWD = new System.Windows.Forms.TextBox();
+			this.button1 = new System.Windows.Forms.Button();
+			this.pictureBox_KeyBoard = new System.Windows.Forms.PictureBox();
+			this.label3 = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox_KeyBoard)).BeginInit();
+			this.SuspendLayout();
 			// 
 			// label1
 			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(62, 27);
-			label1.Margin = new Padding(4, 0, 4, 0);
-			label1.Name = "label1";
-			label1.Size = new Size(39, 16);
-			label1.TabIndex = 0;
-			label1.Text = "密码";
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(62, 27);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(39, 16);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "密码";
 			// 
 			// label_Err
 			// 
-			label_Err.AutoSize = true;
-			label_Err.ForeColor = Color.Red;
-			label_Err.Location = new Point(124, 65);
-			label_Err.Margin = new Padding(4, 0, 4, 0);
-			label_Err.Name = "label_Err";
-			label_Err.Size = new Size(71, 16);
-			label_Err.TabIndex = 1;
-			label_Err.Text = "密码错误";
-			label_Err.Visible = false;
+			this.label_Err.AutoSize = true;
+			this.label_Err.ForeColor = System.Drawing.Color.Red;
+			this.label_Err.Location = new System.Drawing.Point(124, 65);
+			this.label_Err.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label_Err.Name = "label_Err";
+			this.label_Err.Size = new System.Drawing.Size(71, 16);
+			this.label_Err.TabIndex = 1;
+			this.label_Err.Text = "密码错误";
+			this.label_Err.Visible = false;
 			// 
 			// textBox_PWD
 			// 
-			textBox_PWD.Location = new Point(121, 24);
-			textBox_PWD.MaxLength = 16;
-			textBox_PWD.Name = "textBox_PWD";
-			textBox_PWD.PasswordChar = '*';
-			textBox_PWD.Size = new Size(155, 26);
-			textBox_PWD.TabIndex = 2;
-			textBox_PWD.KeyUp += textBox_PWD_KeyUp;
+			this.textBox_PWD.Location = new System.Drawing.Point(121, 24);
+			this.textBox_PWD.MaxLength = 16;
+			this.textBox_PWD.Name = "textBox_PWD";
+			this.textBox_PWD.PasswordChar = '*';
+			this.textBox_PWD.Size = new System.Drawing.Size(155, 26);
+			this.textBox_PWD.TabIndex = 2;
 			// 
 			// button1
 			// 
-			button1.Location = new Point(121, 90);
-			button1.Name = "button1";
-			button1.Size = new Size(75, 27);
-			button1.TabIndex = 3;
-			button1.Text = "确 定";
-			button1.UseVisualStyleBackColor = true;
-			button1.Click += button1_Click;
+			this.button1.Location = new System.Drawing.Point(121, 90);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 27);
+			this.button1.TabIndex = 3;
+			this.button1.Text = "确 定";
+			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// pictureBox_KeyBoard
 			// 
-			pictureBox_KeyBoard.BorderStyle = BorderStyle.FixedSingle;
-			pictureBox_KeyBoard.Image = (Image)resources.GetObject("pictureBox_KeyBoard.Image");
-			pictureBox_KeyBoard.Location = new Point(228, 90);
-			pictureBox_KeyBoard.Name = "pictureBox_KeyBoard";
-			pictureBox_KeyBoard.Size = new Size(48, 27);
-			pictureBox_KeyBoard.SizeMode = PictureBoxSizeMode.Zoom;
-			pictureBox_KeyBoard.TabIndex = 4;
-			pictureBox_KeyBoard.TabStop = false;
-			pictureBox_KeyBoard.Click += pictureBox_KeyBoard_Click;
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(2, 121);
-			label2.Margin = new Padding(4, 0, 4, 0);
-			label2.Name = "label2";
-			label2.Size = new Size(119, 16);
-			label2.TabIndex = 5;
-			label2.Text = "默认密码123456";
+			this.pictureBox_KeyBoard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox_KeyBoard.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_KeyBoard.Image")));
+			this.pictureBox_KeyBoard.Location = new System.Drawing.Point(228, 90);
+			this.pictureBox_KeyBoard.Name = "pictureBox_KeyBoard";
+			this.pictureBox_KeyBoard.Size = new System.Drawing.Size(48, 27);
+			this.pictureBox_KeyBoard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox_KeyBoard.TabIndex = 4;
+			this.pictureBox_KeyBoard.TabStop = false;
 			// 
 			// label3
 			// 
-			label3.AutoSize = true;
-			label3.Dock = DockStyle.Right;
-			label3.Location = new Point(296, 0);
-			label3.Name = "label3";
-			label3.Size = new Size(55, 16);
-			label3.TabIndex = 6;
-			label3.Text = "label3";
+			this.label3.AutoSize = true;
+			this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+			this.label3.Location = new System.Drawing.Point(296, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(55, 16);
+			this.label3.TabIndex = 6;
+			this.label3.Text = "label3";
 			// 
 			// PWD
 			// 
-			AutoScaleDimensions = new SizeF(8F, 16F);
-			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(351, 139);
-			Controls.Add(label3);
-			Controls.Add(label2);
-			Controls.Add(pictureBox_KeyBoard);
-			Controls.Add(button1);
-			Controls.Add(textBox_PWD);
-			Controls.Add(label_Err);
-			Controls.Add(label1);
-			Font = new Font("宋体", 12F);
-			Margin = new Padding(4);
-			MaximizeBox = false;
-			MaximumSize = new Size(367, 178);
-			MinimizeBox = false;
-			MinimumSize = new Size(367, 178);
-			Name = "PWD";
-			ShowIcon = false;
-			ShowInTaskbar = false;
-			StartPosition = FormStartPosition.CenterParent;
-			Text = "请输入密码以继续...";
-			((System.ComponentModel.ISupportInitialize)pictureBox_KeyBoard).EndInit();
-			ResumeLayout(false);
-			PerformLayout();
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(351, 139);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.pictureBox_KeyBoard);
+			this.Controls.Add(this.button1);
+			this.Controls.Add(this.textBox_PWD);
+			this.Controls.Add(this.label_Err);
+			this.Controls.Add(this.label1);
+			this.Font = new System.Drawing.Font("宋体", 12F);
+			this.Margin = new System.Windows.Forms.Padding(4);
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(367, 178);
+			this.MinimizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(367, 178);
+			this.Name = "PWD";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Text = "请输入密码以继续...";
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox_KeyBoard)).EndInit();
+			this.ResumeLayout(false);
+			this.PerformLayout();
+
 		}
 
 		#endregion
@@ -151,7 +137,6 @@ namespace Setup
         private System.Windows.Forms.TextBox textBox_PWD;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox_KeyBoard;
-        private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 	}
 }
