@@ -4,13 +4,13 @@
 </div>
 <h1 align="center">UPPERIOC</h1>
 
-#### 首先声明
+### 首先声明
 
-本项目是一个IOC容器和插件集 ，提供给Winform开发者加速构建你的 **单体应用程序**  ，很多功能都是基于 **FrameWork 4.5.2**  开发，这意味者有些功能 **只在windows可用** 。如果有意和我共同开发跨平台版本，可以私信我，建议 **个人学习** 使用，没有针对性能做过特殊调优，大项目请选择性使用，如选择使用，代表您了解此项目可能存在漏洞，并且愿意承担可能的风险。如果觉得此项目还不错，可以留下一个 **star**  :star:
+本项目是一个IOC容器和插件集 ，提供给Winform开发者加速构建你的 **单体应用程序**  ，功能是基于 **FrameWork 4.5.2**  开发，这意味着部分功能 **只在windows可用** 。如果有意和我共同开发跨平台版本，可以私信我，建议 **个人学习** 使用，没有针对性能做过特殊调优，大项目请选择性使用，如选择使用，代表您了解此项目可能存在漏洞，并且愿意承担可能的风险。如果此项目让你感觉还不错，可以留下一个 **star**  :star:
 
 ### **UPPERIOC**
 
-目前包含了 以下的功能，而且在应用中 **提供了一个插件集合** 希望您学习使用UPPERIOC的基本使用方法。
+目前包含了以下的功能，而且在应用中 **提供了一个插件集合** 希望您学习使用UPPERIOC的基本使用方法。
 项目是个人开发并且 **完全开源** ，后期假如一直在这个行业就会一直维护。可以用来申请专利还有二次开发。无版权问题。
 
 ### 核心用法
@@ -67,7 +67,7 @@ internal class FCTUFileConfiguation : IFileLogConfiguation
     public bool PrintMs { get => true; set => throw new NotImplementedException(); }
 }
 //3.在执行注入了一个Provider后，将实例注入容器中
-config.SetProvider<UPPERDefaultProvider>();//先设置默认的提供类实例
+config.SetProvider<UPPERDefaultProvider>();
 config._containerProvider.Rigister<FCTUFileConfiguation>(new FCTUFileConfiguation());
 //4.通过LogCenter.Log("Hello")使用日志功能
 LogCenter.Log("Hello")
@@ -86,12 +86,12 @@ internal class UFileModelConfigration : IUFileModelConfiguation
 	public string SaveModelPath { get => "conf"; set => throw new NotImplementedException(); }
 }
 //3.在执行注入了一个Provider后，将实例注入容器中
-config.SetProvider<UPPERDefaultProvider>();//先设置默认的提供类实例
+config.SetProvider<UPPERDefaultProvider>();
 config._containerProvider.Rigister<UFileModelConfigration >(new UFileModelConfigration ());
 //4.通过F.I使用实例化功能 where T:IModel
 F.I.SaveModel(new T());
-F.I.GetModel(new T());
-//你可以使用XmlIgnore忽略项目使其不存储。
+var t = F.I.GetModel(new T());
+//你可以使用[XmlIgnore]忽略项目使其不存储。
 ```
 
 > IOC
@@ -101,14 +101,16 @@ UPPERIOC集成了注解注入式容器，主要是项目中整合其他模块的
 
 ```csharp
 config.AddMoudle<UPPERIOCMoudle>();//引入模块
-[IOCObject]//注册一个实例
+//注册一个实例
+[IOCObject]
 public class VerContent
 {
     public string Up;
     public string Ver;
     public string Content;
 }
-U.C.GetInstance<VerContent>();//使用注册的实例
+//使用注册的实例
+U.C.GetInstance<VerContent>();
 ```
 
 > Util
@@ -120,32 +122,33 @@ U.C.GetInstance<VerContent>();//使用注册的实例
 一个可以让你的应用必须注册才可以使用的工具
 ```csharp
 //1.实现MLockConfiguation类
-		public class MLockConfiguation
-    {
-        /// <summary>
-        /// 注册机使用的盐值
-        /// </summary>
-        public virtual string Solt { get; set; }
-        /// <summary>
-        /// 在注册表或者在文件中的目录名称
-        /// </summary>
-        public virtual string Listenaddr { get; set; }
-        /// <summary>
-        /// 文件或者在注册表的项目名称
-        /// </summary>
-        public virtual string LockName { get; set; }
-        /// <summary>
-        /// 如果没有注册的逻辑实现，是提示或者让他注册
-        /// </summary>
-        public virtual void Noregister() {
-            Console.Write("没有注册");
-            Environment.Exit(0);
-        }
+public class MLockConfiguation
+{
+    /// <summary>
+    /// 注册机使用的盐值
+    /// </summary>
+    public virtual string Solt { get; set; }
+    /// <summary>
+    /// 在注册表或者在文件中的目录名称
+    /// </summary>
+    public virtual string Listenaddr { get; set; }
+    /// <summary>
+    /// 文件或者在注册表的项目名称
+    /// </summary>
+    public virtual string LockName { get; set; }
+    /// <summary>
+    /// 如果没有注册的逻辑实现，是提示或者让他注册
+    /// </summary>
+    public virtual void Noregister() {
+        Console.Write("没有注册");
+        Environment.Exit(0);
     }
-    //2.应用模块并注册您的实现类
-    config.AddMoudle<UPPERMLockMoudle>();
-	config.SetProvider<UPPERDefaultProvider>();//先设置默认的提供类实例
-    config._containerProvider.Rigister<ILockConfiguation>();
+}
+ //2.应用模块并注册您的实现类
+config.AddMoudle<UPPERMLockMoudle>();
+//先设置默认的提供类实例
+config.SetProvider<UPPERDefaultProvider>();
+config._containerProvider.Rigister<ILockConfiguation>();
 ```
 
 > SimplePremission
@@ -170,8 +173,6 @@ Control.Property = TranslateCenter.Instance.SetText(Control.Property);
 ```
 
 ### 软件架构
-
-**UPPERIOC**
 
 UPPERIOC.UPPERApplication -核心启动类
 
