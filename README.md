@@ -1,28 +1,38 @@
 # UPPERIOC
 
 #### 首先声明
- 本项目是一个IOC容器和插件集 ，提供给Winform开发者加速构建你的 **单体应用程序** ，功能基本正常 ，建议 **个人学习** 使用，没有针对性能做过特殊调优，大项目请选择性使用，如选择使用，代表您了解此项目可能存在漏洞，并且愿意承担可能的风险。
- 
+
+本项目是一个IOC容器和插件集 ，提供给Winform开发者加速构建你的 **单体应用程序** ，功能基本正常 ，建议 **个人学习** 使用，没有针对性能做过特殊调优，大项目请选择性使用，如选择使用，代表您了解此项目可能存在漏洞，并且愿意承担可能的风险。
 
 ### **UPPERIOC**
+
 目前包含了 以下的功能，而且在应用中 **提供了一个插件集合的东西** ：：希望您学习使用UPPERIOC的基本使用方法。
- 项目是个人开发并且 **开源免费** ，后期假如一直在这个行业就会一直维护。可以用来申请专利还有二次开发。无版权问题。
+项目是个人开发并且 **开源免费** ，后期假如一直在这个行业就会一直维护。可以用来申请专利还有二次开发。无版权问题。
+
 ### 核心用法
 
 ```
 static void main（） {
- var config = new MoudleConfiguaion();
-  config.AddMoudle <XXXMoudle>();
-  config.AddMoudle <YYYMoudle>();
-  config.AddMoudle <ZZZMoudle>();
-  config.SetProvider<UPPERDefaultProvider>();
-  UPPERIOCApplication.RunInstance(config);
-   
+	var config = new UPPERIOC.UPPER.IOC.Center.Configuation.MoudleConfiguaion();
+	config.AddMoudle<UPPERIOCMoudle>();
+	config.AddMoudle<UPPERLogFileMoudle>();
+	config.AddMoudle<UPPERSendorMoudle>();
+	config.AddMoudle<UPPERMLockMoudle>();
+	config.AddMoudle<UPPERPremissionMoudle>();
+	config.AddMoudle<UPPERFileModelMoudle>();
+	//config.AddMoudle<UPPERErrorMoudle>();
+	//config.AddMoudle<UPPERTranslateMoudle>();
+	config.SetProvider<UPPERDefaultProvider>();
+	UPPERIOCApplication.RunInstance(config);
+	TranslateCenter.Instance.SetLanguage("EN");
+	Application.Run(new Form1());
 }
- ```
+```
+
 在应用启动时加载模块，意味着模块的生命周期将会伴随您的应用同生同灭。我们提供了许多模块方便您的开发。
+
 > Sendor
-的用法很简单，提供一个消息类，便可以实现依赖反转式的通信，很好的解耦了软件中的层级关系。
+> 的用法很简单，提供一个消息类，便可以实现依赖反转式的通信，很好的解耦了软件中的层级关系。
 
 ```
 ///注册一个消息Sendor
@@ -31,7 +41,7 @@ SendorCenter.Register<object>(x =>
 	LogCenter.Log(x.ToString);
 });
 //触发消息Sendor
-SendorCenter.Publish<object>("HelloWorld");		
+SendorCenter.Publish<object>("HelloWorld");
 ```
 
 > Log
@@ -52,7 +62,7 @@ internal class FCTUFileConfiguation : IFileLogConfiguation
     public bool PrintMs { get => true; set => throw new NotImplementedException(); }
 }
 //3.在执行注入了一个Provider后，将实例注入容器中
-config.SetProvider<UPPERDefaultProvider>();
+config.SetProvider<UPPERDefaultProvider>();//先设置默认的提供类实例
 config._containerProvider.Rigister<FCTUFileConfiguation>(new FCTUFileConfiguation());
 //4.通过LogCenter.Log("Hello")使用日志功能
 LogCenter.Log("Hello")
@@ -71,9 +81,9 @@ internal class UFileModelConfigration : IUFileModelConfiguation
 	public string SaveModelPath { get => "conf"; set => throw new NotImplementedException(); }
 }
 //3.在执行注入了一个Provider后，将实例注入容器中
-config.SetProvider<UPPERDefaultProvider>();
+config.SetProvider<UPPERDefaultProvider>();//先设置默认的提供类实例
 config._containerProvider.Rigister<UFileModelConfigration >(new UFileModelConfigration ());
-//4.通过F.I使用实例化功能 where T:IModel 
+//4.通过F.I使用实例化功能 where T:IModel
 F.I.SaveModel(new T());
 F.I.GetModel(new T());
 //你可以使用XmlIgnore忽略项目使其不存储。
@@ -91,7 +101,7 @@ public class VerContent
 {
     public string Up;
     public string Ver;
-    public string Content;        
+    public string Content;
 }
 U.C.GetInstance<VerContent>();//使用注册的实例
 ```
@@ -100,6 +110,39 @@ U.C.GetInstance<VerContent>();//使用注册的实例
 
 小工具集合，文档加速整理中...
 
+> MLock
+
+一个可以让你的应用必须注册才可以使用的工具
+```
+//1.实现MLockConfiguation类
+		public class MLockConfiguation
+    {
+        /// <summary>
+        /// 注册机使用的盐值
+        /// </summary>
+        public virtual string Solt { get; set; }
+        /// <summary>
+        /// 在注册表或者在文件中的目录名称
+        /// </summary>
+        public virtual string Listenaddr { get; set; }
+        /// <summary>
+        /// 文件或者在注册表的项目名称
+        /// </summary>
+        public virtual string LockName { get; set; }
+        /// <summary>
+        /// 如果没有注册的逻辑实现，是提示或者让他注册
+        /// </summary>
+        public virtual void Noregister() {
+            Console.Write("没有注册");
+            Environment.Exit(0);
+        }
+    }
+    //2.应用模块并注册您的实现类
+    config.AddMoudle<UPPERMLockMoudle>();
+	config.SetProvider<UPPERDefaultProvider>();//先设置默认的提供类实例
+    config._containerProvider.Rigister<ILockConfiguation>();
+```
+
 > SimplePremission
 
 小权限系统，文档加速整理中...
@@ -107,43 +150,31 @@ U.C.GetInstance<VerContent>();//使用注册的实例
 > Translate
 
 一个翻译模块。可以实现按需翻译你的应用，傻瓜式操作，有手就行。
-1.使用Translate翻译模块需要在启用容器的时候调用
+
+```
+//1.使用Translate翻译模块需要在启用容器的时候调用
 config.AddMoudle<UPPERTranslateMoudle>();
-2.然后在RunApplication之后设置语言
+//2.然后在RunApplication之后设置语言
 TranslateCenter.Instance.SetLanguage("EN");
-3.然后在需要翻译的窗体加载完成后调用函数
+//3.然后在需要翻译的窗体加载完成后调用函数
 TranslateCenter.Instance.SetRootWindows(this);
-3. OR 也可以显式的使用
+//3. OR 也可以显式的使用
 Control.Property = TranslateCenter.Instance.SetText(Control.Property);
-模块会在路径Model/translate生成一个文件，你可以用文本打开，然后依次翻译词条。但是我们推荐使用接口翻译。需要你实现一个ITranslateConfig接口，并注入到容器中。容器会在SetText没有翻译的情况下使用有道词典进行翻译。
+//模块会在路径Model/translate生成一个文件，你可以用文本打开，然后依次翻译词条。但是我们推荐使用接口翻译。需要你实现一个ITranslateConfig接口，并注入到容器中。容器会在SetText没有翻译的情况下使用有道词典进行翻译。
 
+```
 
-#### 软件架构
+### 软件架构
 
- **UpperComAutoTest** 
+**UPPERIOC**
 
-软件架构说明
-View -视图层
-ModelView -逻辑层
-Model -对象层
-Dao -串口通信层
+UPPERIOC.UPPERApplication -核心启动类
 
+UPPERIOC.\*.Moudle -需要加载的模块
 
- **UPPERIOC**
+UPPERIOC.\*.Center -用户直接交互的类
 
-UPPERIOC.UPPERIOCCenter -核心启动类
+UPPERIOC.\*.IConfigration -模块中用户需要自己实现的配置类（注册）
 
-UPPERIOC.*.Moudle -需要加载的模块
-
-UPPERIOC.*.Center -用户直接交互的类
-
-UPPERIOC.*.IConfigration -模块中用户需要自己实现的配置类（注册）
-
-UPPERIOC.*.IModel -模块中用户需要自己实现的模型类（注册）
-
-
-#### 安装教程
-
-pull之后可以直接用vs2022打开
-
+UPPERIOC.\*.IModel -模块中用户需要自己实现的模型类（注册）
 
