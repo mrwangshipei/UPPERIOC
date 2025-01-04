@@ -1,4 +1,8 @@
- :sparkles:  :sparkles:  # UPPERIOC :sparkles:  :sparkles: 
+  <div align="center">
+
+![输入图片说明](9200301643_fef33a95-3a3c-41a9-8d72-f3aa5d0c74dd.png)
+</div>
+<h1 align="center">UPPERIOC</h1>
 
 #### 首先声明
 
@@ -11,7 +15,7 @@
 
 ### 核心用法
 
-```
+```csharp
 static void main（） {
 	var config = new UPPERIOC.UPPER.IOC.Center.Configuation.MoudleConfiguaion();
 	config.AddMoudle<UPPERIOCMoudle>();
@@ -34,7 +38,7 @@ static void main（） {
 > Sendor
 > 的用法很简单，提供一个消息类，便可以实现依赖反转式的通信，很好的解耦了软件中的层级关系。
 
-```
+```csharp
 ///注册一个消息Sendor
 SendorCenter.Register<object>(x =>
 {
@@ -48,7 +52,7 @@ SendorCenter.Publish<object>("HelloWorld");
 
 是我提供的一个统一的接口，任何实现了 ILog 的类都可以注册进来，并且提供了一个默认的实现（ FileLog ），使用 FileLog 需要你配置一个 IFileLogConfiguation 配置类，并且注入到容器中，可以使用你自己的 Provider 注入，也可以使用默认提供的 UPPerContainerProvider 的实现注入。你也可以使用我内置的IOC模块使用注解 [IOCObject] 注入
 
-```
+```csharp
 //1.注册一个文件日志中心
  config.AddMoudle <UPPERLogFileMoudle>();
 //2.实现IFileLogConfiguation接口
@@ -72,7 +76,7 @@ LogCenter.Log("Hello")
 
 Model是一个将文件序列化和反序列化能力的模块，接下来将为您演示
 
-```
+```csharp
 //1.注册一个文件日志中心
  config.AddMoudle <UPPERFileModelMoudle>();
 //2.实现IUFileModelConfiguation接口
@@ -94,7 +98,7 @@ F.I.GetModel(new T());
 UPPERIOC集成了注解注入式容器，主要是项目中整合其他模块的时候可以使用,有时候使用 [IOCObject] 便可以直接使用，而无需在 UPPERApplication.RunInstance(conf) 之前使用 Provider 一个个注册，这样代码会显得很冗余。
 用法：
 
-```
+```csharp
 config.AddMoudle<UPPERIOCMoudle>();//引入模块
 [IOCObject]//注册一个实例
 public class VerContent
@@ -113,7 +117,7 @@ U.C.GetInstance<VerContent>();//使用注册的实例
 > MLock
 
 一个可以让你的应用必须注册才可以使用的工具
-```
+```csharp
 //1.实现MLockConfiguation类
 		public class MLockConfiguation
     {
@@ -151,7 +155,7 @@ U.C.GetInstance<VerContent>();//使用注册的实例
 
 一个翻译模块。可以实现按需翻译你的应用，傻瓜式操作，有手就行。
 
-```
+```csharp
 //1.使用Translate翻译模块需要在启用容器的时候调用
 config.AddMoudle<UPPERTranslateMoudle>();
 //2.然后在RunApplication之后设置语言
