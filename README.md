@@ -16,7 +16,7 @@
 ### 核心用法
 
 ```csharp
-static void main（） {
+static void main() {
 	var config = new UPPERIOC.UPPER.IOC.Center.Configuation.MoudleConfiguaion();
 	config.AddMoudle<UPPERIOCMoudle>();
 	config.AddMoudle<UPPERLogFileMoudle>();
