@@ -8,7 +8,7 @@ using UPPERIOC2.UPPER.EmailErrorSender;
 
 namespace UpperComAutoTest.MyConfiguation
 {
-	[IOCObject]
+	[IOCObject] 
 	public class ErrorUpload : IErrorConfiguation
 	{
 		public string SenderEmail => "13144874915@163.com";

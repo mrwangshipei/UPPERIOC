@@ -1,0 +1,8 @@
+﻿<Project>
+  <ItemGroup>
+    <!-- 自动添加 OutputItemType="Analyzer" -->
+    <ProjectReference Include="@(ProjectReference)" Condition="'$(OutputType)' == 'Library'">
+      <OutputItemType>Analyzer</OutputItemType>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

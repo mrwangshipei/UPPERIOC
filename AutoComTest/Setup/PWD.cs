@@ -23,8 +23,11 @@ namespace Setup
                 textBox_PWD.Text = "123456";
             var x = f.Hour + f.Hour;
 
-			if (("AX127007" + x).Equals(textBox_PWD.Text.Trim()))
+            if (("AX127007" + x).Equals(textBox_PWD.Text.Trim()))
+            { 
                 this.DialogResult = DialogResult.Yes;
+                this.Close();
+            }
             else
                 label_Err.Visible = true;
         }

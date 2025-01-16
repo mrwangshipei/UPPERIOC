@@ -49,11 +49,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UPPERIOC2.0\UPPERIOC2.0.csproj">
-      <Project>{4e52c966-3727-4d58-aa6e-0352b52cfc3c}</Project>
-      <Name>UPPERIOC2.0</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

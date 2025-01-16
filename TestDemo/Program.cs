@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using UPPERIOC2.UPPER.Util.ThreadHelper;
 
 namespace TestDemo
 {
@@ -17,7 +16,6 @@ namespace TestDemo
 
 		static void Main(string[] args)
 		{
-			TaskPool.Instance.Init(); ;
 
 			while (true)
 			{
@@ -35,10 +33,6 @@ namespace TestDemo
 					Console.WriteLine("使用基本for消耗时间" + sw.ElapsedMilliseconds);
 					sw = Stopwatch.StartNew();
 
-					TaskPool.Instance.For(0, count, i =>
-					{
-						y[i] = (i * rowLength + j * 2 + 1 * Math.Sin(i * rowLength + j * 2 + 2 / 180 * Math.PI)); ;
-					});
 					sw.Stop();
 					Console.WriteLine("使用线程池消耗时间" + sw.ElapsedMilliseconds);
 					bool all = true;

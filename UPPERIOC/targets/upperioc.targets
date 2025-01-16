@@ -1,0 +1,60 @@
+
+<Project  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<UPPERIOCInternalNamespace Condition=" '$(UPPERIOCInternalNamespace)' == '' ">$(RootNamespace)</UPPERIOCInternalNamespace>
+
+		<_UPPERIOCMSBuildMinVersion>16.8.0</_UPPERIOCMSBuildMinVersion>
+	</PropertyGroup>
+	
+
+	<Target Name="_DebugPrintAnalyzers" BeforeTargets="Build">
+		<Message Text="Analyzers: @(Analyzer)" Importance="high" />
+	</Target>
+
+	<Target Name="_UPPERIOCGatherAnalyzers">
+		<ItemGroup>
+			<Message Text="Analyzers2" Importance="high" />
+
+			<_UPPERIOCAnalyzer Include="@(Analyzer)" Condition="'%(Analyzer.NuGetPackageId)' == 'IOCG'" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="_UPPERIOCAnalyzerMultiTargeting"
+			Condition="'$(SupportsRoslynComponentVersioning)' != 'true'"
+			AfterTargets="ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets"
+			DependsOnTargets="_UPPERIOCGatherAnalyzers">
+
+		<ItemGroup>
+			<Message Text="Analyzers1" Importance="high" />
+
+			<Analyzer Remove="@(_UPPERIOCAnalyzer)"
+					  Condition="$([System.String]::Copy('%(_UPPERIOCAnalyzer.Identity)').IndexOf('roslyn4')) &gt;= 0" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="_UPPERIOCRemoveAnalyzers"
+			Condition="'$(DisableUPPERIOCSourceGenerator)' == 'true'"
+			AfterTargets="ResolvePackageDependenciesForBuild;ResolveNuGetPackageAssets"
+			DependsOnTargets="_UPPERIOCGatherAnalyzers">
+
+		<ItemGroup>
+			<Message Text="Analyzers3" Importance="high" />
+
+			<Analyzer Remove="@(_UPPERIOCAnalyzer)" />
+		</ItemGroup>
+	</Target>
+	
+	<Target Name="_UPPERIOCMSBuildVersionCheck"
+			Condition=" '$([System.Version]::Parse($(_UPPERIOCMSBuildMinVersion)).CompareTo($([System.Version]::Parse($(MSBuildVersion)))))' &gt; '0' "
+			BeforeTargets="ResolveAssemblyReferences;Build;Rebuild">
+		<Error
+		  Text="Projects using UPPERIOC cannot build using MSBuild '$(MSBuildVersion)'. MSBuild '$(_UPPERIOCMSBuildMinVersion)' or later is required." />
+	</Target>
+
+	<Target Name="_UPPERIOCProjectRestoreTypeCheck"
+			BeforeTargets="ResolveAssemblyReferences;Build;Rebuild"
+			DependsOnTargets="_GetRestoreProjectStyle">
+		<Error Condition="'$(RestoreProjectStyle)' == 'PackagesConfig'"
+			   Text="Packages.config does not support Analyzers, including Source Generators. Migrate to PackageReference: 'https://devblogs.microsoft.com/nuget/migrate-packages-config-to-package-reference/'" />
+	</Target>
+</Project>
