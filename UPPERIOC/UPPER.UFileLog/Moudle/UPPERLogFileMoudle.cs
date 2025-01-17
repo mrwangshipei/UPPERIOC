@@ -9,7 +9,7 @@ using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Moudle;
-using UPPERIOC2.UPPER.UFileLog.DefineLog;
+using UPPERIOC.UPPER.UFileLog.DefineLog;
 
 namespace UPPERIOC.UPPER.UFILELOG.Moudle
 {
