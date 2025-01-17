@@ -37,13 +37,11 @@ namespace UpperComAutoTest.Page
 		{
 
 		}
-		UFileModelCenter center;
 		EventFileModel model;
 		[IOCConstructor]
 
 		public NomalComPage(NomalComPageViewModel viewm, UFileModelCenter center)
 		{
-			this.center = center;
 			InitializeComponent();
 			ComViewMOdel = viewm as NomalComPageViewModel;
 			ComViewMOdel.SetRevent(ReceverEvent);
@@ -308,7 +306,7 @@ namespace UpperComAutoTest.Page
 
 		private void NomalComPage_Load(object sender, EventArgs e)
 		{
-			model = center.GetModel(new EventFileModel());
+			model = F.I.GetModel(new EventFileModel());
 			model.Msgevens.ForEach(item =>
 			{
 				flowLayoutPanel1.Controls.Add(new SelectFuncControl(item));

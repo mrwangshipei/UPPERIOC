@@ -9,6 +9,8 @@ namespace UPPERIOC.UPPER.ILOG
 {
 	public interface ILog
 	{
+		LogType[] CanLogType { get; }
+		
 		/// <summary>
 		/// 输出日志
 		/// </summary>

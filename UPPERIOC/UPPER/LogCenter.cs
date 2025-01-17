@@ -19,7 +19,13 @@ namespace UPPERIOC.UPPER
 
 		public static void Log(LogType type,string msg) 
 		{
-			logs.ForEach(item => item.Log(type,msg));
+			logs.ForEach(item => {
+                if (item.CanLogType!= null && item.CanLogType.Contains(type))
+                {
+					item.Log(type, msg);
+                    return;
+                }
+			});
 		}
 
 	

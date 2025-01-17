@@ -1,12 +1,13 @@
-  <div align="center">
+<div align="center">
 
-![输入图片说明](9200301643_fef33a95-3a3c-41a9-8d72-f3aa5d0c74dd.png)
+![UPPERIOC](9200301643_fef33a95-3a3c-41a9-8d72-f3aa5d0c74dd.png)
 </div>
+
 <h1 align="center">UPPERIOC</h1>
 
 ### 首先声明
 
-本项目是一个IOC容器和插件集 ，提供给Winform开发者加速构建你的 **单体应用程序**  ，功能是基于 **FrameWork 4.5.2**  开发，这意味着部分功能 **只在windows可用** 。如果有意和我共同开发跨平台版本，可以私信我，建议 **个人学习** 使用，没有针对性能做过特殊调优，大项目请选择性使用，如选择使用，代表您了解此项目可能存在漏洞，并且愿意承担可能的风险。如果此项目让你感觉还不错，可以留下一个 **star**  :star:
+本项目是一个IOC容器和插件集 ，提供给Winform开发者加速构建你的 **单体应用程序**  目前对windows支持良好 。如果有意和我共同开发跨平台版本，可以私信我，建议 **个人学习** 使用，没有针对性能做过特殊调优，大项目请选择性使用，如选择使用，代表您了解此项目可能存在漏洞，并且愿意承担可能的风险。如果此项目让你感觉还不错，可以留下一个 **star**  :star:
 
 ### **UPPERIOC**
 
@@ -35,7 +36,7 @@ static void main() {
 
 在应用启动时加载模块，意味着模块的生命周期将会伴随您的应用同生同灭。我们提供了许多模块方便您的开发。
 
-> Sendor
+#### Sendor
 
 Sendor的用法很简单，提供一个消息类，便可以实现依赖反转式的通信，很好的解耦了软件中的层级关系。
 
@@ -43,13 +44,13 @@ Sendor的用法很简单，提供一个消息类，便可以实现依赖反转�
 ///注册一个消息Sendor
 SendorCenter.Register<object>(x =>
 {
-	LogCenter.Log(x.ToString);
+	LogCenter.Log(x.ToString());
 });
 //触发消息Sendor
 SendorCenter.Publish<object>("HelloWorld");
 ```
 
-> Log
+#### Log
 
 是我提供的一个统一的接口，任何实现了 ILog 的类都可以注册进来，并且提供了一个默认的实现（ FileLog ），使用 FileLog 需要你配置一个 IFileLogConfiguation 配置类，并且注入到容器中，可以使用你自己的 Provider 注入，也可以使用默认提供的 UPPerContainerProvider 的实现注入。你也可以使用我内置的IOC模块使用注解 [IOCObject] 注入
 
@@ -73,7 +74,7 @@ config._containerProvider.Rigister<FCTUFileConfiguation>(new FCTUFileConfiguatio
 LogCenter.Log("Hello")
 ```
 
-> Model
+#### Model
 
 Model是一个将文件序列化和反序列化能力的模块，接下来将为您演示
 
@@ -83,7 +84,11 @@ Model是一个将文件序列化和反序列化能力的模块，接下来将为
 //2.实现IUFileModelConfiguation接口
 internal class UFileModelConfigration : IUFileModelConfiguation
 {
-	public string SaveModelPath { get => "conf"; set => throw new NotImplementedException(); }
+    public string SaveModelPath 
+    {
+        get => "conf"; 
+        set => throw new NotImplementedException();
+    }
 }
 //3.在执行注入了一个Provider后，将实例注入容器中
 config.SetProvider<UPPERDefaultProvider>();
@@ -94,7 +99,7 @@ var t = F.I.GetModel(new T());
 //你可以使用[XmlIgnore]忽略项目使其不存储。
 ```
 
-> IOC
+#### IOC
 
 UPPERIOC集成了注解注入式容器，主要是项目中整合其他模块的时候可以使用,有时候使用 [IOCObject] 便可以直接使用，而无需在 UPPERApplication.RunInstance(conf) 之前使用 Provider 一个个注册，这样代码会显得很冗余。
 用法：
@@ -113,11 +118,11 @@ public class VerContent
 U.C.GetInstance<VerContent>();
 ```
 
-> Util
+#### Util
 
 小工具集合，文档加速整理中...
 
-> MLock
+#### MLock
 
 一个可以让你的应用必须注册才可以使用的工具
 ```csharp
@@ -151,11 +156,11 @@ config.SetProvider<UPPERDefaultProvider>();
 config._containerProvider.Rigister<ILockConfiguation>();
 ```
 
-> SimplePremission
+####  SimplePremission
 
 小权限系统，文档加速整理中...
 
-> Translate
+####  Translate
 
 一个翻译模块。可以实现按需翻译你的应用，傻瓜式操作，有手就行。
 

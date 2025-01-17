@@ -8,7 +8,7 @@ using UPPERIOC.UPPER.UFileLog.IConfiguation;
 using UPPERIOC.UPPER.ILOG;
 using System.IO;
 
-namespace UPPERIOC2.UPPER.UFileLog.DefineLog
+namespace UPPERIOC.UPPER.UFileLog.DefineLog
 {
     public class FileLog : ILog
     {
@@ -21,19 +21,20 @@ namespace UPPERIOC2.UPPER.UFileLog.DefineLog
                 throw new Exception("请将FileLog的配置类IFileLogConfiguation 实现交托容器管理");
             }
             this.Config = Config;
+            logt = Config.WhichTypePrint?.ToArray();
         }
+        LogType[] logt;
+        public LogType[] CanLogType => logt;
+
         public void Log(LogType LogType, string Msg)
         {
             lock (Config)
             {
 
-                if (!Config.WhichTypePrint.Contains(LogType))
-                {
-                    return;
-                }
+
                 var logtime = DateTime.Now;
                 //路径
-                var diname = Path.Combine(Environment.CurrentDirectory, Config.DirectoryName);
+                var diname = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Config.DirectoryName);
                 DirectoryInfo di = new DirectoryInfo(diname);
                 if (!Directory.Exists(diname))
                 {
@@ -50,7 +51,14 @@ namespace UPPERIOC2.UPPER.UFileLog.DefineLog
                 StringBuilder sb = new StringBuilder();
                 sb.Append(Enum.GetName(LogType.GetType(), LogType));
                 sb.Append(" - ");
-                sb.Append(logtime.ToLocalTime().ToString());
+                var sbf = "HH:mm:ss";
+                if (Config.PrintMs)
+                {
+                    sbf += ":ffff";
+
+                }
+
+                sb.Append(logtime.ToString(sbf));
                 sb.Append(":");
                 sb.Append(Msg);
                 sb.Append("\n");
