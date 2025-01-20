@@ -169,6 +169,7 @@
     <Compile Include="C\LoadingControl.Designer.cs">
       <DependentUpon>LoadingControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CountModel - 复制.cs" />
     <Compile Include="Model\CountModel.cs" />
     <Compile Include="Model\PNCountModel.cs" />
     <Compile Include="MyTips.cs">

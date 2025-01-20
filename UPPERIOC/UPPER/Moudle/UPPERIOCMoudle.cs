@@ -50,17 +50,21 @@ namespace UPPERIOC.UPPER.IOC.Moudle
             {
 
                 var mainAssembly = AppDomain.CurrentDomain.GetAssemblies()
-                 .FirstOrDefault(assembly =>
+                 .ToList().FindAll(assembly =>
               assembly.GetTypes().Any(type => type.Name == "IOCGeneratedRegistration"));
 
                 if (mainAssembly != null)
                 {
-                    var type = mainAssembly.GetType("UPPER.Generated.IOCGeneratedRegistration");
-                    var method = type?.GetMethod("RegisterAll", BindingFlags.Public | BindingFlags.Static);
-                    if (method != null)
+                    foreach (var item in mainAssembly)
                     {
-                        method?.Invoke(null, new object[] { containerProvider }); // 调用静态方法
-                        Console.WriteLine("RegisterAll invoked successfully.");
+                        var type = item.GetType("UPPER.Generated.IOCGeneratedRegistration");
+                        var method = type?.GetMethod("RegisterAll", BindingFlags.Public | BindingFlags.Static);
+                        if (method != null)
+                        {
+                            method?.Invoke(null, new object[] { containerProvider }); // 调用静态方法
+                            Console.WriteLine("RegisterAll invoked successfully.");
+                        }
+                        
                     }
 
                 }

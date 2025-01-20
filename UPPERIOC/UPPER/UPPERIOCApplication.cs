@@ -17,14 +17,32 @@ using UPPERIOC2.UPPER.Model;
 
 namespace UPPERIOC
 {
-    //public delegate void DosomethingWhenInited(Dictionary<Type, object> Contain);
     public class UPPERIOCApplication
     {
-        public static IContainerProvider Container;
-		public static  VersionModel vm;
+        public static IContainerProvider container;
+       
+        public static  VersionModel vm;
         internal static List<ILog> Log;
-		private static ApplicationEventManager _manager;
-
+        /// <summary>
+        /// 应用事件监听器
+        ///  public class ApplicationStartingEvent : UPPERApplicationEvent { }
+        ///public class ApplicationStartedEvent : UPPERApplicationEvent { }
+        ///public class ApplicationPreCreatInstaceEvent : UPPERApplicationEvent { }
+        ///public class ApplicationCreatInstaceEvent : UPPERApplicationEvent { }
+        ///public class ApplicationAfterCreatInstaceEvent : UPPERApplicationEvent { }
+        ///public class ApplicationInitEndEvent : UPPERApplicationEvent { }
+        ///public class ApplicationStoppingEvent : UPPERApplicationEvent { }
+        ///public class ApplicationStoppedEvent : UPPERApplicationEvent { }
+        ///目前支持事件
+        ////// </summary>
+        private static ApplicationEventManager _manager;
+        /// <summary>
+        /// IOC容器
+        /// </summary>
+        public static IContainerProvider Container { 
+            get=> container;
+            set => container = value;
+        }
         public static ApplicationEventManager EventManager
 		{
 			get { return _manager; }
@@ -35,42 +53,14 @@ namespace UPPERIOC
 		public static void RunInstance(MoudleConfiguaion moudle)
         {
 			
-			var Param = moudle.ExportUpperModel();
-
-			Log = moudle.Log;
-			LogCenter.AddAllLog(Log.ToArray());
-            Container = moudle.Provider;
+            InitLog(moudle);
+			Container = moudle.Provider;
 			RegisterEvent(Container);
             //MoudleConfiguaion model , IContainerProvider prider 
             EventManager.PublishEvent(new ApplicationStartingEvent());
             //    public class  : UPPERApplicationEvent { }
-      
-			if (!Param.Any(x=> x.GetType() == typeof(UPPERIOCMoudle)))
-			{
-				Param.Add(new UPPERIOCMoudle());
-            }
-            Param.All(item =>
-            {
-				item.PreIniter(moudle.Provider);
-                return true;
-            });
-
-			Param.All(item =>
-			{
-				item.IniterAndLoadClass(moudle.Provider);
-				return true;
-			});
-		
-            Param.All(item =>
-            {
-                item.AfterCreateInstance(moudle.Provider);
-                return true;
-            });	
-            Param.All(item =>
-            {
-                item.InitEnd(moudle.Provider);
-                return true;
-            });
+            MoudleInit( moudle);
+			
             AppDomain.CurrentDomain.ProcessExit += (sender, e) =>
             {
                 ; EventManager.PublishEvent(new ApplicationStoppingEvent());
@@ -78,6 +68,43 @@ namespace UPPERIOC
             };
 
             //LoadLog();
+        }
+
+        private static void MoudleInit(MoudleConfiguaion moudle)
+        {
+            var Param = moudle.ExportUpperModel();
+            if (!Param.Any(x => x.GetType() == typeof(UPPERIOCMoudle)))
+            {
+                Param.Add(new UPPERIOCMoudle());
+            }
+            Param.All(item =>
+            {
+                item.PreIniter(moudle.Provider);
+                return true;
+            });
+
+            Param.All(item =>
+            {
+                item.IniterAndLoadClass(moudle.Provider);
+                return true;
+            });
+
+            Param.All(item =>
+            {
+                item.AfterCreateInstance(moudle.Provider);
+                return true;
+            });
+            Param.All(item =>
+            {
+                item.InitEnd(moudle.Provider);
+                return true;
+            });
+        }
+
+        private static void InitLog(MoudleConfiguaion moudle)
+        {
+            Log = moudle.Log;
+            LogCenter.AddAllLog(Log.ToArray());
         }
 
         private static void RegisterEvent(IContainerProvider container)

@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
+using FCT.Model;
 using UpperComAutoTest.MyControls;
 using UPPERIOC;
 using UPPERIOC.UPPER.IOC.Moudle;
@@ -13,7 +14,7 @@ using UPPERIOC2.UPPER.Premission.Model;
 using UPPERIOC2.UPPER.Translate.Center;
 using UPPERIOC2.UPPER.Translate.Moudle;
 using UPPERIOC2.UPPER.UFileModel.Moudle;
-
+using UPPERIOC2.UPPER.UIOC.Center;
 using UPPERIOC2.UPPER.UIOC.DefaultProvider;
 namespace UpperComAutoTest
 {
@@ -31,7 +32,7 @@ namespace UpperComAutoTest
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             var config = new UPPERIOC.UPPER.IOC.Center.Configuation.MoudleConfiguaion();
-			config.AddMoudle<UPPERIOCMoudle>();
+		//	config.AddMoudle<UPPERIOCMoudle>();
 			config.AddMoudle<UPPERLogFileMoudle>();
 			config.AddMoudle<UPPERSendorMoudle>();
 			config.AddMoudle<UPPERMLockMoudle>();
@@ -43,7 +44,6 @@ namespace UpperComAutoTest
 			//config.AddMoudle<UPPERTranslateMoudle>();
 			config.SetProvider<UPPERDefaultProvider>();
 			UPPERIOCApplication.RunInstance(config);
-			
 			TranslateCenter.Instance.SetLanguage("EN");
 
 			Application.Run(new Form1());
