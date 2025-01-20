@@ -10,6 +10,9 @@
   </PropertyGroup>
 	<Import Project="$(MSBuildThisFileDirectory)targets\upperioc.targets" />
 	<Import Project="$(MSBuildThisFileDirectory)targets\upperioc.props" />
+	<ItemGroup>
+	  <Compile Remove="UPPER.EmailErrorSender\IErrorConfiguation.cs" />
+	</ItemGroup>
 
 	  <ItemGroup>
     <PackageReference Include="IOCG" Version="1.0.0" />
@@ -19,7 +22,7 @@
 
 
 <PropertyGroup>
-  <Version>2.0.2.0</Version>
+  <Version>2.0.4.2</Version>
   <PackageId>UPPERIOC</PackageId>
   <Authors>Net Wsp</Authors>
   <Description>一个自带插件的IOC容器</Description>
@@ -41,6 +44,7 @@
     <PackagePath>analyzers\dotnet\roslyn3.8\cs</PackagePath>
   </None>
   <None Include="..\UPPERIOC\bin\$(Configuration)\netstandard2.0\UPPERIOC.dll" Pack="true" PackagePath="lib\netstandard2.0" />
+  <None Include="..\UPPERIOC\UPPERIOC.png" Pack="true" />
     <None Include="..\UPPERIOC\bin\$(Configuration)\net462\UPPERIOC.dll" Pack="true" PackagePath="lib\net462" />
 </ItemGroup>
   <ItemGroup>
@@ -67,7 +71,7 @@
   <PackageReadmeFile>README.md</PackageReadmeFile>
   <PackAsTool>False</PackAsTool>
   <PackageProjectUrl>https://gitee.com/laowangm_m/upper-com-auto-test</PackageProjectUrl>
-  <PackageIcon>9200301643_fef33a95-3a3c-41a9-8d72-f3aa5d0c74dd.png</PackageIcon>
+  <PackageIcon>UPPERIOC.png</PackageIcon>
   <RepositoryUrl>https://gitee.com/laowangm_m/upper-com-auto-test</RepositoryUrl>
   <RepositoryType>gitee</RepositoryType>
   <PackageTags>ioc</PackageTags>
@@ -91,13 +95,13 @@
 </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
   <Optimize>True</Optimize>
+  <DebugType>embedded</DebugType>
+</PropertyGroup>
+<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+  <DebugType>embedded</DebugType>
 </PropertyGroup>
 <ItemGroup>
   <None Include="..\README.md">
-    <Pack>True</Pack>
-    <PackagePath>\</PackagePath>
-  </None>
-  <None Include="D:\Users\Wsp00\Pictures\9200301643_fef33a95-3a3c-41a9-8d72-f3aa5d0c74dd.png">
     <Pack>True</Pack>
     <PackagePath>\</PackagePath>
   </None>
@@ -107,5 +111,12 @@
     <Reference Include="System.Windows.Forms">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Windows.Forms.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="UPPERIOC.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>

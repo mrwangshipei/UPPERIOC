@@ -12,7 +12,7 @@ using UPPERIOC.UPPER.IOC.Extend;
 
 namespace UPPERIOC.UPPER.IOC.Moudle
 {
-	public class UPPERMvvmMoudle : IUPPERMoudle
+    public class UPPERMvvmMoudle : IUPPERMoudle
 	{
 
 		public Type[] DependisMoudel { get; set; } = new Type[0];

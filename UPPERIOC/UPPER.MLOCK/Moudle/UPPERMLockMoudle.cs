@@ -6,7 +6,7 @@ using UPPERIOC2.UPPER.Util;
 
 namespace UPPERIOC.UPPER.IOC.Moudle
 {
-	public class UPPERMLockMoudle : IUPPERMoudle
+    public class UPPERMLockMoudle : IUPPERMoudle
 	{
 
 		public Type[] DependisMoudel { get; set; } = new Type[0];

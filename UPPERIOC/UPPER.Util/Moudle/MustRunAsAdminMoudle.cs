@@ -13,7 +13,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace UPPERIOC2.UPPER.Util.Moudle
 {
-	[StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential)]
 	struct TOKEN_ELEVATION_TYPE
 	{
 		public int TokenElevationType;

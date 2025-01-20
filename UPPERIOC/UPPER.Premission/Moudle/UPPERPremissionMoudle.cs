@@ -12,7 +12,7 @@ using UPPERIOC2.UPPER.Premission.UAttribute;
 
 namespace UPPERIOC2.UPPER.Premission.Moudle
 {
-	public class UPPERPremissionMoudle : IUPPERMoudle
+    public class UPPERPremissionMoudle : IUPPERMoudle
 	{
 		public Type[] DependisMoudel { get => new Type[0]; set => throw new NotImplementedException(); }
 		public object CreateProxy(Type target )

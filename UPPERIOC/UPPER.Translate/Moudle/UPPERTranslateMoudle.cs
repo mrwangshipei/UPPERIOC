@@ -13,7 +13,7 @@ using UPPERIOC2.UPPER.UFileModel.Moudle;
 
 namespace UPPERIOC2.UPPER.Translate.Moudle
 {
-	public class UPPERTranslateMoudle : IUPPERMoudle
+    public class UPPERTranslateMoudle : IUPPERMoudle
 	{
         public Type[] DependisMoudel { get => new Type[] {typeof( UFileModel.Moudle.UPPERFileModelMoudle)}; set => throw new NotImplementedException(); }
 

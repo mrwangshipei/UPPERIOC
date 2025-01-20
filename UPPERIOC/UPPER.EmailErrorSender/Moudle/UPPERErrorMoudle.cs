@@ -12,10 +12,11 @@ using UPPERIOC2.UPPER.EmailErrorSender.Sender;
 
 namespace UPPERIOC2.UPPER.EmailErrorSender.Moudle
 {
-	public class UPPERErrorMoudle : IUPPERMoudle
+    public class UPPERErrorMoudle : IUPPERMoudle
 	{
 		public Type[] DependisMoudel { get => new Type[] { }; set => throw new NotImplementedException(); }
-		private int mainThreadId = 0;
+
+        private int mainThreadId = 0;
 		public void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 		}
