@@ -1,6 +1,7 @@
 <div align="center">
 
- ![UPPERIOC](UPPERIOC.png)
+![logo](asset/UPPERIOC.png)
+
 </div>
 
 <h1 align="center">UPPERIOC</h1>
@@ -19,6 +20,13 @@
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mrwangshipei/UPPERIOC?style=flat-square">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mrwangshipei/UPPERIOC?style=social">
   </p>
+
+
+MyGet Pre-release feed: https://www.nuget.org/packages/UPPERIOC/
+
+| Package | NuGet Stable | NuGet Pre-release | Downloads | MyGet |
+| ------- | ------------ | ----------------- | --------- | ----- |
+| [UPPERIOC](https://www.nuget.org/packages/UPPERIOC/) | [![CNative.Dapper.Utils](https://img.shields.io/nuget/v/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC/) | [![UPPERIOC](https://img.shields.io/nuget/vpre/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC/) | [![UPPERIOC](https://img.shields.io/nuget/dt/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC/) | [![UPPERIOC MyGet](https://img.shields.io/myget/UPPERIOC/vpre/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC) |
 
 ### 首先声明
 
