@@ -13,7 +13,7 @@
     <img src="https://badgen.net/badge/Github/mrwangshipei/21D789?icon=github">
   </a>
 
-<img src="https://img.shields.io/badge/strand-2.0-blue">
+<img src="https://img.shields.io/badge/NetStandard-2.0-blue">
   <a href="https://github.com/mrwangshipei/UPPERIOC/blob/master/LICENSE">
     <img alt="GitHub" src="https://img.shields.io/github/license/mrwangshipei/UPPERIOC?style=flat-square">
   </a>
