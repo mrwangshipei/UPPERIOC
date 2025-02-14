@@ -18,25 +18,25 @@ namespace UPPERIOC.UPPER.UFILELOG.Moudle
 		IContainerProvider containerProvider;
 		public Type[] DependisMoudel { get; set; } = new Type[] { } ;
 
-		public void AfterCreateInstance(IContainerProvider containerProvider)
+        public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 			var con = (IFileLogConfiguation)containerProvider.GetInstance(typeof(IFileLogConfiguation));
 			LogCenter.AddILog(containerProvider.Rigister<FileLog>());
 
 		}
 
-		public void PreIniter(IContainerProvider containerProvider)
+        public override void PreIniter(IContainerProvider containerProvider)
 		{
 
 		}
 
-		public void InitEnd(IContainerProvider containerProvider)
+        public override void InitEnd(IContainerProvider containerProvider)
 		{
 
 		}
 
 
-		public void IniterAndLoadClass(IContainerProvider containerProvider)
+        public override void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
 			this.containerProvider = containerProvider;
 

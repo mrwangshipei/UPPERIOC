@@ -24,22 +24,22 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 		public Type[] DependisMoudel { get; set; } = new Type[0];
 
 
-        public void AfterCreateInstance(IContainerProvider containerProvider)
+        public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
          
         }
 
-		public void PreIniter(IContainerProvider containerProvider)
+        public override void PreIniter(IContainerProvider containerProvider)
 		{
 			    
         }
 
-		public void InitEnd(IContainerProvider containerProvider)
+		public override void InitEnd(IContainerProvider containerProvider)
 		{
             ma.PublishEvent(new ApplicationInitEndEvent());
 
         }
-		public void IniterAndLoadClass(IContainerProvider containerProvider)
+		public override void IniterAndLoadClass(IContainerProvider containerProvider)
         {
 
              ma=  containerProvider.GetInstance<ApplicationEventManager>();
@@ -49,9 +49,19 @@ namespace UPPERIOC.UPPER.IOC.Moudle
             try
             {
 
-                var mainAssembly = AppDomain.CurrentDomain.GetAssemblies()
-                 .ToList().FindAll(assembly =>
-              assembly.GetTypes().Any(type => type.Name == "IOCGeneratedRegistration"));
+                var mainAssembly = GetAllReferencedAssemblies(Assembly.GetEntryAssembly())
+                 .FindAll(assembly => {
+                     try
+                     {
+                         return  assembly.GetTypes().Any(type => type.Name == "IOCGeneratedRegistration");
+
+                     }
+                     catch (Exception ex )
+                     {
+                         return false;
+                     }
+                  }
+              );
 
                 if (mainAssembly != null)
                 {
@@ -61,8 +71,18 @@ namespace UPPERIOC.UPPER.IOC.Moudle
                         var method = type?.GetMethod("RegisterAll", BindingFlags.Public | BindingFlags.Static);
                         if (method != null)
                         {
-                            method?.Invoke(null, new object[] { containerProvider }); // 调用静态方法
-                            Console.WriteLine("RegisterAll invoked successfully.");
+                            try
+                            {
+
+                                method?.Invoke(null, new object[] { containerProvider }); // 调用静态方法
+                                Console.WriteLine("RegisterAll invoked successfully.");
+                            }
+                            catch (Exception ee)
+                            {
+                                LogCenter.Log(enums.LogType.Error,"RegisterAll Error:" + ee.Message + ee.StackTrace);
+
+                                Console.WriteLine("RegisterAll Error:" + ee.Message + ee.StackTrace);
+                            }
                         }
                         
                     }
@@ -76,6 +96,38 @@ namespace UPPERIOC.UPPER.IOC.Moudle
             {
                 Console.WriteLine($"Error invoking RegisterAll: {ex}");
             }
+        }
+        public static List<Assembly> GetAllReferencedAssemblies(Assembly assembly)
+        {
+            var referencedAssemblies = new HashSet<Assembly>();
+            var queue = new Queue<Assembly>();
+            queue.Enqueue(assembly);
+
+            while (queue.Count > 0)
+            {
+                var currentAssembly = queue.Dequeue();
+                if (!referencedAssemblies.Contains(currentAssembly))
+                {
+                    referencedAssemblies.Add(currentAssembly);
+                    foreach (var reference in currentAssembly.GetReferencedAssemblies())
+                    {
+                        try
+                        {
+                            var referencedAssembly = Assembly.Load(reference);
+                            if (!referencedAssemblies.Contains(referencedAssembly))
+                            {
+                                queue.Enqueue(referencedAssembly);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // 忽略找不到的程序集
+                        }
+                    }
+                }
+            }
+
+            return referencedAssemblies.ToList();
         }
 
 

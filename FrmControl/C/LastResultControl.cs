@@ -1,6 +1,7 @@
 ﻿
 using COMIEEE;
 using FCT.Model;
+using FrmBase;
 using System;
 using System.Drawing;
 using System.Linq;

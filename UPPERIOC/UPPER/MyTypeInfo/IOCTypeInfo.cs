@@ -9,6 +9,7 @@ namespace UPPERIOC.UPPER.IOC.MyTypeInfo
     public class IOCTypeInfo
     {
         public Type Type { get; set; }
+		public bool SingleBean { get; set; } = true;
         public string TypeName { get; set; }
 
 		public override bool Equals(object obj)

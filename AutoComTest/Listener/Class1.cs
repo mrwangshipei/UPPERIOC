@@ -16,7 +16,7 @@ namespace AutoComTest.Listener
 
         public void OnEvent(ApplicationStoppingEvent applicationEvent)
         {
-            File.AppendAllText("y.TXT", "终止容器");
+            Console.WriteLine("终止");
         }
     }
 }

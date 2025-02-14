@@ -73,7 +73,7 @@ public class IOCCodeGenerator : ISourceGenerator
           
                 i++;
             builder.AppendLine($"            var type{i} = Type.GetType(\"{namespaceName}.{className}\");");
-            builder.AppendLine($"            container.Rigister(type{i});");
+            builder.AppendLine($"            container.Rigister(type{i},true);");
         }
 
         builder.AppendLine("        }");

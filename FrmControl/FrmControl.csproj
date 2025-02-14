@@ -1,33 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D50E8CDB-9D79-410A-A4DA-43A307D17884}</ProjectGuid>
+   <ImplicitUsings>enable</ImplicitUsings>
+ 
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFramework>net462</TargetFramework>
     <RootNamespace>FrmControl</RootNamespace>
     <AssemblyName>FrmControl</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
+    <UseWindowsForms>True</UseWindowsForms>
+    <FileAlignment>512</FileAlignment> 
+<IsPackable>true</IsPackable>
+<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+<LangVersion>preview</LangVersion>
+
+    </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <DebugType>embedded</DebugType>
+
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <DebugType>embedded</DebugType>
+
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -35,10 +37,12 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
+    <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\</PackageOutputPath>
+    <Version>1.0.0.14</Version>
+
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
-    <Reference Include="PresentationCore" />
+
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -48,10 +52,12 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
+
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animation\AnimationBase.cs" />
+    <Compile Include="Animation\ClickAnimation.cs" />
     <Compile Include="C\Btn\Apple3Btn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -61,13 +67,14 @@
     <Compile Include="C\Btn\FrmBtn.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="C\Btn\FrmBtnImg.cs" />
+    <Compile Include="C\Btn\FrmBtnImg.Designer.cs" />
     <Compile Include="C\Btn\FrmLinerGidentBtn.cs" />
     <Compile Include="C\Btn\FrmLinerGidentBtn.Designer.cs">
       <DependentUpon>FrmLinerGidentBtn.cs</DependentUpon>
     </Compile>
-    <Compile Include="C\CBaseControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="C\Btn\SliderCtl.cs" />
+    <Compile Include="C\CBaseControl.cs" />
     <Compile Include="C\LastResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,10 +146,10 @@
     <Compile Include="FrmSelect.Designer.cs">
       <DependentUpon>FrmSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDialog.cs">
+    <Compile Include="Frm\FrmDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDialog.Designer.cs">
+    <Compile Include="Frm\FrmDialog.Designer.cs">
       <DependentUpon>FrmDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="C\GradientProgressBar.cs">
@@ -201,12 +208,14 @@
     <EmbeddedResource Include="C\Btn\Apple3Btn.resx">
       <DependentUpon>Apple3Btn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C\Btn\FrmBtnImg.resx" />
     <EmbeddedResource Include="C\Btn\FrmLinerGidentBtn.resx">
       <DependentUpon>FrmLinerGidentBtn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C\LastResultControl.resx">
       <DependentUpon>LastResultControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C\TempForm.resx" />
     <EmbeddedResource Include="C\TempShow\TempListForm.resx">
       <DependentUpon>TempListForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,7 +243,7 @@
     <EmbeddedResource Include="FrmSelect.resx">
       <DependentUpon>FrmSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDialog.resx">
+    <EmbeddedResource Include="Frm\FrmDialog.resx">
       <DependentUpon>FrmDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C\GradientProgressBar.resx">
@@ -283,56 +292,11 @@
     <None Include="Resources\Shut down-2.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="IOCG">
-      <Version>1.0.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers">
-      <Version>3.3.4</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.Common">
-      <Version>4.12.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp">
-      <Version>4.12.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Diagnostics.Runtime">
-      <Version>1.1.122004</Version>
-    </PackageReference>
-    <PackageReference Include="System.Buffers">
-      <Version>4.5.1</Version>
-    </PackageReference>
-    <PackageReference Include="System.Collections.Immutable">
-      <Version>8.0.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Management">
-      <Version>4.6.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Memory">
-      <Version>4.5.5</Version>
-    </PackageReference>
-    <PackageReference Include="System.Numerics.Vectors">
-      <Version>4.5.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Reflection.Metadata">
-      <Version>8.0.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
-      <Version>6.0.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Text.Encoding.CodePages">
-      <Version>7.0.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.Threading.Tasks.Extensions">
-      <Version>4.5.4</Version>
-    </PackageReference>
+    <PackageReference Include="IOCG" Version="1.0.0.2" />
     <PackageReference Include="System.ValueTuple">
       <Version>4.5.0</Version>
     </PackageReference>
-    <PackageReference Include="UPPERIOC">
-      <Version>2.0.1.18</Version>
-    </PackageReference>
+    <PackageReference Include="UPPERIOC" Version="2.0.4.10" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

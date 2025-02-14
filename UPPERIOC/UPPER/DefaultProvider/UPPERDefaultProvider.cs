@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -32,7 +33,7 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
                }
            }*/
 
-        public object InitInstance(Type item, bool SubRegister = false, string name = null)
+        public object InitInstance(Type item = null, bool SubRegister = false, string name = null)
         {
             if (!item.HasBaseClassWithAttribute<IOCObject>() && SubRegister)
             {
@@ -89,53 +90,20 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
             {
                 return null;
             }
-
+            if (Contain.IsSingleBean(type) == false) { 
+                return InitInstance(type);
+            }
 
             return Contain.GetIntstance(type); ;
         }
-
-        public object GetInstance(Type type, string name)
+        public object GetInstance(string names)
         {
-            if (string.IsNullOrWhiteSpace(name))
+            if (Contain.IsSingleBean(names) == false)
             {
-                return null;
+                return InitInstance(name : names);
             }
-            return Contain.GetIntstance(type, name); ;
 
-        }
-        public T Rigister<T>()
-        {
-            if (Contain.GetIntstance(typeof(T)) != null)
-            {
-                return default(T);
-            }
-            return (T)(Contain[new IOCTypeInfo() { Type = typeof(T), TypeName = typeof(T).Name }] = InitInstance(typeof(T)));
-        }
-
-
-        public T Rigister<T>(string name)
-        {
-            if (Contain.GetIntstance(name) != null)
-            {
-                return default(T);
-            }
-            return (T)(Contain[new IOCTypeInfo() { Type = typeof(T), TypeName = name }] = InitInstance(typeof(T)));
-
-        }
-
-        public object Rigister(Type T)
-        {
-            if (Contain.GetIntstance(T) != null)
-            {
-                return null; ;
-            }
-            return Contain[new IOCTypeInfo() { Type = T, TypeName = T.Name }] = InitInstance(T);
-        }
-
-        public object GetInstance(string name)
-        {
-
-            return Contain.GetIntstance(name);
+            return Contain.GetIntstance(names);
         }
 
         public object[] GetAllInstance(Type type)
@@ -146,7 +114,78 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
         {
             return Contain.GetAllInstance(typeof(T)).Select(t => (T)t).ToArray(); ;
         }
+        public T GetInstanceAndSub<T>()
+        {
+            if (Contain.IsSingleBean(typeof(T)) == false)
+            {
+                return (T)InitInstance(item:typeof(T));
+            }
+            return (T)Contain.GetIntstance(typeof(T), true);
+        }
 
+        public T GetInstance<T>()
+        {
+            if (Contain.IsSingleBean(typeof(T)) == false)
+            {
+                return (T)InitInstance(item: typeof(T));
+            }
+            return (T)Contain.GetIntstance(typeof(T));
+        }
+        public T GetInstance<T>(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return default(T);
+            }
+            if (Contain.IsSingleBean(typeof(T)) == false)
+            {
+                return (T)InitInstance(item: typeof(T));
+            }
+            return (T)Contain.GetIntstance(typeof(T), name); ;
+        }
+        public object GetInstance(Type type, string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return null;
+            }
+            if (Contain.IsSingleBean(type) == false)
+            {
+                return InitInstance(item: type);
+            }
+            return Contain.GetIntstance(type, name); ;
+
+        }
+        public T Rigister<T>(bool SingleBean = true)
+        {
+            if (Contain.GetIntstance(typeof(T)) != null)
+            {
+                return default(T);
+            }
+            return (T)(Contain[new IOCTypeInfo() { Type = typeof(T), TypeName = typeof(T).Name , SingleBean = SingleBean }] = InitInstance(typeof(T)));
+        }
+
+
+        public T Rigister<T>(string name, bool SingleBean = true)
+        {
+            if (Contain.GetIntstance(name) != null)
+            {
+                return default(T);
+            }
+            return (T)(Contain[new IOCTypeInfo() { Type = typeof(T), TypeName = name, SingleBean = SingleBean }] = InitInstance(typeof(T)));
+
+        }
+
+        public object Rigister(Type T, bool SingleBean = true)
+        {
+            if (Contain.GetIntstance(T) != null)
+            {
+                return null; ;
+            }
+            return Contain[new IOCTypeInfo() { Type = T, TypeName = T.Name , SingleBean = SingleBean }] = InitInstance(T);
+        }
+
+     
         public object Rigister(Type T, object obj)
         {
             return Rigister(T, T.Name, obj);
@@ -161,29 +200,13 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
         {
             return Contain[new IOCTypeInfo() { Type = T, TypeName = name }] = obj;
         }
-		public T GetInstanceAndSub<T>()
+		
+        public object Rigister(Type T, string name, bool SingleBean = true)
 		{
-			return (T)Contain.GetIntstance(typeof(T),true);
-		}
-
-		public T GetInstance<T>()
-        {
-            return (T)Contain.GetIntstance(typeof(T));
-        }
-
-		public object Rigister(Type T, string name)
-		{
-			return Contain[new IOCTypeInfo() { Type = T, TypeName = name}] = InitInstance(T);
+			return Contain[new IOCTypeInfo() { Type = T, TypeName = name, SingleBean = SingleBean }] = InitInstance(T);
 
 		}
 
-		public T GetInstance<T>(string name)
-		{
-			if (string.IsNullOrWhiteSpace(name))
-			{
-				return default(T);
-			}
-			return(T) Contain.GetIntstance(typeof(T), name); ;
-		}
+	
 	}
 }

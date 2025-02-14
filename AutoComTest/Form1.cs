@@ -1,4 +1,5 @@
 
+using FrmBase;
 using FrmControl.C;
 using System;
 using System.Configuration;
@@ -19,7 +20,7 @@ namespace UpperComAutoTest
 		Form1ModelView modelView;
 		public Form1()
 		{
-
+			
 			modelView = UPPERIOCApplication.Container.GetInstance<Form1ModelView>();
 			InitializeComponent();
 			foreach (ToolStripItem item in toolStrip1.Items)
@@ -114,6 +115,7 @@ namespace UpperComAutoTest
 	
 		private void toolStripButton1_Click_2(object sender, EventArgs e)
 		{
+			FrmDialog.ShowDialog(this,"dasda0","asda");
 			//MyTips.ShowTips(this, Tipstype.Tip, "adsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjk");
 			//Thread.Sleep(15000);
 		}

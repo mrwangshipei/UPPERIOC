@@ -13,20 +13,20 @@ namespace UPPERIOC2.UPPER.Util.Moudle
 	{
 		public Type[] DependisMoudel { get => Type.EmptyTypes; set => throw new NotImplementedException(); }
 
-		public void AfterCreateInstance(IContainerProvider containerProvider)
+        public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 		}
 
-		public void InitEnd(IContainerProvider containerProvider)
+        public override void InitEnd(IContainerProvider containerProvider)
 		{
 		}
 
-		public void IniterAndLoadClass(IContainerProvider containerProvider)
+        public override void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
 		}
 		[DllImport("USER32.DLL")]
 		public static extern bool SetForegroundWindow(IntPtr hWnd);
-		public void PreIniter(IContainerProvider containerProvider)
+        public override void PreIniter(IContainerProvider containerProvider)
 		{
 			if (Process.GetProcesses().Select(item => item.ProcessName).Count(item => item == Process.GetCurrentProcess().ProcessName) > 1)
 			{

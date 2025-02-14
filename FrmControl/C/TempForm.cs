@@ -10,8 +10,9 @@ using System.Windows.Forms;
 namespace FrmControl.C
 {
 	public class TempForm : Form
-	{
-		public TempForm()
+    {
+
+        public TempForm()
 		{
 			this.TopMost = true;
 			this.VisibleChanged += VisableChanged;
@@ -76,5 +77,17 @@ namespace FrmControl.C
 			// 如果窗体可能被多个屏幕覆盖，你可能需要遍历所有屏幕并找到最合适的位置  
 			// 这里为了简单起见，只考虑了主屏幕  
 		}
-	}
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // TempForm
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "TempForm";
+            this.ResumeLayout(false);
+
+        }
+    }
 }

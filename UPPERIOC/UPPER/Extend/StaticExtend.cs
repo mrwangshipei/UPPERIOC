@@ -21,8 +21,27 @@ namespace UPPERIOC.UPPER.IOC.Extend
 				type = type.BaseType; // 移动到继承链中的下一个基类  
 			}
 			return false;
-		}
-		public static object GetIntstance(this ConcurrentDictionary<IOCTypeInfo, object> kv, string name)
+        }
+        public static bool? IsSingleBean(this ConcurrentDictionary<IOCTypeInfo, object> kv, string name)
+        {
+            var fir =kv.FirstOrDefault(x => x.Key.TypeName == name) ;
+            if (fir.Key == null)
+            {
+                return null;
+            }
+            return fir.Key.SingleBean;
+            
+        }
+        public static bool? IsSingleBean(this ConcurrentDictionary<IOCTypeInfo, object> kv, Type name)
+        {
+            var fir = kv.FirstOrDefault(item => AreGenericParametersEqual(item.Key.Type, name) && (item.Key.Type.IsSubclassOf(name) || name.IsAssignableFrom(item.Key.Type)));
+            if (fir.Key == null)
+            {
+                return null;
+            }
+            return fir.Key.SingleBean;
+        }
+        public static object GetIntstance(this ConcurrentDictionary<IOCTypeInfo, object> kv, string name)
 		{
 			return kv.GetIntstance(null, name, false);
 		}

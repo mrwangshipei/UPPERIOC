@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FrmControl.C
+namespace FrmControl.FrmBase
 {
-    public class CBaseControl : UserControl
+    public class CBaseControl : Control
     {
-        public void DoInvoke(Action Invoker) {
-            if (InvokeRequired) { 
-            this.Invoke(Invoker);
+        public void DoInvoke(Action Invoker)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(Invoker);
             }
             else
             {

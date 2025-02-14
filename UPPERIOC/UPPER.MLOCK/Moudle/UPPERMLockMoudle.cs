@@ -63,7 +63,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 
 */
 		public static	MLockConfiguation m;
-		public void AfterCreateInstance(IContainerProvider containerProvider)
+		public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 			var c = containerProvider.GetAllInstance<MLockConfiguation>();
 			if (c.Length <= 0)
@@ -93,18 +93,18 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 
 		}
 
-		public void PreIniter(IContainerProvider containerProvider)
+        public override void PreIniter(IContainerProvider containerProvider)
 		{
 			//this.containerProvider = containerProvider;
 			//	LoadClass();
 		}
 
-		public void InitEnd(IContainerProvider containerProvider)
+        public override void InitEnd(IContainerProvider containerProvider)
 		{
 
 		}
 		IContainerProvider containerProvider;
-		public void IniterAndLoadClass(IContainerProvider containerProvider)
+        public override void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
 
 		}

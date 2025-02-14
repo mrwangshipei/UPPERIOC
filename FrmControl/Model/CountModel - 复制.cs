@@ -4,7 +4,6 @@ using UPPERIOC2.UPPER.UFileModel.Model;
 
 namespace FCT.Model
 {
-	[IOCObject]
 	public class X 
 	{
 		public DictionaryEx<string, PNCountModel> PNCounts { get; set; }

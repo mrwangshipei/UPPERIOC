@@ -24,22 +24,22 @@ namespace UPPERIOC.UPPER.Sendor.Moudle
 		public Type[] DependisMoudel { get; set; } = new Type[0];
 
 
-		public void AfterCreateInstance(IContainerProvider containerProvider)
+        public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 
 			VersionCenter.IVersions = containerProvider.GetAllInstance(typeof(IVersionControl)).Select(item => item as IVersionControl).ToList();
 		}
 
-		public void PreIniter(IContainerProvider containerProvider)
+        public override void PreIniter(IContainerProvider containerProvider)
 		{
 			UPPERIOC.UPPERIOCApplication.RigisterVersionModel(new VersionModel());
 		}
 
-		public void InitEnd(IContainerProvider containerProvider)
+        public override void InitEnd(IContainerProvider containerProvider)
 		{
 		}
 
-		public void IniterAndLoadClass(IContainerProvider containerProvider)
+		public override  void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
 		}
 	}

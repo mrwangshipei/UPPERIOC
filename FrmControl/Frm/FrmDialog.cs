@@ -1,15 +1,16 @@
 ﻿using System;
 
 using System.Windows.Forms;
+using FrmControl.FrmBase;
 
-namespace COMIEEE
+namespace FrmBase
 {
-	public partial class FrmDialog : Form
+	public partial class FrmDialog : FrmBaseForm
 	{
 		public static DialogResult ShowDialog(Form parent,string msg,string title) {
 			FrmDialog fm = new FrmDialog();
 			fm.Text = title;
-			fm.label1.Text = msg;
+			fm.label11.Text = msg;
 			fm.Owner = parent;
 			var r = fm.ShowDialog(parent);
 			return r;
@@ -19,7 +20,7 @@ namespace COMIEEE
 		{
 			FrmDialog fm = new FrmDialog();
 			fm.Text = title;
-			fm.label1.Text = msg;
+			fm.label11.Text = msg;
 			fm.TopMost = true;
 			return fm.ShowDialog();
 		}
@@ -43,5 +44,10 @@ namespace COMIEEE
 			this.Close();
 
 		}
-	}
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

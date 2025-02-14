@@ -15,14 +15,14 @@
 	</ItemGroup>
 
 	  <ItemGroup>
-    <PackageReference Include="IOCG" Version="1.0.0" />
+    <PackageReference Include="IOCG" Version="1.0.0.2" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="System.Management" Version="4.6.0" />
   </ItemGroup>
 
 
 <PropertyGroup>
-  <Version>2.0.4.3</Version>
+  <Version>2.0.4.11</Version>
   <PackageId>UPPERIOC</PackageId>
   <Authors>Net Wsp</Authors>
   <Description>一个自带插件的IOC容器</Description>
@@ -64,7 +64,6 @@
   <Nullable>enable</Nullable>
   <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\</PackageOutputPath>
   <Title>UPPERIOC</Title>
-  <NeutralLanguage>zh-Hans</NeutralLanguage>
   <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   <IncludeSymbols>true</IncludeSymbols>
   <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -80,6 +79,7 @@
   <NuGetAudit>False</NuGetAudit>
   <AssemblyVersion>2.0.0</AssemblyVersion>
   <UserSecretsId>5d9e1ecd-9e2e-4d37-86f4-fcb71f419384</UserSecretsId>
+  <NeutralLanguage>zh</NeutralLanguage>
 </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
   <DebugType>embedded</DebugType>

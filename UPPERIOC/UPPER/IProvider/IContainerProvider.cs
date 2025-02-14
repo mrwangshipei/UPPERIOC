@@ -22,14 +22,14 @@ namespace UPPERIOC.UPPER.IOC.Center.IProvider
 
 		 object GetInstance(Type type, string name);
 
-		 T Rigister<T>();
-		 object Rigister(Type T);
+		 T Rigister<T>(bool Single = true);
+		 object Rigister(Type T, bool Single = true);
+		T Rigister<T>(string name, bool Single = true);
+		object Rigister(Type T, string name, bool Single = true);
 
 		object Rigister(Type T,object obj);
-		object Rigister(Type T, string name);
 		object Rigister(Type T,string name,object obj);
 		object Rigister<T>(object obj);
 
-		T Rigister<T>(string name);
 	}
 }

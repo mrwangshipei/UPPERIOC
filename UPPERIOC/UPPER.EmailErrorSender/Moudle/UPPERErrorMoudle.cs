@@ -17,11 +17,11 @@ namespace UPPERIOC2.UPPER.EmailErrorSender.Moudle
 		public Type[] DependisMoudel { get => new Type[] { }; set => throw new NotImplementedException(); }
 
         private int mainThreadId = 0;
-		public void AfterCreateInstance(IContainerProvider containerProvider)
+		public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 		}
 
-		public void InitEnd(IContainerProvider containerProvider)
+        public override void InitEnd(IContainerProvider containerProvider)
 		{
 
 			AppDomain.CurrentDomain.UnhandledException += ExHandle; ;
@@ -30,21 +30,21 @@ namespace UPPERIOC2.UPPER.EmailErrorSender.Moudle
 			Application.ThreadException += ExHandle;
 		}
 
-		private void ExHandle(object sender, UnhandledExceptionEventArgs e)
+        private  void ExHandle(object sender, UnhandledExceptionEventArgs e)
 		{
 			EmailSender.instance.SendEmail(e.ExceptionObject as Exception);
 		}
 
-		private void ExHandle(object sender, ThreadExceptionEventArgs e)
+        private  void ExHandle(object sender, ThreadExceptionEventArgs e)
 		{
 			EmailSender.instance.SendEmail(e.Exception);
 		}
 
-		public void IniterAndLoadClass(IContainerProvider containerProvider)
+		public override  void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
 		}
 
-		public void PreIniter(IContainerProvider containerProvider)
+        public override void PreIniter(IContainerProvider containerProvider)
 		{
 			Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
 

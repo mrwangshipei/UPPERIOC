@@ -12,12 +12,19 @@ namespace FrmControl.C.Btn
 {
 	public partial class Apple3Btn : UserControl
 	{
-		public Apple3Btn()
+		public Padding _btnPad;
+        public Padding BtnPad { get=> panel1.Padding;
+            set {
+				panel1.Padding = value;
+				panel2.Padding = value;
+				panel3.Padding = value;
+				_btnPad = value;
+			}
+		}
+        public Apple3Btn()
 		{
 			InitializeComponent();
 			
-			this.Margin = new Padding(0, 0, 0, 0);
-			this.Padding = new Padding(0, 0, 0, 0);
 			this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint|ControlStyles.SupportsTransparentBackColor, true);
 
 		}
@@ -47,9 +54,9 @@ namespace FrmControl.C.Btn
 
 		private void Apple3Btn_SizeChanged(object sender, EventArgs e)
 		{
-			this.frmBtn1.Radius = this.frmBtn1.Width / 2;
-			this.frmBtn2.Radius = this.frmBtn2.Width / 2;
-			this.frmBtn3.Radius = this.frmBtn3.Width / 2;
+		//	this.frmBtn1.Radius = this.frmBtn1.Width / 2;
+			//this.frmBtn2.Radius = this.frmBtn2.Width / 2;
+		//	this.frmBtn3.Radius = this.frmBtn3.Width / 2;
 		}
 
 		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

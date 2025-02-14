@@ -17,16 +17,16 @@ namespace UPPERIOC2.UPPER.Translate.Moudle
 	{
         public Type[] DependisMoudel { get => new Type[] {typeof( UFileModel.Moudle.UPPERFileModelMoudle)}; set => throw new NotImplementedException(); }
 
-		public void AfterCreateInstance(IContainerProvider containerProvider)
+		public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 			
 		}
 
-		public void InitEnd(IContainerProvider containerProvider)
+        public override void InitEnd(IContainerProvider containerProvider)
 		{
 		}
 
-		public void IniterAndLoadClass(IContainerProvider containerProvider)
+        public override void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
 			TranslateModel tm = F.I.GetModel<TranslateModel>(new TranslateModel());
 			TranslateCenter.Instance = new TranslateCenter(containerProvider);
@@ -42,7 +42,7 @@ namespace UPPERIOC2.UPPER.Translate.Moudle
 			}
 		}
 
-		public void PreIniter(IContainerProvider containerProvider)
+        public override void PreIniter(IContainerProvider containerProvider)
 		{
 		}
 	}

@@ -229,7 +229,7 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 		}
 		PremissionCenter cen;
 		IContainerProvider containerProvider;
-		public void AfterCreateInstance(IContainerProvider containerProvider)
+        public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 			this.containerProvider = containerProvider;
 			PremissionCenter.pd = containerProvider;
@@ -238,15 +238,15 @@ namespace UPPERIOC2.UPPER.Premission.Moudle
 			LoadClass();
 		}
 
-		public void InitEnd(IContainerProvider containerProvider)
+        public override void InitEnd(IContainerProvider containerProvider)
 		{
 		}
 
-		public void IniterAndLoadClass(IContainerProvider containerProvider)
+        public override void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
 		}
 
-		public void PreIniter(IContainerProvider containerProvider)
+        public override void PreIniter(IContainerProvider containerProvider)
 		{
 
 		}

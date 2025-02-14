@@ -17,7 +17,7 @@ namespace UPPERIOC.Interface
         public abstract void Create();
 
         public abstract void Destroy();
-	
+	 
 		public void Invoke<T>(Action<IMvvmCompent> act) where T : IMvvmCompent
 		{
 			var obj = UPPERIOCApplication.Container.GetInstance(typeof(T)) as IMvvmCompent;

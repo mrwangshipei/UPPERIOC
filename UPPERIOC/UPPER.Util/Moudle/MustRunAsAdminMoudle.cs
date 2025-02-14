@@ -23,19 +23,19 @@ namespace UPPERIOC2.UPPER.Util.Moudle
 	{
 		public Type[] DependisMoudel { get => Type.EmptyTypes; set => throw new NotImplementedException(); }
 
-		public void AfterCreateInstance(IContainerProvider containerProvider)
+        public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 		}
 
-		public void InitEnd(IContainerProvider containerProvider)
+        public override void InitEnd(IContainerProvider containerProvider)
 		{
 		}
 
-		public void IniterAndLoadClass(IContainerProvider containerProvider)
+        public override void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
 		}
 
-		public void PreIniter(IContainerProvider containerProvider)
+        public override void PreIniter(IContainerProvider containerProvider)
 		{
 			// 检查当前用户是否具有管理员权限
 			if (!IsRunAsAdmin())

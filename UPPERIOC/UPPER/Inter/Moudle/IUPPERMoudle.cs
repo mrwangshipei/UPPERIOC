@@ -7,13 +7,13 @@ using UPPERIOC.UPPER.IOC.Center.IProvider;
 
 namespace UPPERIOC.UPPER.IOC.Center.Interface
 {
-    public interface IUPPERMoudle
+    public abstract class IUPPERMoudle: Attribute
     {
         Type[] DependisMoudel { get; set; }
         //public static IUPPERContainIniter Instance { get; set; }
-        void AfterCreateInstance(IContainerProvider containerProvider);
-        void PreIniter(IContainerProvider containerProvider);
-        void InitEnd(IContainerProvider containerProvider);
-		void IniterAndLoadClass(IContainerProvider containerProvider);
+        public abstract void AfterCreateInstance(IContainerProvider containerProvider);
+        public abstract void PreIniter(IContainerProvider containerProvider);
+        public abstract void InitEnd(IContainerProvider containerProvider);
+        public abstract void IniterAndLoadClass(IContainerProvider containerProvider);
 	}
 }

@@ -21,6 +21,7 @@ namespace FrmControl.C.Btn
     using System.Threading.Tasks;
     using System.Windows.Input;
     using FrmControl.C.Btn.UPPERIOC2.UPPER.Util;
+    using FrmControl.FrmBase;
 
     namespace UPPERIOC2.UPPER.Util
     {
@@ -90,6 +91,8 @@ namespace FrmControl.C.Btn
         public Color Color1 { get; set; } = Color.LightGray;
         public Color Color2 { get; set; } = Color.DimGray;
         public Color Color3 { get; set; } = Color.LightGray;
+        public string BtnText { get;  set; }
+
         private PointF MousePosition = new PointF(-1,-1);
         private PointF Mousein = new PointF(0,0) ;
         private PointF Mousedown = new PointF(0,0) ;
@@ -203,7 +206,7 @@ namespace FrmControl.C.Btn
              sf.LineAlignment = StringAlignment.Center; // 垂直居中
  */
             // 计算文本尺寸
-            SizeF textSize = g.MeasureString(Text, this.Font);
+            SizeF textSize = g.MeasureString(BtnText, this.Font);
 
             // 计算文本位置
             PointF textLocation = new PointF(
@@ -213,7 +216,7 @@ namespace FrmControl.C.Btn
             // 绘制文本
             using (var b = new SolidBrush(ForeColor))
             {
-                g.DrawString(Text, this.Font, b, textLocation);
+                g.DrawString(BtnText, this.Font, b, textLocation);
             }
          
         }

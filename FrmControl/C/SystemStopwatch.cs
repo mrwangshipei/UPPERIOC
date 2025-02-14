@@ -1,5 +1,4 @@
-﻿using Microsoft.Diagnostics.Runtime;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -104,7 +103,8 @@ namespace FrmControl.C
 		}
 		public string PrintStackTrace(int processId)
 		{
-			 DataTarget target = DataTarget.AttachToProcess(processId, 3000, AttachFlag.Passive);
+			return null;
+           /* DataTarget target = DataTarget.AttachToProcess(processId, 3000, AttachFlag.Passive);
 			System.Threading.Thread.Sleep(3000); // 等待数据收集
 
 			ClrRuntime runtime = target.ClrVersions[0].CreateRuntime();
@@ -122,7 +122,7 @@ namespace FrmControl.C
 				}
 				return str;
 			}
-			return "";
+			return "";*/
 		}
 		protected override void DestroyHandle()
 		{

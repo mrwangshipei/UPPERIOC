@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FrmControl.C.Btn
 {
-	public class FrmBtn:Control
+    public class FrmBtn : Control
 	{
 		// 默认背景颜色
 		public Color defaultBackColor { get; set; } = Color.White;
@@ -28,11 +28,10 @@ namespace FrmControl.C.Btn
 		private float lastell;
 		public float ell;
 		private bool IsMouseDown;
-
-		public float Radius { get { return ell; } set { ell = value;Invalidate(); } }
+        public bool Issquare { get; set; }
+        public float Radius { get { return ell; } set { ell = value;Invalidate(); } }
 		public FrmBtn() {
-			this.Margin = new Padding(0, 0, 0, 0);
-			this.Padding= new Padding(0,0,0,0);
+			
 			this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
 		}
 		protected override void OnPaint(PaintEventArgs e)
@@ -40,10 +39,12 @@ namespace FrmControl.C.Btn
 			//base.OnPaint(e);
 			if (Radius != lastell)
 			{
-				this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
+                this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
 				lastell = Radius;
 			}
-			var gp = e.Graphics;
+            var gp = e.Graphics;
+			gp.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+			gp.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 			if (BackImg != null)
 			{
 				int x = (int)((Height - Height * smallimg)/ 2);
@@ -72,6 +73,11 @@ namespace FrmControl.C.Btn
 		protected override void OnSizeChanged(EventArgs e)
 		{
 			base.OnSizeChanged(e);
+			if (Issquare && this.Width != Height)
+			{
+				Width = Height;
+				Radius = Width / 2;
+			}
 			this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
 			//
 		}
