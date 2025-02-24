@@ -38,7 +38,7 @@
   <PropertyGroup>
     <StartupObject />
     <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\</PackageOutputPath>
-    <Version>1.0.0.14</Version>
+    <Version>1.0.0.34</Version>
 
   </PropertyGroup>
   <ItemGroup>
@@ -203,6 +203,7 @@
     <Compile Include="FrmPremission\C\UserEditControl.Designer.cs">
       <DependentUpon>UserEditControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\WindowUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="C\Btn\Apple3Btn.resx">

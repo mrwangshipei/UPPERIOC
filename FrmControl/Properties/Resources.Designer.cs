@@ -93,6 +93,36 @@ namespace FrmControl.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap UPPERIOC {
+            get {
+                object obj = ResourceManager.GetObject("UPPERIOC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 加载中 {
+            get {
+                object obj = ResourceManager.GetObject("加载中", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 加载中1 {
+            get {
+                object obj = ResourceManager.GetObject("加载中1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 取消 {
             get {
                 object obj = ResourceManager.GetObject("取消", resourceCulture);
@@ -116,6 +146,16 @@ namespace FrmControl.Properties {
         internal static System.Drawing.Bitmap 用户 {
             get {
                 object obj = ResourceManager.GetObject("用户", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 菊花加载 {
+            get {
+                object obj = ResourceManager.GetObject("菊花加载", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -48,8 +48,7 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
             }
             catch (Exception)
             {
-                return null;
-               // throw new Exception($"获取{item.Name}的构造报错");
+               throw new Exception($"请至少为{item.Name}类保留一个开放的构造函数");
             }
             var par = new object[cos.GetParameters().Length];
             for (int i = 0; i < cos.GetParameters().Length; i++)
@@ -118,7 +117,12 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
         {
             if (Contain.IsSingleBean(typeof(T)) == false)
             {
-                return (T)InitInstance(item:typeof(T));
+                Type real ;
+                if ((real = Contain.Find(x => x.Key.Type.IsInBaseTypeHierarchy(typeof(T)))?.Key?.Type) == null)
+                {
+                    real = typeof(T);
+                }
+                return (T)InitInstance(item: real);
             }
             return (T)Contain.GetIntstance(typeof(T), true);
         }

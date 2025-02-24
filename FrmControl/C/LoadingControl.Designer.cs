@@ -30,14 +30,15 @@ namespace UpperComAutoTest.MyControls
 		/// </summary>
 		private void InitializeComponent()
 		{
-			SuspendLayout();
-			// 
-			// LoadingControl
-			// 
-			AutoScaleDimensions = new SizeF(7F, 17F);
-			BackColor = Color.Black;
-			Name = "LoadingControl";
-			ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // LoadingControl
+            // 
+            this.BackColor = System.Drawing.Color.Black;
+            this.Name = "LoadingControl";
+            this.Size = new System.Drawing.Size(375, 194);
+            this.ResumeLayout(false);
+
 		}
 
 		#endregion

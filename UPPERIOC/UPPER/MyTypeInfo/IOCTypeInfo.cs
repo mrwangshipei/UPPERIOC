@@ -9,6 +9,7 @@ namespace UPPERIOC.UPPER.IOC.MyTypeInfo
     public class IOCTypeInfo
     {
         public Type Type { get; set; }
+        public Type BaseType { get; set; }
 		public bool SingleBean { get; set; } = true;
         public string TypeName { get; set; }
 
@@ -22,8 +23,12 @@ namespace UPPERIOC.UPPER.IOC.MyTypeInfo
 		public override int GetHashCode()
 		{
 			int hashCode = -1262880317;
-			hashCode = hashCode * -1521134295 + EqualityComparer<Type>.Default.GetHashCode(Type);
-			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(TypeName);
+			hashCode = hashCode * -1521134295 + (Type).GetHashCode();
+			hashCode = hashCode * -1521134295 + (TypeName).GetHashCode();
+			if (BaseType != null)
+			{
+				hashCode = hashCode * -1521134295 + (BaseType).GetHashCode();
+			}
 			return hashCode;
 		}
 	}

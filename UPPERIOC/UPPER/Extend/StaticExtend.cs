@@ -41,6 +41,17 @@ namespace UPPERIOC.UPPER.IOC.Extend
             }
             return fir.Key.SingleBean;
         }
+        public static KeyValuePair<IOCTypeInfo, object>? Find(this ConcurrentDictionary<IOCTypeInfo, object> kv, Func<KeyValuePair<IOCTypeInfo, object>,bool> func)
+        {
+            foreach (var item in kv)
+            {
+                if (func.Invoke(item))
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
         public static object GetIntstance(this ConcurrentDictionary<IOCTypeInfo, object> kv, string name)
 		{
 			return kv.GetIntstance(null, name, false);
@@ -50,7 +61,27 @@ namespace UPPERIOC.UPPER.IOC.Extend
 			return kv.GetIntstance(t, null, containsub);
 
 		}
-		public static object[] GetAllInstance(this ConcurrentDictionary<IOCTypeInfo, object> kv, Type t)
+        public static bool IsInBaseTypeHierarchy(this Type T, Type basetype)
+        {
+            if (basetype == null || (!basetype.IsClass && !basetype.IsInterface))
+                return false;
+
+            // 检查继承链
+            Type baseType = T.BaseType;
+            while (baseType != null)
+            {
+                if (baseType == basetype)
+                    return true;
+                baseType = baseType.BaseType;
+            }
+
+            // 检查接口实现情况
+            if (basetype.IsInterface && T.GetInterfaces().Contains(basetype))
+                return true;
+
+            return false;
+        }
+        public static object[] GetAllInstance(this ConcurrentDictionary<IOCTypeInfo, object> kv, Type t)
 		{
 			return kv.Where(item => AreGenericParametersEqual(item.Key.Type,t) && (item.Key.Type.IsSubclassOf(t) || t.IsAssignableFrom(item.Key.Type))).Select(item => item.Value).ToArray();
 

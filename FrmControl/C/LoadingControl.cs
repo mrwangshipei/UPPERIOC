@@ -1,289 +1,114 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using System;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Threading;
+﻿using System.Collections.Generic;
+using System.Drawing.Drawing2D;
+using System.Xml;
+using Timer = System.Windows.Forms.Timer;
 
 namespace UpperComAutoTest.MyControls
 {
-	public partial class LoadingControl : UserControl
-	{
-		private System.Windows.Forms.Timer animationTimer;
-		private volatile List<PhysicalObject> objects;
-		private PhysicalObject Mouse;
-		private int value;
-		private System.Windows.Forms.Timer animationTimer2;
-		private float waveOffset;
+    public partial class LoadingControl : UserControl
+    {
+        private class TrailSegment
+        {
+            public float X { get; set; }
+            public float Y { get; set; }
+            public float Alpha { get; set; }
+        }
 
-		public int Value
-		{
-			get { return value; }
-			set
-			{
-				if (value < 0) value = 0;
-				if (value > 100) value = 100;
-				this.value = value;
-				this.Invalidate(); // 重新绘制控件
-			}
-		}
-		protected override void OnHandleDestroyed(EventArgs e)
-		{
-			Visible = false;
-			animationTimer2.Stop();
+        private Timer timer;
+        private float angle { get {
+                return _angle;
+            } set
+            {
+                if (value > 360)
+                {
+                    value -= 360;
+                }
+                _angle = value;
+            } }
+        private float _angle = 0;
+        private const int segmentCount = 3;
+        private const float radius = 70;
+        private const float waveAmplitude = 5;
+        private float speedFactor = 1;
+        private float baseSpeed = 10;
+        public float SpeedMultiplier { get=> baseSpeed; set=> baseSpeed =value; } 
+        public Image Image { get; set; }
+        private const int LastCount = 10;
+        private Queue<TrailSegment>[] trails;
 
-			base.OnHandleDestroyed(e);
-		}
-		protected override void OnVisibleChanged(EventArgs e)
-		{
-			base.OnVisibleChanged(e);
+        public LoadingControl()
+        {
+            this.DoubleBuffered = true;
+            timer = new Timer { Interval = 50 };
+            timer.Tick += (s, e) =>
+            {
+                speedFactor = (float)(1 * Math.Sin(angle / 360)); // Sinusoidal speed change
+                angle += baseSpeed +  speedFactor * SpeedMultiplier;
 
-			if (!Visible)
-			{
-			animationTimer2.Stop();
-				animationTimer2.Enabled = false;
-			}
-		}
-		public LoadingControl()
-		{
-			// 初始化物体列表
-			Mouse = new PhysicalObject(new PointF(50, 50), new PointF(2, 3), new PointF(0, 0.1f), 10f);
-			objects = new List<PhysicalObject>
-		{
-				Mouse,
-			new PhysicalObject(new PointF(50, 50), new PointF(2, 3), new PointF(0, 0.1f), 10f),
-			new PhysicalObject(new PointF(100, 100), new PointF(-2, 1), new PointF(0, 0.1f), 15f)
-		};
-			base.SetStyle(ControlStyles.UserPaint, true);
-			base.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-			base.SetStyle(ControlStyles.DoubleBuffer, true);
-			this.Value = 0;
+                //UpdateTrails();
+                Invalidate();
+            };
+            timer.Start();
 
-			// 初始化定时器
-			animationTimer2 = new System.Windows.Forms.Timer();
-			animationTimer2.Interval = 10; // 控制动画速度
-			animationTimer2.Tick += new EventHandler(OnAnimationTick2);
-			animationTimer2.Start();
-			// 设置定时器
-			Task.Factory.StartNew(() => {
-				while (!Created)
-				{
-					Thread.Sleep(10);
-				}
-			while (this.Visible)
-			{
-				this.Invoke(new Action(() => {
+        }
 
-					if (this.Visible)
-					{
-						UpdateAnimation(null,null);
+   
+        public float Onems { get; set; } = 5000f;
 
-					}
-				}));
-					Thread.Sleep(10);
-			}
-			});
-		//	animationTimer = new System.Windows.Forms.Timer();
-		//	animationTimer.Interval = 1; // 大约60 FPS
-			//animationTimer.Tick += new EventHandler(UpdateAnimation);
-		//	animationTimer.Start();
-		}
-		protected override void OnMouseMove(MouseEventArgs e)		
-		{
-			base.OnMouseMove(e);
-			Mouse.Position = PointToClient(Control.MousePosition);
-		}
-
-		private void OnAnimationTick2(object sender, EventArgs e)
-		{
-			// 更新波浪偏移量以实现动画效果
-			/*waveOffset += 0.1f;
-			if (waveOffset > 2 * Math.PI)
-			{
-			waveOffset -=(float)( 2 * Math.PI);
-			}*/
-			this.Invalidate();
-		}
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
 
 
-		private void UpdateAnimation(object sender, EventArgs e)
-		{
-			
-			// 检测并处理物体之间的碰撞
-			for (int i = 0; i < objects.Count; i++)
-			{
-				for (int j = i + 1; j < objects.Count; j++)
-				{
-					if (objects[i].IsCollidingWith(objects[j]))
-					{
-						objects[i].ResolveCollision(objects[j]);
-					}
-				}
-			}
-		// 更新所有物体的位置
-			for (int i = 0; i < objects.Count; i++)
-			{
-				var obj = objects[i];
-				obj.UpdatePosition(this.ClientSize);
-			}
+            // 获取当前的时间毫秒数，并计算在 Onems 范围内的余数
+          //  float timeProgress = (DateTime.Now.Ticks % Onems) / (float)Onems; // 计算时间在周期内的进度，0 到 1 之间
 
-			// 重新绘制控件
-		}
+            // 使用 Sin 函数来平滑计算角度
+         //   float angle =(float)( 360 * timeProgress * Math.Sin(timeProgress * 2 * Math.PI));
+            // Save the current graphics state
+            GraphicsState state = g.Save();
 
-		protected override void OnPaint(PaintEventArgs e)
-		{
-			base.OnPaint(e);
-		
-			/*// 计算绘制波浪的区域
-			float progressWidth = this.ClientSize.Width * this.Value / 100f;
+            // Move the origin to the center of the control
+            PointF center = new PointF(Width / 2, Height / 2);
+            g.TranslateTransform(center.X, center.Y);
 
-			// 设置绘图工具
-			using (SolidBrush brush = new SolidBrush(Color.Blue))
-			{
-				for (int x = 0; x < progressWidth; x++)
-				{
-					float y = (float)(10 * Math.Sin((x + waveOffset) / 10) + this.ClientSize.Height / 2);
-					e.Graphics.FillRectangle(brush, x, y, 1, this.ClientSize.Height - y);
-				}
-			}*/
-			// 绘制所有物体
-			Graphics g = e.Graphics;
-			foreach (var obj in objects)
-			{
-				obj.Draw(g);
-			}
-		}
-	}
+            // Rotate around the new origin (which is now the center of the control)
+            g.RotateTransform(angle);
 
-	public class PhysicalObject
-	{
-		private readonly object lockObject = new object(); // 用于同步的锁对象
-		private PointF position;
-		private PointF velocity;
-		
-		public PointF Position
-		{
-			get
-			{
-				lock (lockObject)
-				{
-					return position;
-				}
-			}
-			set
-			{
-				lock (lockObject)
-				{
-					position = value;
-				}
-			}
-		}
+            // Draw the image centered at the origin
+            if (Image != null)
+            {
+                int imgSize = (int)(radius * 1.2); // Fixed scaling to center image
+                g.DrawImage(Image, -imgSize / 2, -imgSize / 2, imgSize, imgSize);
+            }
 
-		public PointF Velocity
-		{
-			get
-			{
-				lock (lockObject)
-				{
-					return velocity;
-				}
-			}
-			set
-			{
-				lock (lockObject)
-				{
-					velocity = value;
-				}
-			}
-		}
-		public PointF Acceleration { get; set; }
-		public float Radius { get; set; }
+            // Restore the original graphics state
+            g.Restore(state);
+        }
 
-		public PhysicalObject(PointF position, PointF velocity, PointF acceleration, float radius)
-		{
-			Position = position;
-			Velocity = velocity;
-			Acceleration = acceleration;
-			Radius = radius;
-		}
 
-		public void UpdatePosition(Size bounds)
-		{
-			// 更新速度和位置
-			Velocity = new PointF(Velocity.X + Acceleration.X, Velocity.Y + Acceleration.Y);
-			Position = new PointF(Position.X + Velocity.X, Position.Y + Velocity.Y);
+    }
 
-			// 检测边界碰撞并反弹
-			if (Position.X - Radius < 0 || Position.X + Radius > bounds.Width)
-			{
-				Velocity = new PointF(-Velocity.X, Velocity.Y);
-				Position = new PointF(Math.Max(Radius, Math.Min(bounds.Width - Radius, Position.X)), Position.Y);
-			}
-			if (Position.Y - Radius < 0 || Position.Y + Radius > bounds.Height)
-			{
-				Velocity = new PointF(Velocity.X, -Velocity.Y);
-				Position = new PointF(Position.X, Math.Max(Radius, Math.Min(bounds.Height - Radius, Position.Y)));
-			}
-		}
-
-		public bool IsCollidingWith(PhysicalObject other)
-		{
-			float dx = Position.X - other.Position.X;
-			float dy = Position.Y - other.Position.Y;
-			float distance = (float)Math.Sqrt(dx * dx + dy * dy);
-			return distance < Radius + other.Radius;
-		}
-
-		public void ResolveCollision(PhysicalObject other)
-		{
-			// 简单弹性碰撞处理
-			float dx = other.Position.X - Position.X;
-			float dy = other.Position.Y - Position.Y;
-			float distance = (float)Math.Sqrt(dx * dx + dy * dy);
-			if (distance == 0) return; // 避免除以零
-
-			// 计算碰撞法线向量
-			float nx = dx / distance;
-			float ny = dy / distance;
-
-			// 计算相对速度
-			float vx = Velocity.X - other.Velocity.X;
-			float vy = Velocity.Y - other.Velocity.Y;
-
-			// 计算沿法线方向的速度分量
-			float vn = vx * nx + vy * ny;
-
-			// 如果物体正在远离，则不处理
-			if (vn > 0) return;
-
-			// 简单弹性碰撞响应
-			float impulse = 2 * vn / (1 / Radius + 1 / other.Radius);
-			Velocity = new PointF(Velocity.X - impulse * nx / Radius, Velocity.Y - impulse * ny / Radius);
-			other.Velocity = new PointF(other.Velocity.X + impulse * nx / other.Radius, other.Velocity.Y + impulse * ny / other.Radius);
-
-			/*// 引入阻尼效果，模拟能量损失
-			float damping = 0.9f;
-			Velocity = new PointF(Velocity.X * damping, Velocity.Y * damping);
-			other.Velocity = new PointF(other.Velocity.X * damping, other.Velocity.Y * damping);
-*/
-			// 调整位置避免重叠，逐步调整以减少生硬感
-			float overlap = (Radius + other.Radius - distance) / 2;
-			Position = new PointF(Position.X - overlap * nx * 0.5f, Position.Y - overlap * ny * 0.5f);
-			other.Position = new PointF(other.Position.X + overlap * nx * 0.5f, other.Position.Y + overlap * ny * 0.5f);
-		}
-
-		public void Draw(Graphics g)
-		{
-			g.FillEllipse(Brushes.White, Position.X - Radius, Position.Y - Radius, Radius * 2, Radius * 2);
-		}
-	}
-
+    // Extension method for drawing rounded rectangles
+    public static class GraphicsExtensions
+    {
+        public static void FillRoundedRectangle(this Graphics g, Brush brush, RectangleF rect, float radius)
+        {
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddLine(rect.X + radius, rect.Y, rect.X + rect.Width - radius, rect.Y);
+                path.AddArc(rect.X + rect.Width - radius * 2, rect.Y, radius * 2, radius * 2, 270, 90);
+                path.AddLine(rect.X + rect.Width, rect.Y + radius, rect.X + rect.Width, rect.Y + rect.Height - radius);
+                path.AddArc(rect.X + rect.Width - radius * 2, rect.Y + rect.Height - radius * 2, radius * 2, radius * 2, 0, 90);
+                path.AddLine(rect.X + rect.Width - radius, rect.Y + rect.Height, rect.X + radius, rect.Y + rect.Height);
+                path.AddArc(rect.X, rect.Y + rect.Height - radius * 2, radius * 2, radius * 2, 90, 90);
+                path.AddLine(rect.X, rect.Y + rect.Height - radius, rect.X, rect.Y + radius);
+                path.AddArc(rect.X, rect.Y, radius * 2, radius * 2, 180, 90);
+                path.CloseFigure();
+                g.FillPath(brush, path);
+            }
+        }
+    }
 }

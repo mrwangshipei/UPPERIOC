@@ -21,6 +21,10 @@ namespace UpperComAutoTest
 		public Form1()
 		{
 			
+			Loading lo = new Loading(x => { 
+				Thread.Sleep(500000);
+			});
+			lo.ShowDialog();
 			modelView = UPPERIOCApplication.Container.GetInstance<Form1ModelView>();
 			InitializeComponent();
 			foreach (ToolStripItem item in toolStrip1.Items)

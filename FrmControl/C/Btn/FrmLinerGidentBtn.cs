@@ -83,6 +83,7 @@ namespace FrmControl.C.Btn
         }
     }
     //渐变动画框
+    [DefaultEvent("Click")]
     public partial class FrmLinerGidentBtn : CBaseControl
     {
         public int SizeCLick { get; set; } = 70;
@@ -118,7 +119,7 @@ namespace FrmControl.C.Btn
 
                 }
             });
-
+            
             base.OnMouseEnter(e);
 
         }

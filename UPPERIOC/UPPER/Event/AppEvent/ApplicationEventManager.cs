@@ -15,7 +15,7 @@ namespace UPPERIOC.UPPER.Event.AppEvent
         // 注册监听器
         public void RegisterListener<T>(IUPPERApplicationListener<T> listener) where T : IUPPERApplicationEvent, new()
         {
-            var eventType = typeof(T);
+            var eventType = listener.GetType();
           
             
             int ord = GetOrder(listener.GetType());

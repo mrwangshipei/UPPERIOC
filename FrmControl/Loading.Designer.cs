@@ -31,77 +31,92 @@ namespace UpperComAutoTest.MyControls
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.loadingControl1 = new UpperComAutoTest.MyControls.LoadingControl();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.gradientProgressBar1 = new UpperComAutoTest.MyControls.GradientProgressBar();
-			this.label1 = new System.Windows.Forms.Label();
-			this.panel1.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// loadingControl1
-			// 
-			this.loadingControl1.BackColor = System.Drawing.Color.Black;
-			this.loadingControl1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.loadingControl1.Location = new System.Drawing.Point(0, 0);
-			this.loadingControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.loadingControl1.Name = "loadingControl1";
-			this.loadingControl1.Size = new System.Drawing.Size(406, 150);
-			this.loadingControl1.TabIndex = 1;
-			this.loadingControl1.Value = 0;
-			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.gradientProgressBar1);
-			this.panel1.Controls.Add(this.loadingControl1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(406, 169);
-			this.panel1.TabIndex = 3;
-			// 
-			// gradientProgressBar1
-			// 
-			this.gradientProgressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.gradientProgressBar1.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
-			this.gradientProgressBar1.Location = new System.Drawing.Point(0, 150);
-			this.gradientProgressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.gradientProgressBar1.Maximum = 100;
-			this.gradientProgressBar1.Minimum = 0;
-			this.gradientProgressBar1.Name = "gradientProgressBar1";
-			this.gradientProgressBar1.Size = new System.Drawing.Size(406, 19);
-			this.gradientProgressBar1.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-			this.gradientProgressBar1.TabIndex = 2;
-			this.gradientProgressBar1.Text = "gradientProgressBar1";
-			this.gradientProgressBar1.Value = 0;
-			// 
-			// label1
-			// 
-			this.label1.BackColor = System.Drawing.Color.Gray;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F);
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(0, 169);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(406, 57);
-			this.label1.TabIndex = 4;
-			this.label1.Text = "加载中，请稍后...";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// Loading
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(406, 226);
-			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.label1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.Name = "Loading";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Loading";
-			this.panel1.ResumeLayout(false);
-			this.ResumeLayout(false);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.loadingControl1 = new UpperComAutoTest.MyControls.LoadingControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gradientProgressBar1 = new UpperComAutoTest.MyControls.GradientProgressBar();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.gradientProgressBar1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(406, 226);
+            this.panel1.TabIndex = 3;
+            // 
+            // loadingControl1
+            // 
+            this.loadingControl1.BackColor = System.Drawing.Color.White;
+            this.loadingControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loadingControl1.Image = global::FrmControl.Properties.Resources.菊花加载;
+            this.loadingControl1.Location = new System.Drawing.Point(0, 0);
+            this.loadingControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.loadingControl1.Name = "loadingControl1";
+            this.loadingControl1.Onems = 400F;
+            this.loadingControl1.Size = new System.Drawing.Size(402, 146);
+            this.loadingControl1.SpeedMultiplier = 5F;
+            this.loadingControl1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(0, 146);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(402, 57);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "加载中，请稍后...";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gradientProgressBar1
+            // 
+            this.gradientProgressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gradientProgressBar1.EndColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(144)))), ((int)(((byte)(255)))));
+            this.gradientProgressBar1.Location = new System.Drawing.Point(0, 207);
+            this.gradientProgressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gradientProgressBar1.Maximum = 100;
+            this.gradientProgressBar1.Minimum = 0;
+            this.gradientProgressBar1.Name = "gradientProgressBar1";
+            this.gradientProgressBar1.Size = new System.Drawing.Size(406, 19);
+            this.gradientProgressBar1.StartColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.gradientProgressBar1.TabIndex = 2;
+            this.gradientProgressBar1.Text = "gradientProgressBar1";
+            this.gradientProgressBar1.Value = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.loadingControl1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(406, 207);
+            this.panel2.TabIndex = 5;
+            // 
+            // Loading
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(406, 226);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Loading";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Loading";
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.ResumeLayout(false);
 
 		}
 
@@ -110,5 +125,6 @@ namespace UpperComAutoTest.MyControls
 		private Panel panel1;
 		private GradientProgressBar gradientProgressBar1;
 		private Label label1;
-	}
+        private Panel panel2;
+    }
 }
