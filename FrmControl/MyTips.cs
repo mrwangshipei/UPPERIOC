@@ -20,12 +20,14 @@ namespace UpperComAutoTest.MyControls
 		{
 			InitializeComponent();
 			ShowInTaskbar = false;
-		}
+            FormClosed += MyTips_FormClosed;
+
+        }
 		public float radius { get; set; } = 15;
         public static List<MyTips> useing_Tips = new List<MyTips>();
 		public static void ShowTips(Form BaseForm, Tipstype Type, string msg, int waittime = 2000, bool inWindow = true)
 		{
-			if (BaseForm.InvokeRequired)
+            if (BaseForm != null && BaseForm.InvokeRequired)
 			{
 				BaseForm.Invoke(new Action(() => {
 					ShowTip(BaseForm, Type, msg, waittime , inWindow);
@@ -231,7 +233,11 @@ namespace UpperComAutoTest.MyControls
             close_t.Tick += CloseWindow;
             close_t.Enabled = true;*/
         }
-
+        private void MyTips_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+            GC.Collect();
+        }
         private void CloseWindow(object sender, EventArgs e)
 		{
             //close_t.Enabled = false;
