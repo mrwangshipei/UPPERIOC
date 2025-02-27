@@ -26,7 +26,7 @@ MyGet Pre-release feed: https://www.nuget.org/packages/UPPERIOC/
 
 | Package | NuGet Stable | NuGet Pre-release | Downloads | MyGet |
 | ------- | ------------ | ----------------- | --------- | ----- |
-| [UPPERIOC](https://www.nuget.org/packages/UPPERIOC/) | [![CNative.Dapper.Utils](https://img.shields.io/nuget/v/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC/) | [![UPPERIOC](https://img.shields.io/nuget/vpre/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC/) | [![UPPERIOC](https://img.shields.io/nuget/dt/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC/) | [![UPPERIOC MyGet](https://img.shields.io/myget/UPPERIOC/vpre/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC) |
+| [UPPERIOC](https://www.nuget.org/packages/UPPERIOC/) | [![CNative.Dapper.Utils](https://img.shields.io/nuget/v/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC/) | [![UPPERIOC](https://img.shields.io/nuget/vpre/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC/) | [![UPPERIOC](https://img.shields.io/nuget/dt/UPPERIOC.svg)](https://www.nuget.org/packages/UPPERIOC/) | [![UPPERIOC MyGet](https://img.shields.io/myget/UPPERIOC/vpre/UPPERIOC.svg)](http://8.138.99.154:5000/packages/upperioc/2.0.4.15) |
 
 ### 首先声明
 

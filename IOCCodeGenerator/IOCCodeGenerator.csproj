@@ -81,4 +81,8 @@
 
   <Import Project="..\UPPER.Shared\UPPER.Shared.projitems" Label="Shared" />
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="nuget push -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot; &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;&#xD;&#xA;" />
+  </Target>
+
 </Project>

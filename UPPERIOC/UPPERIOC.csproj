@@ -62,7 +62,7 @@
   <EnableNETAnalyzers>True</EnableNETAnalyzers>
   <AnalysisLevel>latest</AnalysisLevel>
   <Nullable>enable</Nullable>
-  <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\</PackageOutputPath>
+  <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages</PackageOutputPath>
   <Title>UPPERIOC</Title>
   <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   <IncludeSymbols>true</IncludeSymbols>
@@ -80,6 +80,7 @@
   <AssemblyVersion>2.0.0</AssemblyVersion>
   <UserSecretsId>5d9e1ecd-9e2e-4d37-86f4-fcb71f419384</UserSecretsId>
   <NeutralLanguage>zh</NeutralLanguage>
+  <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
 </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
   <DebugType>embedded</DebugType>
@@ -120,4 +121,8 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="nuget push -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot; &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;&#xD;&#xA;" />
+  </Target>
 </Project>

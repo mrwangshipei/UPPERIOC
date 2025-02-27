@@ -37,7 +37,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
-    <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\</PackageOutputPath>
+    <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages</PackageOutputPath>
     <Version>1.0.0.35</Version>
 
   </PropertyGroup>
@@ -299,5 +299,8 @@
     </PackageReference>
     <PackageReference Include="UPPERIOC" Version="2.0.4.10" />
   </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="nuget push -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot; &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;&#xD;&#xA;" />
+  </Target>
 
 </Project>
