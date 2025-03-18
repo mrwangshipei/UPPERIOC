@@ -224,8 +224,15 @@ UPPERIOC.\*.IModel -模块中用户需要自己实现的模型类（注册）
 ### 问题
 
 1. IOCObject属性失效
-    生成的时候检查是否有提示“CSC : warning CS9057: 分析器程序集“C:\Users\1\.nuget\packages\upperioc\2.0.4.20\analyzers\dotnet\roslyn3.8\cs\IOCCodeGenerator.dll”引用了编译器的版本“4.12.0.0”，该版本高于当前正在运行的版本“4.10.0.0”。”
-    这表示你需要在nuget中引用microsoft.codeanalysis.csharp 4.10.0以上的版本（以实际为准）
+  
+```
+  生成的时候检查是否有提示“CSC : warning CS9057: 分析器程序集“C:\Users\1\.nuget\packages\upperioc\2.0.4.20\analyzers\dotnet\roslyn3.8\cs\IOCCodeGenerator.dll”引用了编译器的版本“4.12.0.0”，该版本高于当前正在运行的版本“4.10.0.0”。”
+  这表示你需要在nuget中引用microsoft.codeanalysis.csharp 4.10.0以上的版本（以实际为准）
+```
+
 2. XXXConfiguation对象没有找到
+
+```
     参考1，或者使用U.C注册
+```
 
