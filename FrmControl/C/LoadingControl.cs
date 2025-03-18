@@ -26,10 +26,10 @@ namespace UpperComAutoTest.MyControls
                 _angle = value;
             } }
         private float _angle = 0;
-        private const int segmentCount = 3;
+        public int AAA { get; set; }
         private const float radius = 70;
-        private const float waveAmplitude = 5;
-        private float speedFactor = 1;
+        private const int qq= 0;
+        private float speedFactor =15;
         private float baseSpeed = 10;
         public float SpeedMultiplier { get=> baseSpeed; set=> baseSpeed =value; } 
         public Image Image { get; set; }
@@ -42,8 +42,8 @@ namespace UpperComAutoTest.MyControls
             timer = new Timer { Interval = 50 };
             timer.Tick += (s, e) =>
             {
-                speedFactor = (float)(1 * Math.Sin(angle / 360)); // Sinusoidal speed change
-                angle += baseSpeed +  speedFactor * SpeedMultiplier;
+                speedFactor = (float)(AAA * Math.Sin((angle + qq * 360) / 920)); // Sinusoidal speed change
+                angle += baseSpeed +  speedFactor ;
 
                 //UpdateTrails();
                 Invalidate();

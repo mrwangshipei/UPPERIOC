@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FrmControl.C.TempShow;
+using FrmControl.Frm;
 using UpperComAutoTest.Entry;
 using UpperComAutoTest.Entry.IEventFileModel;
 using UpperComAutoTest.Entry.IEventFileModel.IMsgEvent;

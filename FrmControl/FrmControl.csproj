@@ -42,6 +42,12 @@
 
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="C\CheckBtn - 复制\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
 
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -93,6 +99,9 @@
     <Compile Include="C\TempShow\TempListForm.Designer.cs">
       <DependentUpon>TempListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="C\CheckBox\UCCheckBoxBtn.cs" />
+    <Compile Include="C\CheckBox\UCCheckBoxBtn.Designer.cs" />
+    <Compile Include="Enum\TipType.cs" />
     <Compile Include="Extention\GraphicsExtensions.cs" />
     <Compile Include="FrmBase\FrmBaseForm.cs">
       <SubType>Form</SubType>
@@ -128,24 +137,6 @@
     <Compile Include="FrmPremission\FrmUserGroupEdit.Designer.cs">
       <DependentUpon>FrmUserGroupEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPwd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPwd.Designer.cs">
-      <DependentUpon>FrmPwd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmInput.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmInput.Designer.cs">
-      <DependentUpon>FrmInput.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmSelect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSelect.Designer.cs">
-      <DependentUpon>FrmSelect.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm\FrmDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,27 +155,25 @@
     <Compile Include="FrmPremission\FrmUserEdit.Designer.cs">
       <DependentUpon>FrmUserEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Loading.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Loading.Designer.cs">
-      <DependentUpon>Loading.cs</DependentUpon>
-    </Compile>
     <Compile Include="C\LoadingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="C\LoadingControl.Designer.cs">
       <DependentUpon>LoadingControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm\FrmInput.cs" />
+    <Compile Include="Frm\FrmInput.Designer.cs" />
+    <Compile Include="Frm\FrmPwd.cs" />
+    <Compile Include="Frm\FrmPwd.Designer.cs" />
+    <Compile Include="Frm\FrmSelect.cs" />
+    <Compile Include="Frm\FrmSelect.Designer.cs" />
+    <Compile Include="Frm\Loading.cs" />
+    <Compile Include="Frm\Loading.Designer.cs" />
+    <Compile Include="Frm\MyTips.cs" />
+    <Compile Include="Frm\MyTips.Designer.cs" />
     <Compile Include="Model\CountModel - 复制.cs" />
     <Compile Include="Model\CountModel.cs" />
     <Compile Include="Model\PNCountModel.cs" />
-    <Compile Include="MyTips.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MyTips.Designer.cs">
-      <DependentUpon>MyTips.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -203,6 +192,7 @@
     <Compile Include="FrmPremission\C\UserEditControl.Designer.cs">
       <DependentUpon>UserEditControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\ControlHelper.cs" />
     <Compile Include="Util\WindowUtil.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +210,7 @@
     <EmbeddedResource Include="C\TempShow\TempListForm.resx">
       <DependentUpon>TempListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C\CheckBox\UCCheckBoxBtn.resx" />
     <EmbeddedResource Include="FrmBase\FrmBaseForm.resx">
       <DependentUpon>FrmBaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,15 +226,6 @@
     <EmbeddedResource Include="FrmPremission\FrmUserGroupEdit.resx">
       <DependentUpon>FrmUserGroupEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPwd.resx">
-      <DependentUpon>FrmPwd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmInput.resx">
-      <DependentUpon>FrmInput.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmSelect.resx">
-      <DependentUpon>FrmSelect.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm\FrmDialog.resx">
       <DependentUpon>FrmDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,15 +235,14 @@
     <EmbeddedResource Include="FrmPremission\FrmUserEdit.resx">
       <DependentUpon>FrmUserEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Loading.resx">
-      <DependentUpon>Loading.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="C\LoadingControl.resx">
       <DependentUpon>LoadingControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyTips.resx">
-      <DependentUpon>MyTips.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmInput.resx" />
+    <EmbeddedResource Include="Frm\FrmPwd.resx" />
+    <EmbeddedResource Include="Frm\FrmSelect.resx" />
+    <EmbeddedResource Include="Frm\Loading.resx" />
+    <EmbeddedResource Include="Frm\MyTips.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -271,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPremission\C\UserEditControl.resx">
       <DependentUpon>UserEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -300,7 +284,7 @@
     <PackageReference Include="UPPERIOC" Version="2.0.4.10" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="nuget push -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot; &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;&#xD;&#xA;" />
+	  <Exec Command="start /B nuget push &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;  -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot;&#xD;&#xA;&#xD;&#xA;" />
   </Target>
 
 </Project>

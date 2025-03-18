@@ -22,9 +22,9 @@
 
 
 <PropertyGroup>
-  <Version>2.0.4.15</Version>
+  <Version>2.0.4.23</Version>
   <PackageId>UPPERIOC</PackageId>
-  <Authors>Net Wsp</Authors>
+  <Authors>Wwwwww</Authors>
   <Description>一个自带插件的IOC容器</Description>
 </PropertyGroup>
 <ItemGroup Label="Package">
@@ -123,6 +123,6 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="nuget push -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot; &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;&#xD;&#xA;" />
+    <Exec Command="start /B nuget push  &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;  -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot; || echo &quot;NuGet push failed. Continuing...&quot;&#xD;&#xA;echo &quot;Code generation step starts here...&quot;&#xD;&#xA;" />
   </Target>
 </Project>

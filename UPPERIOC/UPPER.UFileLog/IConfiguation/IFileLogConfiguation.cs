@@ -36,5 +36,9 @@ namespace UPPERIOC.UPPER.UFileLog.IConfiguation
 		/// 日志保存多少小时
 		/// </summary>		
 		 int HowManyHourSave { get; set; }
+		/// <summary>
+		/// 是否在日志名前加上LogType
+		/// </summary>
+		 bool MutiFileName{ get; }
     }
 }

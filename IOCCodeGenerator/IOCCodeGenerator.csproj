@@ -37,7 +37,7 @@
   <EnableNETAnalyzers>true</EnableNETAnalyzers>
   <EnableAnalyzersSupport>true</EnableAnalyzersSupport>
   <PackageId>IOCG</PackageId>
-  <Version>1.0.0.2</Version>
+  <Version>1.0.0.5</Version>
   <Title>IOCG</Title>
   <Copyright>www</Copyright>
   <IncludeSymbols>True</IncludeSymbols>
@@ -56,6 +56,7 @@
   <AssemblyName>IOCCodeGenerator</AssemblyName>
   <TargetFrameworks>netstandard2.0</TargetFrameworks>
   <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages</PackageOutputPath>
+  <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
 
 </PropertyGroup>
 
@@ -76,13 +77,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.12.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" PrivateAssets="all" />
   </ItemGroup>
 
   <Import Project="..\UPPER.Shared\UPPER.Shared.projitems" Label="Shared" />
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="nuget push -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot; &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;&#xD;&#xA;" />
+    <Exec Command="start /B nuget push &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot; -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot; || echo &quot;NuGet push failed. Continuing...&quot;&#xD;&#xA;echo &quot;Code generation step starts here...&quot;&#xD;&#xA;" />
   </Target>
 
 </Project>

@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC2.UPPER.UFileModel.IConfiguaion;
+using UPPERIOC2.UPPER.UIOC.Center;
 using static System.Net.WebRequestMethods;
 
 namespace UPPERIOC2.UPPER.UFileModel.Center
@@ -17,89 +18,101 @@ namespace UPPERIOC2.UPPER.UFileModel.Center
 	{
 		internal static IContainerProvider pdr;
 		public static UFileModelCenter Instance;
-		public I GetModel<I>(I T)where I: Model.IModel 
-		{
+        public I GetModel<I>(I T,bool findformContext = false) where I : Model.IModel
+        {
 
-			if (pdr == null)
-			{
-				throw new Exception("必须使用SetProvider注册一个Ioc管理器");
-			}
-			var arr = pdr.GetAllInstance(typeof(IConfiguaion.IUFileModelConfiguation));
-			if (arr.Length == 0)
-			{
-				throw new Exception("必须注册一个IUFileModelConfiguation的实现");
-			}
-			var cfg = arr[0] as IUFileModelConfiguation;
-			CheckPathExist(cfg);
-			string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
+            if (pdr == null)
+            {
+                throw new Exception("必须使用SetProvider注册一个Ioc管理器");
+            }
+            if (findformContext)
+            {
+                if (U.C.GetInstanceAndSub<I>() is I x)
+                {
+                    return x;
+                }
+            }
+            var arr = pdr.GetAllInstance(typeof(IConfiguaion.IUFileModelConfiguation));
+            if (arr.Length == 0)
+            {
+                throw new Exception("必须注册一个IUFileModelConfiguation的实现");
+            }
+            var cfg = arr[0] as IUFileModelConfiguation;
+            CheckPathExist(cfg);
+            string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 
-			var xs = new XmlSerializer(typeof(I));
-			string p = Path.Combine(dp ,T.ModelName);
-			try
-			{
-			using (var fs = new FileStream(p, FileMode.Open,FileAccess.Read))
-			{
-				var obj = xs.Deserialize(fs);
-					if (obj == null)
-					{
-						return T;
-					}
-					return obj as I;
+            var xs = new XmlSerializer(typeof(I));
+            string p = Path.Combine(dp, T.ModelName);
+            try
+            {
+                using (var fs = new FileStream(p, FileMode.Open, FileAccess.Read))
+                {
+                    var obj = xs.Deserialize(fs);
+                    if (obj == null)
+                    {
+                        return T;
+                    }
+                    return obj as I;
 
-				}
-			}
-			catch (Exception ex)
-			{
-				return T;
+                }
+            }
+            catch (Exception ex)
+            {
+                return T;
 
-			}
-			finally
-			{
-			}
+            }
+            finally
+            {
+            }
 
-		}
-		public void SaveModel<I>(I T) where I : Model.IModel 
-		{
-			lock (this)
-			{
+        }
+        public void SaveModel<I>(I T,bool andregister = false) where I : Model.IModel
+        {
+            lock (this)
+            {
 
-			if (pdr == null)
-			{
-				throw new Exception("必须使用SetProvider注册一个Ioc管理器");
-			}
-			var arr = pdr.GetAllInstance(typeof(IConfiguaion.IUFileModelConfiguation));
-			if (arr.Length == 0)
-			{
-				throw new Exception("必须注册一个IUFileModelConfiguation的实现");
-			}
-			var cfg = arr[0] as IUFileModelConfiguation;
-			CheckPathExist(cfg);
-			string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
+                if (pdr == null)
+                {
+                    throw new Exception("必须使用SetProvider注册一个Ioc管理器");
+                }
+                var arr = pdr.GetAllInstance(typeof(IConfiguaion.IUFileModelConfiguation));
+                if (arr.Length == 0)
+                {
+                    throw new Exception("必须注册一个IUFileModelConfiguation的实现");
+                }
+                var cfg = arr[0] as IUFileModelConfiguation;
+                CheckPathExist(cfg);
+                string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 
-			var xs = new XmlSerializer(typeof(I));
-			string p = Path.Combine(dp, T.ModelName);
-				
-			using (var fs = new FileStream(p, FileMode.Create))
-			{
-				try
-				{
-						
-					xs.Serialize(fs,T);
-				}
-				catch (Exception ex)
-				{
-					throw ex;
-				}
-				finally
-				{
-					fs.Close();
-				}
+                var xs = new XmlSerializer(typeof(I));
+                string p = Path.Combine(dp, T.ModelName);
 
-			}
-			}
+                using (var fs = new FileStream(p, FileMode.Create))
+                {
+                    try
+                    {
 
-		}
-		private void CheckPathExist(IUFileModelConfiguation cfg)
+                        xs.Serialize(fs, T);
+                        if (andregister)
+                        {
+                            pdr.Rigister<I>(T);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        fs.Close();
+                    }
+
+                }
+            }
+
+        }
+     
+        private void CheckPathExist(IUFileModelConfiguation cfg)
 		{
 			string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 			if (!Directory.Exists(dp))

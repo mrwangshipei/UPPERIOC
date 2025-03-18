@@ -41,7 +41,12 @@ namespace UPPERIOC.UPPER.UFileLog.DefineLog
                     Directory.CreateDirectory(diname);
                 }
                 //文件名
-                var filename = logtime.ToString(Config.FileNameTimeFormat) + Config.DefaultExt;
+                var muti = "";
+                if (Config.MutiFileName)
+                {
+                    muti = LogType.ToString();
+                }
+                var filename =  muti+ logtime.ToString(Config.FileNameTimeFormat) + Config.DefaultExt;
                 DelTimeOutLog(di, logtime);
                 var fullname = Path.Combine(diname, filename);
                 if (!File.Exists(fullname))

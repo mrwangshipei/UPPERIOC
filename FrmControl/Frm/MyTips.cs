@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace UpperComAutoTest.MyControls
+namespace FrmControl.Frm
 {
 	public partial class MyTips : Form
 	{
@@ -24,6 +24,12 @@ namespace UpperComAutoTest.MyControls
 
         }
 		public float radius { get; set; } = 15;
+        public int _ImageIndex;
+        public int ImageIndex { get=>_ImageIndex; set {
+                _ImageIndex = value;
+                Invalidate();
+            } }
+
         public static List<MyTips> useing_Tips = new List<MyTips>();
 		public static void ShowTips(Form BaseForm, Tipstype Type, string msg, int waittime = 2000, bool inWindow = true)
 		{
@@ -161,7 +167,7 @@ namespace UpperComAutoTest.MyControls
 				default:
 					break;
 			}
-				tips.label2.ImageIndex = (int)Type;
+				tips.ImageIndex = (int)Type;
 			    tips.label1.Text = msg;
 				tips.TopMost = true;
                 lock (useing_Tips)
@@ -183,8 +189,8 @@ namespace UpperComAutoTest.MyControls
 				tips.ShowForm(waittime);
 
 		}
-	
-		public int GetTextLineCount(System.Windows.Forms.Label label1)
+   
+        public int GetTextLineCount(System.Windows.Forms.Label label1)
 	{
 		using (Graphics graphics = label1.CreateGraphics())
 		{
@@ -248,9 +254,31 @@ namespace UpperComAutoTest.MyControls
             }
 			this.Visible = false;
 		}
-	}
-	public enum Tipstype
-	{
-		Tip,Warn,Error,Success
-	}
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            // 获取图像列表中的图像
+            Image image = imageList1.Images[ImageIndex]; // 根据需要选择图像索引
+            
+            // 获取 Panel 的大小
+            int panelWidth = panel3.Width;
+            int panelHeight = panel3.Height;
+            // 计算正方形的高度（宽度是高度的三分之二）
+            int squareHeight = 35;
+
+            // 计算正方形的左上角坐标，使其居中
+            int x = (panelWidth - squareHeight) / 2;
+            int y = (panelHeight - squareHeight) / 2;
+            var g = e.Graphics;
+            // 计算目标矩形的大小和位置
+            Rectangle destRect = new Rectangle(x,y, squareHeight, squareHeight);
+         
+            // 设置抗锯齿模式
+
+            // 绘制图像，缩放以适应 Panel 的大小
+            e.Graphics.DrawImage(image, destRect);
+        }
+
+    }
+   
 }

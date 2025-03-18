@@ -7,6 +7,7 @@ using System.Threading;
 using System.Windows.Forms;
 using UpperComAutoTest.ModelView;
 using UpperComAutoTest.MyControls;
+using UpperComAutoTest.MyControls.Frm;
 using UpperComAutoTest.View.Page.Interface;
 using UPPERIOC;
 using UPPERIOC.UPPER;

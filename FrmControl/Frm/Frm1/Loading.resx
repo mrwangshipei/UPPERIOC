@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="loadingControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="loadingControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="loadingControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="loadingControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 135</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="loadingControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;loadingControl1.Name" xml:space="preserve">
+    <value>loadingControl1</value>
+  </data>
+  <data name="&gt;&gt;loadingControl1.Type" xml:space="preserve">
+    <value>UpperComAutoTest.MyControls.LoadingControl, FrmControl, Version=1.0.0.61, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;loadingControl1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;loadingControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 14.25pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 135</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 57</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>加载中，请稍后...</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 192</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gradientProgressBar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="gradientProgressBar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="gradientProgressBar1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="gradientProgressBar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 34</value>
+  </data>
+  <data name="gradientProgressBar1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="gradientProgressBar1.Text" xml:space="preserve">
+    <value>gradientProgressBar1</value>
+  </data>
+  <data name="&gt;&gt;gradientProgressBar1.Name" xml:space="preserve">
+    <value>gradientProgressBar1</value>
+  </data>
+  <data name="&gt;&gt;gradientProgressBar1.Type" xml:space="preserve">
+    <value>UpperComAutoTest.MyControls.GradientProgressBar, FrmControl, Version=1.0.0.61, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;gradientProgressBar1.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;gradientProgressBar1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 192</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 34</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 226</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>406, 226</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA
+        AAACAAD/AgAA/wIAAP8CAAD/AgAA/wIAAP8CAAD/AgAA/wIAAP8CAAD/AgAA/wIAAP8CAAD/AgAA/wIA
+        AP8CAAD/AgAA/wIAAP8CAAD/AgAA/wIAAP8CAAD/AgAA/wIAAP8CAAD/AgAA/wIAAP8CAAD/BgUF/wgH
+        B/8GBQX/AgEB/wIBAP8CAAD/AgAA/wIAAP8AAQD/AgAA/wIAAP8CAAD/AgEA/wIBAP8CAAD/AgAA/wIA
+        AP8CAAD/BAEA/wYBAf8GAQH/BgEB/wYBAf8FAQH/BAEB/wMBAP8CAAD/AgAA/wIAAP8CAAD/AwEB/wAA
+        AP8nJib/ODc3/ysqKv8IBwf/AQIA/wIAAP8CAAD/AgEA/woCAf8CAgD/AgAA/wIBAP8CAgH/AgIB/wEC
+        AP8CAgD/BQIA/wEBAP8AAQD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AQIA/wUDAf8CAgD/AgIA/wIB
+        AP8BAgD/AgAA/wUDBP8HBQX/BQMD/wIBAf8BAgD/AgAA/wEAAP8GAQH/HgQE/wUCAf8BAAD/AgAA/wMB
+        Af8CAAD/BQEA/wABAP8AAQD/AQIB/ysGB/9YCxD/eA8X/4URG/96Ehv/WA4V/yoHCv8AAQD/AAAA/wAB
+        AP8FAwH/AQIA/wICAP8BAQD/AQAA/wEAAP8BAAD/AQAA/wEBAP8CAAD/AQAA/wcBAf8fBQT/BgIB/wEB
+        AP8CAAD/AwAA/wMBAP8AAQD/EQMD/28JD//PER7//xgo//8cLf//HTL//x83//8kPf//KkT//yxG/9gl
+        O/9xFSD/DAMD/wAAAP8FAgH/AgIA/wECAP8CAQD/AgAA/wIAAP8BAAD/AQEA/wMAAP8BAAD/CAEB/yAF
+        BP8HAgL/AAEA/wMCAP8AAgD/AAIA/1MECf/PCRf/8w0d/78NGv90CRL/QQYL/yYFCP8gBAj/KQYK/0wL
+        E/+KFSX/4iQ+//8wUv/rKkX/UhAY/wAAAP8CAgD/AgIA/wEBAP8CAQD/AgAA/wEAAP8BAQD/AgEA/wAA
+        AP8HAQH/IAUF/wgCAv8CAQD/AAIA/wECAf98AQz/3AMV/6cDEf85Agf/AAAA/wAAAP8AAAD/AAEB/wAA
+        AP8AAAD/AAAA/wAAAP8EAQL/WQ4a/+onRv//Mlf/ixkr/wAAAP8BAgD/AgIA/wECAP8BAgD/AQAA/wIC
+        AP8CAgD/AQEA/wcBAf8gBQX/CAIC/wABAP8AAgH/fQEM/8kAEv9mAQr/AAEB/wABAP8EAQH/BAAA/wAA
+        AP8AAAD/AwAA/wQBAf8FAQD/BgEB/wIAAP8AAAD/DQIF/7IcN///Mlz/kxsv/wAAAP8DAgH/AQIA/wIB
+        AP8BAAD/AQIA/wIBAP8AAAD/CQEB/x4FBf8KAwL/AAIA/1kBCP+7ABH/UwEJ/wACAP8BAQD/BgEB/wAA
+        AP8IAwn/IxEz/x4QLf8EAwT/AAEA/wICAf8CAQD/AwEA/wcBAf8AAAD/AAAA/6kbN///MmD/aRQj/wAA
+        AP8FAwH/AQEA/wIAAP8BAQD/AgAA/wABAP8HAgH/HwUF/wADAf8pAgb/swAU/2kBDP8AAgD/AwIA/wMC
+        AP8BAgD/AwID/zgZUf8ZDCT/HQ4p/zMZTv8FAwX/AQEA/wECAP8CAgD/AQIA/wUBAf8AAAD/AwEC/9Ii
+        R///LVj/IwcL/wABAP8EAQH/AQAA/wEBAP8CAQD/AAEA/wcCAv8dBAb/BAIC/xgCBf9nAhP/FgEF/wAB
+        AP8DAgD/AwMC/wABAP8LBQ//HQwp/wAAAP8AAAD/Hg4v/xgMJP8AAAD/AgIB/wICAf8CAgH/AQEA/wcA
+        Av8AAAD/NwgU//8tX/+kHDf/AAAA/wUCAf8BAAD/AQIA/wIBAP8BAAD/BwIC/xsEBf8JAgL/AAEA/wAC
+        AP8BAQD/AgEA/wICAf8AAAD/AQIA/wEBAP8AAAD/AwEC/wMCAf8CAAD/AgIB/wEBAP8DAgH/AAAA/wAB
+        AP8CAgH/AQEA/wYBAv8AAAD/rhw9//8tWv8eBgn/AAEA/wMBAf8BAQD/AgEA/wEAAP8GAgL/GgMF/wcD
+        Av8CAQH/BQIC/wICAP8CAgH/AAAA/xEMGP8DAgP/AAEA/wMBAf8CAAD/AgIA/wIBAP8BAQD/AwIB/wAA
+        AP8OChb/CAUM/wAAAP8CAgH/BgEB/wAAAP9JCxr//y5h/2oTJP8AAAD/BQIC/wEBAP8CAQD/AQAA/wYB
+        Av8XAwX/CAIC/wIBAf8CAgH/BAQD/wAAAP8vIj//voz//2ZHnf8AAAD/AwMD/wIBAP8BAQD/AQIA/wMC
+        Av8AAAD/FxEg/6t6+/9+VMn/AAAA/wICAP8DAgH/AAEA/xEDB//4J1X/sB07/wAAAP8EAgH/AQIA/wEB
+        AP8BAAD/BQEC/xgEBf8JAgL/AgIC/wcCA/8FAwP/AAAA/ysgOv+4iP//ZEWZ/wAAAP8DAwL/AQIA/wIC
+        AP8CAgD/AgMC/wAAAP8VDx3/pXfx/3pTwf8AAAD/AgIA/wMCAf8EAgH/AAAA/9EfRv/YIUj/AAAA/wEB
+        AP8CAgD/AgEA/wIBAP8FAwL/BgID/wABAv8AAAD/AAAA/wABAP8FAwL/AAAA/wwHEP8AAAD/AAAA/wIC
+        Af8BAgD/AgIA/wECAP8BAgD/AwID/wAAAP8IBQn/BQMG/wAAAP8DAgL/AgEA/wUCAv8AAAD/vhk9/+cg
+        Sv8FAQH/AAAA/wECAP8BAQD/BgIB/wABAf8kBQL/qx0u/84mUf93ESr/CwID/wAAAP8KAwn/AAAA/xAH
+        Gv8gDTb/AAAA/wICAf8BAgD/AgIA/wICAf8AAAD/IQ86/w0FE/8BAQD/CQQN/wEBAP8CAQD/BAEC/wAA
+        AP+/Fjr/5BtF/wMAAP8AAAD/AQIA/wUBAf8AAQD/NAcF//UmJ//KHyX/ziRP//82df/VIVT/IAQM/wAB
+        B/8oDj//KxJL/wsEEP8AAQD/AgIB/wICAP8BAgD/AgIB/wAAAP8NBRT/LBNM/y0TTv8WCST/AAAA/wMB
+        Af8CAQH/AAEA/9QUPP/OEzr/AAAA/wIAAP8CAQD/AAEA/wkDAv/RHRr//yww/7caI/9zDCb/8CVY//81
+        eP/cIlv/CAAC/wAAAP8AAAD/AAAA/wICAf8BAgD/AQIA/wECAP8BAgD/AgIB/wAAAP8AAAD/AwIB/wAA
+        AP8AAAD/AgEA/wABAP8TAgX/9xNC/6EMK/8AAAD/BQAB/wUCAP8AAAD/Xw0J//8qLP/oIBn/uC9R/9WM
+        7v9NGTD/kxQy/8gfUP8aAwr/AAEA/wQCAv8CAQH/AgIA/wECAP8CAgD/AgIA/wECAP8BAgD/BAMF/wAC
+        AP8AAAD/NiBW/4hU3f8mFDn/AAAA/0sGFf//EUX/XgUX/wAAAP8FAAH/BgEA/wAAAP+gGBP//y0q/4QP
+        Cv8kDh7//2/J/5UrV/8AAAD/AAAA/wAAAP8DAgD/AQIA/wICAP8BAgD/AgIA/wECAP8CAgD/AQEA/wUD
+        Bf8AAAD/BAIG/2E7nP+yb///llzw/xAHFf8AAAD/rwos//kNPf8WAQX/AAAA/wMAAf8EAQD/AAAA/0kN
+        DP91EA7/AAAC/wAAAP+9IE3//z2H/zIMGv8AAAD/BgMC/wECAP8CAgD/AQIA/wICAP8BAgD/AQIA/wEC
+        AP8CAwL/AAAA/xsQLv+GUtX/tnH//5pe9v8jEjT/AAAA/zsFEf//DkH/kQcj/wAAAP8GAAH/AQAA/wIB
+        AP8DAAD/AAAA/wAAAP8FAQH/AAIL/zQNHP//PYf/zjFr/wAAAP8AAQD/BQIC/wECAP8BAgD/AQIA/wEC
+        AP8CAgD/AwIC/wAAAP81IVj/pWb//7Rx//+FUNj/IRAx/wAAAP8IAwb/1Qsz//IMOv8XAgb/AAEA/wMA
+        AP8BAAD/AQEA/wIAAP8EAAD/BgAA/wMBA/8aDjn/AAAD/3oaOf//QpP/qShW/wAAAP8AAAD/BwMC/wIC
+        AP8BAgD/AQIA/wICAf8AAQD/CwYS/5Zd9P+TW+v/TSx+/wwDC/8AAAD/AAME/64JKv//DkL/UgQU/wAB
+        AP8GAAH/AgAA/wEAAP8BAQD/AgAA/wIAAP8DAAD/AgAA/wQBA/8DAAD/AAAA/54hTP//P43/uChW/xME
+        B/8AAAD/AAEA/wYCAv8FAgH/BQIB/wQCAP8FAgL/GAsi/wwEDf8AAAD/AAAA/xYDCP+5CS3//w5D/3UF
+        HP8AAQD/BgEC/wIAAP8CAAD/AQAA/wECAP8CAAD/AgAA/wIBAP8CAQD/AgAA/wMAAf8CAAD/AAAA/5Ac
+        QP//OH//8jBp/2YTKf8JAwP/AAAA/wAAAP8AAAD/AAEA/wAAAP8AAAD/AAAA/wwDB/9lBhr/8A06//8O
+        QP9rBRn/AAAA/wUBAf8CAAD/AgAA/wIAAP8BAAD/AQIA/wIAAP8CAAD/AgAA/wIAAP8CAAD/AQEA/wMB
+        AP8DAQL/AAAA/1MPIv/mKl///zRy/+8qW/+cGTn/Xg4g/zwJE/8yBw7/OwcR/14KG/+aDSn/6xA8//8S
+        Rv/PDDP/OAMO/wAAAP8FAAH/AgAA/wIAAP8CAAD/AgAA/wEAAP8BAQD/AgAA/wIAAP8CAAD/AgAA/wIA
+        AP8DAAH/AAAA/xkFJ/8aBSf/AAAA/woCBP9oESf/zCJM//8qXv//K17//yhY//8jUv//IE3//x1K//0W
+        Q/+8DjD/VAYV/wAAAP8AAAD/BgEB/wIAAP8CAAD/AgAA/wIAAP8CAAD/AQAA/wEBAP8DAAD/AgAA/wIA
+        AP8DAAD/AgAA/wIAAP8BAAD/BgEH/wYBBv8GAAD/AAAA/wAAAP8AAAD/HwQK/0cKFv9jDh7/bA4g/2EL
+        Gv9BBxH/FwMG/wAAAP8AAAD/AgAA/wUAAf8CAAD/AgAA/wIAAP8CAAD/AgAA/wIAAP8BAAD/AQIA/wIA
+        AP8CAAD/AgAA/wIBAP8CAAD/AgAA/wIAAP8BAAD/AQAA/wIBAP8DAAD/BgEB/wMAAf8AAAD/AAAA/wAA
+        AP8AAAD/AAAA/wAAAP8AAAD/BAAB/wUAAf8DAAD/AgAA/wIAAP8CAAD/AgAA/wIAAP8CAAD/AgAA/wEA
+        AP8CAQD/AgEA/wIBAP8BAgD/AQIA/wECAP8CAgD/AgIA/wICAP8CAgD/AQIA/wICAP8BAQD/AgEA/wMB
+        Af8FAQH/BgEB/wYBAf8GAQH/BQEB/wMBAP8CAQD/AgEA/wIBAP8CAQD/AgEA/wEBAP8CAQD/AgEA/wIA
+        AP8CAAD/AQAA/wEBAP8CAgD/AQIA/wIBAP8BAQD/AgEA/wEBAP8BAgD/AQEA/wEBAP8CAQD/AQEA/wIB
+        AP8BAQD/AgIA/wICAP8BAgD/AQIA/wEBAP8CAQD/AQEA/wIBAP8BAQD/AQEA/wECAP8BAgD/AQIA/wEC
+        AP8BAgD/AAIA/wACAP8AAQD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="xkg4n-mvspm-001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\xkg4n-mvspm-001.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

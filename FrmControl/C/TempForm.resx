@@ -117,4 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ucBtnCheckBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAALQAAAA4CAYAAABUv9KRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFNSURBVHhe7dKxCQMBEAPB77+9L8hOBAdGkTPBLEymUM/7
+        vh9Y9fzWRrAiN77aCFbkxlcbwYrc+GojWJEbX20EK3Ljq41gRW58tRGsyI2vNoIVufHVRrAiN77aCFbk
+        xlcbwYrc+GojWJEbX20EK3Ljq41gRW58tRGsyI2vNoIVufHVRrAiN77aCFbkxlcbwYrc+GojWJEbX20E
+        K3Ljq41gRW58tRGsyI2vNoIVufHVRrAiN77aCFbkxlcbwYrc+GojWJEbX20EK3Ljq41gRW58tRGsyI2v
+        NoIVufHVRrAiN77aCFbkxlcbwYrc+GojWJEbX20EK3Ljq41gRW58tRGsyI2vNoIVufHVRrAiN77aCFbk
+        xlcbwYrc+GojWJEbX20EK3Ljq41gRW58tRGsyI2vNoIVufHVRrAiN77aCFbkxlcbwYrcWJIkSdJfPc8X
+        vSoJRTpA9MwAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

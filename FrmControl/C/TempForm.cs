@@ -11,6 +11,7 @@ namespace FrmControl.C
 {
 	public class TempForm : Form
     {
+        private UCBtnCheckBox ucBtnCheckBox1;
 
         public TempForm()
 		{
@@ -80,11 +81,40 @@ namespace FrmControl.C
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TempForm));
+            this.ucBtnCheckBox1 = new FrmControl.C.UCBtnCheckBox();
             this.SuspendLayout();
+            // 
+            // ucBtnCheckBox1
+            // 
+            this.ucBtnCheckBox1.BackColor = System.Drawing.Color.Silver;
+            this.ucBtnCheckBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucBtnCheckBox1.BackgroundImage")));
+            this.ucBtnCheckBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ucBtnCheckBox1.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnCheckBox1.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnCheckBox1.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnCheckBox1.BtnText = null;
+            this.ucBtnCheckBox1.Checked = false;
+            this.ucBtnCheckBox1.CheckLabel = null;
+            this.ucBtnCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnCheckBox1.EnabledMouseEffect = false;
+            this.ucBtnCheckBox1.FillColor = System.Drawing.Color.Silver;
+            this.ucBtnCheckBox1.IsShowTips = false;
+            this.ucBtnCheckBox1.Location = new System.Drawing.Point(49, 65);
+            this.ucBtnCheckBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnCheckBox1.Name = "ucBtnCheckBox1";
+            this.ucBtnCheckBox1.Radio = false;
+            this.ucBtnCheckBox1.Size = new System.Drawing.Size(180, 56);
+            this.ucBtnCheckBox1.TabIndex = 0;
+            this.ucBtnCheckBox1.TabStop = false;
+            this.ucBtnCheckBox1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnCheckBox1.TipsText = "";
+            this.ucBtnCheckBox1.UnCheckLabel = null;
             // 
             // TempForm
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.ucBtnCheckBox1);
             this.Name = "TempForm";
             this.ResumeLayout(false);
 

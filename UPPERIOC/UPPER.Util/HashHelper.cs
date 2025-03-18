@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using UPPERIOC.UPPER;
 namespace UPPERIOC2.UPPER.Util
 {
 	public class HashHelper
@@ -64,16 +65,33 @@ namespace UPPERIOC2.UPPER.Util
 		private static string GetCpuId()
 		{
 			string cpuInfo = string.Empty;
-			string s = "SELECT ProcessorId FROM Win32_Processor";
-			ManagementObjectSearcher searcher = new ManagementObjectSearcher(s);
-
-			foreach (ManagementObject mo in searcher.Get())
+			try
 			{
-				cpuInfo = (string)mo["ProcessorId"];
-				break; // 通常只需要第一个CPU的ID  
-			}
+						string s = "SELECT ProcessorId FROM Win32_Processor";
+						ManagementObjectSearcher searcher = new ManagementObjectSearcher(s);
 
-			return cpuInfo;
+						foreach (ManagementObject mo in searcher.Get())
+						{
+							cpuInfo = (string)mo["ProcessorId"];
+							break; // 通常只需要第一个CPU的ID  
+						}
+  
+			}
+			catch (ManagementException ex)
+			{
+				LogCenter.Log(UPPERIOC.UPPER.enums.LogType.Error,"WMI 查询失败！");
+                LogCenter.Log(UPPERIOC.UPPER.enums.LogType.Error, "错误消息: " + ex.Message);
+                LogCenter.Log(UPPERIOC.UPPER.enums.LogType.Error, "错误代码: " + ex.ErrorCode);
+				if (ex.InnerException != null)
+				{
+                    LogCenter.Log(UPPERIOC.UPPER.enums.LogType.Error, "内部异常: " + ex.InnerException.Message);
+				}
+				cpuInfo = "UnKnowCpuInfo";
+
+            }
+            
+
+            return cpuInfo;
 		}
 		[ComVisible(true)]
 
@@ -82,13 +100,20 @@ namespace UPPERIOC2.UPPER.Util
 			string biosId = string.Empty;
 
 			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT SerialNumber,SMBIOSBIOSVersion FROM Win32_BIOS");
-
-			foreach (ManagementObject mo in searcher.Get())
+			try
 			{
-				biosId = (string)mo["SerialNumber"];
-				if (!string.IsNullOrEmpty(biosId)) break; // 如果SerialNumber为空，则尝试其他属性  
-				biosId = (string)mo["SMBIOSBIOSVersion"];
-				break;
+				foreach (ManagementObject mo in searcher.Get())
+				{
+					biosId = (string)mo["SerialNumber"];
+					if (!string.IsNullOrEmpty(biosId)) break; // 如果SerialNumber为空，则尝试其他属性  
+					biosId = (string)mo["SMBIOSBIOSVersion"];
+					break;
+				}
+
+			}
+			catch (Exception)
+			{
+				biosId = "UnknowBiosId";
 			}
 
 			return biosId;
@@ -98,15 +123,23 @@ namespace UPPERIOC2.UPPER.Util
 		private static string GetBaseBoardId()
 		{
 			string baseBoardId = string.Empty;
-
-			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_BaseBoard");
-
-			foreach (ManagementObject mo in searcher.Get())
+			try
 			{
-				baseBoardId = (string)mo["SerialNumber"];
-				if (!string.IsNullOrEmpty(baseBoardId)) break; // 如果SerialNumber为空，则可能没有其他合适的属性  
-			}
+				ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT SerialNumber FROM Win32_BaseBoard");
 
+				foreach (ManagementObject mo in searcher.Get())
+				{
+					baseBoardId = (string)mo["SerialNumber"];
+					if (!string.IsNullOrEmpty(baseBoardId)) break; // 如果SerialNumber为空，则可能没有其他合适的属性  
+				}
+
+
+			}
+			catch (Exception)
+			{
+				baseBoardId = "UnKnowBaseBoardIdid";
+
+            }
 			return baseBoardId;
 		}
 

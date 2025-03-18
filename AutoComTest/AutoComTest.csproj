@@ -251,9 +251,6 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FrmControl">
-      <Version>1.0.0.33</Version>
-    </PackageReference>
     <PackageReference Include="Prism.Core">
       <Version>8.0.0.1909</Version>
     </PackageReference>
@@ -278,6 +275,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrmControl\FrmControl.csproj">
+      <Project>{d50e8cdb-9d79-410a-a4da-43a307d17884}</Project>
+      <Name>FrmControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

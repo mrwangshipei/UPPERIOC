@@ -124,6 +124,11 @@ namespace FrmControl.C.Btn
 
         }
 
+        public void PreFormClick() {
+            EventArgs e = new EventArgs();
+            // 调用控件的OnClick方法，手动触发点击事件
+            this.OnClick(e);
+        }
         protected override void OnMouseDown(System.Windows.Forms.MouseEventArgs e)
         {
       
