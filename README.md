@@ -51,7 +51,7 @@ MyGet Pre-release feed: https://www.nuget.org/packages/UPPERIOC/
 ```csharp
 static void main() {
 	var config = new UPPERIOC.UPPER.IOC.Center.Configuation.MoudleConfiguaion();
-	config.AddMoudle<UPPERIOCMoudle>();
+	config.AddMoudle<UPPERIOCMoudle>(); //新版中此模块是默认模块
 	config.AddMoudle<UPPERLogFileMoudle>();
 	config.AddMoudle<UPPERSendorMoudle>();
 	config.AddMoudle<UPPERMLockMoudle>();
@@ -59,9 +59,8 @@ static void main() {
 	config.AddMoudle<UPPERFileModelMoudle>();
 	config.AddMoudle<UPPERErrorMoudle>();
 	config.AddMoudle<UPPERTranslateMoudle>();
-	config.SetProvider<UPPERDefaultProvider>();
+	config.SetProvider<UPPERDefaultProvider>(); // 新版中可以省略
 	UPPERIOCApplication.RunInstance(config);
-	TranslateCenter.Instance.SetLanguage("EN");
 	Application.Run(new Form1());
 }
 ```
@@ -78,10 +77,12 @@ SendorCenter.Register<object>(x =>
 {
 	LogCenter.Log(x.ToString());
 });
+
 //触发消息Sendor
 SendorCenter.Publish<object>("HelloWorld");
 ```
-
+XXXXXXXX.XXX:
+Debug - 14:06:26:1892:HelloWorld
 #### Log
 
 是我提供的一个统一的接口，任何实现了 ILog 的类都可以注册进来，并且提供了一个默认的实现（ FileLog ），使用 FileLog 需要你配置一个 IFileLogConfiguation 配置类，并且注入到容器中，可以使用你自己的 Provider 注入，也可以使用默认提供的 UPPerContainerProvider 的实现注入。你也可以使用我内置的IOC模块使用注解 [IOCObject] 注入
@@ -100,11 +101,17 @@ internal class FCTUFileConfiguation : IFileLogConfiguation
     public bool PrintMs { get => true; set => throw new NotImplementedException(); }
 }
 //3.在执行注入了一个Provider后，将实例注入容器中
-config.SetProvider<UPPERDefaultProvider>();
 config._containerProvider.Rigister<FCTUFileConfiguation>(new FCTUFileConfiguation());
+//或者
+U.C.Rigister<FCTUFileConfiguation>(new FCTUFileConfiguation());
+//或者在类上写上特性[IOCObject]
+
 //4.通过LogCenter.Log("Hello")使用日志功能
 LogCenter.Log("Hello")
 ```
+
+正常在应用程序根目录的子文件夹中就会有一个 日志20250501.log 中有一行日志 
+Debug - 14:06:26:1892:Hello
 
 #### Model
 
@@ -113,6 +120,7 @@ Model是一个将文件序列化和反序列化能力的模块，接下来将为
 ```csharp
 //1.注册一个文件日志中心
  config.AddMoudle <UPPERFileModelMoudle>();
+
 //2.实现IUFileModelConfiguation接口
 internal class UFileModelConfigration : IUFileModelConfiguation
 {
@@ -122,12 +130,14 @@ internal class UFileModelConfigration : IUFileModelConfiguation
         set => throw new NotImplementedException();
     }
 }
-//3.在执行注入了一个Provider后，将实例注入容器中
-config.SetProvider<UPPERDefaultProvider>();
+
+//3.将实例注入容器中
 config._containerProvider.Rigister<UFileModelConfigration >(new UFileModelConfigration ());
+
 //4.通过F.I使用实例化功能 where T:IModel
 F.I.SaveModel(new T());
 var t = F.I.GetModel(new T());
+
 //你可以使用[XmlIgnore]忽略项目使其不存储。
 ```
 
@@ -146,8 +156,10 @@ public class VerContent
     public string Ver;
     public string Content;
 }
+
 //使用注册的实例
 U.C.GetInstance<VerContent>();
+
 ```
 
 #### Util
@@ -181,11 +193,14 @@ public class MLockConfiguation
         Environment.Exit(0);
     }
 }
+
  //2.应用模块并注册您的实现类
 config.AddMoudle<UPPERMLockMoudle>();
+
 //先设置默认的提供类实例
 config.SetProvider<UPPERDefaultProvider>();
 config._containerProvider.Rigister<ILockConfiguation>();
+
 ```
 
 ####  SimplePremission
@@ -197,14 +212,24 @@ config._containerProvider.Rigister<ILockConfiguation>();
 一个翻译模块。可以实现按需翻译你的应用，傻瓜式操作，有手就行。
 
 ```csharp
-//1.使用Translate翻译模块需要在启用容器的时候调用
+//1.注册一个ITranslateConfig的实例，实际参数需要填写有道词典你的信息
+public  interface ITranslateConfig
+{
+    string APPKey { get; }
+    string APPSeret { get; }
+    string FromLanguage { get;  }
+    string ToLanguage { get;  }
+}
+
+//2.使用Translate翻译模块需要在启用容器的时候调用
 config.AddMoudle<UPPERTranslateMoudle>();
-//2.然后在RunApplication之后设置语言
-TranslateCenter.Instance.SetLanguage("EN");
+
 //3.然后在需要翻译的窗体加载完成后调用函数
 TranslateCenter.Instance.SetRootWindows(this);
+
 //3. OR 也可以显式的使用
 Control.Property = TranslateCenter.Instance.SetText(Control.Property);
+
 //模块会在路径Model/translate生成一个文件，你可以用文本打开，然后依次翻译词条。但是我们推荐使用接口翻译。需要你实现一个ITranslateConfig接口，并注入到容器中。容器会在SetText没有翻译的情况下使用有道词典进行翻译。
 
 ```
@@ -233,6 +258,12 @@ UPPERIOC.\*.IModel -模块中用户需要自己实现的模型类（注册）
 2. XXXConfiguation对象没有找到
 
 ```
-    参考1，或者使用U.C注册
+    可能是1的bug，或者使用U.C注册
+```
+
+3. 文件中的类都不能进行设计，因此未能为该文件显示设计器，设计器检查出文件中有以下类:FrmDialog请确保已引用该程序集并已生成所有项目
+
+```
+    生成包即可
 ```
 
