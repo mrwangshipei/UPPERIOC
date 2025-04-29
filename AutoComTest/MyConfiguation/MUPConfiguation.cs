@@ -72,7 +72,6 @@ namespace UpperComAutoTest.MyConfiguation
 				PremissionCenter.Instance.AddUser("admin","123456","","");
 				return Login(pm);
 			}
-			return null;
 		}
 
 

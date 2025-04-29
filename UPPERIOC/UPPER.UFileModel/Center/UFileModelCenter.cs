@@ -41,7 +41,7 @@ namespace UPPERIOC2.UPPER.UFileModel.Center
             CheckPathExist(cfg);
             string dp = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, cfg.SaveModelPath);
 
-            var xs = new XmlSerializer(typeof(I));
+            var xs = new XmlSerializer(T.GetType());
             string p = Path.Combine(dp, T.ModelName);
             try
             {

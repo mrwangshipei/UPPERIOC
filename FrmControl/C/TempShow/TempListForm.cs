@@ -106,7 +106,7 @@ namespace FrmControl.C.TempShow
             this.ChangeText = ChangeText;
             if (F != null)
             {
-                this.F = F;
+                //this.F = F;
                 F.KeyDown += OnKeyDown;
 
             }

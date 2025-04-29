@@ -76,36 +76,45 @@ namespace UPPERIOC2.UPPER.Util
 			return string.IsNullOrEmpty(result) ? "" : result.Replace("[", "").Replace("\"", "").Replace("\"", "").Replace("]", "").Replace(",", "");
 
 		}
+		static object tl  = new object();
 		public static string Transcale(string q)
 		{
-			Dictionary<String, String> dic = new Dictionary<string, string>();
-			string url = "https://openapi.youdao.com/api";
 			var cof = UPPERIOCApplication.Container.GetInstanceAndSub<ITranslateConfig>();
 			if (cof == null)
 			{
 				return q;
 			}
-			string appKey = cof.APPKey;
-			string appSecret = cof.APPSeret;
-			string salt = DateTime.Now.Millisecond.ToString();
-			dic.Add("from", cof.FromLanguage);
-			dic.Add("to", cof.ToLanguage);
-			dic.Add("signType", "v3");
-			TimeSpan ts = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc));
-			long millis = (long)ts.TotalMilliseconds;
-			string curtime = Convert.ToString(millis / 1000);
-			dic.Add("curtime", curtime);
-			string signStr = appKey + Truncate(q) + salt + curtime + appSecret; ;
-			string sign = ComputeHash(signStr, new SHA256CryptoServiceProvider());
-			dic.Add("q", UrlEncode(q));
-			dic.Add("appKey", appKey);
-			dic.Add("salt", salt);
-			dic.Add("sign", sign);
-			dic.Add("vocabId", "您的用户词表ID");
-			string re = Post(url, dic);
-			Thread.Sleep(500);
-			Console.WriteLine(re);
-			return	ExtractTranslation(re, "translation");
+            if (cof.FromLanguage == cof.ToLanguage)
+            {
+                return q;
+            }
+            lock (tl)
+			{
+				Dictionary<String, String> dic = new Dictionary<string, string>();
+				string url = "https://openapi.youdao.com/api";
+				string appKey = cof.APPKey;
+				string appSecret = cof.APPSeret;
+				string salt = DateTime.Now.Millisecond.ToString();
+				
+				dic.Add("from", cof.FromLanguage);
+				dic.Add("to", cof.ToLanguage);
+				dic.Add("signType", "v3");
+				TimeSpan ts = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc));
+				long millis = (long)ts.TotalMilliseconds;
+				string curtime = Convert.ToString(millis / 1000);
+				dic.Add("curtime", curtime);
+				string signStr = appKey + Truncate(q) + salt + curtime + appSecret; ;
+				string sign = ComputeHash(signStr, new SHA256CryptoServiceProvider());
+				dic.Add("q", UrlEncode(q));
+				dic.Add("appKey", appKey);
+				dic.Add("salt", salt);
+				dic.Add("sign", sign);
+				dic.Add("vocabId", "您的用户词表ID");
+				string re = Post(url, dic);
+				Thread.Sleep(1000);
+				Console.WriteLine(re);
+				return	ExtractTranslation(re, "translation");
+			}
 		}
 		public static string UrlEncode(string value)
 		{

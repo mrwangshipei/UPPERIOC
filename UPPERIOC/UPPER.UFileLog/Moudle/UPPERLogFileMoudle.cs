@@ -16,8 +16,8 @@ namespace UPPERIOC.UPPER.UFILELOG.Moudle
 {
     public class UPPERLogFileMoudle : IUPPERMoudle
 	{
-		IContainerProvider containerProvider;
-		public Type[] DependisMoudel { get; set; } = new Type[] { } ;
+        IContainerProvider? containerProvider;
+        public Type[]? DependisMoudel { get; set; } = new Type[] { } ;
 
         public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{

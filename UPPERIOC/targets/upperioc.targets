@@ -8,7 +8,7 @@
 	
 
 	<Target Name="_DebugPrintAnalyzers" BeforeTargets="Build">
-		<Message Text="Analyzers: @(Analyzer)" Importance="high" />
+		<!--<Message Text="Analyzers: @(Analyzer)" Importance="high" />-->
 	</Target>
 
 	<Target Name="_UPPERIOCGatherAnalyzers">
@@ -44,12 +44,12 @@
 		</ItemGroup>
 	</Target>
 	
-	<Target Name="_UPPERIOCMSBuildVersionCheck"
+	<!--<Target Name="_UPPERIOCMSBuildVersionCheck"
 			Condition=" '$([System.Version]::Parse($(_UPPERIOCMSBuildMinVersion)).CompareTo($([System.Version]::Parse($(MSBuildVersion)))))' &gt; '0' "
 			BeforeTargets="ResolveAssemblyReferences;Build;Rebuild">
 		<Error
 		  Text="Projects using UPPERIOC cannot build using MSBuild '$(MSBuildVersion)'. MSBuild '$(_UPPERIOCMSBuildMinVersion)' or later is required." />
-	</Target>
+	</Target>-->
 
 	<Target Name="_UPPERIOCProjectRestoreTypeCheck"
 			BeforeTargets="ResolveAssemblyReferences;Build;Rebuild"

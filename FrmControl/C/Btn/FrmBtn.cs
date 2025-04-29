@@ -120,7 +120,7 @@ namespace FrmControl.C.Btn
 			// 改变背景颜色为按下颜色
 			this.BackColor = pressedBackColor;
 			base.OnMouseDown(e);
-
+			IsMouseDown = true;
 		}
 
 		// 鼠标释放时触发
@@ -130,8 +130,10 @@ namespace FrmControl.C.Btn
 			{
 				return; 
 			}
-			// 恢复背景颜色为默认颜色（如果鼠标仍在控件内）
-			if (this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
+            IsMouseDown = false;
+
+            // 恢复背景颜色为默认颜色（如果鼠标仍在控件内）
+            if (this.ClientRectangle.Contains(this.PointToClient(Control.MousePosition)))
 			{
 				this.BackColor = hoverBackColor; // 或者根据需求恢复为默认颜色或其他颜色
 			}

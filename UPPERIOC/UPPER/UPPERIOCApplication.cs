@@ -75,26 +75,33 @@ namespace UPPERIOC
             var Param = moudle.ExportUpperModel();
             if (!Param.Any(x => x.GetType() == typeof(UPPERIOCMoudle)))
             {
-                Param.Add(new UPPERIOCMoudle());
+                Param.RemoveAll(x => x.GetType() == typeof(UPPERIOCMoudle));
             }
+            var ioc = new UPPERIOCMoudle();
+            ioc.PreIniter(moudle.Provider);
             Param.All(item =>
             {
                 item.PreIniter(moudle.Provider);
                 return true;
             });
+            ioc.IniterAndLoadClass(moudle.Provider);
 
             Param.All(item =>
             {
                 item.IniterAndLoadClass(moudle.Provider);
                 return true;
             });
+            ioc.AfterCreateInstance(moudle.Provider);
 
             Param.All(item =>
             {
                 item.AfterCreateInstance(moudle.Provider);
                 return true;
             });
+            ioc.InitEnd(moudle.Provider);
+
             Param.All(item =>
+
             {
                 item.InitEnd(moudle.Provider);
                 return true;

@@ -39,7 +39,15 @@ namespace UPPERIOC2.UPPER.Translate.Center
 			{
 				return;
 			}
-			if (com is ToolStrip it)
+			if (com is MenuStrip mt) {
+				foreach (Component c in mt.Items) {
+
+                    SetRootWindows(c);
+                }
+                mt.Text = GetText(mt.Text);
+
+            }
+            else if (com is ToolStrip it)
 			{
 				foreach (ToolStripItem item in it.Items)
 				{
@@ -47,13 +55,12 @@ namespace UPPERIOC2.UPPER.Translate.Center
 				}
 				it.Text = GetText(it.Text);
 
-			}else
-			if (com is ToolStripItem ita)
+			}else if (com is ToolStripItem ita)
 			{
 				ita.Text = GetText(ita.Text);
 
 			}
-			else			if (com is Control con)
+			else if (com is Control con)
 			{
 				foreach (Control item in con.Controls)
 					{
@@ -67,7 +74,7 @@ namespace UPPERIOC2.UPPER.Translate.Center
 			con.TextChanged -= SetTextChange;
 			con.TextChanged += SetTextChange;*/
 		}
-		public void SetLanguage(string lan)
+		internal void SetLanguage(string lan)
 		{
 			L = lan;
 			if (null == TranslateModel)
@@ -135,6 +142,10 @@ namespace UPPERIOC2.UPPER.Translate.Center
 			if (string.IsNullOrWhiteSpace(str))
 			{
 				str = TranslateUtil.Transcale(text);
+				if (string.IsNullOrWhiteSpace(str))
+				{
+					str = text;
+				}
 				TranslateBlock.Values.Add(new KeyValue(text,str));
 				F.I.SaveModel(TranslateModel);
 			}

@@ -10,6 +10,7 @@ using UPPERIOC2.UPPER.Translate.Model;
 using UPPERIOC2.UPPER.UFileModel.Center;
 using UPPERIOC2.UPPER.UFileModel.Model;
 using UPPERIOC2.UPPER.UFileModel.Moudle;
+using UPPERIOC2.UPPER.Util.IConfiguation;
 
 namespace UPPERIOC2.UPPER.Translate.Moudle
 {
@@ -24,21 +25,27 @@ namespace UPPERIOC2.UPPER.Translate.Moudle
 
         public override void InitEnd(IContainerProvider containerProvider)
 		{
-		}
+            var cof = containerProvider.GetInstanceAndSub<ITranslateConfig>();
+
+            TranslateCenter.Instance.SetLanguage(cof.ToLanguage);
+        }
 
         public override void IniterAndLoadClass(IContainerProvider containerProvider)
 		{
-			TranslateModel tm = F.I.GetModel<TranslateModel>(new TranslateModel());
+
+            TranslateModel tm = F.I.GetModel<TranslateModel>(new TranslateModel());
 			TranslateCenter.Instance = new TranslateCenter(containerProvider);
-			TranslateCenter.Instance.TranslateModel = tm;
-			if (TranslateCenter.Instance.TranslateBlock == null && string.IsNullOrWhiteSpace(TranslateCenter.Instance.L))
+		
+			
+			//TranslateCenter.Instance.TranslateModel = tm;
+		//	if (TranslateCenter.Instance.TranslateBlock == null && string.IsNullOrWhiteSpace(TranslateCenter.Instance.L))
 			{
-				TranslateCenter.Instance.TranslateBlock = tm.Translateblocks.Find(x => x.Name == TranslateCenter.Instance.L);
-				if (TranslateCenter.Instance.TranslateBlock == null)
-				{
-					TranslateCenter.Instance.TranslateBlock = new Translateblock();
-					tm.Translateblocks.Add(TranslateCenter.Instance.TranslateBlock);
-				}
+			//	TranslateCenter.Instance.TranslateBlock = tm.Translateblocks.Find(x => x.Name == TranslateCenter.Instance.L);
+			//	if (TranslateCenter.Instance.TranslateBlock == null)
+			//	{
+			//		TranslateCenter.Instance.TranslateBlock = new Translateblock();
+			//		tm.Translateblocks.Add(TranslateCenter.Instance.TranslateBlock);
+			//	}
 			}
 		}
 

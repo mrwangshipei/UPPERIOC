@@ -13,7 +13,7 @@ namespace UPPERIOC2.UPPER.UFileModel.Model
 	[XmlInclude(typeof(IModel))]
 	public class IModel
 	{
-        public virtual string ModelName { get; set; }
+        public virtual string? ModelName { get; set; }
 		public void SaveModel()
         {
             F.I.SaveModel(this);

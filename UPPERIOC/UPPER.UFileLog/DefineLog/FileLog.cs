@@ -14,7 +14,7 @@ namespace UPPERIOC.UPPER.UFileLog.DefineLog
     {
         IFileLogConfiguation Config;
 
-        public FileLog(IFileLogConfiguation Config)
+        public FileLog(IFileLogConfiguation? Config)
         {
             if (Config == null)
             {
@@ -23,15 +23,20 @@ namespace UPPERIOC.UPPER.UFileLog.DefineLog
             this.Config = Config;
             logt = Config.WhichTypePrint?.ToArray();
         }
-        LogType[] logt;
-        public LogType[] CanLogType => logt;
+        LogType[]? logt;
+        public LogType[] CanLogType { get {
+                if (logt == null)
+                {
+                    return new LogType[0];
+                }
+                return logt;
+            }
+        }
 
         public void Log(LogType LogType, string Msg)
         {
             lock (Config)
             {
-
-
                 var logtime = DateTime.Now;
                 //路径
                 var diname = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Config.DirectoryName);

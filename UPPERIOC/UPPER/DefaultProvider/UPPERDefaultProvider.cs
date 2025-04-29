@@ -12,6 +12,8 @@ using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Extend;
 using UPPERIOC.UPPER.IOC.MyTypeInfo;
+using UPPERIOC2.UPPER.UFileModel.Center;
+using UPPERIOC2.UPPER.UFileModel.Model;
 
 namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
 {
@@ -55,7 +57,7 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
             {
                 try
                 {
-
+                   
                     //容器不存在实例，注册，存在则取出
                     if ((par[i] = Contain.GetIntstance(cos.GetParameters()[i].ParameterType, name, true)) == null)
                     {
@@ -77,12 +79,38 @@ namespace UPPERIOC2.UPPER.UIOC.DefaultProvider
 
                 }
 
+
             }
-            object obj = cos.Invoke(par);
+            object obj = null;
+            if (HasIModelAncestor(item))
+            {
+                if ((obj = cos.Invoke(par))is IModel il)
+                {
+                    obj = F.I.GetModel(il);
+                }
+            }
+            else
+            {
+               obj = cos.Invoke(par);
+
+            }
             item.GetProperties().Where(item1 => item1.GetCustomAttribute<IOCPorpeties>() != null).All(item1 => { item1.SetValue(obj, InitInstance(item1.PropertyType, false, item1.GetCustomAttribute<IOCPorpeties>()?.Name)); return true; });
             return obj;
         }
-
+        public static bool HasIModelAncestor(Type itemType)
+        {
+            while (itemType != null)
+            {
+                // 检查是否是 IModel 类型或其子类
+                if (typeof(IModel).IsAssignableFrom(itemType))
+                {
+                    return true;
+                }
+                // 获取当前类型的基类
+                itemType = itemType.BaseType;
+            }
+            return false;
+        }
         public object GetInstance(Type type)
         {
             if (type == null)

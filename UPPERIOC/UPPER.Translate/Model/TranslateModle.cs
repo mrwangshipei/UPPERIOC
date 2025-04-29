@@ -15,24 +15,24 @@ namespace UPPERIOC2.UPPER.Translate.Model
 	{
 		public override string ModelName { get=>"translate"; set { } }
 		[XmlElement]
-		public List<Translateblock> Translateblocks = new List<Translateblock>();
+		public List<Translateblock> Translateblocks { get; set; } = new List<Translateblock>();
 		
 	}
 	
 	public class Translateblock {
 		[XmlElement]
-		public string Name;
+		public string Name { get; set; }
 		[XmlElement]
-		public List<KeyValue> Values = new List<KeyValue>();
+		public List<KeyValue> Values { get; set; } = new List<KeyValue>();
 
 	}
 	public struct KeyValue {
 		[XmlElement]
-		public string Key;
-		[XmlElement]
-		public string Value;
+		public string Key { get; set; }
+        [XmlElement]
+		public string Value { get; set; }
 
-		public KeyValue(string text, string str) : this()
+        public KeyValue(string text, string str) : this()
 		{
 			this.Key= text;
 			this.Value= str;

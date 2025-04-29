@@ -133,7 +133,6 @@ namespace UpperComAutoTest.MyControls.Frm
 		private static void ShowFormInvoke(Form BaseForm, Action<Loading> act)
 		{
 			Loading l = new Loading(act);
-			bool start = false;
 			BaseForm.BeginInvoke(new Action(() => {
 				
 				l.ShowDialog(BaseForm);
