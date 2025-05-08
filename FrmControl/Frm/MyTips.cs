@@ -255,30 +255,57 @@ namespace FrmControl.Frm
 			this.Visible = false;
 		}
 
+        /* private void panel3_Paint(object sender, PaintEventArgs e)
+         {
+             // 获取图像列表中的图像
+             Image image = imageList1.Images[ImageIndex]; // 根据需要选择图像索引
+
+             // 获取 Panel 的大小
+             int panelWidth = panel3.Width;
+             int panelHeight = panel3.Height;
+             // 计算正方形的高度（宽度是高度的三分之二）
+             int squareHeight = 35;
+
+             // 计算正方形的左上角坐标，使其居中
+             int x = (panelWidth - squareHeight) / 2;
+             int y = (panelHeight - squareHeight) / 2;
+             var g = e.Graphics;
+             // 计算目标矩形的大小和位置
+             Rectangle destRect = new Rectangle(x,y, squareHeight, squareHeight);
+
+             // 设置抗锯齿模式
+
+             // 绘制图像，缩放以适应 Panel 的大小
+             e.Graphics.DrawImage(image, destRect);
+         }*/
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            // 获取图像列表中的图像
-            Image image = imageList1.Images[ImageIndex]; // 根据需要选择图像索引
-            
-            // 获取 Panel 的大小
-            int panelWidth = panel3.Width;
-            int panelHeight = panel3.Height;
-            // 计算正方形的高度（宽度是高度的三分之二）
-            int squareHeight = 35;
+            if (imageList1 == null || ImageIndex < 0 || ImageIndex >= imageList1.Images.Count)
+                return;
 
-            // 计算正方形的左上角坐标，使其居中
-            int x = (panelWidth - squareHeight) / 2;
-            int y = (panelHeight - squareHeight) / 2;
-            var g = e.Graphics;
-            // 计算目标矩形的大小和位置
-            Rectangle destRect = new Rectangle(x,y, squareHeight, squareHeight);
-         
-            // 设置抗锯齿模式
+            try
+            {
+                using (Image image = (Image)imageList1.Images[ImageIndex].Clone()) // clone 避免原图句柄问题
+                {
+                    int panelWidth = panel3.Width;
+                    int panelHeight = panel3.Height;
+                    int squareHeight = 35;
 
-            // 绘制图像，缩放以适应 Panel 的大小
-            e.Graphics.DrawImage(image, destRect);
+                    int x = (panelWidth - squareHeight) / 2;
+                    int y = (panelHeight - squareHeight) / 2;
+                    Rectangle destRect = new Rectangle(x, y, squareHeight, squareHeight);
+
+                    e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    e.Graphics.DrawImage(image, destRect);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("图像绘制失败: " + ex.Message);
+                // 可以考虑记录日志
+            }
         }
 
     }
-   
+
 }
