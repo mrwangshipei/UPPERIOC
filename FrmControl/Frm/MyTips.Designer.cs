@@ -103,6 +103,7 @@ namespace FrmControl.Frm
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MyTips";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MyTips_FormClosed_1);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);

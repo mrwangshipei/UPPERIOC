@@ -202,57 +202,114 @@ namespace FrmControl.Frm
 	}
 	System.Windows.Forms.Timer close_t = new System.Windows.Forms.Timer();
 
+        /*  private void ShowForm(int waittime = 2000)
+          {
+              // 确保从主线程访问
+              if (this.InvokeRequired)
+              {
+                  this.Invoke(new Action<int>(ShowForm), waittime);  // 调用主线程上的方法
+                  return;
+              }
+
+              Show();
+              Rectangle rect = this.ClientRectangle;
+              using (GraphicsPath pa = new GraphicsPath())
+              {
+
+              ;
+
+              // 开始绘制圆角矩形  
+              // 注意：为了简化，我们假设矩形的宽度和高度都足够大，可以放下圆角  
+
+              // 左上角  
+              pa.AddArc(rect.Left, rect.Top, 2 * radius, 2 * radius, 180, 90);
+
+              // 右上角  
+              pa.AddArc(rect.Right - 2 * radius, rect.Top, 2 * radius, 2 * radius, 270, 90);
+
+              // 右下角 
+              pa.AddArc(rect.Right - 2 * radius, rect.Bottom - 2 * radius, 2 * radius, 2 * radius, 0, 90);
+
+              // 左下角 
+              pa.AddArc(rect.Left, rect.Bottom - 2 * radius, 2 * radius, 2 * radius, 90, 90);
+                  Region oldRegion = this.Region;
+                  this.Region = new Region(pa);
+                  oldRegion?.Dispose();  // 避免泄漏旧的 Region
+                                         //   this.Region = new Region(pa);
+                  Task.Factory.StartNew(() => { 
+                 Thread.Sleep(waittime);
+                 CloseWindow(null,null);
+              });
+              }
+            *//*  close_t.Interval = waittime;
+              close_t.Tick += CloseWindow;
+              close_t.Enabled = true;*//*
+          }*/
+
         private void ShowForm(int waittime = 2000)
         {
-            // 确保从主线程访问
             if (this.InvokeRequired)
             {
-                this.Invoke(new Action<int>(ShowForm), waittime);  // 调用主线程上的方法
+                this.Invoke(new Action<int>(ShowForm), waittime);
                 return;
             }
 
-            Show();
-            Rectangle rect = this.ClientRectangle;
-            GraphicsPath pa = new GraphicsPath();
+            try
+            {
+                Show();
+                Region oldRegion = this.Region;
 
-            // 开始绘制圆角矩形  
-            // 注意：为了简化，我们假设矩形的宽度和高度都足够大，可以放下圆角  
+                using (GraphicsPath pa = new GraphicsPath())
+                {
+                    Rectangle rect = this.ClientRectangle;
+                    float r = radius;
+                    pa.AddArc(rect.Left, rect.Top, 2 * r, 2 * r, 180, 90);
+                    pa.AddArc(rect.Right - 2 * r, rect.Top, 2 * r, 2 * r, 270, 90);
+                    pa.AddArc(rect.Right - 2 * r, rect.Bottom - 2 * r, 2 * r, 2 * r, 0, 90);
+                    pa.AddArc(rect.Left, rect.Bottom - 2 * r, 2 * r, 2 * r, 90, 90);
+                    pa.CloseFigure(); // 确保路径闭合
 
-            // 左上角  
-            pa.AddArc(rect.Left, rect.Top, 2 * radius, 2 * radius, 180, 90);
+                    this.Region = new Region(pa);
+                }
 
-            // 右上角  
-            pa.AddArc(rect.Right - 2 * radius, rect.Top, 2 * radius, 2 * radius, 270, 90);
+                oldRegion?.Dispose();
 
-            // 右下角 
-            pa.AddArc(rect.Right - 2 * radius, rect.Bottom - 2 * radius, 2 * radius, 2 * radius, 0, 90);
-
-            // 左下角 
-            pa.AddArc(rect.Left, rect.Bottom - 2 * radius, 2 * radius, 2 * radius, 90, 90);
-
-            this.Region = new Region(pa);
-            Task.Factory.StartNew(() => { 
-               Thread.Sleep(waittime);
-               CloseWindow(null,null);
-            });
-          /*  close_t.Interval = waittime;
-            close_t.Tick += CloseWindow;
-            close_t.Enabled = true;*/
+                Task.Delay(waittime).ContinueWith(_ =>
+                {
+                    if (!this.IsDisposed && !this.Disposing)
+                    {
+                        this.Invoke(new Action(() => Close()));
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ShowForm异常：" + ex.Message);
+            }
         }
+
         private void MyTips_FormClosed(object sender, FormClosedEventArgs e)
         {
+            lock (useing_Tips)
+            {
+                useing_Tips.Remove(this);
+            }
             this.Dispose();
             GC.Collect();
         }
         private void CloseWindow(object sender, EventArgs e)
 		{
             //close_t.Enabled = false;
+            if (Disposing)
+            {
+                return;
+            }
             if (InvokeRequired)
             {
                 Invoke(CloseWindow,null,null);
                 return;
             }
-			this.Visible = false;
+            this.Close();
 		}
 
         /* private void panel3_Paint(object sender, PaintEventArgs e)
@@ -306,6 +363,12 @@ namespace FrmControl.Frm
             }
         }
 
+        private void MyTips_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+
+            imageList1?.Dispose();
+
+        }
     }
 
 }

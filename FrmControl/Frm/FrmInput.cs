@@ -60,5 +60,14 @@ namespace COMIEEE
 			this.Close();
 
 		}
-	}
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+			if (e.KeyCode == Keys.Enter)
+			{
+				this.DialogResult = DialogResult.OK;
+
+            }
+        }
+    }
 }

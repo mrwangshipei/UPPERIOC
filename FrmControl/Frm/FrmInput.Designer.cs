@@ -77,6 +77,7 @@ namespace COMIEEE
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(430, 32);
             this.textBox1.TabIndex = 0;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // panel4
             // 
@@ -107,7 +108,7 @@ namespace COMIEEE
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(131, 49);
+            this.label4.Size = new System.Drawing.Size(437, 49);
             this.label4.TabIndex = 0;
             this.label4.Text = "确认框";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

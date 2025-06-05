@@ -35,7 +35,7 @@ namespace UpperComAutoTest
 		//	config.AddMoudle<UPPERIOCMoudle>();
 			config.AddMoudle<UPPERLogFileMoudle>();
 			config.AddMoudle<UPPERSendorMoudle>();
-			config.AddMoudle<UPPERMLockMoudle>();
+		//	config.AddMoudle<UPPERMLockMoudle>();
 #if NETFRAMEWORK
 			config.AddMoudle<UPPERPremissionMoudle>();
 #endif

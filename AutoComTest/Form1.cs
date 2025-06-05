@@ -22,10 +22,7 @@ namespace UpperComAutoTest
 		public Form1()
 		{
 			
-			Loading lo = new Loading(x => { 
-				Thread.Sleep(500000);
-			});
-			lo.ShowDialog();
+		
 			modelView = UPPERIOCApplication.Container.GetInstance<Form1ModelView>();
 			InitializeComponent();
 			foreach (ToolStripItem item in toolStrip1.Items)
@@ -127,10 +124,22 @@ namespace UpperComAutoTest
 
 		private void toolStripButton2_Click_1(object sender, EventArgs e)
 		{
-
+			TextLoading.ShowForm(this,act => {
+				for (int i = 1; i <= 100; i++) 
+				{
+					act.SetMessage($"Мгдижа... ...", (int)(GetBFB(i)*100));
+					Thread.Sleep(30);
+				}
+			
+			});
 		}
 
-		private void panel1_Paint(object sender, PaintEventArgs e)
+        private float GetBFB(int i)
+        {
+			return (1.0f / (100 * 100 * 100) ) * i * i * i;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
 		{
 
 		}
