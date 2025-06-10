@@ -1,0 +1,318 @@
+﻿==using System;
+using System.Collections.Generic;
+using System.Drawing.Imaging;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FCT.Model;
+using FrmControl.C.Base;
+using UPPERIOC2.UPPER.MVVM.Extension;
+using Timer = System.Windows.Forms.Timer;
+
+namespace FrmControl.C.CPanel_
+{
+    public class CPanel:CBasePanel
+    {
+        public Color backTColor ;
+        private float backTColorTran = 0.25f;
+        private int radius = 5;
+
+        public Color BackTColor 
+        { 
+            get => backTColor; 
+            set 
+            { 
+                backTColor = value;
+                Invalidate(); 
+            } 
+        }
+        public float BackTColorTran 
+        { 
+            get => backTColorTran; 
+            set 
+            { 
+                backTColorTran = value;
+            Invalidate();
+
+            }
+        }
+        public int Radius
+        { 
+            get => radius;
+            set 
+            {
+                radius = value;
+                Invalidate();
+            }
+        }
+    
+      
+        // ------- 构造函数 -------
+        protected override void OnVisibleChanged(EventArgs e)
+        {
+            base.OnVisibleChanged(e);
+          
+        }
+        // —— 私有字段 —— 
+
+        private Bitmap _originalSnapshot = null;
+        private Bitmap _currentBlurred = null;
+
+        /// <summary>
+        /// 动画进度：从 0.0f → 1.0f 线性增长。0 表示“最模糊+最小”；1 表示“无模糊+原始大小”。
+        /// </summary>
+        private float _animationProgress = 0f;
+
+        private Timer _animationTimer;
+
+        /// <summary>
+        /// 每帧进度增量（你可以根据需要改成 0.02 或 0.04 等），
+        /// 这决定了动画多少帧完成以及时长（Interval × 帧数 ≈ 总时长）。
+        /// </summary>
+        private const float ProgressStep = 0.05f; // 大约 20 帧从 0→1
+
+        // —— 构造函数 —— 
+
+        public CPanel()
+        {
+            // 打开双缓冲，减少闪烁
+            this.SetStyle(
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.UserPaint |
+                ControlStyles.OptimizedDoubleBuffer|
+                ControlStyles.SupportsTransparentBackColor,
+                true);
+
+            // 初始化 Timer
+            _animationTimer = new Timer();
+            _animationTimer.Interval = 30;  // 大约 33 FPS
+            _animationTimer.Tick += AnimationTimer_Tick;
+        }
+
+        // —— 对外接口 —— 
+
+        /// <summary>
+        /// 触发“模糊+从后面推入 → 清晰+原始大小”的动画。
+        /// </summary>
+        public void PlayBlur3DToClear()
+        {
+            if (_animationTimer.Enabled)
+                return;
+            var x = this.backTColor;
+            this.backTColor = Color.Transparent;
+            var x1 = this.BackColor;
+            var x2 = backTColorTran;
+            backTColorTran = 0;
+            this.BackColor = Color.Transparent;
+            this.Refresh();
+            // 1. 截图 Panel 和它下面所有可见子控件
+            CaptureOriginalSnapshot();
+            this.backTColor = x;
+            this.BackColor = x1;
+            backTColorTran = x2;
+            // 2. 隐藏所有子控件
+            foreach (Control child in this.Controls)
+                child.Visible = false;
+
+            // 3. 动画进度从 0 开始
+            _animationProgress = 0f;
+
+            // 4. 先生成第一帧“极度模糊+最小缩放”图
+            GenerateBlurredBitmap();
+
+            // 5. 启动 Timer
+            _animationTimer.Start();
+        }
+
+        // —— 私有方法 —— 
+
+        private void CaptureOriginalSnapshot()
+        {
+            // 释放上次的快照
+            _originalSnapshot?.Dispose();
+            _currentBlurred?.Dispose();
+
+            // 创建与 Panel 一样大的 Bitmap
+            //_originalSnapshot = new Bitmap(this.ClientRectangle.Width, this.ClientRectangle.Height, PixelFormat.Format32bppArgb);
+            _originalSnapshot = new Bitmap(this.Width, this.Height, PixelFormat.Format32bppArgb);
+            using (Graphics g = Graphics.FromImage(_originalSnapshot))
+            {
+                g.Clear(Color.Transparent); // 先填充透明背景
+
+                // 1. 绘制自身
+                PaintEventArgs args = new PaintEventArgs(g, this.ClientRectangle);
+                //this.InvokePaintBackground(this, args);
+             //   this.InvokePaint(this, args);
+
+                // 2. 手动绘制每个子控件
+                foreach (Control ctrl in this.Controls)
+                {
+                    if (!ctrl.Visible) continue;
+                    // 将父控件的样式应用到子控件
+                  
+
+                    using (Bitmap childBmp = new Bitmap(ctrl.Width, ctrl.Height, PixelFormat.Format32bppArgb))
+                    {
+                        // 子控件绘制到它自己的 Bitmap 上
+                        ctrl.DrawToBitmap(childBmp, new Rectangle(Point.Empty, ctrl.Size));
+
+                        // 然后将它画到主图上（基于控件位置）
+                        g.DrawImage(childBmp, ctrl.Location);
+                    }
+                }
+            }
+
+            // 把 Panel 本身及所有可见子控件画到这张 Bitmap 上
+            //this.DrawToBitmap(_originalSnapshot, new Rectangle(0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height));
+        }
+
+        /// <summary>
+        /// 根据当前 _animationProgress (0→1)，先计算 eased = progress² 作为“模糊系数”，
+        /// 然后再把 eased 用来同时控制：
+        ///   1) 模糊度（tinyW/tinyH），
+        ///   2) 缩放度（在 OnPaint 里会用到，这里只是为 _currentBlurred 生成对应像素数据，不包含缩放）。
+        /// </summary>
+        private void GenerateBlurredBitmap()
+        {
+            if (_originalSnapshot == null)
+                return;
+
+            int w = this.ClientRectangle.Width;
+            int h = this.ClientRectangle.Height;
+
+            // —— 一、计算缓入后的值 —— 
+            // 这里使用最简单的二次方缓入：eased = progress * progress
+            // 你也可以改成：Math.Pow(_animationProgress, 3) 或 三角函数 S 曲线。
+            float eased = (float)_animationProgress;
+
+            // —— 二、把 eased 用于计算缩小到 0.8 倍大小，偏上 20px —— 
+            // tinyW/tinyH 代表“先把原图缩到多小”，越小看上去越模糊。
+            // 这里 tiny 绝对不能为 0，否则后面 DrawImage 会出错，所以最小值强制为 1。
+            int tinyW = Math.Max(1, (int)(w * 0.3 + (w * eased * 0.7)));  // 从0.8到1之间变化
+            int tinyH = Math.Max(1, (int)(h * 0.3 + (h * eased * 0.7)));  // 从0.8到1之间变化
+
+            // 确保偏移量（20px），将图像上下偏移 20px
+            int offsetY = 20;
+            offsetY =(int)( 20 * (1 - eased));
+            // —— 三、缩小再放大：得到 _currentBlurred —— 
+            using (Bitmap tiny = new Bitmap(tinyW, tinyH))
+            using (Graphics gTiny = Graphics.FromImage(tiny))
+            {
+                gTiny.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+                gTiny.DrawImage(_originalSnapshot,
+                                 new Rectangle(0, 0, tinyW, tinyH),
+                                 new Rectangle(0, 0, w, h),
+                                 GraphicsUnit.Pixel);
+
+                _currentBlurred?.Dispose();
+                _currentBlurred = new Bitmap(w, h);
+                using (Graphics gBlur = Graphics.FromImage(_currentBlurred))
+                {
+                    gBlur.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+                    gBlur.DrawImage(tiny,
+                                     new Rectangle(0, 0, w, h),
+                                     new Rectangle(0, 0, tinyW, tinyH),
+                                     GraphicsUnit.Pixel);
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Timer 每隔 Interval（30ms）就调用一次，推进动画进度，并重绘 Panel。
+        /// </summary>
+        private void AnimationTimer_Tick(object sender, EventArgs e)
+        {
+            _animationProgress += ProgressStep;
+            if (_animationProgress >= 1f)
+                _animationProgress = 1f;
+
+            // 重新生成“/当前进度对应的模糊 Bitmap/”
+            GenerateBlurredBitmap();
+
+            // 触发重绘
+            this.Invalidate();
+
+            // 如果进度到 1.0，就结束动画：显示子控件并释放资源
+            if (_animationProgress >= 1f)
+            {
+                _animationTimer.Stop();
+
+                foreach (Control child in this.Controls)
+                    child.Visible = true;
+
+                _originalSnapshot.Dispose();
+                _originalSnapshot = null;
+
+                _currentBlurred.Dispose();
+                _currentBlurred = null;
+            }
+        }
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            Invalidate();
+        }
+        /// <su0mary>
+        /// 在 Panel 重绘时：如果 _currentBlurred 不为空，就做“模糊+缩放”的绘制；否则交给基类，让它按正常方式画子控件。
+        /// </summary>
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            if (_currentBlurred != null)
+            {
+                int w = this.ClientSize.Width;
+                int h = this.ClientSize.Height;
+
+                // —— 一、计算缓入后的 eased 值 —— 
+                float eased = _animationProgress * _animationProgress;
+
+                // —— 二、计算缩放比例 —— 
+                //    这里示例让 scale 从 0.3 → 1.0。你也可以直接写 scale = eased (从 0→1)。
+                //    只是如果从 0 开始，刚开始会看不到一点；根据需求自行调整最小值。
+                float minScale = 0.8f;
+                float scale = minScale + (1 - minScale) * eased;
+                // 当 eased = 0 时，scale = 0.3；当 eased = 1 时，scale = 1.0。
+
+                // —— 三、根据 scale 计算目标矩形，把 _currentBlurred 居中绘制 —— 
+                int drawW = (int)(w * scale);
+                int drawH = (int)(h * scale);
+
+                int offsetX = (w - drawW) / 2;
+                int offsetY = (h - drawH) / 2;
+
+                Rectangle destRect = new Rectangle(offsetX, offsetY, drawW, drawH);
+                // 直接绘制“模糊 Bitmap”并做缩放
+                e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+                e.Graphics.DrawImage(_currentBlurred, destRect);
+            }
+            else
+            {
+                // 动画结束后，正常绘制 Panel 和它的子控件
+                base.OnPaint(e);
+            }
+        }
+
+
+
+        protected override void OnPaddingChanged(EventArgs e)
+        {
+            base.OnPaddingChanged(e);
+            Invalidate();            
+        }
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+            var g = e.Graphics;
+            Rectangle rectangle = this.ClientRectangle;
+            rectangle.ChangeRectangle(this.Padding);
+            using (var path = rectangle.CreateRoundedRectanglePath(Radius))
+            {
+                using (Brush br = new SolidBrush(Color.FromArgb((int)(255*BackTColorTran),BackTColor)))
+                {
+                    g.FillPath(br, path);
+                }
+            }
+
+        }
+    }
+}

@@ -76,7 +76,7 @@
             this.frmBtn2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.frmBtn2.BackColor = System.Drawing.Color.Lime;
+            this.frmBtn2.BackColor = System.Drawing.Color.Transparent;
             this.frmBtn2.BackImg = global::FrmControl.Properties.Resources.Maximize_2;
             this.frmBtn2.BorderColor = System.Drawing.Color.Black;
             this.frmBtn2.BorderWidth = 0F;
@@ -90,10 +90,9 @@
             this.frmBtn2.Name = "frmBtn2";
             this.frmBtn2.pressedBackColor = System.Drawing.Color.LightGreen;
             this.frmBtn2.Radius = 15F;
-            this.frmBtn2.Size = new System.Drawing.Size(33, 31);
+            this.frmBtn2.Size = new System.Drawing.Size(31, 31);
             this.frmBtn2.smallimg = 0.7F;
             this.frmBtn2.TabIndex = 0;
-            this.frmBtn2.Text = "frmBtn1";
             this.frmBtn2.Click += new System.EventHandler(this.frmBtn2_Click);
             // 
             // panel1
@@ -112,7 +111,7 @@
             this.frmBtn3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.frmBtn3.BackColor = System.Drawing.Color.Red;
+            this.frmBtn3.BackColor = System.Drawing.Color.Transparent;
             this.frmBtn3.BackImg = global::FrmControl.Properties.Resources.Shut_down_2;
             this.frmBtn3.BorderColor = System.Drawing.Color.Black;
             this.frmBtn3.BorderWidth = 0F;
@@ -121,15 +120,14 @@
             this.frmBtn3.hoverBackColor = System.Drawing.Color.LightBlue;
             this.frmBtn3.ImgPix = 1F;
             this.frmBtn3.Issquare = true;
-            this.frmBtn3.Location = new System.Drawing.Point(5, 5);
+            this.frmBtn3.Location = new System.Drawing.Point(8, 5);
             this.frmBtn3.Margin = new System.Windows.Forms.Padding(0);
             this.frmBtn3.Name = "frmBtn3";
             this.frmBtn3.pressedBackColor = System.Drawing.Color.LightGreen;
             this.frmBtn3.Radius = 15F;
-            this.frmBtn3.Size = new System.Drawing.Size(33, 31);
+            this.frmBtn3.Size = new System.Drawing.Size(31, 31);
             this.frmBtn3.smallimg = 0.7F;
             this.frmBtn3.TabIndex = 0;
-            this.frmBtn3.Text = "frmBtn1";
             this.frmBtn3.Click += new System.EventHandler(this.frmBtn3_Click);
             // 
             // panel3
@@ -148,7 +146,7 @@
             this.frmBtn1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.frmBtn1.BackColor = System.Drawing.Color.Yellow;
+            this.frmBtn1.BackColor = System.Drawing.Color.Transparent;
             this.frmBtn1.BackImg = global::FrmControl.Properties.Resources.Minimize_2;
             this.frmBtn1.BorderColor = System.Drawing.Color.Black;
             this.frmBtn1.BorderWidth = 0F;
@@ -162,7 +160,7 @@
             this.frmBtn1.Name = "frmBtn1";
             this.frmBtn1.pressedBackColor = System.Drawing.Color.LightGreen;
             this.frmBtn1.Radius = 15F;
-            this.frmBtn1.Size = new System.Drawing.Size(33, 31);
+            this.frmBtn1.Size = new System.Drawing.Size(31, 31);
             this.frmBtn1.smallimg = 0.7F;
             this.frmBtn1.TabIndex = 0;
             this.frmBtn1.Text = "frmBtn1";
@@ -170,7 +168,6 @@
             // 
             // Apple3Btn
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(0);

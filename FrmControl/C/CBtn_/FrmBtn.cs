@@ -1,4 +1,5 @@
 ﻿using FCT.MyControls;
+using FrmControl.C.Base;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,12 +11,17 @@ using System.Windows.Forms;
 
 namespace FrmControl.C.Btn
 {
-    public class FrmBtn : Control
+    public class FrmBtn : CBaseControl
 	{
-		// 默认背景颜色
-		public Color defaultBackColor { get; set; } = Color.White;
-		// 鼠标悬停时的背景颜色
-		public Color hoverBackColor { get; set; } = Color.LightBlue;
+        // 默认背景颜色
+        public Color defaultBackColor { 
+			get => defaultBackColor1; 
+			set 
+			{ 
+				defaultBackColor1 = value;
+				this.BackColor = value;
+			}}         // 鼠标悬停时的背景颜色
+        public Color hoverBackColor { get; set; } = Color.LightBlue;
 		// 鼠标按下时的背景颜色
 		public Color pressedBackColor { get; set; } = Color.LightGreen;
 
@@ -30,19 +36,37 @@ namespace FrmControl.C.Btn
 		private bool IsMouseDown;
         public bool Issquare { get; set; }
         public float Radius { get { return ell; } set { ell = value;Invalidate(); } }
-		public FrmBtn() {
-			
-			this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
-		}
-		protected override void OnPaint(PaintEventArgs e)
+        public FrmBtn()
+        {
+            // 启用双缓冲和透明背景
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+                          ControlStyles.OptimizedDoubleBuffer |
+                          ControlStyles.UserPaint |
+                          ControlStyles.SupportsTransparentBackColor, true);
+        }
+        private Rectangle Lastr;
+        private Color defaultBackColor1 = Color.White;
+
+        protected override void OnPaint(PaintEventArgs e)
 		{
-			//base.OnPaint(e);
-			if (Radius != lastell)
+			if (Radius != lastell || !Rectangle.Equals(this.ClientRectangle, Lastr))
 			{
+				if (Region != null)
+				{
+					Region.Dispose();
+				}
+				Lastr = this.ClientRectangle;
                 this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
 				lastell = Radius;
 			}
+           // base.OnPaint(e);
+
             var gp = e.Graphics;
+			using (var bs = new SolidBrush(BackColor))
+			{
+
+				gp.FillPath(bs, GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
+			}
 			gp.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
 			gp.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 			if (BackImg != null)
@@ -64,13 +88,26 @@ namespace FrmControl.C.Btn
 			if (BorderWidth != 0)
 			{
 
-			var path  = GraphicsExtensions.GetRoundedRectangle(new Rectangle((int)(this.ClientRectangle.X + BorderWidth / 2), (int)(this.ClientRectangle.Y + (BorderWidth / 2)), (int)(this.ClientRectangle.Width - BorderWidth), (int)(this.ClientRectangle.Height - BorderWidth)), Radius);
-			gp.DrawPath(new Pen(BorderColor, BorderWidth ),path); ;
+				var path  = GraphicsExtensions.GetRoundedRectangle(new Rectangle((int)(this.ClientRectangle.X + BorderWidth / 2), (int)(this.ClientRectangle.Y + (BorderWidth / 2)), (int)(this.ClientRectangle.Width - BorderWidth), (int)(this.ClientRectangle.Height - BorderWidth)), Radius);
+				gp.DrawPath(new Pen(BorderColor, BorderWidth ),path); ;
 			
 
 			}
 		}
-		protected override void OnSizeChanged(EventArgs e)
+        protected override void OnPaintBackground(PaintEventArgs pevent)
+        {
+            if (Radius != lastell || !Rectangle.Equals(this.ClientRectangle, Lastr))
+            {
+                if (Region != null)
+                {
+                    Region.Dispose();
+                }
+                Lastr = this.ClientRectangle;
+                this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
+                lastell = Radius;
+            }
+        }
+        protected override void OnSizeChanged(EventArgs e)
 		{
 			base.OnSizeChanged(e);
 			if (Issquare && this.Width != Height)
@@ -78,7 +115,7 @@ namespace FrmControl.C.Btn
 				Width = Height;
 				Radius = Width / 2;
 			}
-			this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
+	//		this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
 			//
 		}
 
@@ -122,9 +159,15 @@ namespace FrmControl.C.Btn
 			base.OnMouseDown(e);
 			IsMouseDown = true;
 		}
+        protected override void OnLocationChanged(EventArgs e)
+        {
+            base.OnLocationChanged(e);
+            // 每次位置变化，就更新 Region 保证圆角
+          //  this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
+        }
 
-		// 鼠标释放时触发
-		protected override void OnMouseUp( MouseEventArgs e)
+        // 鼠标释放时触发
+        protected override void OnMouseUp( MouseEventArgs e)
 		{
 			if (this.IsDisposed)
 			{

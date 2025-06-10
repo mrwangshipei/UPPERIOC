@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using FrmControl.C.ProgressBar;
 
 namespace UpperComAutoTest.MyControls.Frm
 {
@@ -33,8 +34,8 @@ namespace UpperComAutoTest.MyControls.Frm
 		{
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textProgressBar1 = new FrmControl.C.ProgressBar.TextProgressBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.textProgressBar1 = new UpperComAutoTest.MyControls.TextProgressBar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -58,19 +59,6 @@ namespace UpperComAutoTest.MyControls.Frm
             this.panel2.Size = new System.Drawing.Size(404, 212);
             this.panel2.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(0, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(404, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "正在加载中，请稍后";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // textProgressBar1
             // 
             this.textProgressBar1.Animationspeed = 3F;
@@ -86,12 +74,26 @@ namespace UpperComAutoTest.MyControls.Frm
             this.textProgressBar1.ProgressColor = System.Drawing.Color.DimGray;
             this.textProgressBar1.progressColor2 = System.Drawing.Color.Silver;
             this.textProgressBar1.ProgressColor2 = System.Drawing.Color.Silver;
+            this.textProgressBar1.Radius = 0;
+            this.textProgressBar1.Retlast = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.textProgressBar1.Size = new System.Drawing.Size(404, 189);
             this.textProgressBar1.TabIndex = 2;
-            this.textProgressBar1.Text = "textProgressBar1";
             this.textProgressBar1.TextColor = System.Drawing.Color.White;
             this.textProgressBar1.WaveHeight = 15F;
             this.textProgressBar1.WaveWidth = 50F;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(0, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(404, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "正在加载中，请稍后";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TextLoading
             // 
@@ -110,8 +112,8 @@ namespace UpperComAutoTest.MyControls.Frm
 
 		#endregion
 		private Panel panel1;
-		private Label label1;
         private Panel panel2;
-        private TextProgressBar textProgressBar1;
+        public TextProgressBar textProgressBar1;
+        protected Label label1;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace FrmControl.FrmBase
+﻿namespace FrmControl.FrmBase_
 {
 	partial class FrmBaseForm
 	{

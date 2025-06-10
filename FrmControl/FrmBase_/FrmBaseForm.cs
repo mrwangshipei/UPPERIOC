@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FrmControl.Util;
 
-namespace FrmControl.FrmBase
+namespace FrmControl.FrmBase_
 {
-	public partial class FrmBaseForm : Form
+	public partial class FrmBaseForm : FrmBase
 	{
         public override string Text { get=> label1?.Text == null ? "": label1.Text; set {
 				if (label1 == null)

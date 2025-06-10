@@ -21,11 +21,13 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using FCT.Model;
 
 namespace FrmControl
 {
@@ -116,7 +118,12 @@ namespace FrmControl
         /// <returns>IntPtr.</returns>
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         public static extern IntPtr GetForegroundWindow();
-
+        public static void ChangeRectangle(ref this Rectangle re,Padding pa) {
+            re.X += pa.Left;
+            re.Y += pa.Top;
+            re.Width = re.Width - pa.Left - pa.Right;
+            re.Height = re.Height - pa.Top -pa.Bottom;
+        }
         /// <summary>
         /// Threads the base call back.
         /// </summary>
@@ -452,19 +459,46 @@ namespace FrmControl
         /// <param name="rect">The rect.</param>
         /// <param name="cornerRadius">The corner radius.</param>
         /// <returns>GraphicsPath.</returns>
+        //public static GraphicsPath CreateRoundedRectanglePath(this Rectangle rect, int cornerRadius)
+        //{
+        //    GraphicsPath roundedRect = new GraphicsPath();
+        //    roundedRect.AddArc(rect.X, rect.Y, cornerRadius * 2, cornerRadius * 2, 180, 90);
+        //    roundedRect.AddLine(rect.X + cornerRadius, rect.Y, rect.Right - cornerRadius * 2, rect.Y);
+        //    roundedRect.AddArc(rect.X + rect.Width - cornerRadius * 2, rect.Y, cornerRadius * 2, cornerRadius * 2, 270, 90);
+        //    roundedRect.AddLine(rect.Right, rect.Y + cornerRadius * 2, rect.Right, rect.Y + rect.Height - cornerRadius * 2);
+        //    roundedRect.AddArc(rect.X + rect.Width - cornerRadius * 2, rect.Y + rect.Height - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2, 0, 90);
+        //    roundedRect.AddLine(rect.Right - cornerRadius * 2, rect.Bottom, rect.X + cornerRadius * 2, rect.Bottom);
+        //    roundedRect.AddArc(rect.X, rect.Bottom - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2, 90, 90);
+        //    roundedRect.AddLine(rect.X, rect.Bottom - cornerRadius * 2, rect.X, rect.Y + cornerRadius * 2);
+        //    roundedRect.CloseFigure();
+        //    return roundedRect;
+        //}
         public static GraphicsPath CreateRoundedRectanglePath(this Rectangle rect, int cornerRadius)
         {
-            GraphicsPath roundedRect = new GraphicsPath();
-            roundedRect.AddArc(rect.X, rect.Y, cornerRadius * 2, cornerRadius * 2, 180, 90);
-            roundedRect.AddLine(rect.X + cornerRadius, rect.Y, rect.Right - cornerRadius * 2, rect.Y);
-            roundedRect.AddArc(rect.X + rect.Width - cornerRadius * 2, rect.Y, cornerRadius * 2, cornerRadius * 2, 270, 90);
-            roundedRect.AddLine(rect.Right, rect.Y + cornerRadius * 2, rect.Right, rect.Y + rect.Height - cornerRadius * 2);
-            roundedRect.AddArc(rect.X + rect.Width - cornerRadius * 2, rect.Y + rect.Height - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2, 0, 90);
-            roundedRect.AddLine(rect.Right - cornerRadius * 2, rect.Bottom, rect.X + cornerRadius * 2, rect.Bottom);
-            roundedRect.AddArc(rect.X, rect.Bottom - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2, 90, 90);
-            roundedRect.AddLine(rect.X, rect.Bottom - cornerRadius * 2, rect.X, rect.Y + cornerRadius * 2);
-            roundedRect.CloseFigure();
-            return roundedRect;
+            GraphicsPath path = new GraphicsPath();
+
+            int diameter = cornerRadius * 2;
+            Size size = new Size(diameter, diameter);
+
+            Rectangle arc = new Rectangle(rect.Location, size);
+
+            // 左上角
+            path.AddArc(arc, 180, 90);
+
+            // 上边
+            arc.X = rect.Right - diameter;
+            path.AddArc(arc, 270, 90);
+
+            // 右边
+            arc.Y = rect.Bottom - diameter;
+            path.AddArc(arc, 0, 90);
+
+            // 下边
+            arc.X = rect.X;
+            path.AddArc(arc, 90, 90);
+
+            path.CloseFigure();
+            return path;
         }
 
         /// <summary>

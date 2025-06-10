@@ -11,6 +11,7 @@ using System.Threading.Tasks;
     using System.Drawing;
     using System.Drawing.Drawing2D;
     using System.Windows.Forms;
+using FrmControl.C.Base;
 
 namespace FrmControl.C.Btn
 {

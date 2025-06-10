@@ -38,7 +38,7 @@
   <PropertyGroup>
     <StartupObject />
     <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages</PackageOutputPath>
-    <Version>1.0.0.77</Version>
+    <Version>1.0.0.79</Version>
 
   </PropertyGroup>
   <ItemGroup>
@@ -64,31 +64,34 @@
   <ItemGroup>
     <Compile Include="Animation\AnimationBase.cs" />
     <Compile Include="Animation\ClickAnimation.cs" />
-    <Compile Include="C\Btn\Apple3Btn.cs">
+    <Compile Include="C\Base\CBasePanel.cs" />
+    <Compile Include="C\CBtn_\Apple3Btn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="C\Btn\Apple3Btn.Designer.cs">
+    <Compile Include="C\CBtn_\Apple3Btn.Designer.cs">
       <DependentUpon>Apple3Btn.cs</DependentUpon>
     </Compile>
-    <Compile Include="C\Btn\FrmBtn.cs">
+    <Compile Include="C\CBtn_\FrmBtn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="C\Btn\FrmBtnImg.cs" />
-    <Compile Include="C\Btn\FrmBtnImg.Designer.cs" />
-    <Compile Include="C\Btn\FrmLinerGidentBtn.cs" />
-    <Compile Include="C\Btn\FrmLinerGidentBtn.Designer.cs">
+    <Compile Include="C\CBtn_\FrmBtnImg.cs" />
+    <Compile Include="C\CBtn_\FrmBtnImg.Designer.cs" />
+    <Compile Include="C\CBtn_\FrmLinerGidentBtn.cs" />
+    <Compile Include="C\CBtn_\FrmLinerGidentBtn.Designer.cs">
       <DependentUpon>FrmLinerGidentBtn.cs</DependentUpon>
     </Compile>
-    <Compile Include="C\Btn\SliderCtl.cs" />
-    <Compile Include="C\CBaseControl.cs" />
-    <Compile Include="C\LastResultControl.cs">
+    <Compile Include="C\CBtn_\SliderCtl.cs" />
+    <Compile Include="C\Base\CBaseControl.cs" />
+    <Compile Include="C\CCheckBox_\UCCheckBoxBtn.cs" />
+    <Compile Include="C\CCheckBox_\UCCheckBoxBtn.Designer.cs" />
+    <Compile Include="C\CPanel_\CPanel.cs" />
+    <Compile Include="C\Special\LastResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="C\LastResultControl.Designer.cs">
+    <Compile Include="C\Special\LastResultControl.Designer.cs">
       <DependentUpon>LastResultControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="C\TextProgressBar.cs" />
-    <Compile Include="C\Panel\CTableLayoutPanel.cs" />
+    <Compile Include="C\ProgressBar\TextProgressBar.cs" />
     <Compile Include="C\SystemStopwatch.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,14 +104,13 @@
     <Compile Include="C\TempShow\TempListForm.Designer.cs">
       <DependentUpon>TempListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="C\CheckBox\UCCheckBoxBtn.cs" />
-    <Compile Include="C\CheckBox\UCCheckBoxBtn.Designer.cs" />
+    <Compile Include="C\CCheckBox_\CCheckBox.cs" />
+    <Compile Include="C\CCheckBox_\CCheckBox.Designer.cs" />
     <Compile Include="Enum\TipType.cs" />
     <Compile Include="Extention\GraphicsExtensions.cs" />
-    <Compile Include="FrmBase\FrmBaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBase\FrmBaseForm.Designer.cs">
+    <Compile Include="FrmBase_\FrmBase.cs" />
+    <Compile Include="FrmBase_\FrmBaseForm.cs" />
+    <Compile Include="FrmBase_\FrmBaseForm.Designer.cs">
       <DependentUpon>FrmBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPremission\BLL\FrmEditCBLL.cs" />
@@ -145,10 +147,10 @@
     <Compile Include="Frm\FrmDialog.Designer.cs">
       <DependentUpon>FrmDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="C\GradientProgressBar.cs">
+    <Compile Include="C\ProgressBar\GradientProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="C\GradientProgressBar.Designer.cs">
+    <Compile Include="C\ProgressBar\GradientProgressBar.Designer.cs">
       <DependentUpon>GradientProgressBar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPremission\FrmUserEdit.cs">
@@ -157,10 +159,10 @@
     <Compile Include="FrmPremission\FrmUserEdit.Designer.cs">
       <DependentUpon>FrmUserEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="C\LoadingControl.cs">
+    <Compile Include="C\Loading\LoadingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="C\LoadingControl.Designer.cs">
+    <Compile Include="C\Loading\LoadingControl.Designer.cs">
       <DependentUpon>LoadingControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm\FrmInput.cs" />
@@ -201,22 +203,24 @@
     <Compile Include="Util\WindowUtil.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="C\Btn\Apple3Btn.resx">
+    <EmbeddedResource Include="C\CBtn_\Apple3Btn.resx">
       <DependentUpon>Apple3Btn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C\Btn\FrmBtnImg.resx" />
-    <EmbeddedResource Include="C\Btn\FrmLinerGidentBtn.resx">
+    <EmbeddedResource Include="C\CBtn_\FrmBtnImg.resx" />
+    <EmbeddedResource Include="C\CBtn_\FrmLinerGidentBtn.resx">
       <DependentUpon>FrmLinerGidentBtn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C\LastResultControl.resx">
+    <EmbeddedResource Include="C\CCheckBox_\UCCheckBoxBtn.resx" />
+    <EmbeddedResource Include="C\Special\LastResultControl.resx">
       <DependentUpon>LastResultControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C\TempForm.resx" />
     <EmbeddedResource Include="C\TempShow\TempListForm.resx">
       <DependentUpon>TempListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C\CheckBox\UCCheckBoxBtn.resx" />
-    <EmbeddedResource Include="FrmBase\FrmBaseForm.resx">
+    <EmbeddedResource Include="C\CCheckBox_\CCheckBox.resx" />
+    <EmbeddedResource Include="FrmBase_\FrmBase.resx" />
+    <EmbeddedResource Include="FrmBase_\FrmBaseForm.resx">
       <DependentUpon>FrmBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPremission\C\RoleGroupEditControl.resx">
@@ -234,13 +238,13 @@
     <EmbeddedResource Include="Frm\FrmDialog.resx">
       <DependentUpon>FrmDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C\GradientProgressBar.resx">
+    <EmbeddedResource Include="C\ProgressBar\GradientProgressBar.resx">
       <DependentUpon>GradientProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPremission\FrmUserEdit.resx">
       <DependentUpon>FrmUserEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C\LoadingControl.resx">
+    <EmbeddedResource Include="C\Loading\LoadingControl.resx">
       <DependentUpon>LoadingControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm\FrmInput.resx" />
@@ -290,6 +294,9 @@
       <Version>4.5.0</Version>
     </PackageReference>
     <PackageReference Include="UPPERIOC" Version="2.0.4.33" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="C\CMenu_\" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
 	  <Exec Command="start /B nuget push &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;  -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot;&#xD;&#xA;&#xD;&#xA;" />

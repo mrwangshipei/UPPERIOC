@@ -10,12 +10,13 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrmControl.FrmBase_;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FrmControl.Frm
 {
-	public partial class MyTips : Form
-	{
+	public partial class MyTips : FrmBase
+    {
 		public MyTips()
 		{
 			InitializeComponent();
@@ -23,7 +24,7 @@ namespace FrmControl.Frm
             FormClosed += MyTips_FormClosed;
 
         }
-		public float radius { get; set; } = 15;
+		public float radius { get; set; } = 10;
         public int _ImageIndex;
         public int ImageIndex { get=>_ImageIndex; set {
                 _ImageIndex = value;
@@ -146,28 +147,41 @@ namespace FrmControl.Frm
                 }
 
             MyTips tips = new MyTips();
-		
-			switch (Type)
-			{
-				case Tipstype.Warn:
-					tips.BackColor = Color.DimGray;
-					break;
-				case Tipstype.Success:
-					tips.BackColor = Color.LightGreen;
 
-					break;
-				case Tipstype.Tip:
-					tips.BackColor = Color.LightGray;
+            switch (Type)
+            {
+                case Tipstype.Warn:
+                    // 黄色系，但偏金黄，显得更大气
+                    tips.BackColor = ColorTranslator.FromHtml("#D68910"); // 类似金色
+                    tips.ForeColor = Color.White;
+                    break;
 
-					break;
-				case Tipstype.Error:
-					tips.BackColor = Color.IndianRed;
+                case Tipstype.Success:
+                    // 稳重大气的绿色
+                    tips.BackColor = ColorTranslator.FromHtml("#27AE60"); // 深绿
+                    tips.ForeColor = Color.White;
+                    break;
 
-					break;
-				default:
-					break;
-			}
-				tips.ImageIndex = (int)Type;
+                case Tipstype.Tip:
+                    // 清爽的蓝色系
+                    tips.BackColor = ColorTranslator.FromHtml("#2980B9"); // 深蓝
+                    tips.ForeColor = Color.White;
+                    break;
+
+                case Tipstype.Error:
+                    // 激情且沉稳的红色系
+                    tips.BackColor = ColorTranslator.FromHtml("#C0392B"); // 暗红
+                    tips.ForeColor = Color.White;
+                    break;
+
+                default:
+                    // 默认使用中性色
+                    tips.BackColor = ColorTranslator.FromHtml("#7F8C8D"); // 灰色
+                    tips.ForeColor = Color.White;
+                    break;
+            }
+
+            tips.ImageIndex = (int)Type;
 			    tips.label1.Text = msg;
 				tips.TopMost = true;
                 lock (useing_Tips)

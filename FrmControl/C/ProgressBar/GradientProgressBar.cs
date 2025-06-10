@@ -2,9 +2,10 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using FrmControl.C.Base;
 namespace UpperComAutoTest.MyControls
 {
-	public partial class GradientProgressBar : Control
+	public partial class GradientProgressBar : CBaseControl
 	{
 		private int minimum;
 		private int maximum;

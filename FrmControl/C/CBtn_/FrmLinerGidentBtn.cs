@@ -20,8 +20,9 @@ namespace FrmControl.C.Btn
     using System.Threading;
     using System.Threading.Tasks;
     using System.Windows.Input;
+    using FrmControl.C.Base;
     using FrmControl.C.Btn.UPPERIOC2.UPPER.Util;
-    using FrmControl.FrmBase;
+    using FrmControl.FrmBase_;
 
     namespace UPPERIOC2.UPPER.Util
     {

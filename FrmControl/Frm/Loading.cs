@@ -1,6 +1,7 @@
 ﻿using COMIEEE;
-using FrmBase;
+using FrmBase_;
 using FrmControl.Frm;
+using FrmControl.FrmBase_;
 using FrmControl.Properties;
 using System;
 using System.Collections.Generic;
@@ -20,8 +21,8 @@ using System.Windows.Forms;
 namespace UpperComAutoTest.MyControls.Frm
 {
 	
-	public partial class Loading : Form
-	{
+	public partial class Loading : FrmBase
+    {
 		
 		public void SetMessage(string msg,int value) {
 

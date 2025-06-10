@@ -1,5 +1,5 @@
 ﻿using COMIEEE;
-using FrmBase;
+using FrmBase_;
 using FrmControl.Frm;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,6 @@
 ﻿using COMIEEE;
-using FrmBase;
+using FrmBase_;
+using FrmControl;
 using FrmControl.Frm;
 using FrmControl.Properties;
 using System;
@@ -12,6 +13,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Resources;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,6 +24,8 @@ namespace UpperComAutoTest.MyControls.Frm
   
     public partial class TextLoading : Form
 	{
+        Action<TextLoading> act;
+
         public KeyValuePair<int, string> CurrentMsg
         {
             set
@@ -29,7 +33,22 @@ namespace UpperComAutoTest.MyControls.Frm
 				SetMessage(value.Key ,value.Value);
 			}
 		}
-		public void SetMessage(int value, string msg) {
+        private int radius = 10;
+
+        public int Radius { get => radius; set
+			{
+
+				radius = value;
+                ResetRegion();
+			}
+		}
+
+        private void ResetRegion()
+        {
+            this.Region = new Region(this.ClientRectangle.CreateRoundedRectanglePath(Radius));
+        }
+
+        public void SetMessage(int value, string msg) {
 
 			SetMessage(msg, value);
 
@@ -59,6 +78,7 @@ namespace UpperComAutoTest.MyControls.Frm
 
             this.act = act;
 			InitializeComponent();
+			ResetRegion();
             textProgressBar1.Font = FontLoader.LoadFont(textProgressBar1.Font.Size, textProgressBar1.Font.Style);
 			MemoryStream stream = new MemoryStream(Resources.logo);
 			
@@ -75,7 +95,6 @@ namespace UpperComAutoTest.MyControls.Frm
             path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90); // 左下角
             path.CloseFigure(); // 关闭路径，完成矩形形状
 
-            this.Region = new Region();
 
         }
         public void DoInvoke(Action act)
@@ -116,7 +135,7 @@ namespace UpperComAutoTest.MyControls.Frm
 				}
 			});
 		}
-		Action<TextLoading> act;
+		
         public static void ShowFormDialog(Form BaseForm, Action<TextLoading> act)
         {
             if (BaseForm.InvokeRequired)

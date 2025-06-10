@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FrmControl.C;
-using FrmControl.FrmBase;
+using FrmControl.FrmBase_;
 using UPPERIOC.UPPER.IOC.Annaiation;
 
 namespace FrmControl.Animation

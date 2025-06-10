@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrmControl;
+using FrmControl.FrmBase_;
 
 namespace COMIEEE
 {
-	public partial class FrmInput : Form
-	{
+    public partial class FrmInput : FrmBase
+    {
 		public static string ShowDialog(Form parent,string title, string defaultv ="") {
 			FrmInput fm = new FrmInput();
 			fm.label4.Text = title;
@@ -43,7 +45,9 @@ namespace COMIEEE
 		public FrmInput()
 		{
 			InitializeComponent();
-		}
+            
+			
+        }
 
 		private void button1_Click(object sender, EventArgs e)
 		{

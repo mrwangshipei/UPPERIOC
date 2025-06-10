@@ -23,10 +23,9 @@ namespace FrmControl.C.Btn
 		}
         public Apple3Btn()
 		{
-			InitializeComponent();
-			
+            InitializeComponent();
 			this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint|ControlStyles.SupportsTransparentBackColor, true);
-
+		
 		}
 
 		private void frmBtn1_Click(object sender, EventArgs e)

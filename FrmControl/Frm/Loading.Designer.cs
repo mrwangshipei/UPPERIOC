@@ -78,7 +78,7 @@ namespace UpperComAutoTest.MyControls.Frm
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Font = new System.Drawing.Font("宋体", 12F);
             this.label1.ForeColor = System.Drawing.Color.Black;
@@ -119,6 +119,7 @@ namespace UpperComAutoTest.MyControls.Frm
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Loading";
+            this.Radius = 10;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

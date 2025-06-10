@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrmControl.FrmBase_;
 
 namespace COMIEEE
 {
-	public partial class FrmPwd : Form
-	{
+	public partial class FrmPwd : FrmBase
+    {
 		public static string[] Show(string title, string v = null,string p = null) {
 			FrmPwd fm = new FrmPwd(v, p);
 			fm.label4.Text = title;

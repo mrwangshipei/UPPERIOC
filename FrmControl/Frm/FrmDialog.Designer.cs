@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FrmBase
+namespace FrmBase_
 {
 	partial class FrmDialog
 	{
@@ -61,13 +61,13 @@ namespace FrmBase
             // 
             this.apple3Btn1.BtnPad = new System.Windows.Forms.Padding(10);
             this.apple3Btn1.Padding = new System.Windows.Forms.Padding(0);
-            this.apple3Btn1.Size = new System.Drawing.Size(156, 52);
+            this.apple3Btn1.Size = new System.Drawing.Size(156, 50);
             // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(156, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Size = new System.Drawing.Size(336, 52);
+            this.label1.Size = new System.Drawing.Size(334, 50);
             this.label1.Text = "FrmDialog";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -78,7 +78,7 @@ namespace FrmBase
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(492, 252);
+            this.panel11.Size = new System.Drawing.Size(488, 248);
             this.panel11.TabIndex = 0;
             // 
             // panel3
@@ -89,7 +89,7 @@ namespace FrmBase
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(30);
-            this.panel3.Size = new System.Drawing.Size(492, 159);
+            this.panel3.Size = new System.Drawing.Size(488, 155);
             this.panel3.TabIndex = 2;
             // 
             // label11
@@ -98,7 +98,7 @@ namespace FrmBase
             this.label11.Font = new System.Drawing.Font("微软雅黑", 13F);
             this.label11.Location = new System.Drawing.Point(30, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(430, 97);
+            this.label11.Size = new System.Drawing.Size(426, 93);
             this.label11.TabIndex = 0;
             this.label11.Text = "label1";
             // 
@@ -106,9 +106,9 @@ namespace FrmBase
             // 
             this.panel21.Controls.Add(this.tableLayoutPanel1);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel21.Location = new System.Drawing.Point(0, 159);
+            this.panel21.Location = new System.Drawing.Point(0, 155);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(492, 93);
+            this.panel21.Size = new System.Drawing.Size(488, 93);
             this.panel21.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -126,19 +126,19 @@ namespace FrmBase
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 93);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(488, 93);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.Color.PapayaWhip;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("宋体", 14F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(246, 0);
+            this.label3.Location = new System.Drawing.Point(244, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 93);
+            this.label3.Size = new System.Drawing.Size(244, 93);
             this.label3.TabIndex = 1;
             this.label3.Text = "取消";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,13 +146,13 @@ namespace FrmBase
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.LightGray;
+            this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.ForeColor = System.Drawing.Color.Green;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(246, 93);
+            this.label2.Size = new System.Drawing.Size(244, 93);
             this.label2.TabIndex = 0;
             this.label2.Text = "确定";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -164,6 +164,7 @@ namespace FrmBase
             this.ClientSize = new System.Drawing.Size(492, 304);
             this.Font = new System.Drawing.Font("宋体", 12F);
             this.Name = "FrmDialog";
+            this.Radius = 10;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmDialog";
             this.panel1.ResumeLayout(false);

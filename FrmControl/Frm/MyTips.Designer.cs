@@ -91,8 +91,8 @@ namespace FrmControl.Frm
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "提示.png");
             this.imageList1.Images.SetKeyName(1, "警告.png");
-            this.imageList1.Images.SetKeyName(2, "失败.png");
-            this.imageList1.Images.SetKeyName(3, "成功.png");
+            this.imageList1.Images.SetKeyName(2, "错误.png");
+            this.imageList1.Images.SetKeyName(3, "成功 (1).png");
             // 
             // MyTips
             // 

@@ -2,18 +2,19 @@
 using System.Drawing.Drawing2D;
 using System.Xml;
 using Timer = System.Windows.Forms.Timer;
-    using System;
-    using System.ComponentModel;
-    using System.Drawing;
-    using System.Drawing.Drawing2D;
-    using System.Drawing.Text;
-    using System.Windows.Forms;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
+using System.Windows.Forms;
+using FrmControl.C.Base;
 
 
-namespace UpperComAutoTest.MyControls
+namespace FrmControl.C.ProgressBar
 {
 
-    public  class TextProgressBar : Control
+    public  class TextProgressBar : CBaseControl
     {
         private float progress = 0.5f;
         private string displayText = "PROCESS";
@@ -29,9 +30,9 @@ namespace UpperComAutoTest.MyControls
         public Timer tm = new Timer();
         public TextProgressBar()
         {
-            this.DoubleBuffered = true;
-            this.Font = new Font("Arial", 48, FontStyle.Bold);
-            this.Size = new Size(300, 100);
+            DoubleBuffered = true;
+            Font = new Font("Arial", 48, FontStyle.Bold);
+            Size = new Size(300, 100);
             tm.Tick += (e, arg) => {
                 waveOffset1 += Animationspeed * 2;
                 waveOffset += Animationspeed;
@@ -42,7 +43,7 @@ namespace UpperComAutoTest.MyControls
                 {
                     waveOffset1 = 0;
                 }
-                this.Invalidate();
+                Invalidate();
             };
             tm.Interval = 45;
         }
@@ -139,12 +140,12 @@ namespace UpperComAutoTest.MyControls
             g.Clear(backgroundColor);
 
             // 测量文字位置
-            SizeF textSize = g.MeasureString(displayText, this.Font);
+            SizeF textSize = g.MeasureString(displayText, Font);
             PointF textPos = new PointF((Width - textSize.Width) / 2, (Height - textSize.Height) / 2);
 
             // 创建文字路径
             GraphicsPath path = new GraphicsPath();
-            path.AddString(displayText, this.Font.FontFamily, (int)this.Font.Style, g.DpiY * this.Font.Size / 72, textPos, StringFormat.GenericDefault);
+            path.AddString(displayText, Font.FontFamily, (int)Font.Style, g.DpiY * Font.Size / 72, textPos, StringFormat.GenericDefault);
 
             RectangleF bounds = path.GetBounds();
             float progressHeight = bounds.Height * progress;
@@ -219,11 +220,11 @@ namespace UpperComAutoTest.MyControls
             }
             // 绘制右下角的百分比文字
             string percentText = $"{(int)(progress * 100)}%";
-            using (Font percentFont = new Font(this.Font.FontFamily, 12f, FontStyle.Regular)) // 调整为实际约12像素高度
+            using (Font percentFont = new Font(Font.FontFamily, 12f, FontStyle.Regular)) // 调整为实际约12像素高度
             using (Brush percentBrush = new SolidBrush(textColor))
             {
                 SizeF percentSize = g.MeasureString(percentText, percentFont);
-                PointF percentPos = new PointF(this.Width - percentSize.Width - 6, this.Height - percentSize.Height - 4); // 右下角偏移
+                PointF percentPos = new PointF(Width - percentSize.Width - 6, Height - percentSize.Height - 4); // 右下角偏移
                 g.DrawString(percentText, percentFont, percentBrush, percentPos);
             }
 

@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrmControl.FrmBase_;
 
 namespace COMIEEE
 {
-	public partial class FrmSelect : Form
-	{
+	public partial class FrmSelect : FrmBase
+    {
 		public static string ShowDialog(Form parent,IEnumerable<string> msg,string title) {
 			FrmSelect fm = new FrmSelect();
 			fm.label4.Text = title;

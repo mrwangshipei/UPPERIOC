@@ -1,9 +1,9 @@
 ﻿using System;
 
 using System.Windows.Forms;
-using FrmControl.FrmBase;
+using FrmControl.FrmBase_;
 
-namespace FrmBase
+namespace FrmBase_
 {
 	public partial class FrmDialog : FrmBaseForm
 	{

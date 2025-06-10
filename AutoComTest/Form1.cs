@@ -1,9 +1,11 @@
 
-using FrmBase;
+using FrmBase_;
 using FrmControl.C;
+using FrmControl.Frm;
 using System;
 using System.Configuration;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using UpperComAutoTest.ModelView;
 using UpperComAutoTest.MyControls;
@@ -116,11 +118,28 @@ namespace UpperComAutoTest
 
 	
 		private void toolStripButton1_Click_2(object sender, EventArgs e)
-		{
-			FrmDialog.ShowDialog(this,"dasda0","asda");
-			//MyTips.ShowTips(this, Tipstype.Tip, "adsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjk");
-			//Thread.Sleep(15000);
-		}
+        {// 普通提示
+			//Task.Factory.StartNew(() => { 
+			//	MyTips.ShowTipTip("这是一个普通提示（Tip）", 2000);
+			//	Thread.Sleep(2000);
+
+			//	// 成功提示
+			//	MyTips.ShowTipSuccess("操作成功！", 2000);
+			//	Thread.Sleep(2000);
+
+			//	// 警告提示
+			//	MyTips.ShowTipWarn("请注意，操作可能存在风险", 2000);
+			//	Thread.Sleep(2000);
+
+			//	// 错误提示
+			//	MyTips.ShowTipError("发生错误，请重试", 2000);
+			//});
+			TempForm tp = new TempForm();
+			tp.ShowDialog();
+            //FrmDialog.ShowDialog(this,"dasda0","asda");
+            //MyTips.ShowTips(this, Tipstype.Tip, "adsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjkadsfkladshjfnkladshfjkadshfjk");
+            //Thread.Sleep(15000);
+        }
 
 		private void toolStripButton2_Click_1(object sender, EventArgs e)
 		{
