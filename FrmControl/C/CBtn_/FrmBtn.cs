@@ -20,15 +20,31 @@ namespace FrmControl.C.Btn
 			{ 
 				defaultBackColor1 = value;
 				this.BackColor = value;
-			}}         // 鼠标悬停时的背景颜色
-        public Color hoverBackColor { get; set; } = Color.LightBlue;
-		// 鼠标按下时的背景颜色
-		public Color pressedBackColor { get; set; } = Color.LightGreen;
+                this.Invalidate();
 
-		public float smallimg { get; set; } = 1;
-		public float BorderWidth { get; set; } = 0;
-		public Color BorderColor{ get; set; } =Color.Black;
-        public string FrmText { get; set; }
+            }
+        }         // 鼠标悬停时的背景颜色
+		public Color hoverBackColor { get; set; } = Color.LightGray;
+		// 鼠标按下时的背景颜色
+		public Color pressedBackColor { get; set; } = Color.Gray;
+
+        public float smallimg { get => smallimg1; set { smallimg1 = value; 
+			this.Invalidate();
+
+            }
+        }
+        public float BorderWidth { get => borderWidth; set {borderWidth = value; 
+			this.Invalidate();
+            }
+        }
+        public Color BorderColor { get => borderColor; set{ borderColor = value;
+			this.Invalidate();
+
+            }
+        }
+        public string FrmText { get => frmText; set{  frmText = value; 
+			this.Invalidate();
+			} }
         public Image BackImg { get; set; }
 		public float ImgPix { get; set; } = 0f;
 		private float lastell;
@@ -46,6 +62,10 @@ namespace FrmControl.C.Btn
         }
         private Rectangle Lastr;
         private Color defaultBackColor1 = Color.White;
+        private string frmText;
+        private float borderWidth = 1;
+        private Color borderColor = Color.Black;
+        private float smallimg1 = 1;
 
         protected override void OnPaint(PaintEventArgs e)
 		{
@@ -56,8 +76,8 @@ namespace FrmControl.C.Btn
 					Region.Dispose();
 				}
 				Lastr = this.ClientRectangle;
-                this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
 				lastell = Radius;
+                this.Region = new Region(GraphicsExtensions.GetRoundedRectangle(this.ClientRectangle, Radius));
 			}
            // base.OnPaint(e);
 
@@ -94,6 +114,11 @@ namespace FrmControl.C.Btn
 
 			}
 		}
+        protected override void OnTextChanged(EventArgs e)
+        {
+            base.OnTextChanged(e);
+			FrmText = Text;
+        }
         protected override void OnPaintBackground(PaintEventArgs pevent)
         {
             if (Radius != lastell || !Rectangle.Equals(this.ClientRectangle, Lastr))

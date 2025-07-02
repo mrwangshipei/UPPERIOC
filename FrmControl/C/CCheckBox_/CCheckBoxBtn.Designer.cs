@@ -84,7 +84,7 @@ namespace FrmControl.C
             // UCBtnCheckBox
             // 
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.lblTips);
+          ///  this.Controls.Add(this.lblTips);
             this.Controls.Add(this.lbl);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Margin = new System.Windows.Forms.Padding(0);

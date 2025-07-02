@@ -75,7 +75,6 @@ namespace UpperComAutoTest.MyControls.Frm
             this.textProgressBar1.progressColor2 = System.Drawing.Color.Silver;
             this.textProgressBar1.ProgressColor2 = System.Drawing.Color.Silver;
             this.textProgressBar1.Radius = 0;
-            this.textProgressBar1.Retlast = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.textProgressBar1.Size = new System.Drawing.Size(404, 189);
             this.textProgressBar1.TabIndex = 2;
             this.textProgressBar1.TextColor = System.Drawing.Color.White;

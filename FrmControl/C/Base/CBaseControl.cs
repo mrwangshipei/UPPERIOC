@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -12,7 +13,21 @@ namespace FrmControl.C.Base
     {
         private int radius = 0;
         private Rectangle retlast;
+        private Padding radiusAngle;
 
+        [Browsable(true)]
+        [Category("外观")]
+        [Description("设置圆角半径（分别代表左上、右上、右下、左下），0 表示无圆角")]
+        [CornerRadius("每个值对应一个角的圆角大小，单位为像素")]
+        public Padding RadiusAngle { get => radiusAngle; set{ radiusAngle = value; 
+                ResetRegion();
+
+            }
+        }
+        [Browsable(true)]
+        [Category("外观")]
+        [Description("设置总的圆角")]
+        [CornerRadius("圆角大小，单位为像素")]
         public int Radius
         {
             get => radius; set
@@ -22,8 +37,10 @@ namespace FrmControl.C.Base
                 ResetRegion();
             }
         }
-
-        public Rectangle Retlast { get => retlast; set => retlast = value; }
+        public CBaseControl() {
+            SetStyle( ControlStyles.SupportsTransparentBackColor,true);
+        }
+        private Rectangle Retlast { get => retlast; set => retlast = value; }
 
         private void ResetRegion()
         {
@@ -38,7 +55,14 @@ namespace FrmControl.C.Base
                 }
                 this.Region?.Dispose();
                 Retlast = this.Bounds;
-                this.Region = new Region(this.ClientRectangle.CreateRoundedRectanglePath(Radius));
+                if (RadiusAngle == new Padding()) { 
+                    this.Region = new Region(this.ClientRectangle.CreateRoundedRectanglePath(Radius));
+                }
+                else
+                {
+                    this.Region = new Region(this.ClientRectangle.CreateRoundedRectanglePath( RadiusAngle));
+
+                }
             }
         }
         protected override void OnPaint(PaintEventArgs e)

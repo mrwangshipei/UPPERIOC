@@ -17,12 +17,13 @@
 	  <ItemGroup>
     <PackageReference Include="IOCG" Version="1.0.0.7" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Management" Version="4.6.0" />
   </ItemGroup>
 
 
 <PropertyGroup>
-  <Version>2.0.4.33</Version>
+  <Version>2.0.4.35</Version>
   <PackageId>UPPERIOC</PackageId>
   <Authors>Wwwwww</Authors>
   <Description>一个自带插件的IOC容器</Description>

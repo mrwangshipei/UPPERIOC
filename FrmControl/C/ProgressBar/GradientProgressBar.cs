@@ -14,7 +14,14 @@ namespace UpperComAutoTest.MyControls
 		private Color endColor = Color.FromArgb(24, 144, 255);
 		private System.Windows.Forms.Timer animationTimer;
 		private float animationValue;
+        private bool useAnimation = true;
+
+        public bool UseAnimation { get => useAnimation; set => useAnimation = value; }
         public Color StartColor { get=> startColor; set=> startColor = value; }
+        public Color ValueColor { get=> startColor; set { startColor = value;
+				endColor = value;
+				Invalidate();
+			}}
         public Color EndColor { get=> endColor; set=> endColor = value; }
         public GradientProgressBar()
 		{
@@ -71,17 +78,28 @@ namespace UpperComAutoTest.MyControls
 
 		private void OnAnimationTick(object sender, EventArgs e)
 		{
-			// 模拟动画效果
-			if (animationValue < value)
+			if (UseAnimation)
 			{
-				animationValue += 1f;
-				Invalidate();
+				// 模拟动画效果
+				if (animationValue < value)
+				{
+					animationValue += 1f;
+					Invalidate();
+				}
+				else if (animationValue > value)
+				{
+					animationValue -= 1f;
+					Invalidate();
+				}
 			}
-			else if (animationValue > value)
+			else
 			{
-				animationValue -= 1f;
-				Invalidate();
-			}
+				if (animationValue != value)
+				{
+					animationValue = value;
+					Invalidate();
+				}
+            }
 		}
 
 		protected override void OnPaint(PaintEventArgs e)
@@ -110,7 +128,7 @@ namespace UpperComAutoTest.MyControls
 			}
 
 			// 绘制边框
-			using (Pen pen = new Pen(endColor, 2)) // 边框颜色和宽度
+			using (Pen pen = new Pen(Color.Black, 2)) // 边框颜色和宽度
 			{
 				e.Graphics.DrawRectangle(pen, ClientRectangle.X, ClientRectangle.Y, ClientRectangle.Width - 1, ClientRectangle.Height - 1);
 			}

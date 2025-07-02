@@ -395,6 +395,11 @@ namespace FrmControl.C
             base.OnSizeChanged(e);
             Radius = (int)(Height * 0.3);
         }
+        protected override void OnLocationChanged(EventArgs e)
+        {
+            base.OnLocationChanged(e);
+            Radius = (int)(Height * 0.3);
+        }
         private void ChangeCheck(object sender, EventArgs e)
 		{
             this.Checked = !this.Checked;

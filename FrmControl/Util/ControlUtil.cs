@@ -1,17 +1,4 @@
-﻿// ***********************************************************************
-// Assembly         : HZH_Controls
-// Created          : 08-08-2019
-//
-// ***********************************************************************
-// <copyright file="ControlHelper.cs">
-//     Copyright by All, QQ group:568015492 QQ:623128629 Email:623128629@qq.com
-// </copyright>
-//
-// Blog: https://www.cnblogs.com/bfyx
-// GitHub：https://github.com/kwwwvagaa/NetWinformControl
-// gitee：https://gitee.com/kwwwvagaa/net_winform_custom_control.git
-//
-// If you use this code, please keep this note.
+﻿
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
@@ -34,7 +21,7 @@ namespace FrmControl
     /// <summary>
     /// Class ControlHelper.
     /// </summary>
-    public static class ControlHelper
+    public static class ControlUtil
     {
         static object obj = new object();
         public static void LogAppend(this System.Windows.Forms.RichTextBox richTextBox1,Color color, string text) {
@@ -52,6 +39,41 @@ namespace FrmControl
 
             }
 		}
+        // 扩展方法：将矩形裁剪成斜角区域
+        public static GraphicsPath ToSlantedRegion(this Rectangle rect,int slantLength)
+        {
+            // 创建一个GraphicsPath
+            GraphicsPath path = new GraphicsPath();
+
+            // 计算斜角的裁剪线，修改这里的值来控制斜角的大小
+
+            if (slantLength > 0)
+            {
+                // 定义矩形的四个角，斜角裁剪的逻辑
+                path.AddLine(rect.Left + slantLength, rect.Top, rect.Right, rect.Top);
+            }
+            else
+            {
+                path.AddLine(rect.Left , rect.Top, rect.Right, rect.Top);
+            }
+            path.AddLine(rect.Right, rect.Top, rect.Right, rect.Bottom );
+            if (slantLength > 0)
+            {
+                // 定义矩形的四个角，斜角裁剪的逻辑
+                path.AddLine(rect.Right, rect.Bottom, rect.Left , rect.Bottom);
+
+            }
+            else
+            {
+                path.AddLine(rect.Right, rect.Bottom, rect.Left + slantLength, rect.Bottom);
+
+            }
+         
+            path.CloseFigure();
+
+            // 将路径转化为Region，并返回
+            return (path);
+        }
         #region 设置控件Enabled，切不改变控件颜色
         /// <summary>
         /// 功能描述:设置控件Enabled，切不改变控件颜色
@@ -67,11 +89,11 @@ namespace FrmControl
             {
                 if (enabled)
                 {
-                    ControlHelper.SetWindowLong(c.Handle, -16, -134217729 & ControlHelper.GetWindowLong(c.Handle, -16));
+                    ControlUtil.SetWindowLong(c.Handle, -16, -134217729 & ControlUtil.GetWindowLong(c.Handle, -16));
                 }
                 else
                 {
-                    ControlHelper.SetWindowLong(c.Handle, -16, 134217728 + ControlHelper.GetWindowLong(c.Handle, -16));
+                    ControlUtil.SetWindowLong(c.Handle, -16, 134217728 + ControlUtil.GetWindowLong(c.Handle, -16));
                 }
             }
         }
@@ -473,6 +495,38 @@ namespace FrmControl
         //    roundedRect.CloseFigure();
         //    return roundedRect;
         //}
+        public static GraphicsPath CreateRoundedRectanglePath(this Rectangle rect, Padding radiusAngle)
+        {
+            // 确保传入的尺寸有效
+            if (rect.Width <= 0 || rect.Height <= 0)
+            {
+                throw new ArgumentException("无效的矩形尺寸");
+            }
+
+            // 创建一个GraphicsPath实例
+            GraphicsPath path = new GraphicsPath();
+
+            // 计算四个角的圆角
+            int radiusTL = radiusAngle.Left > 0 ? radiusAngle.Left : 0; // 左上角圆角
+            int radiusTR = radiusAngle.Top > 0 ? radiusAngle.Top : 0; // 右上角圆角
+            int radiusBR = radiusAngle.Right > 0 ? radiusAngle.Right : 0; // 右下角圆角
+            int radiusBL = radiusAngle.Bottom > 0 ? radiusAngle.Bottom : 0; // 左下角圆角
+
+            // 使用GraphicsPath绘制圆角四边形
+            path.AddArc(rect.Left, rect.Top, radiusTL * 2, radiusTL * 2, 180, 90); // 左上角
+            path.AddLine(rect.Left + radiusTL, rect.Top, rect.Right - radiusTR, rect.Top); // 上边
+            path.AddArc(rect.Right - radiusTR * 2, rect.Top, radiusTR * 2, radiusTR * 2, 270, 90); // 右上角
+            path.AddLine(rect.Right, rect.Top + radiusTR, rect.Right, rect.Bottom - radiusBR); // 右边
+            path.AddArc(rect.Right - radiusBR * 2, rect.Bottom - radiusBR * 2, radiusBR * 2, radiusBR * 2, 0, 90); // 右下角
+            path.AddLine(rect.Right - radiusBR, rect.Bottom, rect.Left + radiusBL, rect.Bottom); // 下边
+            path.AddArc(rect.Left, rect.Bottom - radiusBL * 2, radiusBL * 2, radiusBL * 2, 90, 90); // 左下角
+            path.AddLine(rect.Left, rect.Bottom - radiusBL, rect.Left, rect.Top + radiusTL); // 左边
+
+            // 关闭路径，形成闭合的四边形
+            path.CloseFigure();
+
+            return path;
+        }
         public static GraphicsPath CreateRoundedRectanglePath(this Rectangle rect, int cornerRadius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -527,7 +581,7 @@ namespace FrmControl
         /// <value>The colors.</value>
         public static Color[] Colors { get; private set; }
 
-        static ControlHelper()
+        static ControlUtil()
         {
             List<Color> list = new List<Color>();
             list.Add(Color.FromArgb(55, 162, 218));
@@ -971,6 +1025,18 @@ namespace FrmControl
             }
 
             return returnFlag;
+        }
+    
+        public static Point ClientPointToControlPoint(this Control con,Point clickAt)
+        {
+            var form = con.FindForm();
+            if (form == null)
+            {
+                return new Point();
+            }
+            var conlocatx = form.PointToScreen(con.Location);
+            var conlocat = con.PointToClient(conlocatx);
+            return new Point(clickAt.X - conlocat.X,clickAt.Y - conlocat.Y);
         }
 
         #region 滚动条    English:scroll bar

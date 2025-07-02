@@ -40,6 +40,7 @@ namespace UpperComAutoTest.Page
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.转16进制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查看字符ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cComboBox1 = new FrmControl.C.ComboBox_.CComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -155,6 +156,23 @@ namespace UpperComAutoTest.Page
             this.查看字符ToolStripMenuItem.Name = "查看字符ToolStripMenuItem";
             this.查看字符ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.查看字符ToolStripMenuItem.Text = "查看字符";
+            // 
+            // cComboBox1
+            // 
+            this.cComboBox1.BackColor = System.Drawing.Color.White;
+            this.cComboBox1.DataSource = null;
+            this.cComboBox1.ItemSize = 60;
+            this.cComboBox1.Location = new System.Drawing.Point(-5, 138);
+            this.cComboBox1.MaxHeight = 180;
+            this.cComboBox1.Name = "cComboBox1";
+            this.cComboBox1.OutLength = 15;
+            this.cComboBox1.Radius = 0;
+            this.cComboBox1.RadiusAngle = new System.Windows.Forms.Padding(0);
+            this.cComboBox1.SelectBtnBackColor = System.Drawing.Color.Silver;
+            this.cComboBox1.SelectedIndex = 0;
+            this.cComboBox1.Size = new System.Drawing.Size(267, 49);
+            this.cComboBox1.TabIndex = 1;
+            this.cComboBox1.Text = "cComboBox1";
             // 
             // panel2
             // 
@@ -355,6 +373,7 @@ namespace UpperComAutoTest.Page
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cComboBox1);
             this.groupBox1.Controls.Add(this.comboBox3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.checkBox8);
@@ -552,5 +571,6 @@ namespace UpperComAutoTest.Page
 		private FlowLayoutPanel flowLayoutPanel1;
 		private Panel panel5;
 		private Button button5;
+        private FrmControl.C.ComboBox_.CComboBox cComboBox1;
     }
 }

@@ -30,30 +30,29 @@ namespace FrmControl.C.Btn
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.OutPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.IconPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.OutPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 88);
-            this.panel1.TabIndex = 0;
+            this.OutPanel.Controls.Add(this.tableLayoutPanel1);
+            this.OutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OutPanel.Location = new System.Drawing.Point(0, 0);
+            this.OutPanel.Name = "panel1";
+            this.OutPanel.Size = new System.Drawing.Size(215, 88);
+            this.OutPanel.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.IconPanel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -65,11 +64,11 @@ namespace FrmControl.C.Btn
             // 
             // panel2
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(99, 78);
-            this.panel2.TabIndex = 0;
+            this.IconPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IconPanel.Location = new System.Drawing.Point(3, 3);
+            this.IconPanel.Name = "panel2";
+            this.IconPanel.Size = new System.Drawing.Size(99, 78);
+            this.IconPanel.TabIndex = 0;
             // 
             // label1
             // 
@@ -83,10 +82,10 @@ namespace FrmControl.C.Btn
             // 
             // FrmBtnImg
             // 
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.OutPanel);
             this.Name = "FrmBtnImg";
             this.Size = new System.Drawing.Size(215, 88);
-            this.panel1.ResumeLayout(false);
+            this.OutPanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -94,9 +93,9 @@ namespace FrmControl.C.Btn
 
         #endregion
 
-        private Panel panel1;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Panel panel2;
-        private Label label1;
+        public Panel OutPanel;
+        public TableLayoutPanel tableLayoutPanel1;
+        public Panel IconPanel;
+        public Label label1;
     }
 }

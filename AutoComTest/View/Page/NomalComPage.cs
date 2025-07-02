@@ -44,6 +44,9 @@ namespace UpperComAutoTest.Page
 		public NomalComPage(NomalComPageViewModel viewm, UFileModelCenter center)
 		{
 			InitializeComponent();
+			cComboBox1.MaxHeight = 500;
+
+            cComboBox1.DataSource = new BindingList<string>() { "133", "wqeqw", "wqeqw", "wqeqw", "wqeqw", "wqeqw", "wqeqw", "wqeqw", "wqeqw", "wqeqw" };
 			ComViewMOdel = viewm as NomalComPageViewModel;
 			ComViewMOdel.SetRevent(ReceverEvent);
 			comboBox3.DataSource = Enum.GetNames(typeof(Parity));
@@ -354,5 +357,10 @@ namespace UpperComAutoTest.Page
             te.Show();
 			richTextBox_s.Focus();
 		}
+
+        private void cComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

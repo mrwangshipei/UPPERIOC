@@ -38,7 +38,7 @@
   <PropertyGroup>
     <StartupObject />
     <PackageOutputPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages</PackageOutputPath>
-    <Version>1.0.0.79</Version>
+    <Version>1.0.1.6</Version>
 
   </PropertyGroup>
   <ItemGroup>
@@ -47,6 +47,7 @@
   <ItemGroup>
     <None Remove="resc\AlimamaDaoLiTi.ttf" />
     <None Remove="Resources\logo.ico" />
+    <None Remove="Resources\更多.png" />
   </ItemGroup>
   <ItemGroup>
 
@@ -64,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Animation\AnimationBase.cs" />
     <Compile Include="Animation\ClickAnimation.cs" />
+    <Compile Include="CAttribute\CornerRadiusAttribute.cs" />
     <Compile Include="C\Base\CBasePanel.cs" />
     <Compile Include="C\CBtn_\Apple3Btn.cs">
       <SubType>UserControl</SubType>
@@ -82,8 +84,13 @@
     </Compile>
     <Compile Include="C\CBtn_\SliderCtl.cs" />
     <Compile Include="C\Base\CBaseControl.cs" />
-    <Compile Include="C\CCheckBox_\UCCheckBoxBtn.cs" />
-    <Compile Include="C\CCheckBox_\UCCheckBoxBtn.Designer.cs" />
+    <Compile Include="C\CCheckBox_\CCheckBoxBtn.cs" />
+    <Compile Include="C\CCheckBox_\CCheckBoxBtn.Designer.cs" />
+    <Compile Include="C\CMenu_\CTreeMenu.cs" />
+    <Compile Include="C\CMenu_\Node_\CTreeNodeTxt.cs" />
+    <Compile Include="C\CMenu_\Node_\ICTreeNode.cs" />
+    <Compile Include="C\CMenu_\Paint_\IPaint.cs" />
+    <Compile Include="C\ComboBox_\CComboBox.cs" />
     <Compile Include="C\CPanel_\CPanel.cs" />
     <Compile Include="C\Special\LastResultControl.cs">
       <SubType>UserControl</SubType>
@@ -106,6 +113,7 @@
     </Compile>
     <Compile Include="C\CCheckBox_\CCheckBox.cs" />
     <Compile Include="C\CCheckBox_\CCheckBox.Designer.cs" />
+    <Compile Include="C\TextBox_\PlaceHolderTextBox.cs" />
     <Compile Include="Enum\TipType.cs" />
     <Compile Include="Extention\GraphicsExtensions.cs" />
     <Compile Include="FrmBase_\FrmBase.cs" />
@@ -198,7 +206,7 @@
     <Compile Include="FrmPremission\C\UserEditControl.Designer.cs">
       <DependentUpon>UserEditControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Util\ControlHelper.cs" />
+    <Compile Include="Util\ControlUtil.cs" />
     <Compile Include="Util\FontLoader.cs" />
     <Compile Include="Util\WindowUtil.cs" />
   </ItemGroup>
@@ -210,7 +218,7 @@
     <EmbeddedResource Include="C\CBtn_\FrmLinerGidentBtn.resx">
       <DependentUpon>FrmLinerGidentBtn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="C\CCheckBox_\UCCheckBoxBtn.resx" />
+    <EmbeddedResource Include="C\CCheckBox_\CCheckBoxBtn.resx" />
     <EmbeddedResource Include="C\Special\LastResultControl.resx">
       <DependentUpon>LastResultControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +275,9 @@
     <EmbeddedResource Include="Resources\logo.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\更多.png">
+      <CustomToolNamespace>FrmControl</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -289,14 +300,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="IOCG" Version="1.0.0.7" />
-    <PackageReference Include="SimplexNoise" Version="2.0.0" />
     <PackageReference Include="System.ValueTuple">
       <Version>4.5.0</Version>
     </PackageReference>
     <PackageReference Include="UPPERIOC" Version="2.0.4.33" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="C\CMenu_\" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
 	  <Exec Command="start /B nuget push &quot;$(PackageOutputPath)\$(PackageId).$(Version).nupkg&quot;  -Source &quot;http://8.138.99.154:5000/v3/index.json&quot; -ApiKey &quot;wspwasnl001112&quot;&#xD;&#xA;&#xD;&#xA;" />
