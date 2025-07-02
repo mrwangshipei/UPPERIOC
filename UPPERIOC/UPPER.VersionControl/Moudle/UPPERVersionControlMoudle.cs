@@ -32,7 +32,7 @@ namespace UPPERIOC.UPPER.Sendor.Moudle
 
         public override void PreIniter(IContainerProvider containerProvider)
 		{
-			UPPERIOC.UPPERIOCApplication.RigisterVersionModel(new VersionModel());
+			UPPERIOC.UPPERIOCApplication.RegisterVersionModel(new VersionModel());
 		}
 
         public override void InitEnd(IContainerProvider containerProvider)

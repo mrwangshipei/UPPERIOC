@@ -22,7 +22,7 @@ namespace UPPERIOC.UPPER.UFILELOG.Moudle
         public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
 			var con = (IFileLogConfiguation)containerProvider.GetInstance(typeof(IFileLogConfiguation));
-			LogCenter.AddILog(containerProvider.Rigister<FileLog>());
+			LogCenter.AddLogger(containerProvider.Rigister<FileLog>());
             BindExceptionHandler();
 
         }

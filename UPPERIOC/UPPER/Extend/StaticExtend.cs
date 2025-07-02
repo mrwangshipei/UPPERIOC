@@ -3,148 +3,137 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Xml.Linq;
 using UPPERIOC.UPPER.IOC.MyTypeInfo;
 
 namespace UPPERIOC.UPPER.IOC.Extend
 {
-	public static class StaticExtend
-	{
-		public static bool HasBaseClassWithAttribute<TAttribute>(this Type type) where TAttribute : Attribute
-		{
-			while (type != null && type != typeof(object))
-			{
-				if (type.GetCustomAttribute<TAttribute>() != null)
-				{
-					return true;
-				}
-				type = type.BaseType; // 移动到继承链中的下一个基类  
-			}
-			return false;
-        }
-        public static bool? IsSingleBean(this ConcurrentDictionary<IOCTypeInfo, object> kv, string name)
+    public static class StaticExtend
+    {
+        // 判断是否有指定特性存在于基类上
+        public static bool HasBaseClassWithAttribute<TAttribute>(this Type type) where TAttribute : Attribute
         {
-            var fir =kv.FirstOrDefault(x => x.Key.TypeName == name) ;
-            if (fir.Key == null)
+            while (type != null && type != typeof(object))
             {
-                return null;
+                if (type.GetCustomAttribute<TAttribute>() != null)
+                    return true;
+
+                type = type.BaseType;
             }
-            return fir.Key.SingleBean;
-            
+            return false;
         }
-        public static bool? IsSingleBean(this ConcurrentDictionary<IOCTypeInfo, object> kv, Type name)
+
+        // 判断是否是单例（根据名称）
+        public static bool? IsSingleBean(this ConcurrentDictionary<IOCTypeInfo, object> dict, string typeName)
         {
-            var fir = kv.FirstOrDefault(item => AreGenericParametersEqual(item.Key.Type, name) && (item.Key.Type.IsSubclassOf(name) || name.IsAssignableFrom(item.Key.Type)));
-            if (fir.Key == null)
-            {
-                return null;
-            }
-            return fir.Key.SingleBean;
+            var entry = dict.FirstOrDefault(x => x.Key.TypeName == typeName);
+            return entry.Key?.SingleBean;
         }
-        public static KeyValuePair<IOCTypeInfo, object>? Find(this ConcurrentDictionary<IOCTypeInfo, object> kv, Func<KeyValuePair<IOCTypeInfo, object>,bool> func)
+
+        // 判断是否是单例（根据类型）
+        public static bool? IsSingleBean(this ConcurrentDictionary<IOCTypeInfo, object> dict, Type type)
         {
-            foreach (var item in kv)
+            var entry = dict.FirstOrDefault(item => item.Key.Type.IsCompatibleWith(type));
+            return entry.Key?.SingleBean;
+        }
+
+        // 查找第一个满足条件的键值对
+        public static KeyValuePair<IOCTypeInfo, object>? Find(this ConcurrentDictionary<IOCTypeInfo, object> dict, Func<KeyValuePair<IOCTypeInfo, object>, bool> predicate)
+        {
+            foreach (var item in dict)
             {
-                if (func.Invoke(item))
-                {
+                if (predicate(item))
                     return item;
-                }
             }
             return null;
         }
-        public static object GetIntstance(this ConcurrentDictionary<IOCTypeInfo, object> kv, string name)
-		{
-			return kv.GetIntstance(null, name, false);
-		}
-		public static object GetIntstance(this ConcurrentDictionary<IOCTypeInfo, object> kv, Type t, bool containsub = false)
-		{
-			return kv.GetIntstance(t, null, containsub);
 
-		}
-        public static bool IsInBaseTypeHierarchy(this Type T, Type basetype)
+        // 获取所有符合类型的实例
+        public static object[] GetAllInstances(this ConcurrentDictionary<IOCTypeInfo, object> dict, Type type)
         {
-            if (basetype == null || (!basetype.IsClass && !basetype.IsInterface))
-                return false;
+            return dict
+                .Where(item => item.Key.Type.IsCompatibleWith(type))
+                .Select(item => item.Value)
+                .ToArray();
+        }
 
-            // 检查继承链
-            Type baseType = T.BaseType;
-            while (baseType != null)
+        // 获取实例（通过类型或名称）
+        public static object GetInstance(this ConcurrentDictionary<IOCTypeInfo, object> dict, Type type = null, string name = null, bool includeSub = false)
+        {
+            if (type != null)
             {
-                if (baseType == basetype)
-                    return true;
-                baseType = baseType.BaseType;
+                return includeSub
+                    ? dict.FirstOrDefault(item => item.Key.Type.IsCompatibleWith(type)).Value
+                    : dict.FirstOrDefault(item => item.Key.Type == type).Value;
             }
 
-            // 检查接口实现情况
-            if (basetype.IsInterface && T.GetInterfaces().Contains(basetype))
+            if (!string.IsNullOrEmpty(name))
+            {
+                return dict.FirstOrDefault(item => item.Key.TypeName == name).Value;
+            }
+
+            return null;
+        }
+
+        // 类型兼容性判断（支持泛型判断）
+        public static bool IsCompatibleWith(this Type actual, Type target)
+        {
+            if (actual == null || target == null)
+                return false;
+
+            if (actual == target)
                 return true;
 
-            return false;
-        }
-        public static object[] GetAllInstance(this ConcurrentDictionary<IOCTypeInfo, object> kv, Type t)
-		{
-			return kv.Where(item => AreGenericParametersEqual(item.Key.Type,t) && (item.Key.Type.IsSubclassOf(t) || t.IsAssignableFrom(item.Key.Type))).Select(item => item.Value).ToArray();
-
-		}
-        public static bool AreGenericParametersEqual(Type type1, Type type2)
-        {
-            // 确保类型都是泛型类型
-            if (type1.IsGenericType && type2.IsGenericType)
+            if (actual.IsGenericType && target.IsGenericType)
             {
-                // 获取泛型定义是否一致
-                if (type1.GetGenericTypeDefinition() == type2.GetGenericTypeDefinition())
-                {
-                    // 获取并比较泛型参数类型
-                    Type[] typeArgs1 = type1.GetGenericArguments();
-                    Type[] typeArgs2 = type2.GetGenericArguments();
+                if (actual.GetGenericTypeDefinition() != target.GetGenericTypeDefinition())
+                    return false;
 
-                    // 比较泛型参数的数量和每个参数的类型
-                    if (typeArgs1.Length == typeArgs2.Length)
-                    {
-                        for (int i = 0; i < typeArgs1.Length; i++)
-                        {
-                            if (typeArgs1[i] != typeArgs2[i]) // 类型参数不匹配
-                            {
-                                return false;
-                            }
-                        }
-                        return true;
-                    }
+                var actualArgs = actual.GetGenericArguments();
+                var targetArgs = target.GetGenericArguments();
+                if (actualArgs.Length != targetArgs.Length)
+                    return false;
+
+                for (int i = 0; i < actualArgs.Length; i++)
+                {
+                    if (actualArgs[i] != targetArgs[i])
+                        return false;
                 }
+
+                return true;
             }
-            else
-            {
+
+            return target.IsAssignableFrom(actual);
+        }
+
+        // 判断一个类型是否处于另一个类型的继承链中
+        public static bool IsInBaseTypeHierarchy(this Type type, Type baseType)
+        {
+            if (baseType == null || (!baseType.IsClass && !baseType.IsInterface))
+                return false;
+
+            if (type == baseType)
                 return true;
 
+            var current = type.BaseType;
+            while (current != null)
+            {
+                if (current == baseType)
+                    return true;
+                current = current.BaseType;
             }
-                return false;
+
+            return baseType.IsInterface && type.GetInterfaces().Contains(baseType);
         }
 
-        public static object GetIntstance(this ConcurrentDictionary<IOCTypeInfo, object> kv, Type t, string name,bool containsub = false)
+        // 自定义 FirstOrDefault 带默认值
+        public static KeyValuePair<T, V> FirstOrDefaultOr<T, V>(this IEnumerable<KeyValuePair<T, V>> source, Func<KeyValuePair<T, V>, bool> predicate, KeyValuePair<T, V> defaultValue)
         {
-            if (t != null)
+            foreach (var item in source)
             {
-                if (containsub)
-                {
-					return kv.Where(item => AreGenericParametersEqual(item.Key.Type, t) && (item.Key.Type.IsSubclassOf(t) || t.IsAssignableFrom(item.Key.Type))).FirstOrDefault(item => true).Value;
-				}
-                return kv?.FirstOrDefault(item => item.Key.Type == t, new KeyValuePair<IOCTypeInfo, object>(null,null)).Value;
+                if (predicate(item))
+                    return item;
             }
-            else if (name != null)
-            {
-                return kv?.FirstOrDefault(item => item.Key.TypeName == name, new KeyValuePair<IOCTypeInfo, object>(null, null)).Value;
-
-            }
-            else
-            {
-                return kv?.FirstOrDefault(item => item.Key.TypeName == name && item.Key.Type == t, new KeyValuePair<IOCTypeInfo, object>(null,null)).Value;
-
-            }
+            return defaultValue;
         }
-
-		public static KeyValuePair<T, V> FirstOrDefault<T,V>(this ConcurrentDictionary<T, V> kv,Func<KeyValuePair<T,V>,bool> func, KeyValuePair<T, V> defaultv )
-		{
-			return (kv?.FirstOrDefault(func).Equals( default(KeyValuePair<T, V>)) == true) ? defaultv : kv.FirstOrDefault(func);
-		}
-	}
+    }
 }
