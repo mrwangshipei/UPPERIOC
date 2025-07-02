@@ -1,0 +1,26 @@
+name: 功能建议
+description: 提出对项目的新功能建议
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提出新功能建议，请填写以下内容帮助我们更好地评估。
+  - type: textarea
+    attributes:
+      label: 功能描述
+      description: 请说明你希望实现的功能
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 使用场景
+      description: 简要说明这个功能的使用背景或动机
+  - type: textarea
+    attributes:
+      label: 实现建议（可选）
+  - type: textarea
+    attributes:
+      label: 其他补充信息（可选）

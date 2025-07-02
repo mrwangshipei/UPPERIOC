@@ -1,0 +1,42 @@
+name: Bug 报告
+description: 报告软件在使用中遇到的问题
+title: "[Bug]: "
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你提交 Bug 报告！请尽可能填写详细信息。
+  - type: textarea
+    attributes:
+      label: 问题描述
+      description: 简要描述你遇到的问题
+      placeholder: 比如：程序在写入时断电会丢失数据
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 启动服务
+        2. 写入数据
+        3. 断电或强关进程
+        4. 重启后数据未恢复
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 预期结果
+      placeholder: 应该能够自动恢复写入数据
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 实际结果
+      validations:
+        required: true
+  - type: input
+    attributes:
+      label: 版本号
+      placeholder: 比如 v1.0.2 / master
