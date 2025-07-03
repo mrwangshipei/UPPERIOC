@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using UPPERIOC.UPPER.IOC.Annaiation;
+using UPPERIOC.UPPER.IOC.Center.Interface;
+using UPPERIOC.UPPER.IOC.Center.IProvider;
 
 namespace TestDemo.Entity
 {
@@ -12,6 +14,28 @@ namespace TestDemo.Entity
     public class SimpleService
     {
         public string GetData() => "Hello";
+    }
+    public class IOO : IUPPERMoudle
+    {
+        public override void AfterCreateInstance(IContainerProvider containerProvider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void InitEnd(IContainerProvider containerProvider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void IniterAndLoadClass(IContainerProvider containerProvider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void PreIniter(IContainerProvider containerProvider)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     [IOCObject]

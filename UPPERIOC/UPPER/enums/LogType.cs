@@ -8,6 +8,11 @@ namespace UPPERIOC.UPPER.enums
 {
 	public enum LogType
 	{
-		Debug,Info,Warn,Error
-	}
+		Debug,
+		Info,
+		Warn,
+		Error, 
+		Success,
+		Tip
+    }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UPPERIOC2.UPPER.Util.IConfiguation
+namespace UPPERIOC.UPPER.Translate.IConfigration
 {
 	public  interface ITranslateConfig
 	{

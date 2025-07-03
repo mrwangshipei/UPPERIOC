@@ -1,35 +1,146 @@
-﻿# User-specific files
+﻿# ============================================================
+# Standard .gitignore for WinForms / Visual Studio projects
+# Based on GitHub's VisualStudio.gitignore plus WinForms‑specific entries
+# ============================================================
+
+##############
+# OS files
+##############
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+##############
+# User‑specific Visual Studio / IDE files
+##############
 *.rsuser
 *.suo
 *.user
 *.userosscache
+*.sln.docstates
+*.vcxproj.user
+*.code-workspace
 
+##############
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
+##############
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+[Bb]uild/
+[Tt]emp/
+[Test]Results/
+[Uu]nit[Tt]est+[Rr]esult*/
+*.bak
+*.tmp
 
-# Visual Studio cache and configuration files
+##############
+# NuGet packages
+##############
+# Solution‑level or project‑level packages folders
+[Pp]ackages/
+**/[Pp]ackages/
+# Package files
+*.nupkg
+*.snupkg
+# Local NuGet cache (v3)
+~/.nuget/packages/
+
+##############
+# Publish / Click‑Once / Setup artifacts
+##############
+[Pp]ublish/
+**/Properties/PublishProfiles/
+AppPackages/
+BundleArtifacts/
+
+##############
+# .NET build artifacts
+##############
+*.dll
+*.exe
+*.apphost
+*.deps.json
+*.runtimeconfig.json
+*.mdb
+*.pdb
+
+##############
+# Code Coverage & Profiling
+##############
+*.coverage
+*.coveragexml
+*.vspx
+*.vsp
+*.sap
+
+##############
+# Rider / ReSharper / VS Code / VS Cache
+##############
+.idea/
 .vs/
 .vscode/
-*.pdb
-*.ipch
-*.log
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
 
-# Others
-*.nupkg
-*.snk
+##############
+# Static Analysis & Intellisense
+##############
+*.ruleSet
+*.gch
+*.ipch
+*.cache
 *.dbmdl
+
+##############
+# Database / Data files
+##############
+*.mdf
+*.ldf
+*.ndf
+*.sdf
+*.db
+*.sql
+*.sqlite
+
+##############
+# Miscellaneous generated/intermediate files
+##############
+*.ipdb
+*.iobj
+*.obj
+*.tlog
+*.ilk
+*.meta
+*.pch
+*.tlh
+*.tli
+*_i.c
+*_p.c
+*_i.h
+*.jfm
+*.snk
+*.log
 *.publishsettings
+
+##############
+# Visual Studio solution‑specific cache you listed
+##############
 /UpperComAutoTest/MyConfiguation/ErrorUpload.cs
-/.vs
-ProjectEvaluation
+ProjectEvaluation/
 /.vs/ProjectEvaluation
 /.vs/UpperComAutoTest
 /.vs/upperioc

@@ -46,7 +46,7 @@ namespace UPPERIOC2.UPPER.MLOCK
 		}
 	
 
-	public static  void Rigister(MLockConfiguation m) {
+		internal static  void Rigister(MLockConfiguation m) {
 			Console.WriteLine("欢迎使用注册器，请输入需要注册的验证码");
 			// 使用SecureString来存储密码，避免在内存中留下明文密码  
 			SecureString password = new SecureString();

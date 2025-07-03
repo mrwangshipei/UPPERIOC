@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Text;
 namespace UPPERIOC.Generators
 { 
 [Generator]
@@ -50,98 +51,12 @@ public class IOCCodeGenerator : ISourceGenerator
 
             var generatedCode = GenerateRegistrationCode(iocClasses, listenerClasses);
             context.AddSource("IOCGeneratedRegistration.g.cs", generatedCode);
-           var generatedCodem = GenerateMClass(context);
-          //  context.AddSource("M.g.cs", generatedCodem);
+           
 
         }
-        private static string GenerateMClass(GeneratorExecutionContext context)
-        {
-            var targetNamespace = "UPPERIOC.UPPER.IOC.Moudle";
+      
 
-            var moduleTypes = AppDomain.CurrentDomain
-                .GetAssemblies()
-                .SelectMany(asm =>
-                {
-                    try { return asm.GetTypes(); } catch { return Array.Empty<Type>(); }
-                })
-                .Where(t => t.IsClass && t.Namespace == targetNamespace)
-                .ToList();
-
-            var builder = new StringBuilder();
-            builder.AppendLine("using System;");
-            builder.AppendLine($"using {targetNamespace};");
-            builder.AppendLine("");
-            builder.AppendLine("namespace UPPER.Generated");
-            builder.AppendLine("{");
-            builder.AppendLine("    public class M");
-            builder.AppendLine("    {");
-            StringBuilder debugInfo = new StringBuilder();
-            foreach (var type in moduleTypes)
-            {
-                try
-                {
-                    var fieldName = SanitizeName(type);
-                    var typeName = GetTypeofExpression(type);
-
-                    builder.AppendLine($"        public Type {fieldName} = typeof({typeName});");
-                    debugInfo.Append($"//类型: {type.FullName}, 是否泛型: {type.IsGenericType}");
-                    debugInfo.Append($"//        public Type {fieldName} = typeof({typeName});");
-                    if (type.IsGenericType)
-                    {
-                        foreach (var arg in type.GetGenericArguments())
-                        {
-                            debugInfo.Append($"// - 泛型参数: {arg.FullName}");
-                        }
-                    }
-
-                }
-                catch(Exception ex)
-                {
-                    // 可选日志记录
-                    debugInfo.Append($"// err {ex.Message} ,type {type}");
-
-                }
-            }
-            context.AddSource($"IOC_Debug_M.g.cs", debugInfo.ToString());
-            builder.AppendLine("    }");
-            builder.AppendLine("}");
-
-            return builder.ToString();
-        }
-
-        private static string SanitizeName(Type type)
-        {
-            if (!type.IsGenericType)
-                return type.Name;
-
-            var baseName = type.Name.Split('`')[0];
-            return baseName + "_Generic";
-        }
-
-        //private static string GetTypeofExpression(Type type)
-        //{
-        //    if (!type.IsGenericType)
-        //        return type.FullName;
-
-        //    var genericType = type.GetGenericTypeDefinition();
-        //    var baseName = genericType.FullName!.Split('`')[0];
-        //    var arity = genericType.GetGenericArguments().Length;
-        //    return $"{baseName}`{arity}";
-        //}
-        private static string GetTypeofExpression(Type type)
-        {
-            if (!type.IsGenericType)
-                return type.FullName!;
-
-            var genericTypeDef = type.GetGenericTypeDefinition();
-            var baseTypeName = genericTypeDef.FullName!.Split('`')[0];
-            var genericArgs = type.GetGenericArguments();
-
-            var argNames = string.Join(", ", genericArgs.Select(arg => arg.FullName));
-            return $"{baseTypeName}<{argNames}>";
-        }
-
-
+    
         private static string GenerateRegistrationCode(List<(string ClassName, string ParentName,string Namespace)> classInfo, List<(string ClassName, string ParentName, string Namespace)> LisclassInfo)
     {
         var builder = new StringBuilder();
@@ -196,39 +111,33 @@ public class IOCCodeGenerator : ISourceGenerator
     {
         public List<ClassDeclarationSyntax> CandidateClasses { get; } = new List<ClassDeclarationSyntax>();
         public List<ClassDeclarationSyntax> ListenerClasses { get; } = new List<ClassDeclarationSyntax>();
-
+            // 新增列表用于记录待分析是否实现了 IUPPERMoudle 的类
+       
             public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
             {
-                
-                // 判断是否是类声明
                 if (syntaxNode is ClassDeclarationSyntax classDecl)
                 {
                     try
                     {
                         var txt = GetTopLevelInterfaceName(classDecl);
-                        if (txt.Contains("IUPPERApplicationListener<") )
+
+                        if (txt.Contains("IUPPERApplicationListener<"))
                         {
                             ListenerClasses.Add(classDecl);
                         }
-                        else
-                        {
-                            // 遍历该类的所有属性列表
-                            foreach (var attributeList in classDecl.AttributeLists)
-                            {
-                                foreach (var attribute in attributeList.Attributes)
-                                {
-                                    // 获取特性名称，剔除命名空间前缀
-                                    var attributeName = attribute.Name.ToString();
 
-                                    if (attributeName.EndsWith("IOCObject") || attributeName.Contains(".IOCObject"))
-                                    {
-                                
-                                        CandidateClasses.Add(classDecl);
-                                    }
+                        foreach (var attributeList in classDecl.AttributeLists)
+                        {
+                            foreach (var attribute in attributeList.Attributes)
+                            {
+                                var attributeName = attribute.Name.ToString();
+                                if (attributeName.EndsWith("IOCObject") || attributeName.Contains(".IOCObject"))
+                                {
+                                    CandidateClasses.Add(classDecl);
                                 }
                             }
-                            
                         }
+
                     }
                     catch (Exception)
                     {
@@ -237,9 +146,9 @@ public class IOCCodeGenerator : ISourceGenerator
                             Debugger.Launch();
                         }
                     }
-                    ;
                 }
             }
+
 
             private string GetTopLevelInterfaceName(ClassDeclarationSyntax classDecl)
             {

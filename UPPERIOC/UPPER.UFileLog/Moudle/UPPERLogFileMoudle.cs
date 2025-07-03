@@ -10,7 +10,7 @@ using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC.UPPER.UFileLog.DefineLog;
 using UPPERIOC.UPPER.IOC.Center.Interface;
-using System.Windows.Forms;
+
 
 namespace UPPERIOC.UPPER.UFILELOG.Moudle
 {
@@ -39,9 +39,9 @@ namespace UPPERIOC.UPPER.UFILELOG.Moudle
         private static void BindExceptionHandler()
         {
             //设置应用程序处理异常方式：ThreadException处理
-            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.Automatic);
+            //Application.SetUnhandledExceptionMode(UnhandledExceptionMode.Automatic);
             //处理UI线程异常
-            Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
+           // Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
             //处理未捕获的异常
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
         }

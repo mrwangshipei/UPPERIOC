@@ -1,17 +1,7 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Dynamic;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using UPPERIOC.UPPER;
-using UPPERIOC.UPPER.Event.AppEvent;
+﻿using UPPERIOC.UPPER.Event.AppEvent;
 using UPPERIOC.UPPER.Event.AppEvent.Impl;
 using UPPERIOC.UPPER.IOC.Center.Configuation;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
-using UPPERIOC.UPPER.IOC.Extend;
-using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC.UPPER.MainApplication.Dispatcher;
 using UPPERIOC.UPPER.MainApplication.Initer;
 using UPPERIOC.UPPER.MainApplication.Log_;
@@ -41,6 +31,16 @@ namespace UPPERIOC
                 EventManager.PublishEvent(new ApplicationStoppingEvent());
                 EventManager.PublishEvent(new ApplicationStoppedEvent());
             };
+        }
+        public static void RunInstance(Action<MoudleConfiguaion> configa)
+        {
+            if (configa == null)
+            {
+                throw new Exception("请位RunInstance传入参数");
+            }
+            var config = new MoudleConfiguaion();
+            configa.Invoke(config);
+            RunInstance(config);
         }
 
         public static void RegisterVersionModel(VersionModel model)
