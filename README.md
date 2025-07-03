@@ -56,17 +56,12 @@ UPPERIOC 是一个为 WinForm 应用设计的 IOC 容器和插件集合框架，
 
 ```csharp
 static void main() {
-    var config = new UPPERIOC.UPPER.IOC.Center.Configuation.MoudleConfiguaion();
-    config.AddMoudle<UPPERIOCMoudle>();
-    config.AddMoudle<UPPERLogFileMoudle>();
-    config.AddMoudle<UPPERSendorMoudle>();
-    config.AddMoudle<UPPERMLockMoudle>();
-    config.AddMoudle<UPPERPremissionMoudle>();
-    config.AddMoudle<UPPERFileModelMoudle>();
-    config.AddMoudle<UPPERErrorMoudle>();
-    config.AddMoudle<UPPERTranslateMoudle>();
-    config.SetProvider<UPPERDefaultProvider>();
-    UPPERIOCApplication.RunInstance(config);
+    UPPERIOCApplication.RunInstance(md =>
+    {
+        md.UPPERFileModelMoudle(new FileModle());
+        md.UPPERMLockMoudle(new MLock());
+        md.UPPERLogFileMoudle(new FIleLogConfig());
+    });
     Application.Run(new Form1());
 }
 ```
@@ -98,8 +93,10 @@ internal class FCTUFileConfiguation : IFileLogConfiguation {
     public int HowManyHourSave => 48;
     public bool PrintMs => true;
 }
-
-config._containerProvider.Rigister<FCTUFileConfiguation>(new FCTUFileConfiguation());
+UPPERIOCApplication.RunInstance(md =>
+{
+    md.UPPERLogFileMoudle(new FCTUFileConfiguation());
+});
 LogCenter.Log("Hello");
 ```
 
@@ -112,8 +109,10 @@ internal class UFileModelConfigration : IUFileModelConfiguation {
     public string SaveModelPath => "conf";
 }
 
-config._containerProvider.Rigister<UFileModelConfigration>(new UFileModelConfigration());
-
+UPPERIOCApplication.RunInstance(md =>
+{
+    md.UPPERFileModelMoudle(new UFileModelConfigration());
+});
 F.I.SaveModel(new T());
 var t = F.I.GetModel(new T());
 ```
@@ -127,8 +126,11 @@ public class VerContent {
     public string Ver;
     public string Content;
 }
-
-config.AddMoudle<UPPERIOCMoudle>();
+UPPERIOCApplication.RunInstance(md =>
+{
+   // 不需要模块
+   // md.UPPERLogFileMoudle(new FCTUFileConfiguation());
+});
 U.C.GetInstance<VerContent>();
 ```
 
@@ -145,7 +147,10 @@ public class MLockConfiguation {
     }
 }
 
-config.AddMoudle<UPPERMLockMoudle>();
+UPPERIOCApplication.RunInstance(md =>
+{
+    md.UPPERMLockMoudle(new MLockConfiguation());
+});
 config._containerProvider.Rigister<ILockConfiguation>();
 ```
 
@@ -158,8 +163,7 @@ public interface ITranslateConfig {
     string FromLanguage { get; }
     string ToLanguage { get; }
 }
-
-config.AddMoudle<UPPERTranslateMoudle>();
+UPPERIOCApplication...//...添加模块
 TranslateCenter.Instance.SetRootWindows(this);
 ```
 
