@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using UPPERIOC;
-using UPPERIOC2.UPPER.Util.IConfiguation;
+using UPPERIOC.UPPER.Translate.IConfigration;
 
 namespace UPPERIOC2.UPPER.Util
 {

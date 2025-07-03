@@ -11,11 +11,16 @@
 	<Import Project="$(MSBuildThisFileDirectory)targets\upperioc.targets" />
 	<Import Project="$(MSBuildThisFileDirectory)targets\upperioc.props" />
 	<ItemGroup>
+	  <Compile Remove="bin\**" />
+	  <EmbeddedResource Remove="bin\**" />
+	  <None Remove="bin\**" />
+	</ItemGroup>
+	<ItemGroup>
 	  <Compile Remove="UPPER.EmailErrorSender\IErrorConfiguation.cs" />
 	</ItemGroup>
 
 	  <ItemGroup>
-    <PackageReference Include="IOCG" Version="1.0.0.7" />
+    <PackageReference Include="IOCG" Version="1.0.0.20" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Management" Version="4.6.0" />
@@ -23,7 +28,7 @@
 
 
 <PropertyGroup>
-  <Version>2.0.4.35</Version>
+  <Version>2.0.4.50</Version>
   <PackageId>UPPERIOC</PackageId>
   <Authors>Wwwwww</Authors>
   <Description>一个自带插件的IOC容器</Description>
@@ -40,12 +45,18 @@
     <Pack>true</Pack>
     <PackagePath>analyzers\dotnet\roslyn3.8\cs</PackagePath>
   </None>
+
+    
+  <None Remove="..\UPPERIOC\bin\Debug\netstandard2.0\UPPERIOC.dll" />
   <None Include="..\UPPERIOC\bin\$(Configuration)\netstandard2.0\UPPERIOC.dll">
     <Pack>true</Pack>
     <PackagePath>analyzers\dotnet\roslyn3.8\cs</PackagePath>
   </None>
+  <None Remove="..\UPPERIOC\bin\Debug\netstandard2.0\UPPERIOC.dll" />
+  <None Remove="..\UPPERIOC\bin\Debug\netstandard2.0\UPPERIOC.dll" />
   <None Include="..\UPPERIOC\bin\$(Configuration)\netstandard2.0\UPPERIOC.dll" Pack="true" PackagePath="lib\netstandard2.0" />
   <None Include="..\UPPERIOC\UPPERIOC.png" Pack="true" />
+  <None Remove="..\UPPERIOC\bin\Debug\net462\UPPERIOC.dll" />
     <None Include="..\UPPERIOC\bin\$(Configuration)\net462\UPPERIOC.dll" Pack="true" PackagePath="lib\net462" />
 </ItemGroup>
   <ItemGroup>

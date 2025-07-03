@@ -1,38 +1,51 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using UPPERIOC.UPPER.enums;
-using UPPERIOC.UPPER.ILOG;
+using UPPERIOC.UPPER.MainApplication.Log_;
 
 namespace UPPERIOC.UPPER
 {
-	public class LogCenter
-	{
-		internal static List<ILog> logs = new List<ILog>();
-		public static void AddILog(ILog log) 
-		{
-			logs.Add(log);
-		}
+    public static class LogCenter
+    {
+        // 使用线程安全集合
+        private static readonly ConcurrentBag<ILog> _loggers = new ConcurrentBag<ILog>();
 
-		public static void Log(LogType type,string msg) 
-		{
-			logs.ForEach(item => {
-                if (item.CanLogType!= null && item.CanLogType.Contains(type))
+        /// <summary>
+        /// 注册单个日志器
+        /// </summary>
+        public static void AddLogger(ILog logger)
+        {
+            if (logger == null) return;
+            _loggers.Add(logger);
+        }
+
+        /// <summary>
+        /// 批量注册日志器
+        /// </summary>
+        public static void AddAllLoggers(IEnumerable<ILog> loggers)
+        {
+            if (loggers == null) return;
+            foreach (var logger in loggers)
+            {
+                if (logger != null)
+                    _loggers.Add(logger);
+            }
+        }
+
+        /// <summary>
+        /// 打印日志
+        /// </summary>
+        public static void Log(LogType type, string message)
+        {
+            foreach (var logger in _loggers)
+            {
+                if (logger?.CanLogType?.Contains(type) == true)
                 {
-					item.Log(type, msg);
-                    return;
+                    logger.Log(type, message);
                 }
-			});
-		}
-
-	
-
-		internal static void AddAllLog(ILog[] ls)
-		{
-			logs.AddRange(ls);
-		}
-	}
+            }
+        }
+    }
 }

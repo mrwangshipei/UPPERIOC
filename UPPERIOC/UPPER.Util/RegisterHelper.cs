@@ -32,7 +32,7 @@
         }
 
         // 写入注册表值或文件值
-        public virtual void SaveLockFile(string keyName, string valueName, object value)
+        internal virtual void SaveLockFile(string keyName, string valueName, object value)
         {
 #if NET462
             // 在 .NET Framework 4.6.2 下使用注册表

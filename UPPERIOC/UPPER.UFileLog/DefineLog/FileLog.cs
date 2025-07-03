@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.enums;
 using UPPERIOC.UPPER.UFileLog.IConfiguation;
-using UPPERIOC.UPPER.ILOG;
 using System.IO;
+using UPPERIOC.UPPER.MainApplication.Log_;
 
 namespace UPPERIOC.UPPER.UFileLog.DefineLog
 {

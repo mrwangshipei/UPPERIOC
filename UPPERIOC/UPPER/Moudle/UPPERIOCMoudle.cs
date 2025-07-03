@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.Event.AppEvent;
 using UPPERIOC.UPPER.Event.AppEvent.Impl;
-using UPPERIOC.UPPER.ILOG;
 using UPPERIOC.UPPER.IOC.Annaiation;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
@@ -23,7 +22,7 @@ namespace UPPERIOC.UPPER.IOC.Moudle
 
 		public Type[] DependisMoudel { get; set; } = new Type[0];
 
-
+        
         public override void AfterCreateInstance(IContainerProvider containerProvider)
 		{
          
