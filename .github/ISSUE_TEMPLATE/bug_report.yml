@@ -1,42 +1,49 @@
-name: Bug 报告
-description: 报告软件在使用中遇到的问题
-title: "[Bug]: "
+name: 🐞 Bug 报告
+description: 提交软件缺陷或异常行为
+title: "[Bug] 简要描述问题"
 labels: ["bug"]
-assignees: []
 body:
   - type: markdown
     attributes:
       value: |
-        感谢你提交 Bug 报告！请尽可能填写详细信息。
-  - type: textarea
-    attributes:
-      label: 问题描述
-      description: 简要描述你遇到的问题
-      placeholder: 比如：程序在写入时断电会丢失数据
-      validations:
-        required: true
-  - type: textarea
+        请提供尽量详细的信息，以便我们复现和定位问题。
+  - type: input
+    id: reproduce
     attributes:
       label: 复现步骤
-      placeholder: |
-        1. 启动服务
-        2. 写入数据
-        3. 断电或强关进程
-        4. 重启后数据未恢复
-      validations:
-        required: true
-  - type: textarea
+      description: 请列出复现该问题的详细步骤
+      placeholder: 1. 进入页面... 2. 点击按钮... 3. 出现错误...
+    validations:
+      required: true
+  - type: input
+    id: expected
     attributes:
       label: 预期结果
-      placeholder: 应该能够自动恢复写入数据
-      validations:
-        required: true
+      placeholder: 应该显示正常页面
+    validations:
+      required: true
   - type: textarea
+    id: actual
     attributes:
       label: 实际结果
-      validations:
-        required: true
-  - type: input
+      placeholder: 实际弹出错误提示，页面空白等
+    validations:
+      required: true
+  - type: dropdown
+    id: os
     attributes:
-      label: 版本号
-      placeholder: 比如 v1.0.2 / master
+      label: 操作系统
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 项目版本
+      placeholder: 如：v1.2.3 或 Git Commit 哈希
+    validations:
+      required: true

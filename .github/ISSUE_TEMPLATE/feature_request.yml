@@ -1,26 +1,24 @@
-name: 功能建议
-description: 提出对项目的新功能建议
-title: "[Feature]: "
-labels: ["enhancement"]
-assignees: []
+name: ✨ 功能请求 Feature
+description: 请求添加一个新的功能
+title: "[Feature] 简要描述功能"
+labels: ["feature"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        欢迎提出新功能建议，请填写以下内容帮助我们更好地评估。
   - type: textarea
+    id: feature-desc
     attributes:
       label: 功能描述
-      description: 请说明你希望实现的功能
-      validations:
-        required: true
+      description: 请详细描述你希望添加的功能是什么，以及为什么它很重要
+    validations:
+      required: true
   - type: textarea
+    id: usecase
     attributes:
       label: 使用场景
-      description: 简要说明这个功能的使用背景或动机
-  - type: textarea
+      description: 请描述该功能会在哪些场景下被使用，有无替代方案
+    validations:
+      required: false
+  - type: input
+    id: priority
     attributes:
-      label: 实现建议（可选）
-  - type: textarea
-    attributes:
-      label: 其他补充信息（可选）
+      label: 优先级（可选）
+      placeholder: high / medium / low

@@ -1,0 +1,12 @@
+name: 💬 讨论 Chat
+description: 提出一个开放性问题或建议讨论方向
+title: "[Chat] ..."
+labels: ["discussion"]
+body:
+  - type: textarea
+    id: topic
+    attributes:
+      label: 讨论话题
+      description: 描述你想讨论的问题或思路
+    validations:
+      required: true
