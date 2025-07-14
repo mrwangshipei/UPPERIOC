@@ -19,6 +19,16 @@
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mrwangshipei/UPPERIOC?style=social">
 </p>
 
+---
+
+## 💬 联系我
+
+交流群： 816781059
+
+qq: 3644005356
+
+---
+
 ## 📦 包管理
 
 MyGet Pre-release feed: [https://www.nuget.org/packages/UPPERIOC/](https://www.nuget.org/packages/UPPERIOC/)
@@ -197,12 +207,6 @@ TranslateCenter.Instance.SetRootWindows(this);
 
 **解决方法**：生成项目解决
 
----
-
-## 💬 联系我
-
-交流群： 816781059
-qq: 3644005356
 
 ---
 
