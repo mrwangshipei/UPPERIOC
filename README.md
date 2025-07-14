@@ -201,7 +201,8 @@ TranslateCenter.Instance.SetRootWindows(this);
 
 ## 💬 联系我
 
-如对跨平台移植、性能增强等有兴趣，欢迎私信参与！
+交流群： 816781059
+qq: 3644005356
 
 ---
 
