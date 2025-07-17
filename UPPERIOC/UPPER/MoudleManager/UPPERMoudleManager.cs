@@ -4,7 +4,6 @@ using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC.UPPER.Translate.IConfigration;
 using UPPERIOC.UPPER.UFileLog.IConfiguation;
 using UPPERIOC.UPPER.UFILELOG.Moudle;
-using UPPERIOC2.UPPER.EmailErrorSender.Moudle;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
 using UPPERIOC2.UPPER.Translate.Moudle;
 using UPPERIOC2.UPPER.UFileModel.IConfiguaion;
@@ -14,52 +13,47 @@ namespace UPPERIOC.UPPER.IOC.Center.Configuation
 {
     public static class UPPERMoudleManager
     {
-        public static void UPPERIOCMoudle(this MoudleConfiguaion md)
+        public static void UPPERIOCMoudle(this ModuleConfiguaion md)
         {
-            md.AddModule<UPPERIOCMoudle>();
+            md.AddModule<UPPERIOCModule>();
         }
 
-        public static void UPPERErrorMoudle(this MoudleConfiguaion md)
-        {
-            md.AddModule<UPPERErrorMoudle>();
-        }
-
-        public static void UPPERMLockMoudle(this MoudleConfiguaion md,MLockConfiguation conf)
+        public static void UPPERMLockMoudle(this ModuleConfiguaion md,MLockConfiguation conf)
         {
             if (conf != null)
             {
-                md.Provider.Rigister(conf);
+                md.Provider.Rigister(conf.GetType(),conf);
             }
-            md.AddModule<UPPERMLockMoudle>();
+            md.AddModule<UPPERMLockModule>();
         }
 
-        public static void UPPERTranslateMoudle(this MoudleConfiguaion md,ITranslateConfig conf)
+        public static void UPPERTranslateMoudle(this ModuleConfiguaion md,ITranslateConfig conf)
         {
             if (conf != null)
             {
-                md.Provider.Rigister(conf);
+                md.Provider.Rigister(conf.GetType(), conf);
             }
 
-            md.AddModule<UPPERTranslateMoudle>();
+            md.AddModule<UPPERTranslateModule>();
         }
 
-        public static void UPPERLogFileMoudle(this MoudleConfiguaion md,IFileLogConfiguation conf)
+        public static void UPPERLogFileMoudle(this ModuleConfiguaion md,IFileLogConfiguation conf)
         {
             if (conf != null)
             {
-                md.Provider.Rigister(conf);
+                md.Provider.Rigister(conf.GetType(), conf);
             }
-            md.AddModule<UPPERLogFileMoudle>();
+            md.AddModule<UPPERLogFileModule>();
         }
 
-        public static void UPPERFileModelMoudle(this MoudleConfiguaion md,IUFileModelConfiguation conf)
+        public static void UPPERFileModelMoudle(this ModuleConfiguaion md,IUFileModelConfiguation conf)
         {
 
             if (conf != null)
             {
-                md.Provider.Rigister(conf);
+                md.Provider.Rigister(conf.GetType(), conf);
             }
-            md.AddModule<UPPERFileModelMoudle>();
+            md.AddModule<UPPERFileModelModule>();
         }
     }
 }

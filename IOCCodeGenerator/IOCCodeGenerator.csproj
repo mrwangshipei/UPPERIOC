@@ -37,7 +37,7 @@
   <EnableNETAnalyzers>true</EnableNETAnalyzers>
   <EnableAnalyzersSupport>true</EnableAnalyzersSupport>
   <PackageId>IOCG</PackageId>
-  <Version>1.0.0.20</Version>
+  <Version>1.0.0.21</Version>
   <Title>IOCG</Title>
   <Copyright>www</Copyright>
   <IncludeSymbols>True</IncludeSymbols>

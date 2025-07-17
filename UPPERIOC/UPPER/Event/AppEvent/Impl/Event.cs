@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace UPPERIOC.UPPER.Event.AppEvent.Impl
 {
-    public class ApplicationStartingEvent : UPPERApplicationEvent { }
-    public class ApplicationStartedEvent : UPPERApplicationEvent { }
-    public class ApplicationPreCreatInstaceEvent : UPPERApplicationEvent { }
-    public class ApplicationCreatInstaceEvent : UPPERApplicationEvent { }
-    public class ApplicationAfterCreatInstaceEvent : UPPERApplicationEvent { }
+    public class ApplicationPreInitializationEvent : UPPERApplicationEvent { }
+    public class ApplicationModuleInitializedEvent : UPPERApplicationEvent { }
+    public class ApplicationModulePreCreationEvent : UPPERApplicationEvent { }
+    public class ApplicationInstanceCreatedEvent : UPPERApplicationEvent { }
     public class ApplicationInitEndEvent : UPPERApplicationEvent { }
 
     public class ApplicationStoppingEvent : UPPERApplicationEvent { }

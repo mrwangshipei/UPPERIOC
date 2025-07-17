@@ -15,9 +15,6 @@
 	  <EmbeddedResource Remove="bin\**" />
 	  <None Remove="bin\**" />
 	</ItemGroup>
-	<ItemGroup>
-	  <Compile Remove="UPPER.EmailErrorSender\IErrorConfiguation.cs" />
-	</ItemGroup>
 
 	  <ItemGroup>
     <PackageReference Include="IOCG" Version="1.0.0.20" />
@@ -28,7 +25,7 @@
 
 
 <PropertyGroup>
-  <Version>2.0.4.50</Version>
+  <Version>2.0.4.59</Version>
   <PackageId>UPPERIOC</PackageId>
   <Authors>Wwwwww</Authors>
   <Description>一个自带插件的IOC容器</Description>

@@ -1,7 +1,7 @@
 ﻿using Xunit;
-using UPPERIOC2.UPPER.UIOC.DefaultProvider;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using TestDemo.Entity;
+using UPPERIOC.UPPER.IOC.DefaultProvider;
 
 public class IoCTests
 {

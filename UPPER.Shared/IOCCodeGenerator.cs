@@ -121,10 +121,10 @@ public class IOCCodeGenerator : ISourceGenerator
                     {
                         var txt = GetTopLevelInterfaceName(classDecl);
 
-                        if (txt.Contains("IUPPERApplicationListener<"))
-                        {
-                            ListenerClasses.Add(classDecl);
-                        }
+                        //if (txt.Contains("IUPPERApplicationListener<"))
+                        //{
+                        //    ListenerClasses.Add(classDecl);
+                        //}
 
                         foreach (var attributeList in classDecl.AttributeLists)
                         {

@@ -7,7 +7,7 @@ using System.Text;
 using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
 using UPPERIOC2.UPPER.Util;
-using static UPPERIOC.UPPER.IOC.Moudle.UPPERMLockMoudle;
+using static UPPERIOC.UPPER.IOC.Moudle.UPPERMLockModule;
 
 namespace UPPERIOC2.UPPER.MLOCK
 {
