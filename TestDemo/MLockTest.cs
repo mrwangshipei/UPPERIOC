@@ -31,10 +31,10 @@ namespace UPPERTest
         public void MLockisok()
         {
             MLock m = new MLock();
+            m.UnloadRegister();
             UPPERIOCApplication.RunInstance(md => {
                 
                 md.UPPERMLockMoudle(new MLock());
-               // md.Provider.Rigister<>();
             });
             var mm = U.C.GetInstance<MLock>();
             Assert.Equal(false, mm.isre);
@@ -47,7 +47,7 @@ namespace UPPERTest
             public override string LockName { get; set; } = "xxx";
             public override void Noregister()
             {
-                Console.Write("没有注册");
+                Console.Write("注册中");//模拟注册操作
                 Register();
                 isre = false;
             }
@@ -60,16 +60,29 @@ namespace UPPERTest
         [Fact]
         public void UnMLockisOk()
         {
+            UPPERIOCApplication.RunInstance(md => {
+                var xx = new MLock();
+                md.UPPERMLockMoudle(xx);
+                xx.UnloadRegister();
+
+            });
+            { 
+                var mm = U.C.GetInstance<MLock>();
+                Assert.Equal(false, mm.isre);
+            }
             UnMLock m = new UnMLock();
             UPPERIOCApplication.RunInstance(md => {
-                md.UPPERMLockMoudle(new MLock());
+                md.UPPERMLockMoudle(m);
             });
             UPPERIOCApplication.RunInstance(md => {
                 md.UPPERMLockMoudle(new MLock());
             });
-            var mm = U.C.GetInstance<MLock>();
+            { 
+                var mm = U.C.GetInstance<MLock>();
+                Assert.Equal(true, mm.isre);
+                m.UnloadRegister();
+            }
 
-            Assert.Equal(false, mm.isre);
         }
     }
 }

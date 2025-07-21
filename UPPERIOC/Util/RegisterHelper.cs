@@ -11,21 +11,24 @@
         {
             Instance = instanc;
         }
-
+        public object _lockobj = new object();
         // 读取注册表值或文件值
-        public virtual string GetLockFile(string keyName, string valueName)
+        internal virtual string GetLockFile(string keyName, string valueName)
         {
 #if NET462
             // 在 .NET Framework 4.6.2 下使用注册表
+            lock (_lockobj)
             return ReadFromRegistry(keyName, valueName);
 #else
             // 在 .NET Standard 2.0 下，根据平台判断使用注册表或文件存储
             if (IsWindows() && SupportsRegistry())
             {
+            lock (_lockobj)
                 return ReadFromRegistry(keyName, valueName);
             }
             else
             {
+            lock (_lockobj)
                 return ReadFromFile(keyName, valueName);
             }
 #endif
@@ -36,16 +39,39 @@
         {
 #if NET462
             // 在 .NET Framework 4.6.2 下使用注册表
-            WriteToRegistry(keyName, valueName, value);
+            lock (_lockobj)
+                WriteToRegistry(keyName, valueName, value);
 #else
             // 在 .NET Standard 2.0 下，根据平台判断使用注册表或文件存储
             if (IsWindows() && SupportsRegistry())
             {
+            lock (_lockobj)
                 WriteToRegistry(keyName, valueName, value);
             }
             else
             {
+            lock (_lockobj)
                 WriteToFile(keyName, valueName, value);
+            }
+#endif
+        }
+
+        internal virtual void UnloadLockFile(string keyName, string valueName)
+        {
+#if NET462
+            // 在 .NET Framework 4.6.2 下使用注册表
+            WriteToRegistry(keyName, valueName, "nothingisthere");
+#else
+            // 在 .NET Standard 2.0 下，根据平台判断使用注册表或文件存储
+            if (IsWindows() && SupportsRegistry())
+            {
+            lock (_lockobj)
+                WriteToRegistry(keyName, valueName, "nothingisthere");
+            }
+            else
+            {
+            lock (_lockobj)
+                WriteToFile(keyName, valueName, "nothingisthere");
             }
 #endif
         }
