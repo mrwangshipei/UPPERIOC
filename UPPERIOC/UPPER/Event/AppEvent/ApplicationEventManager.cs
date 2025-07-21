@@ -20,13 +20,13 @@ namespace UPPERIOC.UPPER.Event.AppEvent
             
             int ord = GetOrder(listener.GetType());
             Type[] findstype = eventType.GetInterfaces();
-            Type ctype = null;
-            if (null != (ctype = findstype.ToList().Find(x => x.FullName.Contains("UPPERIOC.UPPER.Event.AppEvent.Impl.IUPPERApplicationListener"))))  // 先确认是不是泛型类型
+            Type[] ctypes = null;
+            if ((ctypes = findstype.ToList().FindAll(x => x.FullName.Contains("UPPERIOC.UPPER.Event.AppEvent.Impl.IUPPERApplicationListener")).ToArray()).Length > 0)  // 先确认是不是泛型类型
             {
                 try
                 {
                     // 获取泛型参数
-                    ctype = ctype.GetGenericArguments()[0];
+                    ctypes = ctypes.Select(x => x.GetGenericArguments()[0]).ToArray() ;
 
                     // 你可以在这里继续使用 genericArgument 来进行后续处理
                 }
@@ -44,19 +44,22 @@ namespace UPPERIOC.UPPER.Event.AppEvent
             {
                 throw new Exception("[Order]在此处大于等于0");
             }
-           
-            if (!_listeners.ContainsKey(ctype))
+            foreach (var ctype in ctypes)
             {
-                _listeners[ctype] = new Dictionary<int, List<object>>();
-            }
-            if (!_listeners[ctype].ContainsKey(ord))
-            {
-                _listeners[ctype][ord] = new List<object>();
-                _listeners[ctype][ord].Add(listener);
-            }
-            else
-            {
-                _listeners[ctype][ord].Add(listener);
+                
+                if (!_listeners.ContainsKey(ctype))
+                {
+                    _listeners[ctype] = new Dictionary<int, List<object>>();
+                }
+                if (!_listeners[ctype].ContainsKey(ord))
+                {
+                    _listeners[ctype][ord] = new List<object>();
+                    _listeners[ctype][ord].Add(listener);
+                }
+                else
+                {
+                    _listeners[ctype][ord].Add(listener);
+                }
             }
 
         }
@@ -69,13 +72,13 @@ namespace UPPERIOC.UPPER.Event.AppEvent
                 throw new Exception("[Order]在此处大于等于0");
             }
             Type[] findstype = eventType.GetInterfaces();
-            Type ctype = null;
-            if (null != (ctype = findstype.ToList().Find(x=> x.FullName.Contains("UPPERIOC.UPPER.Event.AppEvent.Impl.IUPPERApplicationListener"))))  // 先确认是不是泛型类型
+            Type[] ctypes = null;
+            if ((ctypes = findstype.ToList().FindAll(x => x.FullName.Contains("UPPERIOC.UPPER.Event.AppEvent.Impl.IUPPERApplicationListener")).ToArray()).Length > 0)  // 先确认是不是泛型类型
             {
                 try
                 {
                     // 获取泛型参数
-                    ctype = ctype.GetGenericArguments()[0];
+                    ctypes = ctypes.Select(x => x.GetGenericArguments()[0]).ToArray();
 
                     // 你可以在这里继续使用 genericArgument 来进行后续处理
                 }
@@ -89,21 +92,29 @@ namespace UPPERIOC.UPPER.Event.AppEvent
                 throw new Exception("确保事件IUPPERApplicationListener类型正确，并且注册了事件参数,");
             }
 
-            if (!_listeners.ContainsKey(ctype))
+            if (ord < 0)
             {
-                _listeners[ctype] = new Dictionary<int, List<object>>();
+                throw new Exception("[Order]在此处大于等于0");
             }
-            var listener = Activator.CreateInstance(eventType);
-          
-            if (!_listeners[ctype].ContainsKey(ord))
+            foreach (var ctype in ctypes)
             {
-                _listeners[ctype][ord] = new List<object>();
-                _listeners[ctype][ord].Add(listener);
+
+                if (!_listeners.ContainsKey(ctype))
+                {
+                    _listeners[ctype] = new Dictionary<int, List<object>>();
+                }
+                var listener = Activator.CreateInstance(eventType);
+                if (!_listeners[ctype].ContainsKey(ord))
+                {
+                    _listeners[ctype][ord] = new List<object>();
+                    _listeners[ctype][ord].Add(listener);
+                }
+                else
+                {
+                    _listeners[ctype][ord].Add(listener);
+                }
             }
-            else
-            {
-                _listeners[ctype][ord].Add(listener);
-            }
+         
 
         }
         public void PublishEvent<T>(T applicationEvent) where T : IUPPERApplicationEvent, new()

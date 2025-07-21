@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPPER.Test", "TestDemo\UPPER.Test.csproj", "{91BD652E-C624-4F1B-B500-C5816A440579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOCCodeGenerator", "IOCCodeGenerator\IOCCodeGenerator.csproj", "{58037466-8377-498F-BB03-CBA62AF571FC}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UPPER.Shared", "UPPER.Shared\UPPER.Shared.shproj", "{CF82D5A3-E4E9-447B-8EB3-6200954CFE4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPPERIOC", "UPPERIOC\UPPERIOC.csproj", "{7BC98436-8116-4547-A174-9D0AC126A3CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationEvent", "ApplicationEvent", "{2C8ECB36-0D14-46F1-9EAF-6B3C50E3E1D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPPER.Test.ApplicationEventTests", "UPPER.Test.ApplicationEventTests\UPPER.Test.ApplicationEventTests.csproj", "{90875408-4071-413E-AEF7-D1607F03A6B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91BD652E-C624-4F1B-B500-C5816A440579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91BD652E-C624-4F1B-B500-C5816A440579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91BD652E-C624-4F1B-B500-C5816A440579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91BD652E-C624-4F1B-B500-C5816A440579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58037466-8377-498F-BB03-CBA62AF571FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58037466-8377-498F-BB03-CBA62AF571FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58037466-8377-498F-BB03-CBA62AF571FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58037466-8377-498F-BB03-CBA62AF571FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC98436-8116-4547-A174-9D0AC126A3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC98436-8116-4547-A174-9D0AC126A3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC98436-8116-4547-A174-9D0AC126A3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC98436-8116-4547-A174-9D0AC126A3CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90875408-4071-413E-AEF7-D1607F03A6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90875408-4071-413E-AEF7-D1607F03A6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90875408-4071-413E-AEF7-D1607F03A6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90875408-4071-413E-AEF7-D1607F03A6B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91BD652E-C624-4F1B-B500-C5816A440579} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{2C8ECB36-0D14-46F1-9EAF-6B3C50E3E1D6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{90875408-4071-413E-AEF7-D1607F03A6B0} = {2C8ECB36-0D14-46F1-9EAF-6B3C50E3E1D6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {222FD9B0-85B4-43F1-B03B-A85920FDCC8F}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		UPPER.Shared\UPPER.Shared.projitems*{58037466-8377-498f-bb03-cba62af571fc}*SharedItemsImports = 5
+		UPPER.Shared\UPPER.Shared.projitems*{cf82d5a3-e4e9-447b-8eb3-6200954cfe4e}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal

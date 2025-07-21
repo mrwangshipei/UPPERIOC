@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Text;
 namespace UPPERIOC.Generators
 { 
 [Generator]
@@ -16,7 +17,8 @@ public class IOCCodeGenerator : ISourceGenerator
     {
         // 注册语法接收器
         context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
-    }
+          
+        }
 
         private (string Namespace, string ParentName) GetNamespaceAndParent(ClassDeclarationSyntax classDecl)
         {
@@ -29,6 +31,7 @@ public class IOCCodeGenerator : ISourceGenerator
 
         public void Execute(GeneratorExecutionContext context)
         {
+           
             if (context.SyntaxReceiver is not SyntaxReceiver receiver)
                 return;
 
@@ -48,8 +51,12 @@ public class IOCCodeGenerator : ISourceGenerator
 
             var generatedCode = GenerateRegistrationCode(iocClasses, listenerClasses);
             context.AddSource("IOCGeneratedRegistration.g.cs", generatedCode);
-        }
+           
 
+        }
+      
+
+    
         private static string GenerateRegistrationCode(List<(string ClassName, string ParentName,string Namespace)> classInfo, List<(string ClassName, string ParentName, string Namespace)> LisclassInfo)
     {
         var builder = new StringBuilder();
@@ -67,6 +74,7 @@ public class IOCCodeGenerator : ISourceGenerator
 
         builder.AppendLine("        public static void RegisterAll(this IContainerProvider container)");
         builder.AppendLine("        {");
+          
             int i = 0;
         foreach (var (className, ParentName, namespaceName) in classInfo)
         {
@@ -103,39 +111,33 @@ public class IOCCodeGenerator : ISourceGenerator
     {
         public List<ClassDeclarationSyntax> CandidateClasses { get; } = new List<ClassDeclarationSyntax>();
         public List<ClassDeclarationSyntax> ListenerClasses { get; } = new List<ClassDeclarationSyntax>();
-
+            // 新增列表用于记录待分析是否实现了 IUPPERMoudle 的类
+       
             public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
             {
-                
-                // 判断是否是类声明
                 if (syntaxNode is ClassDeclarationSyntax classDecl)
                 {
                     try
                     {
                         var txt = GetTopLevelInterfaceName(classDecl);
-                        if (txt.Contains("IUPPERApplicationListener<") )
-                        {
-                            ListenerClasses.Add(classDecl);
-                        }
-                        else
-                        {
-                            // 遍历该类的所有属性列表
-                            foreach (var attributeList in classDecl.AttributeLists)
-                            {
-                                foreach (var attribute in attributeList.Attributes)
-                                {
-                                    // 获取特性名称，剔除命名空间前缀
-                                    var attributeName = attribute.Name.ToString();
 
-                                    if (attributeName.EndsWith("IOCObject") || attributeName.Contains(".IOCObject"))
-                                    {
-                                
-                                        CandidateClasses.Add(classDecl);
-                                    }
+                        //if (txt.Contains("IUPPERApplicationListener<"))
+                        //{
+                        //    ListenerClasses.Add(classDecl);
+                        //}
+
+                        foreach (var attributeList in classDecl.AttributeLists)
+                        {
+                            foreach (var attribute in attributeList.Attributes)
+                            {
+                                var attributeName = attribute.Name.ToString();
+                                if (attributeName.EndsWith("IOCObject") || attributeName.Contains(".IOCObject"))
+                                {
+                                    CandidateClasses.Add(classDecl);
                                 }
                             }
-                            
                         }
+
                     }
                     catch (Exception)
                     {
@@ -144,9 +146,9 @@ public class IOCCodeGenerator : ISourceGenerator
                             Debugger.Launch();
                         }
                     }
-                    ;
                 }
             }
+
 
             private string GetTopLevelInterfaceName(ClassDeclarationSyntax classDecl)
             {

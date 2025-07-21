@@ -11,7 +11,7 @@ using UPPERIOC2.UPPER.USendor.Center;
 
 namespace UPPERIOC.UPPER.Sendor.Moudle
 {
-    public class UPPERSendorMoudle : IUPPERMoudle
+    public class UPPERSendorMoudle : IUPPERModule, IModulePostConstruction, IModuleInitialization, IModulePostInitialization, IModulePreInitialization
     {
 
         public UPPERSendorMoudle()
@@ -19,24 +19,24 @@ namespace UPPERIOC.UPPER.Sendor.Moudle
 
         }
 
-		public Type[] DependisMoudel { get; set; } = new Type[0];
+        public override Type[] Dependencies { get => new Type[] { }; }
 
 
-        public override void AfterCreateInstance(IContainerProvider containerProvider)
+        public void OnPostConstruct(IContainerProvider containerProvider)
 		{
 			SendorCenter.Contain = containerProvider;
 
 		}
 
-        public override void PreIniter(IContainerProvider containerProvider)
+        public void OnPreInitialize(IContainerProvider containerProvider)
 		{
 		}
 
-        public override void InitEnd(IContainerProvider containerProvider)
+        public void OnPostInitialize(IContainerProvider containerProvider)
 		{
 		}
 
-        public override void IniterAndLoadClass(IContainerProvider containerProvider)
+        public void OnInitialize(IContainerProvider containerProvider)
 		{
 		}
 	}

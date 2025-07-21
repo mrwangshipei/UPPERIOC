@@ -1,0 +1,42 @@
+name: Bug 反馈
+description: 程序报错或行为异常时请用这个模板
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    attributes:
+      label: 问题描述
+      description: 简要概括你遇到的问题是什么
+      placeholder: 比如：IOC 在写入后未能持久化
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 复现步骤
+      description: 请详细说明如何复现该问题
+      placeholder: |
+        1. 启动服务
+        2. 写入数据 X
+        3. 中途关闭服务
+        4. 重启后未恢复 X
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 预期结果
+      placeholder: 应该可以恢复之前写入的数据
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 实际结果
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 日志信息（可选）
+      description: 可粘贴报错或日志内容
+  - type: input
+    attributes:
+      label: 当前使用版本
+      placeholder: v1.2.3 / master

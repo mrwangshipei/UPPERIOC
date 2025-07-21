@@ -1,0 +1,12 @@
+name: 💡 建议 Suggestion
+description: 你有一个不算功能需求的建议或改进点
+title: "[Suggestion] ..."
+labels: ["suggestion"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: 建议内容
+      description: 描述你的想法，它可能是优化、调整、文档改进等
+    validations:
+      required: true

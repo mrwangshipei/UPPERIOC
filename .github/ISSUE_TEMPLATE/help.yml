@@ -1,0 +1,17 @@
+name: 🙋 寻求帮助 Help
+description: 你遇到了问题，不确定是不是 bug
+title: "[Help] 简要描述遇到的问题"
+labels: ["help"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: 遇到的问题描述
+      description: 尽量清楚描述问题和你尝试的解决方案
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: 环境信息
+      placeholder: 系统 / 浏览器 / Node 版本等

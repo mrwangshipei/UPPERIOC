@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.Event.AppEvent;
+using UPPERIOC2.UPPER.UIOC.Center;
 
 namespace UPPERIOC.UPPER.Event.AppEvent.Impl
 {
@@ -12,4 +13,5 @@ namespace UPPERIOC.UPPER.Event.AppEvent.Impl
         string MoudleName { get; }
         void OnEvent(T applicationEvent);
     }
+   
 }

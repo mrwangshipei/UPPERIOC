@@ -1,0 +1,20 @@
+name: 问题求助
+description: 使用中遇到的疑惑、配置问题等请在此提交
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: textarea
+    attributes:
+      label: 你的问题是什么？
+      description: 请清晰描述你的疑问或配置问题
+      placeholder: 比如：IOC 如何动态注册接口？
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 你尝试过哪些方案？
+      placeholder: 描述你排查或尝试的过程
+  - type: input
+    attributes:
+      label: 当前使用版本
+      placeholder: v1.3.0 / master

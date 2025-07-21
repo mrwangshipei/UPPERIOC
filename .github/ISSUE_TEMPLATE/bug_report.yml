@@ -1,0 +1,49 @@
+name: 🐞 Bug 报告
+description: 提交软件缺陷或异常行为
+title: "[Bug] 简要描述问题"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请提供尽量详细的信息，以便我们复现和定位问题。
+  - type: input
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 请列出复现该问题的详细步骤
+      placeholder: 1. 进入页面... 2. 点击按钮... 3. 出现错误...
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: 预期结果
+      placeholder: 应该显示正常页面
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      placeholder: 实际弹出错误提示，页面空白等
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 项目版本
+      placeholder: 如：v1.2.3 或 Git Commit 哈希
+    validations:
+      required: true

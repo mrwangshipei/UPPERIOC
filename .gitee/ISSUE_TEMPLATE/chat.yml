@@ -1,0 +1,15 @@
+name: 闲聊 / 吐槽
+description: 自由交流，欢迎讨论项目相关话题
+title: "[Chat]: "
+labels: ["discussion"]
+body:
+  - type: textarea
+    attributes:
+      label: 想聊点啥？
+      placeholder: 比如：觉得 IOC 这个理念真酷，或者某设计不太好理解…
+      validations:
+        required: true
+  - type: textarea
+    attributes:
+      label: 有什么建议或者灵感吗？
+      placeholder: 也许你的点子能变成下一个版本的新特性
