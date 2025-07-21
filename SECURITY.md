@@ -2,16 +2,7 @@
 
 ## Supported Versions / 支持的版本
 
-Use this section to tell people about which versions of your project are currently being supported with security updates. / 使用此部分告知用户哪些版本的项目当前正获得安全更新。
-
-| Version | Supported          | 版本 | 是否支持         |
-| ------- | ------------------ | ---- | ---------------- |
-| 5.1.x   | :white_check_mark: | 5.1.x | :white_check_mark: |
-| 5.0.x   | :x:                | 5.0.x | :x:              |
-| 4.0.x   | :white_check_mark: | 4.0.x | :white_check_mark: |
-| < 4.0   | :x:                | < 4.0 | :x:              |
-
-We support security updates for **5.1.x** and **4.0.x** versions. Any versions below **4.0** will no longer receive security updates. / 我们为 **5.1.x** 和 **4.0.x** 版本提供安全更新。低于 **4.0** 的版本将不再接收安全更新。
+We support security updates for **2.0.1.60** and **2.0.1.60** versions. Any versions below **2.0.1.60** will no longer receive security updates. / 我们为 **2.0.1.60** 和 **2.0.1.60** 以上的版本提供安全更新。低于 **2.0.1.60** 的版本将不再接收安全更新。
 
 ## Reporting a Vulnerability / 报告漏洞
 
