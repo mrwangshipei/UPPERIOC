@@ -158,14 +158,24 @@ UPPERIOCApplication.RunInstance(md => { }, e => {
 
 ## 🧯 常见问题
 
-- **`[IOCObject]` 不生效？**  
-  请升级 `Microsoft.CodeAnalysis.CSharp >= 4.10.0`，避免编译器兼容问题。
+- **我开发的模块别人难道要记住模块名称才能注册吗？**  
+  这个问题现在的解决方案是通过在命名空间 **UPPERIOC.UPPER.IOC.Center.Configuation** 下写扩展方法，编译器就会自动在ModuleConfiguation点的时候带出你的模块，只需要引用了你的Nuget包，开发方式如下
+```
+namespace UPPERIOC.UPPER.IOC.Center.Configuation
+{
+    public static class UPPERMoudleManager
+    {
+        public static void UPPERIOCMoudle(this ModuleConfiguaion md)
+        {
+            md.AddModule<UPPERIOCModule>();
+        }
+    }
+}
+```
 
-- **配置类注入失败？**  
-  检查是否正确添加模块，或使用 `Rigister<T>()` 显式注入。
 
-- **设计器无法打开类？**  
-  编译项目，确保类型生成完整。
+- **请问支持xml配置吗，因为这样可能会比较方便修改？**  
+  暂时不支持，但是你可以使用UModel模块在实现配置接口的时候实现IModel，这样容器在加载配置类的时候就会从你的xml文件中加载，具体方法后续补充。
 
 ---
 
