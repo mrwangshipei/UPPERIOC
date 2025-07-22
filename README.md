@@ -1,11 +1,10 @@
-
 <div align="center">
 
 ![logo](asset/UPPERIOC.png)
 
 </div>
 
-<h1 align="center">UPPERIOC</h1>
+# UPPERIOC
 
 <p align="center">
   <a href="https://github.com/mrwangshipei/UPPERIOC">
@@ -21,51 +20,24 @@
 
 ---
 
-## 💬 联系我
+## 🔰 项目简介
 
-交流群： 816781059
+`UPPERIOC` 是为 WinForm 应用打造的 IoC 容器与模块框架，专注于快速构建标准化、可维护的桌面系统。
 
-qq: 3644005356
+- 支持模块化组织和自动注入
+- 完整生命周期管理，行为可控
+- 提供全局事件监听机制
+- 并发安全，运行期无线程冲突
+- 单元测试覆盖齐全，流程可靠
 
----
-
-## 📦 包管理
-
-MyGet Pre-release feed: [https://www.nuget.org/packages/UPPERIOC/](https://www.nuget.org/packages/UPPERIOC/)
-
-| Package                                              | NuGet Stable                                                 | NuGet Pre-release                                            | Downloads                                                        | MyGet                                                             |
-| ---------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------------------------------------------- | ----------------------------------------------------------------- |
-| [UPPERIOC](https://www.nuget.org/packages/UPPERIOC/) | ![NuGet Stable](https://img.shields.io/nuget/v/UPPERIOC.svg) | ![NuGet Pre](https://img.shields.io/nuget/vpre/UPPERIOC.svg) | ![NuGet Downloads](https://img.shields.io/nuget/dt/UPPERIOC.svg) | ![MyGet](https://img.shields.io/myget/UPPERIOC/vpre/UPPERIOC.svg) |
+适合个人开发、小型工具系统、快速原型。
 
 ---
 
-## 🔰 项目说明
-
-UPPERIOC 是一个为 WinForm 应用设计的 IOC 容器和插件集合框架，旨在帮助开发者快速搭建标准化、模块化的单体应用程序。项目完全开源并长期维护。
-
-**适合个人学习、小型项目、原型系统等快速开发场景。**
-
-> ⚠️ 注意：未针对高性能或大规模项目优化，使用即代表理解并接受可能的风险。
-
----
-
-## ✨ 功能概览
-
-* IOC 容器 + 注解式注入
-* 日志系统（默认实现文件日志）
-* 消息通信模块（Sendor）
-* 文件配置模型系统（Model）
-* 工具集（Util）
-* 应用加锁（MLock）
-* 权限系统（SimplePremission）
-* 翻译模块（Translate）
-
----
-
-## 🚀 快速入门
+## 🚀 快速上手
 
 ```csharp
-static void main() {
+static void Main() {
     UPPERIOCApplication.RunInstance(md =>
     {
         md.UPPERFileModelMoudle(new FileModle());
@@ -78,136 +50,131 @@ static void main() {
 
 ---
 
-## 🧩 模块详解
+## 🧱 模块注册与生命周期
 
-### Sendor
-
-```csharp
-SendorCenter.Register<object>(x => {
-    LogCenter.Log(x.ToString());
-});
-
-SendorCenter.Publish<object>("HelloWorld");
-```
-
-### Log
+模块实现 `IUPPERModule` 接口系列，即可响应容器初始化流程：
 
 ```csharp
-config.AddMoudle<UPPERLogFileMoudle>();
-
-internal class FCTUFileConfiguation : IFileLogConfiguation {
-    public string DirectoryName => "FCTlog";
-    public string DefaultExt => ".log";
-    public List<LogType> WhichTypePrint => new() { LogType.Debug, LogType.Warn, LogType.Info, LogType.Error };
-    public string FileNameTimeFormat => "日志yyyyMMdd";
-    public int HowManyHourSave => 48;
-    public bool PrintMs => true;
-}
-UPPERIOCApplication.RunInstance(md =>
+public class MyModule : IUPPERModule,
+    IModulePreInitialization,
+    IModuleInitialization,
+    IModulePostConstruction,
+    IModulePostInitialization,
+    IModulePreDestruction
 {
-    md.UPPERLogFileMoudle(new FCTUFileConfiguation());
-});
-LogCenter.Log("Hello");
+    public override Type[] Dependencies => null;
+
+    public void OnPreInitialize(IContainerProvider p) => Log("PreInit");
+    public void OnInitialize(IContainerProvider p) => Log("Init");
+    public void OnPostConstruct(IContainerProvider p) => Log("PostConstruct");
+    public void OnPostInitialize(IContainerProvider p) => Log("PostInit");
+    public void OnPreDestroy(IContainerProvider p) => Log("Destroy");
+
+    void Log(string stage) => Console.WriteLine(stage);
+}
 ```
 
-### Model
+注册方式：
 
 ```csharp
-config.AddMoudle<UPPERFileModelMoudle>();
+UPPERIOCApplication.RunInstance(md => {
+    md.AddModule<MyModule>();
+});
+```
 
-internal class UFileModelConfigration : IUFileModelConfiguation {
-    public string SaveModelPath => "conf";
-}
+模块执行顺序严格保证：  
+**依赖先于本模块初始化，生命周期流程按规范推进。**
 
-UPPERIOCApplication.RunInstance(md =>
+---
+
+## 📡 容器全局事件监听（推荐使用）
+
+若你需要监听容器生命周期的各阶段行为，可通过事件系统实现。监听器实现如下：
+
+```csharp
+public class FullLifecycleListener :
+    IUPPERApplicationListener<ApplicationPreInitializationEvent>,
+    IUPPERApplicationListener<ApplicationModuleInitializedEvent>,
+    IUPPERApplicationListener<ApplicationInstanceCreatedEvent>,
+    IUPPERApplicationListener<ApplicationInitEndEvent>,
+    IUPPERApplicationListener<ApplicationStoppingEvent>,
+    IUPPERApplicationListener<ApplicationStoppedEvent>
 {
-    md.UPPERFileModelMoudle(new UFileModelConfigration());
-});
-F.I.SaveModel(new T());
-var t = F.I.GetModel(new T());
+    private readonly List<string> _eventLog;
+    public FullLifecycleListener(List<string> log) => _eventLog = log;
+
+    public void OnEvent(ApplicationPreInitializationEvent e) => _eventLog.Add("PreInit");
+    public void OnEvent(ApplicationModuleInitializedEvent e) => _eventLog.Add("ModuleInit");
+    public void OnEvent(ApplicationInstanceCreatedEvent e) => _eventLog.Add("InstanceCreated");
+    public void OnEvent(ApplicationInitEndEvent e) => _eventLog.Add("InitEnd");
+    public void OnEvent(ApplicationStoppingEvent e) => _eventLog.Add("Stopping");
+    public void OnEvent(ApplicationStoppedEvent e) => _eventLog.Add("Stopped");
+}
 ```
 
-### IOCObject 注入
+注册监听器：
 
 ```csharp
-[IOCObject]
-public class VerContent {
-    public string Up;
-    public string Ver;
-    public string Content;
-}
-UPPERIOCApplication.RunInstance(md =>
-{
-   // 不需要模块
-   // md.UPPERLogFileMoudle(new FCTUFileConfiguation());
+UPPERIOCApplication.RunInstance(md => { }, e => {
+    e.RegisterListener<ApplicationPreInitializationEvent>(
+        new FullLifecycleListener(_eventLog)
+    );
 });
-U.C.GetInstance<VerContent>();
 ```
 
-### MLock
+📌 **提示**：监听器注册时机不受限制，**生命周期尚未开始时注册也有效**，可在程序任何位置动态添加。
+
+在应用运行中注册监听器(此方式必须在容器初始化完成后才可用，否则U.E...将抛出NPE):
 
 ```csharp
-public class MLockConfiguation {
-    public virtual string Solt { get; set; }
-    public virtual string Listenaddr { get; set; }
-    public virtual string LockName { get; set; }
-    public virtual void Noregister() {
-        Console.Write("没有注册");
-        Environment.Exit(0);
-    }
-}
-
-UPPERIOCApplication.RunInstance(md =>
-{
-    md.UPPERMLockMoudle(new MLockConfiguation());
-});
-config._containerProvider.Rigister<ILockConfiguation>();
-```
-
-### Translate
-
-```csharp
-public interface ITranslateConfig {
-    string APPKey { get; }
-    string APPSeret { get; }
-    string FromLanguage { get; }
-    string ToLanguage { get; }
-}
-UPPERIOCApplication...//...添加模块
-TranslateCenter.Instance.SetRootWindows(this);
+    U.E.RegisterListener<ApplicationPreInitializationEvent>(
+        new FullLifecycleListener(_eventLog)
+    );
 ```
 
 ---
 
-## 🏗️ 架构概览
+## ✨ 功能一览
 
-* `UPPERIOC.UPPERApplication`：核心入口
-* `*.Moudle`：可插拔模块集合
-* `*.Center`：使用者调用接口
-* `*.IConfigration`：配置接口
-* `*.IModel`：数据模型接口
+- ✅ IoC 容器（注解式注入）
+- ✅ 模块化注册与隔离
+- ✅ 生命周期控制
+- ✅ 日志系统（默认文件日志）
+- ✅ 消息通信（发布/订阅）
+- ✅ 配置建模（序列化）
+- ✅ 权限管理（基础版）
+- ✅ 翻译模块（可接第三方 API）
+- ✅ 防多开锁定（MLock）
+
+---
+
+## 📦 包下载
+
+| 包名      | NuGet Stable | NuGet PreRelease | 下载量 | MyGet |
+|-----------|---------------|------------------|--------|--------|
+| [UPPERIOC](https://www.nuget.org/packages/UPPERIOC/)  | ![Stable](https://img.shields.io/nuget/v/UPPERIOC.svg) | ![Pre](https://img.shields.io/nuget/vpre/UPPERIOC.svg) | ![Downloads](https://img.shields.io/nuget/dt/UPPERIOC.svg) | ![MyGet](https://img.shields.io/myget/UPPERIOC/vpre/UPPERIOC.svg) |
 
 ---
 
 ## 🧯 常见问题
 
-### IOCObject 失效
+- **`[IOCObject]` 不生效？**  
+  请升级 `Microsoft.CodeAnalysis.CSharp >= 4.10.0`，避免编译器兼容问题。
 
-> 错误提示：CSC warning CS9057 编译器版本不兼容
+- **配置类注入失败？**  
+  检查是否正确添加模块，或使用 `Rigister<T>()` 显式注入。
 
-**解决方法**：更新 `Microsoft.CodeAnalysis.CSharp` 到 `4.10.0+`
-
-### Configuation 找不到
-
-> 手动注入或开启默认容器 Provider
-
-### WinForm 设计器类无法显示
-
-> **提示**：文件中的类不能进行设计，请确保已生成所有项目
-
-**解决方法**：生成项目解决
-
+- **设计器无法打开类？**  
+  编译项目，确保类型生成完整。
 
 ---
 
-如果你觉得这个项目对你有帮助，欢迎 Star 🌟 一下！
+## 💬 联系方式
+
+- QQ 群：816781059  
+- QQ：3644005356  
+- GitHub：[mrwangshipei/UPPERIOC](https://github.com/mrwangshipei/UPPERIOC)
+
+---
+
+如果你觉得这个项目对你有帮助，欢迎 Star 🌟 支持。
