@@ -134,6 +134,57 @@ UPPERIOCApplication.RunInstance(md => { }, e => {
 
 ---
 
+## 🚨 应用事件的创建与管理
+
+在 UPPER 应用框架中，自定义应用事件需继承基础事件类 `UPPERApplicationEvent`，即可参与系统事件发布机制。
+
+### 🔧 创建自定义事件
+
+自定义事件需继承 `UPPERApplicationEvent`，系统自动记录事件创建时间：
+
+```csharp
+public class DataInsertEvent : UPPERApplicationEvent
+{
+    public string Sql { get; set; }
+    public DateTime UseTime { get; set; }
+}
+```
+
+该事件类可包含任意业务所需字段，确保在事件发布时携带完整上下文。
+
+---
+
+### 📤 事件推送机制
+
+事件推送由系统全局事件调度器 `U.E` 负责。  
+在**合适的时机**调用 `PublishEvent` 方法，即可广播事件到所有监听器：
+
+```csharp
+U.E.PublishEvent(new DataInsertEvent {
+    Sql = "INSERT INTO User ...",
+    UseTime = DateTime.Now
+});
+```
+
+事件会立即被推送，**无排队、无延迟机制**，请在确保上下文安全的前提下调用。
+
+---
+
+### 🧩 推送时机建议
+
+以下是常见推荐推送时机，具体以业务场景为准：
+
+- **数据库操作后**推送 `DataInsertEvent`、`DataUpdateEvent` 等；
+- **外部调用返回成功后**推送业务成功事件；
+- **系统启动/关闭前后**可推送状态事件（如 `SystemOnlineEvent`）；
+- **模块初始化完成**时，推送 `ModuleReadyEvent` 等。
+
+---
+
+该机制适用于 **跨模块通信、日志分析、行为审计等场景**，  
+事件监听方式可参考上节《📡 容器全局事件监听（推荐使用）》。
+
+---
 ## ✨ 功能一览
 
 - ✅ IoC 容器（注解式注入）
