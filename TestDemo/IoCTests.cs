@@ -2,6 +2,9 @@
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using TestDemo.Entity;
 using UPPERIOC.UPPER.IOC.DefaultProvider;
+using System.Collections.Concurrent;
+using System.Threading.Tasks;
+using System;
 
 public class IoCTests
 {
@@ -73,4 +76,116 @@ public class IoCTests
         Assert.NotNull(result.InjectedProp);
         Assert.Equal("Hello", result.InjectedProp.GetData());
     }
+    [Fact]
+    public void Concurrent_Resolve_Should_Be_Thread_Safe()
+    {
+        _container.Rigister<SimpleService>(false); // 非单例，避免因共享导致误判
+
+        var exceptions = new ConcurrentQueue<Exception>();
+        var results = new ConcurrentBag<SimpleService>();
+
+        Parallel.For(0, 1000, i =>
+        {
+            try
+            {
+                var instance = _container.GetInstance<SimpleService>();
+                if (instance == null || instance.GetData() != "Hello")
+                {
+                    exceptions.Enqueue(new Exception("Resolved instance invalid"));
+                }
+                results.Add(instance);
+            }
+            catch (Exception ex)
+            {
+                exceptions.Enqueue(ex);
+            }
+        });
+
+        Assert.Empty(exceptions); // 不应有异常
+        Assert.Equal(1000, results.Count); // 所有实例都应返回
+    }
+
+    [Fact]
+    public void Concurrent_Register_And_Resolve_Should_Not_Throw()
+    {
+        var exceptions = new ConcurrentQueue<Exception>();
+
+        Parallel.For(0, 100, i =>
+        {
+            try
+            {
+                _container.Rigister<SimpleService>(false);
+                var resolved = _container.GetInstance<SimpleService>();
+                if (resolved == null || resolved.GetData() != "Hello")
+                {
+                    exceptions.Enqueue(new Exception("Invalid resolution"));
+                }
+            }
+            catch (Exception ex)
+            {
+                exceptions.Enqueue(ex);
+            }
+        });
+
+        Assert.Empty(exceptions); // 并发注册和解析不应抛出异常
+    }
+    [Fact]
+    public void Concurrent_Resolve_ComplexService_Should_Be_Thread_Safe()
+    {
+        _container.Rigister<SimpleService>();
+        _container.Rigister<ComplexService>();
+
+        var exceptions = new ConcurrentQueue<Exception>();
+        var results = new ConcurrentBag<ComplexService>();
+
+        Parallel.For(0, 1000, i =>
+        {
+            try
+            {
+                var instance = _container.GetInstance<ComplexService>();
+                if (instance == null || instance.Simple == null || instance.Simple.GetData() != "Hello")
+                {
+                    exceptions.Enqueue(new Exception("Constructor injection failed"));
+                }
+                results.Add(instance);
+            }
+            catch (Exception ex)
+            {
+                exceptions.Enqueue(ex);
+            }
+        });
+
+        Assert.Empty(exceptions);
+        Assert.Equal(1000, results.Count);
+    }
+    [Fact]
+    public void Concurrent_Resolve_PropertyInjectedService_Should_Be_Thread_Safe()
+    {
+        _container.Rigister<SimpleService>();
+        _container.Rigister<PropertyInjectedService>();
+
+        var exceptions = new ConcurrentQueue<Exception>();
+        var results = new ConcurrentBag<PropertyInjectedService>();
+
+        Parallel.For(0, 1000, i =>
+        {
+            try
+            {
+                var instance = _container.GetInstance<PropertyInjectedService>();
+                if (instance == null || instance.InjectedProp == null || instance.InjectedProp.GetData() != "Hello")
+                {
+                    exceptions.Enqueue(new Exception("Property injection failed"));
+                }
+                results.Add(instance);
+            }
+            catch (Exception ex)
+            {
+                exceptions.Enqueue(ex);
+            }
+        });
+
+        Assert.Empty(exceptions);
+        Assert.Equal(1000, results.Count);
+    }
+
 }

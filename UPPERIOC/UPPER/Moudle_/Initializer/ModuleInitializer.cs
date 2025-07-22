@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.Event.AppEvent.Impl;
 using UPPERIOC.UPPER.IOC.Center.Configuation;
-using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Moudle;
 using UPPERIOC2.UPPER.UIOC.Center;
 

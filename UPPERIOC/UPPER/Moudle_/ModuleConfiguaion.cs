@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.Event.AppEvent;
 using UPPERIOC.UPPER.Event.AppEvent.Impl;
-using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.DefaultProvider;
 using UPPERIOC.UPPER.MainApplication.Log_;
