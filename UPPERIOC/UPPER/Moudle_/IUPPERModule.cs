@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 
-namespace UPPERIOC.UPPER.IOC.Center.Interface
+namespace UPPERIOC.UPPER.Moudle_
 {
     public abstract class IUPPERModule
     {

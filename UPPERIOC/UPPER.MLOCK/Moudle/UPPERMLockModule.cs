@@ -1,6 +1,6 @@
 ﻿using System;
-using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
+using UPPERIOC.UPPER.Moudle_;
 using UPPERIOC2.UPPER.MLOCK.IConfiguation;
 using UPPERIOC2.UPPER.Util;
 

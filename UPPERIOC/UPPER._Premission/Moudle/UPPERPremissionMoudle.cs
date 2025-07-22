@@ -7,6 +7,8 @@ using System.Runtime.CompilerServices;
 using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
 using UPPERIOC.UPPER.IOC.Extend;
+using UPPERIOC.UPPER.Moudle_;
+using UPPERIOC.UPPER.Moudle_.Moudle;
 using UPPERIOC2.UPPER.Premission.Center;
 using UPPERIOC2.UPPER.Premission.UAttribute;
 

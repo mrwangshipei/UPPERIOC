@@ -4,8 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UPPERIOC.UPPER.IOC.Center.Interface;
 using UPPERIOC.UPPER.IOC.Center.IProvider;
+using UPPERIOC.UPPER.Moudle_;
 using UPPERIOC2.UPPER.USendor.Center;
 
 
