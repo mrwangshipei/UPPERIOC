@@ -2,6 +2,22 @@
 
 UPPERIOC 是一款专为 **WinForms** 和 **WPF** 上位机项目设计的轻量级 **IOC**（控制反转）插件系统，旨在简化模块化设计，提升系统解耦度，支持依赖注入、插件动态加载、事件总线等功能，适用于工业控制、数据采集、设备通信等领域。
 
+---
+
+<p align="center">
+  <a href="https://github.com/mrwangshipei/UPPERIOC">
+    <img src="https://badgen.net/badge/Github/mrwangshipei/21D789?icon=github">
+  </a>
+  <img src="https://img.shields.io/badge/NetStandard-2.0-blue">
+  <a href="https://github.com/mrwangshipei/UPPERIOC/blob/master/LICENSE">
+    <img alt="GitHub" src="https://img.shields.io/github/license/mrwangshipei/UPPERIOC?style=flat-square">
+  </a>
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mrwangshipei/UPPERIOC?style=flat-square">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mrwangshipei/UPPERIOC?style=social">
+</p>
+
+---
+
 ## 目录
 
 - [项目简介](#项目简介)
