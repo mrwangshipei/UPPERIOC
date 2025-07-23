@@ -47,8 +47,8 @@ UpperIocApplication.RunInstance(md=>{});
 
 ```csharp
 U.C.Register<MainForm>();
-MainForm m = new();
 // or
+MainForm m = new();
 U.C.Register<MainForm>(m);
 ```
 
